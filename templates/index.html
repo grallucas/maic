@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        $$common_metadata('MAIC')$$
+        <!-- <title>MAIC</title>
+        <link rel="icon" href="./logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css"> -->
+        <style>
+            @keyframes AppearFromTop {
+                0% {
+                    transform: translateY(-10px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            #splash-logo{
+                position: absolute;
+                width: 33%;
+                right: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 20px;
+            }
+            #splash-logo img{
+                width: 100%;
+            }
+            #splash-abt {
+                position: absolute;
+                width: 33%;
+                left: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 20px;
+            }
+            #below-splash {
+                position:relative;
+                width: 100%;
+            }
+            #splash-scroll {
+                position:absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            #splash-bg{
+                position: absolute;
+                top:0;
+                left:0;
+                background: linear-gradient(to bottom, rgb(var(--bg-1)), #000);
+                width: 100%;
+                height: 100vh;
+            }
+
+            /* To overlay the BG */
+            #toolbar{
+                position:fixed;
+                width: 100%;
+            }
+
+            #below-splash-content{
+                /* padding: 100px; */
+
+                display: flex;
+                flex-wrap: wrap;
+
+                /* align-items: center; */
+                justify-content:center;
+            }
+
+            #below-splash-content div {
+                padding: 40px;
+                /* width: 100%; */
+            }
+
+            #leaderboard {
+                overflow-y: scroll;
+                max-height: 550px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="./js-css/delay-animation.js"></script>
+
+        $$toolbar('index.html')$$
+        <!-- <div id="toolbar">
+            <h3>MAIC</h3> <h4>─</h4>
+            <a href="#below-splash" style="border-bottom: rgb(var(--text-2)) solid 1px;"><p>Home</p></a>
+            <a href="."><p>Learning Resources</p></a>
+            <a href="."><p>Research</p></a>
+            <a href="workshops.html"><p>Workshops</p></a>
+            <a href="."><p>Contact</p></a>
+        </div> -->
+
+        <div style="position:relative; width: 100%; height: 100vh">
+            <canvas id="splash-bg"></canvas>
+        </div>
+        
+        <div id="splash-logo">
+            <img class="appear" src="./img/logo.png" style="animation: AppearFromTop 0.7s ease-out 0s 1;">
+        </div>
+        <div id="splash-abt">
+            <h1>About Us</h1>
+            <hr>
+            <p>We like AI.</p>
+        </div>
+        
+        <div id="splash-scroll">
+            <h3>↓ Go Down ↓</h3>
+        </div>
+
+        <div id="below-splash">
+            <img src="./img/transition1.png" class="transition">
+            <div id="below-splash-content">
+                <div>
+                    <h1>Meet the Ebaord!</h1>
+                    <img src="./img/eboard.png" width="500">
+                    <p>Words about the eboard</p>
+                    <a href="./contact.html">Contact Us</a>
+                </div>
+                <div id="leaderboard">
+                    <h1>Leaderboard</h1>
+                    $$leaderboard_html$$
+                </div>
+                <div>
+                    <h1>Recent</h1>
+                    $$'\n'.join([
+                        f'''
+                        <hr>
+                        <a href="."><h2>{x['title']}</h2></a>
+                        {x['summary']}
+                        '''
+                        for x in everything[:5] # LIMIT CAN BE CHANGED !
+                    ])$$
+                </div>
+            </div>
+        </div>
+
+        <script src="./js-css/bg-animation.js"></script>
+    </body>
+</html>

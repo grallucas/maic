@@ -1,0 +1,136 @@
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+    animation-play-state: paused !important;
+}
+
+:root{
+    --bg-1: 35, 39, 42;
+    --bg-2: 18, 22, 25;
+
+    --hl-1: 141, 224, 254;
+    --hl-2: 224, 132, 255;
+
+    --text-1: 255, 255, 255;
+    --text-2: 187, 187, 187;
+
+    --transition-height: 80px;
+}
+
+
+body{
+    margin:0px;
+    background: rgb(var(--bg-1));
+    color: rgb(var(--text-1));
+    font-family: Helvetica;
+    line-height: 170%;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* optional size in px or %: */
+    /* width: 100px;
+    height: 100px; */
+
+    text-align: center;
+}
+
+hr {
+    /* clear:both; */
+    border:0;
+    height:1px;
+    background-image:linear-gradient(to right,rgba(var(--text-1),0),rgba(var(--text-1),.75),rgba(var(--text-1),0))
+}
+
+a{
+    color: rgb(var(--hl-1));
+}
+
+a:visited{
+    color: rgb(var(--hl-2));
+}
+
+.transition {
+    width: 100%;
+    height: var(--transition-height);
+}
+
+/** TOOLBAR **/
+
+#toolbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    /* text-align: center; */
+    background: rgba(var(--bg-1), 0.5);
+    padding: 10px;
+    z-index: 100;
+    line-height: 40px;
+}
+
+#toolbar h3 {
+    padding: 15px;
+    display: inline;
+}
+
+#toolbar p {
+    padding: 15px;
+    display: inline;
+    /* border: rgb(var(--text-1)) solid 1px; */
+}
+
+#toolbar h4 {
+    padding: 15px;
+    display: inline;
+    /* border: rgb(var(--text-1)) solid 1px; */
+    user-select: none;
+    color: rgb(var(--text-2));
+}
+
+#toolbar a {
+    text-decoration: none;
+    color: rgb(var(--text-1));
+}
+
+#toolbar p:hover {
+    /* border-color: rgb(var(--hl-1)); */
+    color: rgb(var(--hl-1));
+    background-color: rgb(var(--bg-2));
+}
+
+
+
+td, th{
+    padding-right: 100px;
+}
+
+tr:nth-child(even), th {
+    background-color: rgb(var(--bg-2));
+}
+
+
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    /* border-bottom: rgb(var(--text-2)) solid 1px; */
+    /* align-items: center; */
+    /* justify-content:center; */
+    /* position:relative;
+    left: 50%;
+    transform: translateX(-25%); */
+}
+.card div{
+    padding-left: 40px;
+    /* width: 50%; */
+}
+.break{
+    flex-basis: 100%;
+    height:0;
+}
