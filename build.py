@@ -31,7 +31,7 @@ def toolbar(current_page):
     pages = [
         {'file': 'index.html', 'title': 'Home'},
         {'file': 'learning.html', 'title': 'Learning Resources'},
-        {'file': '.', 'title': 'Research'},
+        {'file': 'research.html', 'title': 'Research'},
         {'file': 'workshops.html', 'title': 'Workshops'},
         {'file': 'merch.html', 'title': 'Merch'},
         {'file': 'contact.html', 'title': 'Contact'},
@@ -111,6 +111,9 @@ contacts = sorted(contacts, key = lambda w: w['date'], reverse=True)
 
 merch = map(parse_md, get_dir_items('./md/merch/'))
 merch = sorted(merch, key = lambda w: w['date'], reverse=True)
+
+research = map(parse_md, get_dir_items('./md/research/'))
+research = sorted(research, key = lambda w: w['date'], reverse=True)
 
 learning = {}
 for dir in get_dir_items('./md/learning/'):
