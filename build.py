@@ -132,15 +132,15 @@ everything += workshops
 everything = sorted(everything, key = lambda x: x['date'], reverse=True)
 
 leaderboard_df = pd.read_csv('./md/leaderboard.csv')
-leaderboard_html = markdown(
-    '|' + '|'.join(leaderboard_df.columns) + '|\n' +
-    '|' + '|'.join(['-']*len(leaderboard_df.columns)) + '|\n' +
-    '\n'.join([
-        '|' + '|'.join([str(x) for x in row]) + '|'
-        for _, row in leaderboard_df.iterrows()
-    ]),
-    extensions=['tables']
-)
+leaderboard_html = leaderboard_df.to_html(index = False) # markdown(
+#     '|' + '|'.join(leaderboard_df.columns) + '|\n' +
+#     '|' + '|'.join(['-']*len(leaderboard_df.columns)) + '|\n' +
+#     '\n'.join([
+#         '|' + '|'.join([str(x) for x in row]) + '|'
+#         for _, row in leaderboard_df.iterrows()
+#     ]),
+#     extensions=['tables']
+# )
 
 ### Create the final HTML files
 
