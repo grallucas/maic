@@ -131,8 +131,32 @@ for x in learning.values():
 everything += workshops
 everything = sorted(everything, key = lambda x: x['date'], reverse=True)
 
-leaderboard_df = pd.read_csv('./md/leaderboard.csv')
-leaderboard_html = leaderboard_df.to_html(index = False) # markdown(
+def build_leaderboard_csv(user_data_path):
+    user_data_df = pd.read_csv(user_data_path)
+
+
+
+    leaderboard_df = pd.read_csv('./md/leaderboard.csv')
+    leaderboard_df = leaderboard_df.sort_values(by='All-Time Points', ascending=False)  
+    return leaderboard_df
+
+def build_leaderboard_html(leaderboard_df):
+    # Add medals to the left of the names in 1st, 2nd, and 3rd
+    leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
+    leaderboard_df['User'].iloc[0] = f'🏆 {leaderboard_df["User"].iloc[0]}'
+    leaderboard_df['User'].iloc[1] = f'🥈 {leaderboard_df["User"].iloc[1]}'
+    leaderboard_df['User'].iloc[2] = f'🥉 {leaderboard_df["User"].iloc[2]}'
+
+    # Testing if the tooltip works
+    # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
+
+    leaderboard_html = leaderboard_df.to_html(index = False, escape = False, classes = 'leaderboard-table')
+    return leaderboard_html
+
+leaderboard_df = build_leaderboard_csv('./data/User_Data.csv')
+leaderboard_html = build_leaderboard_html(leaderboard_df)
+
+# DEPRECATED
 #     '|' + '|'.join(leaderboard_df.columns) + '|\n' +
 #     '|' + '|'.join(['-']*len(leaderboard_df.columns)) + '|\n' +
 #     '\n'.join([

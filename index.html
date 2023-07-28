@@ -90,6 +90,30 @@
                 overflow-y: scroll;
                 max-height: 550px;
             }
+            
+            .tooltip {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #333;
+                color: #fff;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 14px;
+                opacity: 0;
+                transition: opactiy 0.2s ease-in-out;
+            }
+
+            .custom-emoji {
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            margin: 0 2px;
+            }
+            .custom-emoji:hover .tooltip {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -145,115 +169,100 @@
                 <div id="leaderboard">
                     <h1>Leaderboard</h1>
                     <button onclick="alert('Use Ctrl-F!')">Search</button>
+                    <style>
+                        .leaderboard-table {
+                            border-collapse: collapse;
+                            text-align: left
+                        }
+                        th, td {
+                            border: 0px solid #ddd;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-weight: bold; 
+                        }
+                        td {
+                            padding-left: 8px;
+                        }
+                        tr:nth-child(1) {
+                            background-color: gold;
+                            color: rgb(103, 88, 4);
+                        }
+                        tr:nth-child(2) {
+                            background-color: silver;
+                            color: rgb(76, 75, 75);
+                        }
+                        tr:nth-child(3) {
+                            background-color: #cd7f32;
+                            color: #5c340c;
+                        }
+                        th {
+                            color: white;
+                        }
+                        th:first-child {
+                          width: 70%
+                        }
+                    </style>
                     
-<table border="1" class="dataframe">
+<table border="1" class="dataframe leaderboard-table">
   <thead>
     <tr style="text-align: right;">
-      <th>name</th>
-      <th>points</th>
-      <th>other stat</th>
+      <th>User</th>
+      <th>All-Time Points</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>test1</td>
-      <td>1000</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>test2</td>
+      <td>🏆    test2</td>
       <td>1200</td>
-      <td>bc</td>
     </tr>
     <tr>
-      <td>test3</td>
+      <td>🥈    test3</td>
       <td>1066</td>
-      <td>def</td>
+    </tr>
+    <tr>
+      <td>🥉    test1</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <td>test14</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <td>test13</td>
+      <td>124</td>
+    </tr>
+    <tr>
+      <td>test12</td>
+      <td>123</td>
+    </tr>
+    <tr>
+      <td>test11</td>
+      <td>122</td>
+    </tr>
+    <tr>
+      <td>test10</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <td>test9</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>test8</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <td>test7</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <td>test6</td>
+      <td>117</td>
     </tr>
     <tr>
       <td>test5</td>
       <td>116</td>
-      <td>ghijk</td>
-    </tr>
-    <tr>
-      <td>test1</td>
-      <td>1000</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>test2</td>
-      <td>1200</td>
-      <td>bc</td>
-    </tr>
-    <tr>
-      <td>test3</td>
-      <td>1066</td>
-      <td>def</td>
-    </tr>
-    <tr>
-      <td>test5</td>
-      <td>116</td>
-      <td>ghijk</td>
-    </tr>
-    <tr>
-      <td>test1</td>
-      <td>1000</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>test2</td>
-      <td>1200</td>
-      <td>bc</td>
-    </tr>
-    <tr>
-      <td>test3</td>
-      <td>1066</td>
-      <td>def</td>
-    </tr>
-    <tr>
-      <td>test5</td>
-      <td>116</td>
-      <td>ghijk</td>
-    </tr>
-    <tr>
-      <td>test1</td>
-      <td>1000</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>test2</td>
-      <td>1200</td>
-      <td>bc</td>
-    </tr>
-    <tr>
-      <td>test3</td>
-      <td>1066</td>
-      <td>def</td>
-    </tr>
-    <tr>
-      <td>test5</td>
-      <td>116</td>
-      <td>ghijk</td>
-    </tr>
-    <tr>
-      <td>test1</td>
-      <td>1000</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <td>test2</td>
-      <td>1200</td>
-      <td>bc</td>
-    </tr>
-    <tr>
-      <td>test3</td>
-      <td>1066</td>
-      <td>def</td>
-    </tr>
-    <tr>
-      <td>test5</td>
-      <td>116</td>
-      <td>ghijk</td>
     </tr>
   </tbody>
 </table>

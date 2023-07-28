@@ -24,4 +24,4 @@ The markdown files start with metadata formatted like `<name>:<data>` followed b
 The template files are regular html, except anything between two paris of dollar signs (`$$...$$`) should be a python expression that evaluates to a string.
 
 **How To See Your Changes:**
-Push your changes up to the GitHub repo -- it will update the live website.
+Based on the details outlined in the `tasks.json` file, you can execute the command `ctrl+shift+b` while in the `index.html` file and it will open a preview of the webpage.

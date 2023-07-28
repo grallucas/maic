@@ -81,6 +81,30 @@
                 overflow-y: scroll;
                 max-height: 550px;
             }
+            
+            .tooltip {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #333;
+                color: #fff;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 14px;
+                opacity: 0;
+                transition: opactiy 0.2s ease-in-out;
+            }
+
+            .custom-emoji {
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            margin: 0 2px;
+            }
+            .custom-emoji:hover .tooltip {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -125,6 +149,40 @@
                 <div id="leaderboard">
                     <h1>Leaderboard</h1>
                     <button onclick="alert('Use Ctrl-F!')">Search</button>
+                    <style>
+                        .leaderboard-table {
+                            border-collapse: collapse;
+                            text-align: left
+                        }
+                        th, td {
+                            border: 0px solid #ddd;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-weight: bold; 
+                        }
+                        td {
+                            padding-left: 8px;
+                        }
+                        tr:nth-child(1) {
+                            background-color: gold;
+                            color: rgb(103, 88, 4);
+                        }
+                        tr:nth-child(2) {
+                            background-color: silver;
+                            color: rgb(76, 75, 75);
+                        }
+                        tr:nth-child(3) {
+                            background-color: #cd7f32;
+                            color: #5c340c;
+                        }
+                        th {
+                            color: white;
+                        }
+                        th:first-child {
+                          width: 70%
+                        }
+                    </style>
                     $$leaderboard_html$$
                 </div>
                 <div>
