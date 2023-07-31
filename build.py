@@ -137,7 +137,7 @@ def create_award_user_string(username, awards_df):
     :param username: Name of the player
     :param awards_df: Awards player has and associated data 
     """
-    for i in range(len(awards_df.iloc[:5])):
+    for i in range(len(awards_df)):
         file_name = awards_df.iloc[i]['Icon Image Path']
         tooltip = awards_df.iloc[i]['Tooltip']
         username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji">'

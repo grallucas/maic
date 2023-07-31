@@ -73,12 +73,12 @@
                 <h1>{name}</h1>
             </a>
             '''
-            for name in ['Python', 'Jupyter', 'Rosie', 'AI', 'ML'] # like this to control order
+            for name in ['Python', 'Jupyter', 'Rosie', 'AI', 'News'] # like this to control order
             ])
             $$
         </div>
 
-        <div style="text-align: center; padding-bottom: 40px;"><b>^ Click a Section ^</b></div>
+        <div style="text-align: center; padding-bottom: 40px;"><b>↑ Jump To A Specific Section ↑</b></div>
         
         $$'\n'.join([
         f'''
@@ -102,7 +102,7 @@
             for article in learning[name]['articles']
             ])
         )
-        for name in ['Python', 'Jupyter', 'Rosie', 'AI', 'ML'] # like this to control order
+        for name in ['Python', 'Jupyter', 'Rosie', 'AI', 'News'] # like this to control order
         ])$$
 
         <!-- <div class="section" style="background: 

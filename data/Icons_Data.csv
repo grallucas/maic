@@ -1,8 +1,8 @@
 Icon Name,Icon Image Path,Tooltip,Priority
 eboard2023,./data/custom_icons/current_eboard.png,2023 Eboard,1000
-eboard2022,./data/custom_icons/old_eboard.png,2022 Eboard,200
-eboard2021,./data/custom_icons/old_eboard.png,2021 Eboard,199
-eboard2020,./data/custom_icons/old_eboard.png,2020 Eboard,198
+eboard2022,./data/custom_icons/old_eboard.png,2022 Eboard,120
+eboard2021,./data/custom_icons/old_eboard.png,2021 Eboard,119
+eboard2020,./data/custom_icons/old_eboard.png,2020 Eboard,118
 eboard2019,./data/custom_icons/MAIC.png,Founding Board Member,999
 ROSIE Competition Finalist 2023,./data/custom_icons/ROSIE2023.png,2023 ROSIE Challenge Finalist,190
 ROSIE Competition Finalist 2023,./data/custom_icons/ROSIE2022.png,2022 ROSIE Challenge Finalist,189
