@@ -131,30 +131,47 @@ for x in learning.values():
 everything += workshops
 everything = sorted(everything, key = lambda x: x['date'], reverse=True)
 
-def build_leaderboard_csv(user_data_path):
+def create_award_user_string(username, awards_df):
+    """
+    For an awards df (max 3 entries), put award icons next to associated player
+    :param username: Name of the player
+    :param awards_df: Awards player has and associated data 
+    """
+    for i in range(len(awards_df.iloc[:5])):
+        file_name = awards_df.iloc[i]['Icon Image Path']
+        tooltip = awards_df.iloc[i]['Tooltip']
+        username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji">'
+        # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
+    return username
+
+def build_leaderboard_html(user_data_path):
     user_data_df = pd.read_csv(user_data_path)
+    leaderboard_df = user_data_df[['User', 'All-Time Points']]
+    icons_library = pd.read_csv('./data/Icons_Data.csv')
 
+    # Add the images for icons that the player has
+    for i in range(len(user_data_df)):
+        award_names = user_data_df.iloc[i]['Awards'].split("|")
+        awards_df = icons_library[icons_library['Icon Name'].isin(award_names)]
+        print("NUM AWARDS: ", len(awards_df))
+        awards_df = awards_df.sort_values(by = 'Priority', ascending=False)
+        leaderboard_df['User'].iloc[i] = create_award_user_string(leaderboard_df['User'].iloc[i], awards_df) 
+        print("USERNAME:", leaderboard_df.iloc[i]['User'])
 
-
-    leaderboard_df = pd.read_csv('./md/leaderboard.csv')
+    # Sort so players with the most point sare at the top
     leaderboard_df = leaderboard_df.sort_values(by='All-Time Points', ascending=False)  
-    return leaderboard_df
-
-def build_leaderboard_html(leaderboard_df):
-    # Add medals to the left of the names in 1st, 2nd, and 3rd
-    leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
+    
+    # Add finishing touches
+    # leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
     leaderboard_df['User'].iloc[0] = f'🏆 {leaderboard_df["User"].iloc[0]}'
     leaderboard_df['User'].iloc[1] = f'🥈 {leaderboard_df["User"].iloc[1]}'
     leaderboard_df['User'].iloc[2] = f'🥉 {leaderboard_df["User"].iloc[2]}'
-
-    # Testing if the tooltip works
-    # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
+    
 
     leaderboard_html = leaderboard_df.to_html(index = False, escape = False, classes = 'leaderboard-table')
-    return leaderboard_html
+    return leaderboard_html    
 
-leaderboard_df = build_leaderboard_csv('./data/User_Data.csv')
-leaderboard_html = build_leaderboard_html(leaderboard_df)
+leaderboard_html = build_leaderboard_html('./data/User_Data.csv')
 
 # DEPRECATED
 #     '|' + '|'.join(leaderboard_df.columns) + '|\n' +

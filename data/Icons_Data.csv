@@ -1,13 +1,11 @@
 Icon Name,Icon Image Path,Tooltip,Priority
-eboard2023,./data/custom_icons/2023_eboard.png,2023 Eboard,1000
+eboard2023,./data/custom_icons/current_eboard.png,2023 Eboard,1000
 eboard2022,./data/custom_icons/old_eboard.png,2022 Eboard,200
 eboard2021,./data/custom_icons/old_eboard.png,2021 Eboard,199
 eboard2020,./data/custom_icons/old_eboard.png,2020 Eboard,198
-eboard2019,./data/custom_icons/old_eboard.png,Founding Board Member,999
+eboard2019,./data/custom_icons/MAIC.png,Founding Board Member,999
 ROSIE Competition Finalist 2023,./data/custom_icons/ROSIE2023.png,2023 ROSIE Challenge Finalist,190
 ROSIE Competition Finalist 2023,./data/custom_icons/ROSIE2022.png,2022 ROSIE Challenge Finalist,189
-1st Place 2023 ROSIE Competition,./data/custom_icons/ROSIE2023_Winner.png,1st Place 2023 ROSIE Challenge,500
-1st Place 2022 ROSIE Competition,./data/custom_icons/ROSIE2022_Winner.png,1st Place 2022 ROSIE Challenge,499
 2023 Researcher,./data/custom_icons/2023Researcher.png,2023 Researcher,100
 2022 Researcher,./data/custom_icons/2022Researcher.png,2022 Researcher,99
 2023 MICS Attendee,./data/custom_icons/2023MICS.png,2023 MICS Attendee,130
