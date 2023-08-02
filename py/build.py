@@ -116,7 +116,7 @@ HOME_RECENT_LENGTH = 5
 
 for page_name in top_pages:
     try:
-        with open(f'./py/page-{page_name}.py', 'r') as f_from, open(f'./{page_name}.html', 'w') as f_to:
+        with open(f'./py/page-{page_name}.py', 'r', encoding='utf8') as f_from, open(f'./{page_name}.html', 'w', encoding='utf8') as f_to:
             CURRENT_PAGE_NAME = page_name
             f_to.write(eval(f_from.read()))
     except FileNotFoundError:
