@@ -1,0 +1,73 @@
+@keyframes AppearFromTop {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+#splash-logo{
+    position: absolute;
+    width: 33%;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+#splash-logo img{
+    width: 100%;
+}
+#splash-abt {
+    position: absolute;
+    width: 33%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+#below-splash {
+    position:relative;
+    width: 100%;
+}
+#splash-scroll {
+    position:absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#splash-bg{
+    position: absolute;
+    top:0;
+    left:0;
+    background: linear-gradient(to bottom, rgb(var(--bg-1)), #000);
+    width: 100%;
+    height: 100vh;
+}
+
+/* To overlay the BG */
+#toolbar{
+    position:fixed;
+    width: 100%;
+}
+
+#below-splash-content{
+    /* padding: 100px; */
+
+    display: flex;
+    flex-wrap: wrap;
+
+    /* align-items: center; */
+    justify-content:center;
+}
+
+#below-splash-content div {
+    padding: 40px;
+    /* width: 100%; */
+}
+
+#leaderboard {
+    overflow-y: scroll;
+    max-height: 550px;
+}

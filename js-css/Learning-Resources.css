@@ -1,0 +1,56 @@
+#topics{
+    position: relative;
+    
+    /* padding: 100px; */
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.topic-card{
+    background: gray;
+    padding: 100px;
+    position: relative;
+    margin: 40px;
+    transition: 0.1s;
+}
+
+.topic-card:hover{
+    filter: contrast(130%);
+    padding: 105px;
+}
+
+.topic-card h1{
+    color: rgb(var(--text-1));
+    font-size: 250%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+}
+
+.section{
+    padding: 1px;
+    padding-left: 40px;
+}
+
+.card{
+    /* margin: 40px;
+    width: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card div{
+    padding-left: 40px;
+}
+
+/* @media screen and (min-width: 800px) {
+    .card h2, p{
+        display:inline;
+        padding-right: 50px;
+    }
+} */
