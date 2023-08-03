@@ -63,25 +63,28 @@ def toolbar(current_page):
     '''
 
 def gen_html_from_cards(content: list[dict]) -> str:
-    return '\n'.join([
+    return '\n<body style = "padding: 100px;">'.join([
         f'''
-        <div class="card">
+        <div style="padding-left: 2.5%; padding-right: 2.5%">
+        <div class="card" style="background-color: black; border-radius: 5%;">
             <div>
                 <h1>{w['title']}</h1>
             </div>
             <div class="break"></div>
             <div class="content-wrapper">
                 <div class="image-container">
-                    {('<img src="' + w["img"] + '" style="width: 200px; float: left; margin: 5px 5px 2px 0px;">') if "img" in w else ''}
+                    {('<img src="' + w["img"] + '" style="width: 200px; float: left; margin: 0 10px 10px 0;">') if "img" in w else ''}
                 </div>
-                <div class="text-container">
+                <div class="text-container" style="padding-left: 2%; padding-right: 2%"> <!-- Increase the padding here -->
                     <p style="text-align: justify;">{w['body']}</p>
                 </div>
             </div>
         </div>
+        </div>
         <hr>
         ''' for w in content
-    ])
+    ]) + '</body>'
+ 
 
 ### Import site md content
 
