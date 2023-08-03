@@ -4,8 +4,8 @@
     <head>
         
 
-    <title>MAIC</title>
-    <link rel="icon" href="./logo.png">
+    <title>MSOE AI-Club</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./js-css/style.css">
@@ -86,9 +86,14 @@
                 /* width: 100%; */
             }
 
-            #leaderboard {
-                overflow-y: scroll;
+            /* #leaderboard {
                 max-height: 550px;
+                overflow-y: scroll;
+            } */
+
+            #df_data {
+                max-height: 550px;
+                overflow-y: scroll;
             }
             
             .tooltip {
@@ -129,6 +134,7 @@
 <a href="workshops.html"><p>Workshops</p></a>
 <a href="merch.html"><p>Merch</p></a>
 <a href="contact.html"><p>Contact</p></a>
+<a href="about.html"><p>About</p></a>
 </div>
 
         <!-- <div id="toolbar">
@@ -151,6 +157,7 @@
             <h1>About Us</h1>
             <hr>
             <p><span style="color: rgb(225, 68, 230);"><b>MSOE AI-Club (MAIC)</b></span> is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups. </p>
+            <a href="./about.html" style="font-weight: bold; color: rgb(238, 97, 243)">Learn More About MAIC's Mission</a>
         </div>
         
         <div id="splash-scroll">
@@ -160,29 +167,34 @@
         <div id="below-splash">
             <img src="./img/transition1.png" class="transition">
             <div id="below-splash-content">
-                <div>
-                    <h1>Meet the Ebaord!</h1>
+                <div style="max-width: 50%;">
+                    <h1>Meet the Eboard!</h1>
                     <img src="./img/eboard.png" width="500">
-                    <p>Words about the eboard</p>
-                    <a href="./contact.html">Contact Us</a>
+                    <p>A passionate team of MSOE univsersity students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential.</p>
+                    <!-- <button 
+                        href="./contact.html" 
+                        style="font-weight: bold; padding: 1%; background-color: rgb(225, 68, 230); color: white; border-color: rgb(133, 18, 137)">
+                        Contact Us
+                    </button> -->
+                    <a href="./contact.html" style="font-weight: bold; color: rgb(238, 97, 243)">Contact Us</a>
                 </div>
                 <div id="leaderboard">
                     <h1>Leaderboard</h1>
-                    <button onclick="alert('Use Ctrl-F!')">Search</button>
+                    <!-- <button onclick="alert('Use Ctrl+F!')" style="font-weight: bold; padding: 1%;">
+                        🔍 Search
+                    </button> -->
                     <style>
                         .leaderboard-table {
                             border-collapse: collapse;
-                            text-align: left
+                            text-align: left;
+                            /* table-layout: fixed; */ 
+                            align-self: center;
                         }
-                        th, td {
+                        th, td{
                             border: 0px solid #ddd;
                             white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
                             font-weight: bold; 
-                        }
-                        td {
-                            padding-left: 8px;
+                            padding-left: 2%;
                         }
                         tr:nth-child(1) {
                             background-color: gold;
@@ -198,13 +210,20 @@
                         }
                         th {
                             color: white;
+                            text-align: left;
                         }
-                        th:first-child {
-                          width: 70%
-                        }
+
+                        
+                        /* th:nth-child(1) {
+                            max-width: 50%;
+                        } */
+                        
+                        /* th:first-child {
+                          width: 50%
+                        } */
                     </style>
-                    
-<table border="1" class="dataframe leaderboard-table">
+                    <div id="df_data">
+<table border="1" class="dataframe leaderboard-table" id="df_data">
   <thead>
     <tr style="text-align: right;">
       <th>User</th>
@@ -213,56 +232,373 @@
   </thead>
   <tbody>
     <tr>
-      <td>🏆 Lucas Gral<img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/old_eboard.png" title="2022 Eboard" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"><img src="./data/custom_icons/2022Researcher.png" title="2022 Researcher" class="custom-emoji"></td>
+      <td>🏆 Lucas Gral <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/old_eboard.png" title="2022 Eboard" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"><img src="./data/custom_icons/2022Researcher.png" title="2022 Researcher" class="custom-emoji"></td>
       <td>1000</td>
     </tr>
     <tr>
-      <td>🥈 Ben Paulson<img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/old_eboard.png" title="2022 Eboard" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"><img src="./data/custom_icons/2022Researcher.png" title="2022 Researcher" class="custom-emoji"></td>
+      <td>🥈 Sydney Balboni <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"></td>
       <td>20</td>
     </tr>
     <tr>
-      <td>🥉 Sydney Balboni<img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"></td>
+      <td>🥉 Ben Paulson <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
       <td>20</td>
     </tr>
     <tr>
-      <td>John Cisler<img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2023Researcher.png" title="2023 Researcher" class="custom-emoji"><img src="./data/custom_icons/2022Researcher.png" title="2022 Researcher" class="custom-emoji"></td>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>John Cisler <img src="./data/custom_icons/current_eboard.png" title="2023 Eboard" class="custom-emoji"><img src="./data/custom_icons/ROSIE2023.png" title="2023 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/ROSIE2022.png" title="2022 ROSIE Challenge Finalist" class="custom-emoji"><img src="./data/custom_icons/2023MICS.png" title="2023 MICS Attendee" class="custom-emoji"><img src="./data/custom_icons/2022MICS.png" title="2022 MICS Attendee" class="custom-emoji">...</td>
       <td>10</td>
     </tr>
   </tbody>
 </table>
-
-                </div>
-                <div>
-                    <h1>Recent</h1>
-                    
-
-                        <hr>
-                        <a href="."><h2>Example 2</h2></a>
-                        <p>Q learning does stuff with Q table?!?!</p>
-                        
-
-                        <hr>
-                        <a href="."><h2>Attention</h2></a>
-                        <p>How can machine learning models understand language (or <em>any</em> sequential information)? Attention is how!</p>
-                        
-
-                        <hr>
-                        <a href="."><h2>Intro to Jupyter</h2></a>
-                        <p>All about Jupyter and Jupyter notebooks. Learn how to install and use these tools.</p>
-                        
-
-                        <hr>
-                        <a href="."><h2>Hello World</h2></a>
-                        <p>New to Python? Start here to learn about installing and using the programming language!</p>
-                        
-
-                        <hr>
-                        <a href="."><h2>What Is Rosie</h2></a>
-                        <p>Have you heard of MSOE's supercomputer? It's called ROSIE, and you can learn how to use it here!</p>
-                        
-
+</div>
                 </div>
             </div>
+        </div>
+
+        <div id='Recent Activity' style='padding: 15%;'>
+            <h1>Recent Activity</h1>
+            
+
+                <hr>
+                <a href="."><h2>Example 2</h2></a>
+                <p>Q learning does stuff with Q table?!?!</p>
+                
+
+                <hr>
+                <a href="."><h2>Attention</h2></a>
+                <p>How can machine learning models understand language (or <em>any</em> sequential information)? Attention is how!</p>
+                
+
+                <hr>
+                <a href="."><h2>Intro to Jupyter</h2></a>
+                <p>All about Jupyter and Jupyter notebooks. Learn how to install and use these tools.</p>
+                
+
+                <hr>
+                <a href="."><h2>Hello World</h2></a>
+                <p>New to Python? Start here to learn about installing and using the programming language!</p>
+                
+
+                <hr>
+                <a href="."><h2>What Is Rosie</h2></a>
+                <p>Have you heard of MSOE's supercomputer? It's called ROSIE, and you can learn how to use it here!</p>
+                
+
         </div>
 
         <script src="./js-css/bg-animation.js"></script>

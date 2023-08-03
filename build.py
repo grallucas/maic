@@ -21,7 +21,7 @@ def get_dir_items(dir):
 def common_metadata(title):
     return f'''
     <title>{title}</title>
-    <link rel="icon" href="./logo.png">
+    <link rel="icon" type="image/png" href="./img/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./js-css/style.css">
@@ -35,6 +35,7 @@ def toolbar(current_page):
         {'file': 'workshops.html', 'title': 'Workshops'},
         {'file': 'merch.html', 'title': 'Merch'},
         {'file': 'contact.html', 'title': 'Contact'},
+        {'file': 'about.html', 'title': 'About'}
     ]
 
     return \
@@ -137,11 +138,18 @@ def create_award_user_string(username, awards_df):
     :param username: Name of the player
     :param awards_df: Awards player has and associated data 
     """
+    username += " " # Add some padding between the name and the awards
+    itr = 0
     for i in range(len(awards_df)):
-        file_name = awards_df.iloc[i]['Icon Image Path']
-        tooltip = awards_df.iloc[i]['Tooltip']
-        username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji">'
-        # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
+        itr += 1
+        if itr > 5:
+            username += "..." # Ellipses wrap so doesn't go over to points column
+            break
+        else:
+            file_name = awards_df.iloc[i]['Icon Image Path']
+            tooltip = awards_df.iloc[i]['Tooltip']
+            username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji">'
+            # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
     return username
 
 def build_leaderboard_html(user_data_path):
@@ -168,7 +176,7 @@ def build_leaderboard_html(user_data_path):
     leaderboard_df['User'].iloc[2] = f'🥉 {leaderboard_df["User"].iloc[2]}'
     
 
-    leaderboard_html = leaderboard_df.to_html(index = False, escape = False, classes = 'leaderboard-table')
+    leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table')
     return leaderboard_html    
 
 leaderboard_html = build_leaderboard_html('./data/User_Data.csv')
