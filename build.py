@@ -70,15 +70,16 @@ def gen_html_from_cards(content: list[dict]) -> str:
                 <h1>{w['title']}</h1>
             </div>
             <div class="break"></div>
-            {
-            ('<div> <img src="' + w["img"] + '" width=200px> </div>')
-            if "img" in w else ''
-            }
-            <div>
-                {w['body']}
-                <hr>
+            <div class="content-wrapper">
+                <div class="image-container">
+                    {('<img src="' + w["img"] + '" style="width: 200px; float: left; margin: 5px 5px 2px 0px;">') if "img" in w else ''}
+                </div>
+                <div class="text-container">
+                    <p style="text-align: justify;">{w['body']}</p>
+                </div>
             </div>
         </div>
+        <hr>
         ''' for w in content
     ])
 
