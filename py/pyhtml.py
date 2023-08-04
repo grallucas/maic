@@ -60,4 +60,10 @@ def br(*children, **tags): return _html_element_from_func(*children, **tags)
 def img(*children, **tags): return _html_element_from_func(*children, **tags)
 def canvas(*children, **tags): return _html_element_from_func(*children, **tags)
 
-def elems(*xs): return '\n'.join(xs)
+def elems(*xs):
+    return '\n'.join([
+        elems(*list(x)) if type(x) == type(_ for _ in []) else
+        elems(*x) if type(x) == list else
+        x
+        for x in xs
+    ])

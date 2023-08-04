@@ -1,11 +1,11 @@
 from pyhtml import *
-from collections import OrderedDict
 import pandas as pd
 from markdown import markdown
 import os
 from datetime import datetime
+import traceback
 
-top_pages = ['index', 'Learning-Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About']
+TOP_PAGES = ['index', 'Learning-Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
@@ -33,13 +33,13 @@ def common_toolbar(page_name):
     return div(
         h3('MAIC', style='background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;'),
         h4('─'),
-        *[
+        elems(
             a(
                 p(get_page_display_name(page)),
                 href = ('#below-splash' if page_name=='index' and page=='index' else f'{page}.html'),
                 style = 'border-bottom: rgb(var(--text-2)) solid 2px; font-weight: bold;' if page == page_name else ''
-            ) for page in top_pages
-        ],
+            ) for page in TOP_PAGES
+        ),
         id='toolbar'
 )
 
@@ -57,14 +57,12 @@ def common_content_to_card(entry):
         style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px"
     )
 
-def common_content_group_to_page(page_name, content_group):
+def common_content_group_to_page(page_name, content):
     return html(
         head(common_metadata(page_name)),
         body(
             common_toolbar(page_name),
-            elems(*[
-                common_content_to_card(entry) for entry in content_group
-            ])
+            elems(common_content_to_card(entry) for entry in content)
         )
     )
 
@@ -73,17 +71,17 @@ def common_content_group_to_page(page_name, content_group):
 
 ### Aggregate page content
 
-### DEPRECATED ###
-### leaderboard_df = pd.read_csv('./content/leaderboard.csv')
-### LEADERBOARD_HTML = markdown(
-###     '|' + '|'.join(leaderboard_df.columns) + '|\n' +
-###     '|' + '|'.join(['-']*len(leaderboard_df.columns)) + '|\n' +
-###     '\n'.join([
-###         '|' + '|'.join([str(x) for x in row]) + '|'
-###         for _, row in leaderboard_df.iterrows()
-###     ]),
-###     extensions=['tables']
-### )
+## DEPRECATED
+# leaderboard_df = pd.read_csv('./content/leaderboard.csv')
+# LEADERBOARD_HTML = markdown(
+#     '|' + '|'.join(leaderboard_df.columns) + '|\n' +
+#     '|' + '|'.join(['-']*len(leaderboard_df.columns)) + '|\n' +
+#     '\n'.join([
+#         '|' + '|'.join([str(x) for x in row]) + '|'
+#         for _, row in leaderboard_df.iterrows()
+#     ]),
+#     extensions=['tables']
+# )
 
 def build_leaderboard_html(user_data_path):
     def create_award_user_string(username, awards_df):
@@ -134,7 +132,7 @@ def build_leaderboard_html(user_data_path):
 
 LEADERBOARD_HTML = build_leaderboard_html('./data/User_Data.csv')
 
-content = []
+CONTENT = []
 for fname in listdir('./content'):
     entry = {}
     entry['type'] = fname.split('/')[-1].split('-')[0]
@@ -152,26 +150,30 @@ for fname in listdir('./content'):
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
 
-    content += [entry]
-content.sort(key = lambda x:(x['order'], x['date']), reverse=True)
+    CONTENT += [entry]
+CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)
 
-content_groups = {}
-for entry in content:
+CONTENT_GROUPS = {}
+for entry in CONTENT:
     t = entry['type']
-    if t not in content_groups:
-        content_groups[t] = [entry]
+    if t not in CONTENT_GROUPS:
+        CONTENT_GROUPS[t] = [entry]
     else:
-        content_groups[t] += [entry]
+        CONTENT_GROUPS[t] += [entry]
 
 ### Generate HTML
 
 HOME_RECENT_LENGTH = 5
 
-for page_name in top_pages:
+for page_name in TOP_PAGES:
     try:
         with open(f'./py/page-{page_name}.py', 'r', encoding='utf8') as f_from, open(f'./{page_name}.html', 'w', encoding='utf8') as f_to:
             CURRENT_PAGE_NAME = page_name
-            f_to.write(eval(f_from.read()))
+            try:
+                f_to.write(eval(f_from.read()))
+            except Exception:
+                print(f'ERROR in page: {page_name}:')
+                print('\n'.join([f'    {s}' for s in traceback.format_exc().split('\n')]))
     except FileNotFoundError:
         print('Missing expected top page:', f'./py/page-{page_name}.py')
 

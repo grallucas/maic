@@ -15,7 +15,7 @@ html(
             class_='card'
         ),
         elems(*[
-            common_content_to_card(entry) for entry in content_groups[CURRENT_PAGE_NAME]
+            common_content_to_card(entry) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
         ])
     )
 )

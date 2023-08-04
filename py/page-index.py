@@ -19,8 +19,8 @@ html(
         div(
             h1('About Us'),
             hr(),
-            p(b('MSOE AI-Club (MAIC)', style='color: rgb(var(--hl-2));'), 'is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups.'),
-            a('Learn More About MAIC\'s Mission', href='./About.html'),
+            p(b('MSOE AI Club (MAIC)', style='color: rgb(var(--hl-2));'), 'is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups.'),
+            a('Learn More', href='./About.html'),
             id='splash-abt'
         ),
 
@@ -45,14 +45,14 @@ html(
                 div(class_='break'),
                 div(
                     h1('Recent'),
-                    *[
+                    elems(
                         elems(
                             hr(),
                             a(h2(entry['title']),
                             href='.'), p(entry['summary'])
                         )
-                        for entry in list(filter(lambda entry: 'not_in_recent' not in entry, content))[:HOME_RECENT_LENGTH]
-                    ]
+                        for entry in list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT))[:HOME_RECENT_LENGTH]
+                    )
                 ),
                 id='below-splash-content'
             ),

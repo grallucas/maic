@@ -3,7 +3,7 @@ html(
     body(
         common_toolbar(CURRENT_PAGE_NAME),
         div(
-            elems(*[
+            elems(
                 a(
                     h1(name),
                     href=f'#section-{name}',
@@ -19,23 +19,24 @@ html(
                         'rgb(51, 170, 204);'
                     ]
                 )
-            ]),
+            ),
             id='topics'
         ),
         div(b('^ Click to Jump to a Section ^'), style='text-align: center; padding-bottom: 40px;'),
-        elems(*[
+        elems(
             elems(
                 div(h1(name), id=f"section-{name}", class_="section", style="background: rgb(var(--bg-2)); /*{learning[name]['col']};*/"),
-                *[
+                elems(
                     div(
                         div(a(h2('title'), href='.'), style="min-width:200px;"),
                         div(p('summary')),
                         class_='card'
                     ),
                     hr()
-            ])
+                )
+            )
             for name in ['Python', 'Jupyter', 'Rosie', 'AI', 'News'] 
-        ])
+        )
     )
 )
 
