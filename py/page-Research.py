@@ -1,0 +1,1 @@
+common_content_group_to_page(CURRENT_PAGE_NAME, content_groups[CURRENT_PAGE_NAME])
