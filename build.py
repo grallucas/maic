@@ -40,7 +40,7 @@ def toolbar(current_page):
 
     return \
     '<div id="toolbar">\n' +\
-    '<h3>MAIC</h3>\n' +\
+    '<h3><span style="background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</span></h3>\n' +\
     '<h4>─</h4>\n' +\
     '\n'.join([
     f'<a href="{"#below-splash" if current_page=="index.html" and p["file"] == "index.html" else p["file"]}"' +\
@@ -66,7 +66,7 @@ def gen_html_from_cards(content: list[dict]) -> str:
     return '\n<body style = "padding: 100px;">'.join([
         f'''
         <div style="padding-left: 2.5%; padding-right: 2.5%">
-        <div class="card" style="background-color: black; border-radius: 5%;">
+        <div class="card" style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px">
             <div>
                 <h1>{w['title']}</h1>
             </div>
