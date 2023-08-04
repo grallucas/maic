@@ -5,8 +5,9 @@
 }
 
 :root{
-    --bg-1: 35, 39, 42;
+    --bg-1: 20, 20, 20;
     --bg-2: 18, 22, 25;
+    --toolbar-bg: 40, 40, 40;
 
     --hl-1: 141, 224, 254;
     --hl-2: 224, 132, 255;
@@ -59,6 +60,12 @@ a:visited{
     height: var(--transition-height);
 }
 
+#clickableDiv:hover{
+    transition: width 0.3s ease, height 0.3s ease;
+    width: 250px;
+    height: 120px;
+}
+
 /** TOOLBAR **/
 
 #toolbar {
@@ -67,7 +74,7 @@ a:visited{
     left: 0;
     /* width: 100%; */
     /* text-align: center; */
-    background: rgba(var(--bg-1), 0.5);
+    background: rgba(var(--toolbar-bg), 0.5);
     padding: 10px;
     z-index: 100;
     line-height: 40px;

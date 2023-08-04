@@ -1,6 +1,6 @@
 img: ./img/placeholder.png
 summary: Q learning does stuff with Q table?!?!
-date: 14/11/2023
+date: 6/10/2023
 
 ===
 

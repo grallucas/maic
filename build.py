@@ -44,42 +44,53 @@ def toolbar(current_page):
     '<h4>─</h4>\n' +\
     '\n'.join([
     f'<a href="{"#below-splash" if current_page=="index.html" and p["file"] == "index.html" else p["file"]}"' +\
-        (' style="border-bottom: rgb(var(--text-2)) solid 1px;"' if p['file']==current_page else '') +\
+        (' style="border-bottom: rgb(var(--text-2)) solid 2px; font-weight: bold;"' if p['file']==current_page else '') +\
         f'><p>{p["title"]}</p></a>'
     for p in pages
     ]) +\
     '\n</div>'
     
-    return f'''
-    <div id="toolbar">
-        <h3>MAIC</h3>
-        <h4>─</h4>
-        <a href="index.html"><p>Home</p></a>
-        <a href="."><p>Learning Resources</p></a>
-        <a href="."><p>Research</p></a>
-        <a href="workshops.html" style="border-bottom: rgb(var(--text-2)) solid 1px;"><p>Workshops</p></a>
-        <a href="."><p>Contact</p></a>
-    </div>
-    '''
+    # return f'''
+    # <div id="toolbar">
+    #     <h3>MAIC</h3>
+    #     <h4>─</h4>
+    #     <a href="index.html"><p>Home</p></a>
+    #     <a href="."><p>Learning Resources</p></a>
+    #     <a href="."><p>Research</p></a>
+    #     <a href="workshops.html" style="border-bottom: rgb(var(--text-2)) solid 1px;"><p>Workshops</p></a>
+    #     <a href="."><p>Contact</p></a>
+    # </div>
+    # '''
 
 def gen_html_from_cards(content: list[dict]) -> str:
-    return '\n<body style = "padding: 100px;">'.join([
+    return '\n<body>'.join([
         f'''
         <div style="padding-left: 2.5%; padding-right: 2.5%">
-        <div class="card" style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px">
-            <div>
-                <h1>{w['title']}</h1>
-            </div>
-            <div class="break"></div>
-            <div class="content-wrapper">
-                <div class="image-container">
-                    {('<img src="' + w["img"] + '" style="width: 200px; float: left; margin: 0 10px 10px 0;">') if "img" in w else ''}
+            <div id = "clickableDiv" class="card" style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-top: 20px; cursor: pointer;">
+                <script>
+                    const clickableDiv = document.getElementById("clickableDiv");
+
+                    clickableDiv.addEventListener("click", function() {{
+                        // Replace the alert with your desired action
+                        window.location.href = "index.html"
+                        // You can perform any other actions here, such as navigating to another page,
+                        // showing or hiding elements, etc.
+                    }});
+                </script>
+                
+                <div>
+                    <h1>{w['title']}</h1>
                 </div>
-                <div class="text-container" style="padding-left: 2%; padding-right: 2%"> <!-- Increase the padding here -->
-                    <p style="text-align: justify;">{w['body']}</p>
+                <div class="break"></div>
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        {('<img src="' + w["img"] + '" style="width: 200px; float: left; margin: 0 10px 10px 0;">') if "img" in w else ''}
+                    </div>
+                    <div class="text-container" style="padding-left: 2%; padding-right: 2%"> <!-- Increase the padding here -->
+                        <p style="text-align: justify;">{w['body']}</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <hr>
         ''' for w in content
@@ -134,6 +145,7 @@ for x in learning.values():
     for a in x['articles']:
         everything += [a]
 everything += workshops
+# everything += research
 everything = sorted(everything, key = lambda x: x['date'], reverse=True)
 
 def create_award_user_string(username, awards_df):

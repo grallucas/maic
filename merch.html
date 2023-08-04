@@ -21,7 +21,7 @@
 <a href="learning.html"><p>Learning Resources</p></a>
 <a href="research.html"><p>Research</p></a>
 <a href="workshops.html"><p>Workshops</p></a>
-<a href="merch.html" style="border-bottom: rgb(var(--text-2)) solid 1px;"><p>Merch</p></a>
+<a href="merch.html" style="border-bottom: rgb(var(--text-2)) solid 2px; font-weight: bold;"><p>Merch</p></a>
 <a href="contact.html"><p>Contact</p></a>
 <a href="about.html"><p>About</p></a>
 </div>
@@ -29,22 +29,33 @@
         
 
         <div style="padding-left: 2.5%; padding-right: 2.5%">
-        <div class="card" style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px">
-            <div>
-                <h1>Brain</h1>
-            </div>
-            <div class="break"></div>
-            <div class="content-wrapper">
-                <div class="image-container">
-                    <img src="./img/Merch/Brains.jpg" style="width: 200px; float: left; margin: 0 10px 10px 0;">
+            <div id = "clickableDiv" class="card" style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-top: 20px; cursor: pointer;">
+                <script>
+                    const clickableDiv = document.getElementById("clickableDiv");
+
+                    clickableDiv.addEventListener("click", function() {
+                        // Replace the alert with your desired action
+                        window.location.href = "index.html"
+                        // You can perform any other actions here, such as navigating to another page,
+                        // showing or hiding elements, etc.
+                    });
+                </script>
+                
+                <div>
+                    <h1>Brain</h1>
                 </div>
-                <div class="text-container" style="padding-left: 2%; padding-right: 2%"> <!-- Increase the padding here -->
-                    <p style="text-align: justify;"><p><strong>1 Point</strong></p>
+                <div class="break"></div>
+                <div class="content-wrapper">
+                    <div class="image-container">
+                        <img src="./img/Merch/Brains.jpg" style="width: 200px; float: left; margin: 0 10px 10px 0;">
+                    </div>
+                    <div class="text-container" style="padding-left: 2%; padding-right: 2%"> <!-- Increase the padding here -->
+                        <p style="text-align: justify;"><p><strong>1 Point</strong></p>
 <p>Introducing the MAIC-Squeezer: Your brain's new best friend! This squishy plastic blue brain stress toy proudly rocks the MAIC logo, and boy, does it know how to de-stress with style! Give it a ~~gentle~~ squeeze, and you'll unleash the genius within 💙</p>
 <p><span style="color: yellow; font-weight: bold;">To purchase: ask an Eboard member</span></p></p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <hr>
         </body>

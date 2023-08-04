@@ -145,11 +145,11 @@
 
         <div id="below-splash">
             <img src="./img/transition1.png" class="transition">
-            <div id="below-splash-content">
-                <div style="max-width: 50%;">
+            <div id="below-splash-content" style="display: flex; padding-left: 5%; padding-right: 5%;">
+                <div id="eboard" style="max-width: 50%; flex: 1; padding: 20px;">
                     <h1>Meet the Eboard!</h1>
                     <img src="./img/eboard.png" width="500">
-                    <p>A passionate team of MSOE univsersity students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential.</p>
+                    <p><span style="max-width: 50%;">A passionate team of MSOE univsersity students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential.</span></p>
                     <!-- <button 
                         href="./contact.html" 
                         style="font-weight: bold; padding: 1%; background-color: rgb(225, 68, 230); color: white; border-color: rgb(133, 18, 137)">
@@ -157,7 +157,7 @@
                     </button> -->
                     <a href="./contact.html" style="font-weight: bold; color: dodgerblue">Contact Us</a>
                 </div>
-                <div id="leaderboard">
+                <div id="leaderboard" style = "flex: 1; padding: 20px;">
                     <h1>Leaderboard</h1>
                     <!-- <button onclick="alert('Use Ctrl+F!')" style="font-weight: bold; padding: 1%;">
                         🔍 Search
@@ -206,7 +206,7 @@
             </div>
         </div>
 
-        <div id='Recent Activity' style='padding: 15%;'>
+        <div id='Recent MAIC Activity' style='padding-left: 15%; padding-right: 15%; padding-top: 40px;'>
             <h1>Recent Activity</h1>
             $$'\n'.join([
                 f'''
@@ -220,4 +220,7 @@
 
         <script src="./js-css/bg-animation.js"></script>
     </body>
+    <footer style="text-align: center; padding-top: 30px; font-weight: bold;">
+        <p>&copy; 2023 MSOE Artificial Intelligence Club</p>
+      </footer>
 </html>
