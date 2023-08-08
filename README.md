@@ -3,7 +3,7 @@
 ## Requirements
 
 * `pip install markdown`
-* `pip install pandas` (you probably have this already
+* `pip install pandas` (you probably have this already)
 
 ---
 
@@ -101,6 +101,11 @@ Other useful things for page code:
 
 ## How to Preview The Website
 
+**Extension Method**
+Download the `Live Server` extension
+Right click the `index.html` file and select "Open With Live Server".
+
+**Tasks.json Method (More Advanced)**
 Based on the details outlined in the `./.vscode/tasks.json` file, you can execute the command `ctrl+shift+b` while in the `index.html` file and it will open a preview of the webpage.
 - If a pop-up appears asking which software to use, open it using your preferred browser
 - If a pop-up does not appear, ensure `"version": "0.1.0"` is in the `tasks.json` file, NOT 2.0.0

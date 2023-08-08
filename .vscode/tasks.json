@@ -1,23 +1,8 @@
 {
     "version": "0.1.0",
-    "command": "explorer",
+    "command": "explorer",    
     "windows": {
         "command": "explorer.exe"
     },
-    "args": [
-        "index.html"
-    ],
-    "tasks": [
-        {
-            "label": "explorer.exe",
-            "args": [
-                "index.html"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "_id": "build",
-                "isDefault": false
-            }
-        }
-    ]
+    "args": ["index.html"]
 }
