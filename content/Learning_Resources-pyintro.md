@@ -1,6 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: If you're brand new to Python, start here.
 order: 1
+date: 8/9/2023
 title: What's Python?
 difficulty: 1
 catagories: Python, Guide, Example Catagory

@@ -51,7 +51,16 @@ html(
                             a(h2(entry['title']),
                             href='.'), p(entry['summary'])
                         )
-                        for entry in list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT))[:HOME_RECENT_LENGTH]
+                        for entry in
+                            sorted(
+                                list(
+                                    filter(
+                                        lambda entry: 'not_in_recent' not in entry,
+                                        CONTENT
+                                    )
+                                ),
+                                key=lambda entry: entry['date'], reverse=True
+                            )[:HOME_RECENT_LENGTH]
                     )
                 ),
                 id='below-splash-content'
