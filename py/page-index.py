@@ -49,7 +49,7 @@ html(
                         elems(
                             hr(),
                             a(h2(entry['title']),
-                            href='.'), p(entry['summary'])
+                            href=common_get_article_link(entry['fname'])), p(entry['summary'])
                         )
                         for entry in
                             sorted(
