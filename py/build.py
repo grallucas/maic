@@ -53,7 +53,7 @@ def common_content_to_card(entry):
             # hr(),
             style='max-width:80%;'
         ),
-        style=f"background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 25px;"
+        style="background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
     )
 
 def common_content_group_to_page(page_name, content):
@@ -81,6 +81,7 @@ def common_get_article_link(fname):
 # )
 
 def build_leaderboard_html(user_data_path):
+    
     def create_award_user_string(username, awards_df):
         """
         For an awards df (max 3 entries), put award icons next to associated player
@@ -147,8 +148,8 @@ for fname in listdir('./content'):
     entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
-    if 'catagories' in entry:
-        entry['catagories'] = [s.strip() for s in entry['catagories'].split(',')]
+    if 'categories' in entry:
+        entry['categories'] = [s.strip() for s in entry['categories'].split(',')]
 
     CONTENT += [entry]
 CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)
