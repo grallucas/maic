@@ -5,11 +5,11 @@ import os
 from datetime import datetime
 import traceback
 
-TOP_PAGES = ['index', 'Learning-Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About']
+TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
-    return name.replace('-', ' ')
+    return name.replace('_', ' ')
 
 def listdir(dir):
     if dir[-1] != '/':
@@ -53,7 +53,6 @@ def common_content_to_card(entry):
             # hr(),
             style='max-width:75%'
         ),
-        class_='card',
         style="background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
     )
 
@@ -64,8 +63,8 @@ def common_content_group_to_page(page_name, content):
         )
     )
 
-# TODO for articles
-# def common_content_to_page(entry):
+def common_get_article_link(fname):
+    return f'./articles-{fname}.html'
 
 ### Aggregate page content
 
@@ -134,6 +133,7 @@ CONTENT = []
 for fname in listdir('./content'):
     entry = {}
     entry['type'] = fname.split('/')[-1].split('-')[0]
+    entry['fname'] = fname.split('/')[-1].split('.')[0]
 
     with open(fname, 'r') as f:
         lines = f.read().split('\n')
@@ -147,6 +147,8 @@ for fname in listdir('./content'):
     entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
+    if 'catagories' in entry:
+        entry['catagories'] = [s.strip() for s in entry['catagories'].split(',')]
 
     CONTENT += [entry]
 CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)
@@ -174,6 +176,26 @@ for page_name in TOP_PAGES:
                 print('\n'.join([f'    {s}' for s in traceback.format_exc().split('\n')]))
     except FileNotFoundError:
         print('Missing expected top page:', f'./py/page-{page_name}.py')
+
+for entry in CONTENT_GROUPS['Learning_Resources']:
+    with open(common_get_article_link(entry["fname"]), 'w') as f:
+        f.write(
+            html(
+                head(
+                    common_metadata(entry['title'])
+                ),
+                body(
+                    common_toolbar(entry['title']),
+                    div(
+                        h1(entry['title'], style="text-align:center;"),
+                        h3(entry['summary'], style="text-align:center;"),
+                        hr(),
+                        entry['body'],
+                        style="padding-left: 40px; padding-right: 40px;"
+                    )
+                )
+            )
+        )
 
 with open('./404.html', 'w') as f:
     f.write(

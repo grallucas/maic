@@ -48,14 +48,25 @@ html(
                     elems(
                         div(
                             hr(),
-                            a(h2(entry['title']),
-                            href='.',
-                            style = 'color: #0099ff; font-weight: bold;'), 
+                            a(
+                                h2(entry['title']),
+                                href=common_get_article_link(entry['fname']),
+                                style='color: #0099ff; font-weight: bold;'
+                            ), 
                             p(entry['summary']),
                             class_='card',
                             style = "background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
                         )
-                        for entry in list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT))[:HOME_RECENT_LENGTH]
+                        for entry in
+                            sorted(
+                                list(
+                                    filter(
+                                        lambda entry: 'not_in_recent' not in entry,
+                                        CONTENT
+                                    )
+                                ),
+                                key=lambda entry: entry['date'], reverse=True
+                            )[:HOME_RECENT_LENGTH]
                     )
                 ),
                 id='below-splash-content'
