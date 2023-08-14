@@ -38,7 +38,7 @@ These are the metedata tags used:
 * `summary: <text>` - on the home page in "Recent" and in learning resource article previews.
 * `title: <text>` - in previews and in the content itself.
 * `difficulty: <positive integer>` - Appears next to learning resources
-* `catagories: <text>, ...` - Comma-separated strings that appear next to learning resources. The first catagory is the **main** one, and it determines which section of the learning resources page to place content in.
+* `categories: <text>, ...` - Comma-separated strings that appear next to learning resources. The first category is the **main** one, and it determines which section of the learning resources page to place content in.
 
 Other metadata tags are ignored.
 

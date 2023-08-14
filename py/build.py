@@ -150,8 +150,8 @@ for fname in listdir('./content'):
     entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
-    if 'catagories' in entry:
-        entry['catagories'] = [s.strip() for s in entry['catagories'].split(',')]
+    if 'categories' in entry:
+        entry['categories'] = [s.strip() for s in entry['categories'].split(',')]
 
     CONTENT += [entry]
 CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)

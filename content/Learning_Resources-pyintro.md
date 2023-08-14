@@ -4,7 +4,8 @@ order: 1
 date: 8/9/2023
 title: What's Python?
 difficulty: 1
-catagories: Python, Guide, Example Catagory
+categories: Python, Guide, Example Catagory
+points: 1
 
 **(copied text from old site)**
 

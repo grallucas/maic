@@ -34,12 +34,13 @@ html(
                                 entry['summary']),
                                 p(
                                     b('Difficulty: '), entry['difficulty'], br(),
-                                    b('Catagories: '), ', '.join(entry['catagories'])
+                                    b('Points: '), entry['points'], br(),
+                                    b('Catagories: '), ', '.join(entry['categories'])
                                 )
                             ),
                             class_='card'
                         ), hr()
-                    ) for entry in CONTENT_GROUPS['Learning_Resources'] if entry['catagories'][0] == section
+                    ) for entry in CONTENT_GROUPS['Learning_Resources'] if entry['categories'][0] == section
                 )
             )
             for section in ['Python', 'Jupyter', 'Rosie', 'AI', 'News'] 
