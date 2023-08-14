@@ -40,34 +40,29 @@ html(
                     h1('Leaderboard'),
                     # button('Search', onclick='alert(\'Use Ctrl-F\')'),
                     div(LEADERBOARD_HTML, id='df_data'),
-                    id='leaderboard'
+                    id='leaderboard',
                 ),
                 div(class_='break'),
                 div(
-                    h1('Recent'),
+                    h1('Recent Activity'),
                     elems(
-                        div(
-                            hr(),
-                            a(
-                                h2(entry['title']),
-                                href=common_get_article_link(entry['fname']),
-                                style='color: #0099ff; font-weight: bold;'
-                            ), 
-                            p(entry['summary']),
-                            class_='card',
-                            style = "background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
-                        )
-                        for entry in
-                            sorted(
-                                list(
-                                    filter(
-                                        lambda entry: 'not_in_recent' not in entry,
-                                        CONTENT
-                                    )
-                                ),
+                        (
+                            div(
+                                a(
+                                    h2(entry['title']),
+                                    href=common_get_article_link(entry['fname']),
+                                    style='color: #0099ff; font-weight: bold;'
+                                ), 
+                                p(entry['summary']),
+                                style="margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
+                            )
+                            for entry in sorted(
+                                list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT)),
                                 key=lambda entry: entry['date'], reverse=True
                             )[:HOME_RECENT_LENGTH]
-                    )
+                        )
+                    ),
+                    style = 'width: 65%;'
                 ),
                 id='below-splash-content'
             ),
