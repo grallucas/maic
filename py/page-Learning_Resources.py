@@ -33,8 +33,7 @@ html(
                             div(a(h2(entry['title']), b(f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height ="35">'), href=common_get_article_link(entry["fname"])), style="min-width:200px;"),
                             div(p(
                                 p(
-                                    # , # DIFFICULTY
-                                    b('(' + ', '.join(entry['catagories']) + ')')
+                                    b('(' + ', '.join(entry['categories']) + ')')
                                 ),
                                 entry['summary']),
                                 style = "padding-top: 7px;"
@@ -42,7 +41,7 @@ html(
                             class_='card',
                             style = "margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 10px; margin-bottom: 10px;"
                         )
-                    ) for entry in CONTENT_GROUPS['Learning_Resources'] if entry['catagories'][0] == section
+                    ) for entry in CONTENT_GROUPS['Learning_Resources'] if entry['categories'][0] == section
                 )
             )
             for section in ['Python', 'Jupyter', 'Rosie', 'AI', 'News'] 

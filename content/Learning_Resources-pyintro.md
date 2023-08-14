@@ -5,7 +5,7 @@ date: 8/9/2023
 title: What's Python?
 image: ../maic/img/thumbnails/Python_Introduction.png
 difficulty: easy
-catagories: Python, Topic Introduction
+categories: Python,Topic Introduction
 
 
 
