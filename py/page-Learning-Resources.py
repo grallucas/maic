@@ -22,7 +22,7 @@ html(
             ),
             id='topics'
         ),
-        div(b('^ Click to Jump to a Section ^'), style='text-align: center; padding-bottom: 40px;'),
+        div(b('↑ Click Any Topic to Jump ↑'), style='text-align: center; padding-bottom: 40px;'),
         elems(
             elems(
                 div(h1(name), id=f"section-{name}", class_="section", style="background: rgb(var(--bg-2)); /*{learning[name]['col']};*/"),

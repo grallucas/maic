@@ -22,7 +22,7 @@ def common_metadata(page_name):
     return elems(
         title('MSOE AI Club') if page_name == 'index'
         else title(f'MAIC - {get_page_display_name(page_name)}'),
-        link(rel='icon', type='image/png', href='./logo.png'),
+        link(rel='icon', type='image/png', href='./img/misc/logo.png'),
         meta(charset="UTF-8"),
         meta(name='viewport', content='width=device-width, initial-scale=1.0'),
         link(rel='stylesheet', href='./js-css/style.css'),
@@ -32,15 +32,15 @@ def common_metadata(page_name):
 def common_toolbar(page_name):
     return div(
         h3('MAIC', style='background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;'),
-        h4('─'),
         elems(
             a(
                 p(get_page_display_name(page)),
                 href = ('#below-splash' if page_name=='index' and page=='index' else f'{page}.html'),
-                style = 'border-bottom: rgb(var(--text-2)) solid 2px; font-weight: bold;' if page == page_name else ''
+                style = 'background-color: rgb(55, 34, 107); font-weight: bold; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;' if page == page_name else ''
             ) for page in TOP_PAGES
         ),
-        id='toolbar'
+        id='toolbar',
+        style = 'text-align: center;'
 )
 
 def common_content_to_card(entry):
@@ -54,14 +54,12 @@ def common_content_to_card(entry):
             style='max-width:75%'
         ),
         class_='card',
-        style="background-color: black; border-radius: 5%; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px"
+        style="background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
     )
 
 def common_content_group_to_page(page_name, content):
     return html(
-        head(common_metadata(page_name)),
         body(
-            common_toolbar(page_name),
             elems(common_content_to_card(entry) for entry in content)
         )
     )

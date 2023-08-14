@@ -99,8 +99,13 @@ a:visited{
 
 #toolbar p:hover {
     /* border-color: rgb(var(--hl-1)); */
-    color: rgb(var(--hl-1));
-    background-color: rgb(var(--bg-2));
+    /* color: rgb(var(--hl-1));
+    background-color: rgb(var(--bg-2)); */
+
+    background-color: rgb(71, 46, 134); 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    border-radius: 10px;
 }
 
 
