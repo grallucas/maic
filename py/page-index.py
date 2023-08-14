@@ -20,7 +20,7 @@ html(
             h1('About Us'),
             hr(),
             p(b('MSOE AI Club (MAIC)', style='color: rgb(var(--hl-2));'), 'is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups.'),
-            a('Learn More', href='./About.html'),
+            a('Learn More', href='./About.html', style = 'color: #0099ff; font-weight: bold;'),
             id='splash-abt'
         ),
 
@@ -33,7 +33,7 @@ html(
                     h1('Meet the Eboard!'),
                     img(src="./img/misc/eboard.png", style='width:100%'),
                     p("A passionate team of MSOE univsersity students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential."),
-                    a('Contact Us', href='./contact.html'),
+                    a('Contact Us', href='./contact.html', style = 'color: #0099ff; font-weight: bold;'),
                     style='max-width: 400px;'
                 ),
                 div(
@@ -46,10 +46,16 @@ html(
                 div(
                     h1('Recent'),
                     elems(
-                        elems(
+                        div(
                             hr(),
-                            a(h2(entry['title']),
-                            href=common_get_article_link(entry['fname'])), p(entry['summary'])
+                            a(
+                                h2(entry['title']),
+                                href=common_get_article_link(entry['fname']),
+                                style='color: #0099ff; font-weight: bold;'
+                            ), 
+                            p(entry['summary']),
+                            class_='card',
+                            style = "background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%;"
                         )
                         for entry in
                             sorted(

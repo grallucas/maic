@@ -50,6 +50,7 @@
 #toolbar{
     position:fixed;
     width: 100%;
+    align-content: center;
 }
 
 #below-splash-content{

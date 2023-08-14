@@ -22,7 +22,7 @@ html(
             ),
             id='topics'
         ),
-        div(b('^ Click to Jump to a Section ^'), style='text-align: center; padding-bottom: 40px;'),
+        div(b('↑ Click Any Topic to Jump ↑'), style='text-align: center; padding-bottom: 40px;'),
         elems(
             elems(
                 div(h1(section), id=f"section-{section}", class_="section", style="background: rgb(var(--bg-2));"),
@@ -35,7 +35,7 @@ html(
                                 p(
                                     b('Difficulty: '), entry['difficulty'], br(),
                                     b('Points: '), entry['points'], br(),
-                                    b('Catagories: '), ', '.join(entry['categories'])
+                                    b('Categories: '), ', '.join(entry['categories'])
                                 )
                             ),
                             class_='card'
