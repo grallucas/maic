@@ -34,7 +34,7 @@ html(
                                 entry['summary']),
                                 p(
                                     b('Difficulty: '), entry['difficulty'], br(),
-                                    b('Catagories: '), ', '.join(entry['catagories'])
+                                    b('Categories: '), ', '.join(entry['catagories'])
                                 )
                             ),
                             class_='card'
