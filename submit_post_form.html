@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./js-css/style.css">
         <link rel="stylesheet" href="./js-css/Workshops.css">
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </head>
     <div id="toolbar" style="text-align: center;">
         <h3 style="background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</h3>
@@ -28,7 +27,10 @@
             <span style = "color: yellow; font-weight: bold;">All accepted submission will reward the applicant 10 points!</span>
         </div><br><br>
 
-        <form>
+        <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+
+        <!-- <form action = "submit_post_form.php" method="post">
             
             <label for="title" style = 'font-weight: bold; font-size: 20px;'>Article Title: <span style = "color: red;">*</span></label><br>
             <input type="text" id="title" name="title" required><br><br>
@@ -42,24 +44,29 @@
             </label><br>
             <textarea type="text" id="summary" name="summary" rows="5" cols="100" required>Please enter your summary here...</textarea><br><br>
             
-            <label for="content" style = 'font-weight: bold; font-size: 20px;'>Content: <span style = "color: red;">*</span></label><br>
-            <label for="content" style = 'font-size: 12px;'>
+            <label for="markdownInput" style = 'font-weight: bold; font-size: 20px;'>Content: <span style = "color: red;">*</span></label><br>
+            <label for="markdownInput" style = 'font-size: 12px;'>
                 Please note, this form will be submitted as a markdown file. All formatting should be written as markdown.<br>
                 You can find a guide online for writing markdown <a href="www.markdownguide.org/basic-syntax" target="_blank">at this article.</a>
             </label><br>
-            <textarea id="content" name="content" rows="10" cols="100" oninput="previewMarkdown()" required>Please enter your article content here...</textarea><br><br>
-            <div id="markdownPreview"></div>
+            <textarea id="markdownInput" rows="10" cols="100" oninput="previewMarkdown()"></textarea><br>
 
-            <script>
-                function previewMarkdown() {
-                  const markdownInput = document.getElementById("content").value;
-                  const markdownPreview = document.getElementById("markdownPreview");
-                  markdownPreview.innerHTML = marked(markdownInput);
-                }
-            </script>
+            <label for="category" style = 'font-weight: bold; font-size: 20px;'><br>Select a Category: <span style = "color: red;">*</span></label><br>
+            <select id="category" name="category" style = 'font-size: 17px;' required>
+                <option value="option1">Python</option>
+                <option value="option2">Jupyter</option>
+                <option value="option3">Rosie</option>
+                <option value="option3">AI</option>
+                <option value="option3">News</option>
+            </select><br><br>
 
-            <input type="submit" value="Submit">
-        </form>
+            <label for="author" style = 'font-weight: bold; font-size: 20px;'>Author Name: <span style = "color: red;">*</span></label><br>
+            <input type="text" id="author" name="author" required><br><br>
 
+            <label for="email" style = 'font-weight: bold; font-size: 20px;'>Author Email:</label><br>
+            <input type="text" id="email" name="email" required><br><br><br>
+
+            <input type="submit" value="Submit Article For Review" style = 'font-size: 25px; font-weight: bold;'>
+        </form> -->
     </div>
 </body>
