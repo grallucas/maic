@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 import traceback
 
-TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About']
+TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
@@ -37,7 +37,7 @@ def common_toolbar(page_name):
                 p(get_page_display_name(page)),
                 href = ('#below-splash' if page_name=='index' and page=='index' else f'{page}.html'),
                 style = 'background-color: rgb(55, 34, 107); font-weight: bold; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;' if page == page_name else ''
-            ) for page in TOP_PAGES
+            ) for page in TOP_PAGES[:-1]
         ),
         id='toolbar',
         style = 'text-align: center;'
@@ -98,7 +98,7 @@ def build_leaderboard_html(user_data_path):
             else:
                 file_name = awards_df.iloc[i]['Icon Image Path']
                 tooltip = awards_df.iloc[i]['Tooltip']
-                username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji">'
+                username += f'<img src="{file_name}" title="{tooltip}" class="custom-emoji" height = 20px width = 20px>'
                 # leaderboard_df['User'].iloc[0] = f'{leaderboard_df["User"].iloc[0]} <img src="custom_emojis/gold_medal.png" title="GOLD MEDAL!" class="custom-emoji">'
         return username
 
