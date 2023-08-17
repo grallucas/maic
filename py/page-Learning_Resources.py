@@ -23,7 +23,7 @@ html(
             id='topics'
         ),
         div(b('↑ Click Any Topic to Jump ↑'), style='text-align: center; padding-bottom: 40px;'),
-        button("Submit Your Own Article", style = 'font-weight: bold; text-align: center;', href="submit_post_form.html"),
+        button("Submit Your Own Article", style = 'font-weight: bold; text-align: center; justify-content: center; align-items: center; display: flex;', href="submit_post_form.html"),
         elems(
             elems(
                 div(h1(section), id=f"section-{section}", class_="section", style="background: rgb(var(--bg-2));"),
