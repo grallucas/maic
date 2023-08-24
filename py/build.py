@@ -145,7 +145,7 @@ for fname in listdir('./content'):
         entry['body'] = markdown('\n'.join(lines).strip())
 
     if 'order' not in entry: entry['order'] = '0'
-    entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
+    entry['date'] = datetime.strptime(entry['date'], '%M/%d/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
     if 'categories' in entry:

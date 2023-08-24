@@ -1,7 +1,6 @@
-img: ./img/thumbnails/placeholder.png
 summary: If you're brand new to Python, start here.
 order: 1
-date: 8/9/2023
+date: 08/09/2023
 title: What's Python?
 image: ../maic/img/thumbnails/Python_Introduction.png
 difficulty: easy
