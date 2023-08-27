@@ -11,7 +11,7 @@
     </head>
     <body>
         <div id="toolbar" style="text-align: center;">
-            <h3 style="background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</h3>
+            <h3><a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a></h3>
             <a href="index.html"><p>Home</p></a>
             <a href="Learning_Resources.html"><p>Learning Resources</p></a>
             <a href="Research.html"><p>Research</p></a>
@@ -22,11 +22,14 @@
         </div>
         <div style="padding-left: 40px; padding-right: 40px;">
             <h1 style="text-align:center;">Developing with Jupyter Notebooks on DGX Nodes</h1>
-            <h3 style="text-align:center;">How to run a Jupyter Notebook on ROSIE while using a DGX node.</h3>
+            <h3 style="text-align:center;">How to run a Jupyter Notebook while using a DGX node on ROSIE. Remember, only use DGX notebooks for when absolutely necessary for computing power required to complete your project.</h3>
             <hr>
+            <div style="text-align:center; padding-bottom: 20px;">
+                By: <a style=font-weight:bold;>Bart Gebka</a>
+            </div>
             <h2>Introduction</h2>
             <p>ROSIE offers a remarkable platform for executing python scripts and functions via a web browser interface. Nonetheless, the current interface lacks the capability for users to run tasks on high-performance computing in an interactive jupyter notebook environment. This guide aims to demonstrate the process of initiating a jupyter instance server on a ROSIE compute node and establishing a tunnel between said node and your local computer, enabling seamless interaction with the server.</p>
-            <h2>After following this guide you'll be able to</h2>
+            <h2>After following this guide you'll be able to...</h2>
             <ul>
             <li>Develop software on a DGX node from the comfort of a jupyter notebook</li>
             <li>Run a job with custom compute parameters</li>
@@ -35,7 +38,8 @@
             </ul>
             <h2>Rosie Architecture</h2>
             <p>ROSIE's firewall does not allow direct connections to compute nodes meaning that we will need to connect to our job via a managment node. We can do this via an SSH tunnel.</p>
-            <h2>Steps</h2>
+            <p><img src = '../maic/img/thumbnails/ROSIE Architecture.png' height = 600></p>
+            <h2>DGX Notebook Steps</h2>
             <ol>
             <li>Start a SLURM job with desired compute</li>
             <li>SSH into the node the job is running on </li>
@@ -53,8 +57,8 @@
             <code>sh
             salloc --partition=dgx -G 1</code>
             For more information on how to use salloc see the <a href="https://slurm.schedmd.com/salloc.html">official salloc documentation</a> and <a href="https://msoe.dev/#/cli/SLURM">MSOE Rosie documentation</a> for the partition names.</p>
-            <p>You can view your running job with</p>
-            <p><code>sh
+            <p>You can view your running job with
+            <code>sh
             squeue</code></p>
             <p>Make sure to note which node you are running your job on (for this example my job was running on <code>dh-dgx1-1</code>)</p>
             <h2>2. SSH into the node the job is running on</h2>

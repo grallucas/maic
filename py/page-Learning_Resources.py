@@ -23,20 +23,37 @@ html(
             id='topics'
         ),
         div(b('↑ Click Any Topic to Jump ↑'), style='text-align: center; padding-bottom: 40px;'),
-        button("Submit Your Own Article", style = 'font-weight: bold; text-align: center; justify-content: center; align-items: center; display: flex;', href="submit_post_form.html"),
+        a(
+            "Submit Your Own Article",
+            href = "submit_post_form.html",
+            style = "text-align: center; display: block; padding-bottom: 40px; font-weight: bold; background-color: rgb(37, 37, 37); border-radius: 20px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 10px; padding-left: 10px; padding-top: 10px; margin-right: 40%; margin-left: 40%; margin-bottom: 40px;"
+        ),
         elems(
             elems(
                 div(h1(section), id=f"section-{section}", class_="section", style="background: rgb(var(--bg-2));"),
                 elems(
                     elems(
                         div(
-                            div(f"<img src = '{entry['image']}' height = 125>", href = common_get_article_link(entry["fname"])),
-                            div(a(h2(entry['title']), b(f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height ="35">'), href=common_get_article_link(entry["fname"])), style="min-width:200px;"),
-                            div(p(
-                                p(
-                                    b('(' + ', '.join(entry['categories']) + ')')
+                            div(f"<img src = '{entry['image']}' height = 125 width = 125>", href = common_get_article_link(entry["fname"])),
+                            div(
+                                a(
+                                    h2(
+                                        entry['title']), 
+                                        href=common_get_article_link(entry["fname"])
+                                    ), 
+                                    b(
+                                        f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height ="35">'
+                                    ),  
+                                    br(),
+                                    b(
+                                        'Categories: ' + ', '.join(entry['categories'])
+                                    ),
+                                    style="min-width:200px;"
                                 ),
-                                entry['summary']),
+                            div(
+                                p(
+                                    entry['summary'] 
+                                ),
                                 style = "padding-top: 7px;"
                             ),
                             class_='card',

@@ -31,7 +31,7 @@ def common_metadata(page_name):
 
 def common_toolbar(page_name):
     return div(
-        h3('MAIC', style='background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;'),
+        h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
         elems(
             a(
                 p(get_page_display_name(page)),
@@ -191,6 +191,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                         h1(entry['title'], style="text-align:center;"),
                         h3(entry['summary'], style="text-align:center;"),
                         hr(),
+                        div("By: <a style=font-weight:bold;>" + entry['author'] + '</a>', style="text-align:center; padding-bottom: 20px;"),
                         entry['body'],
                         style="padding-left: 40px; padding-right: 40px;"
                     )
