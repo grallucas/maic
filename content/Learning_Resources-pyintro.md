@@ -4,7 +4,7 @@ date: 9/8/2023
 title: What's Python?
 image: ../maic/img/thumbnails/Python_Introduction.png
 difficulty: easy
-author: Lucas Gral, Sydney Balboni
+authors: Lucas Gral, Sydney Balboni
 categories: Python,Topic Introduction
 
 
