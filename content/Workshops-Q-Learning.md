@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Q-Learning
-date: 14/11/2023
+date: 5/1/2023
 title: Q-Learning
-author: tbd
+authors: Michael Conner
 
 ...

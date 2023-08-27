@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Deep Q-Learning
-date: 14/11/2023
+date: 12/1/2023
 title: Deep Q-Learning
-author: tbd
+authors: Michael Conner
 
 ...

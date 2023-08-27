@@ -1,10 +1,10 @@
 summary: If you've never touched Python before, this is the perfect place to start! Learn how to install Python & beging using VSC for programming development.
 order: 1
-date: 08/09/2023
+date: 9/8/2023
 title: What's Python?
 image: ../maic/img/thumbnails/Python_Introduction.png
 difficulty: easy
-author: Lucas Gral
+authors: Lucas Gral
 categories: Python,Topic Introduction
 
 

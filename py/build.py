@@ -145,11 +145,13 @@ for fname in listdir('./content'):
         entry['body'] = markdown('\n'.join(lines).strip())
 
     if 'order' not in entry: entry['order'] = '0'
-    entry['date'] = datetime.strptime(entry['date'], '%M/%d/%Y') if 'date' in entry else datetime.min
+    entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
     if 'categories' in entry:
         entry['categories'] = [s.strip() for s in entry['categories'].split(',')]
+    if 'authors' in entry:
+        entry['authors'] = [s.strip() for s in entry['authors'].split(',')]
 
     CONTENT += [entry]
 CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)
@@ -191,7 +193,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                         h1(entry['title'], style="text-align:center;"),
                         h3(entry['summary'], style="text-align:center;"),
                         hr(),
-                        div("By: <a style=font-weight:bold;>" + entry['author'] + '</a>', style="text-align:center; padding-bottom: 20px;"),
+                        div("By: <a style=font-weight:bold;>" + ', '.join(entry['authors']) + '</a>', style="text-align:center; padding-bottom: 20px;"),
                         entry['body'],
                         style="padding-left: 40px; padding-right: 40px;"
                     )

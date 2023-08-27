@@ -32,7 +32,11 @@ html(
     elems(
         common_content_to_card(
             entry,
-            a('Download', href=f'./data/downloads/{entry["fname"]}.zip', download='')
+            elems(
+                a('Download', href=f'./data/downloads/{entry["fname"]}.zip', download=''), br(),
+                b(f'By: '), ', '.join(entry['authors']), br(),
+                b('Date: '), entry['date'].strftime("%b %d, %Y")
+            )
         ) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
     )
 )

@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Image Segmentation
-date: 14/11/2023
+date: 19/1/2023
 title: Image Segmentation
-author: tbd
+authors: Michael Conner, Theodore Colwell
 
 ...

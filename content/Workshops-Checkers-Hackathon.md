@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Checkers Hackathon
-date: 14/11/2023
+date: 10/12/2022
 title: Checkers Hackathon
-author: tbd
+authors: Michael Conner
 
 ...

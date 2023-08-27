@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Deep Learning from Scratch
-date: 14/11/2023
+date: 1/12/2022
 title: Deep Learning from Scratch
-author: tbd
+authors: Michael Conner
 
 ...
