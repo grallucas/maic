@@ -1,4 +1,4 @@
-body(
+html(
     head(common_metadata(CURRENT_PAGE_NAME)),
     common_toolbar(CURRENT_PAGE_NAME),
     body(
@@ -29,5 +29,10 @@ body(
         style = 'padding-right: 20px; padding-left: 20px;'
         
     ),
-    common_content_group_to_page(CURRENT_PAGE_NAME, CONTENT_GROUPS[CURRENT_PAGE_NAME]),
+    elems(
+        common_content_to_card(
+            entry,
+            a('Download', href=f'./data/downloads/{entry["fname"]}.zip', download='')
+        ) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
+    )
 )

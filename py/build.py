@@ -43,13 +43,13 @@ def common_toolbar(page_name):
         style = 'text-align: center;'
 )
 
-def common_content_to_card(entry):
+def common_content_to_card(entry, extra=''):
     return div(
         div(h1(entry['title'])),
         div(class_='break'),
         div(img(src=entry['img'], width='200px'), style = 'float: left; padding-right: 20px;') if 'img' in entry else '',
         div(
-            entry['body'],
+            entry['body']+extra,
             # hr(),
             style='max-width:80%;'
         ),
@@ -191,7 +191,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                         h1(entry['title'], style="text-align:center;"),
                         h3(entry['summary'], style="text-align:center;"),
                         hr(),
-                        div("By: <a style=font-weight:bold;>" + entry['author'] + '</a>', style="text-align:center; padding-bottom: 20px;"),
+                        div("By: <a style=font-weight:bold;>" + entry['author'] + '</a>', style="text-align:center; padding-bottom: 10px;"),
                         entry['body'],
                         style="padding-left: 40px; padding-right: 40px;"
                     )

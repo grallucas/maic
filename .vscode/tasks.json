@@ -4,5 +4,20 @@
     "windows": {
         "command": "explorer.exe"
     },
-    "args": ["index.html"]
+    "args": [
+        "index.html"
+    ],
+    "tasks": [
+        {
+            "label": "explorer.exe",
+            "args": [
+                "index.html"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "build",
+                "isDefault": false
+            }
+        }
+    ]
 }
