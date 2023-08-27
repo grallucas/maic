@@ -4,7 +4,7 @@ date: 9/8/2023
 title: What's Python?
 image: ../maic/img/thumbnails/Python_Introduction.png
 difficulty: easy
-authors: Lucas Gral
+author: Lucas Gral, Sydney Balboni
 categories: Python,Topic Introduction
 
 
@@ -21,6 +21,10 @@ You can go <a href="https://www.python.org/downloads/">here</a> for the latest p
 After installing, you'll also want to hit the "Disable path length limit" button if it is shown.
 
 <img src = '..\img\article_content\Python Installer.png' height="60%" width="60%">
+
+To test your python installation, type `python` into your terminal and you should get a result similar to the image below. If you get an error instead, your likely issue is not having the python path variable set.
+
+<img src = '..\img\article_content\python test.png' height="70%" width="70%">
 
 ## Installing Visual Studio Code
 
