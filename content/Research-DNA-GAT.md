@@ -10,7 +10,7 @@ Members
 - Arman Hossain
 - Collin Schmocker
 
-<img src="./img/thumbnails/DNA-GAT.png">
+<img src="./img/thumbnails/DNA-GAT.PNG">
 
 Problem​
 

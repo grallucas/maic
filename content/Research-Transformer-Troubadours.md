@@ -13,7 +13,7 @@ Members
 - Jiri Liska
 - Lucas Gral
 
-<img src="./img/thumbnails/Transformer-Troubadours.png">
+<img src="./img/thumbnails/Transformer-Troubadours.PNG">
 
 Problem​
 

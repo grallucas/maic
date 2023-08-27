@@ -15,7 +15,7 @@ Members
 - Julia Kalish
 - Andrew Crisler
 
-<img src="./img/thumbnails/XProspeCT.png">
+<img src="./img/thumbnails/XProspeCT.PNG">
 
 Problem​
 

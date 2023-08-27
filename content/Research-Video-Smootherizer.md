@@ -11,7 +11,7 @@ Members
 - Autumn Beyer
 - Tyler Schreiber
 
-<img src="./img/thumbnails/Video-Smootherizer.png">
+<img src="./img/thumbnails/Video-Smootherizer.PNG">
 
 Problem​
 

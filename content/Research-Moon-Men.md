@@ -13,7 +13,7 @@ Members
 - Michael Kirkton
 - Benjamin Weber
 
-<img src="./img/thumbnails/Moon-Men.png">
+<img src="./img/thumbnails/Moon-Men.PNG">
 
 Problem​
 
