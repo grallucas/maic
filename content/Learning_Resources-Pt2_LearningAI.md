@@ -4,7 +4,7 @@ date: 8/22/2023
 title: Learning AI (Pt. 2): What Is AI?
 image: ../maic/img/thumbnails/what_is_ai_2.png
 difficulty: easy
-author: Ben Paulson
+authors: Ben Paulson
 categories: AI,Walkthrough,Overview
 
 When talking about Artificial Intelligence (AI), it's important to recognize the innovations of today and tomorrow which are continually having an influence on the field. In fact, this philosophy is the basis of our AI-Club workshops: presenting the latest AI innovations of today so that you can build the best AI applications of tomorrow.<br/>

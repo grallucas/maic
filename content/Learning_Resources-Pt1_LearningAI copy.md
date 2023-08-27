@@ -4,7 +4,7 @@ date: 8/22/2023
 title: Learning AI (Pt. 1): What Is AI?
 image: ../maic/img/thumbnails/what_is_ai.png
 difficulty: easy
-author: Ben Paulson
+authors: Ben Paulson
 categories: AI,Walkthrough,Overview
 
 Artificial Intelligence (AI) has repeatedly showcased remarkable capacity for revolutionalizing every industry and everyday life. It processes vast amounts of data for valuable insights, enhances productivity for a wide range of capabilities for automation, and refines decision-making by learning from patterns. It can break language barriers, facilitate academic and industry conversations, and provide precise diagnostics. <br/>

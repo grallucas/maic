@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: UNets
-date: 14/11/2023
+date: 30/5/2023
 title: UNets
-author: tbd
+authors: Lucas Gral
 
 ...

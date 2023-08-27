@@ -1,10 +1,10 @@
 summary: How to run a Jupyter Notebook while using a DGX node on ROSIE. Remember, only use DGX notebooks for when absolutely necessary for computing power required to complete your project.
 order: 1
-date: 8/22/2023
+date: 2/8/2023
 title: Developing with Jupyter Notebooks on DGX Nodes
 image: ../maic/img/thumbnails/DGX Node.png
 difficulty: hard
-author: Bart Gebka
+authors: Bart Gebka
 categories: Rosie,DGX,Jupyter
 
 ## Introduction

@@ -1,7 +1,7 @@
 img: ./img/thumbnails/placeholder.png
 summary: Image GAN
-date: 14/11/2023
+date: 29/9/2022
 title: Image GAN
-author: tbd
+authors: Michael Conner
 
 ...
