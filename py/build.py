@@ -108,12 +108,13 @@ def build_leaderboard_html(user_data_path):
 
     # Add the images for icons that the player has
     for i in range(len(user_data_df)):
-        award_names = user_data_df.iloc[i]['Awards'].split("|")
-        awards_df = icons_library[icons_library['Icon Name'].isin(award_names)]
-        print("NUM AWARDS: ", len(awards_df))
-        awards_df = awards_df.sort_values(by = 'Priority', ascending=False)
-        leaderboard_df['User'].iloc[i] = create_award_user_string(leaderboard_df['User'].iloc[i], awards_df) 
-        print("USERNAME:", leaderboard_df.iloc[i]['User'])
+        if type(user_data_df.iloc[i]['Awards']) != float:
+            award_names = user_data_df.iloc[i]['Awards'].split("|")
+            awards_df = icons_library[icons_library['Icon Name'].isin(award_names)]
+            print("NUM AWARDS: ", len(awards_df))
+            awards_df = awards_df.sort_values(by = 'Priority', ascending=False)
+            leaderboard_df['User'].iloc[i] = create_award_user_string(leaderboard_df['User'].iloc[i], awards_df) 
+            print("USERNAME:", leaderboard_df.iloc[i]['User'])
 
     # Sort so players with the most point sare at the top
     leaderboard_df = leaderboard_df.sort_values(by='All-Time Points', ascending=False)  
