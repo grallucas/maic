@@ -47,7 +47,7 @@ def common_content_to_card(entry, extra=''):
     return div(
         div(h1(entry['title'])),
         div(class_='break'),
-        div(img(src=entry['img'], width='200px'), style = 'float: left; padding-right: 20px;') if 'img' in entry else '',
+        div(img(src=entry['img'], height='170'), style = 'float: left; padding-right: 20px;') if 'img' in entry else '',
         div(
             entry['body']+extra,
             # hr(),
@@ -136,7 +136,7 @@ for fname in listdir('./content'):
     entry['type'] = fname.split('/')[-1].split('-')[0]
     entry['fname'] = fname.split('/')[-1].split('.')[0]
 
-    with open(fname, 'r') as f:
+    with open(fname, 'r', encoding='utf-8') as f:
         lines = f.read().split('\n')
         while ':' in lines[0]:
             colon_idx = lines[0].index(':')
@@ -170,7 +170,7 @@ HOME_RECENT_LENGTH = 5
 
 for page_name in TOP_PAGES:
     try:
-        with open(f'./py/page-{page_name}.py', 'r', encoding='utf8') as f_from, open(f'./{page_name}.html', 'w', encoding='utf8') as f_to:
+        with open(f'./py/page-{page_name}.py', 'r', encoding='utf-8') as f_from, open(f'./{page_name}.html', 'w', encoding='utf-8') as f_to:
             CURRENT_PAGE_NAME = page_name
             try:
                 f_to.write(eval(f_from.read()))
@@ -181,7 +181,7 @@ for page_name in TOP_PAGES:
         print('Missing expected top page:', f'./py/page-{page_name}.py')
 
 for entry in CONTENT_GROUPS['Learning_Resources']:
-    with open(common_get_article_link(entry["fname"]), 'w') as f:
+    with open(common_get_article_link(entry["fname"]), 'w', encoding='utf-8') as f:
         f.write(
             html(
                 head(
