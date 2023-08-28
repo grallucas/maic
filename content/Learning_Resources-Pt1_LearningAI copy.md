@@ -35,11 +35,13 @@ We've built-out this graphic below (feel free to share around) to encapsulate th
 
 
 ## What Connects All of AI?
-It's quite challenging to find a global similarity between all portions of a field as large as artificial intelligence. However, there is a "loss function" associated with every AI network -- some learning methods may just rely on it more than others.
+It's quite challenging to find a global similarity between all portions of a field as large as artificial intelligence. However, there is a "loss" associated with every AI network -- some learning methods may just rely on it more than others.
 
-Look at the below image to visualize this process. This is a representation of a neural network (implementation of an "AI") learning in order to become better. Its goal is to minimize the loss (reach the bottom of the hill) such that it is closer to an answer we want. We will go over the details of this "loss", as well as how it's minimized, in a later module.
+Look at the below image to visualize this "loss" process. This short gif is a visualization of an AI network learning. As the network gets closer to the bottom of the hill, it gets closer to an answer we want it to achieve. Therefore, "height" in this scenario is the "loss" or **difference between what the AI network achieved and what we wanted it to achieve**, and the other dimensions in this graphic are the weights/parameters the AI network can change to get to the bottom of the hill.
 
 <img src = '../maic/img/article_content/grad_descent.gif' height = 200px style = "text-align: center;"><br/><br/>
+
+To recap, **all AI algorithms have the goal of reaching the bottom of hills like this!** We will go over the details of this "loss", as well as how the AI knows how to travel down it, in a later module.
 
 
 ## Different Types of Learning
