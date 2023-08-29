@@ -2,27 +2,12 @@
 # date: 8/8/2023
 not_in_recent:
 title: Moon Men: MoonBoard Route Classification and Generation​
-# summary: ...
+img: ./img/thumbnails/Moon-Men.PNG"
 
-Members
+**Members:** Aiden Miller, Joshua Grant, Carter ulschmid, Aydin Ruppe, Michael Kirkton, Benjamin Weber
 
-- Aiden Miller
-- Joshua Grant
-- Carter ulschmid
-- Aydin Ruppe
-- Michael Kirkton
-- Benjamin Weber
+**Problem:​** Classifying and generating MoonBoard routes​
 
-<img src="./img/thumbnails/Moon-Men.PNG">
+**Approach:​** Putting holds into a series and using Transformer​
 
-Problem​
-
-- Classifying and generating MoonBoard routes​
-
-Approach​
-
-- Putting holds into a series and using Transformer​
-
-Progress​
-
-- Working classification model ​
+**Progress​:** Working classification model ​

@@ -2,24 +2,12 @@
 # date: 8/8/2023
 not_in_recent:
 title: DNA GAT
-# summary: ...
+img: ./img/thumbnails/DNA-GAT.PNG
 
-Members
+**Members:** Alex Drobek, Arman Hossain, Collin Schmocker
 
-- Alex Drobek
-- Arman Hossain
-- Collin Schmocker
+**Problem:​** Genomic Inversion Detection​
 
-<img src="./img/thumbnails/DNA-GAT.PNG">
+**Approach:​** Graph Attention Networks (GATs)​
 
-Problem​
-
-- Genomic Inversion Detection​
-
-Approach​
-
-- Graph Attention Networks (GATs)​
-
-Progress​
-
-- Formatting Data for Graph Input​
+**Progress:​** Formatting Data for Graph Input​

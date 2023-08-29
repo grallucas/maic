@@ -2,25 +2,13 @@
 # date: 8/8/2023
 not_in_recent:
 title: Video Smootherizer
-# summary: ...
+img: ./img/thumbnails/Video-Smootherizer.PNG
 
-Members
+**Members:** Tillie Pasternak, Mitchell Johnstone, Autumn Beyer, Tyler Schreiber
 
-- Tillie Pasternak
-- Mitchell Johnstone
-- Autumn Beyer
-- Tyler Schreiber
 
-<img src="./img/thumbnails/Video-Smootherizer.PNG">
+**Problem​:** Videos don't be smooth​
 
-Problem​
+**Approach​:** Transformer​
 
-- Videos don't be smooth​
-
-Approach​
-
-- Transformer​
-
-Progress​
-
-- It trainin​
+**Progress​:** Currently training on ROSIE!

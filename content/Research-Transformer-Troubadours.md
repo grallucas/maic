@@ -2,30 +2,12 @@
 # date: 8/8/2023
 not_in_recent:
 title: The Transformer Troubadors
-# summary: Generating Music With AI
+img: ./img/thumbnails/Transformer-Troubadours.PNG
 
-Members
+**Members:** Luke Harwood, Code Steinmetz, Adam Buker, Andy Dao, Jiri Liska, Lucas Gral
 
-- Luke Harwood
-- Code Steinmetz
-- Adam Buker
-- Andy Dao
-- Jiri Liska
-- Lucas Gral
+**Problem​:** Music be hard​
 
-<img src="./img/thumbnails/Transformer-Troubadours.PNG">
+**Approach:​** Sequence to Sequence Transformer​, Take in part of a midi song, fill in the rest​
 
-Problem​
-
-- Music be hard​
-
-Approach​
-
-- Sequence to Sequence Transformer​
-- Take in part of a midi song, fill in the rest​
-
-Progress​
-
-- We have data​
-- Setting up data processing pipeline​
-- Setting up model
+**Progress​:** We have data​, Setting up data processing pipeline​, Setting up model

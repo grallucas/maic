@@ -2,32 +2,13 @@
 # date: 8/8/2023
 not_in_recent:
 title: Emotion FC: Facial Emotion Recognition from photographs​
-# summary: ...
+img: ./img/thumbnails/Sentiment-Analysis.PNG
 
-Members
+**Members** Hugo Garrido-Lestache, Alexander Chapovalov, Samuel Abel, Alex Ruchti, Ryan Canalia
 
-- Hugo Garrido-Lestache
-- Alexander Chapovalov
-- Samuel Abel
-- Alex Ruchti
-- Ryan Canalia
 
-Given a photograph of a face, what is their **emotion**?​
+**Approach:** Image classification via convolutional neural networks​. (Given a photograph of a face, what is their *emotion*?​)
 
-Approach:
+**Progress:​** Acquired dataset​, Made repository​, Built basic model​
 
-- Image classification via convolutional neural networks​
-
-Progress:​
-
-- Acquired dataset​
-
-- Made repository​
-
-- Built basic model​
-
-Next steps:​
-
-- Tie data to model​
-
-- Train model​
+**Next Steps:​** Tie data to model​, Train model​

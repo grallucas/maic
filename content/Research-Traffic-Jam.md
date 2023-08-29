@@ -2,26 +2,8 @@
 # date: 8/8/2023
 not_in_recent:
 title: Traffic Jam
-# summary: ...
+img: ./img/thumbnails/Traffic_Jam.PNG
 
-Members
+**Members** John Olson, Nathan Johnson, Zachary Stoffel, Noah Nieberle, Thomas Benzshawel, Michael Conner, Alex Moran, Bart Gebka
 
-- John Olson
-- Nathan Johnson
-- Zachary Stoffel
-- Noah Nieberle
-- Thomas Benzshawel
-- Michael Conner
-- Alex Moran
-
-Problem​
-
-- Traffic
-
-Approach​
-
-- AI
-
-Progress​
-
-- Traffic
+**Problem:​** Traffic control solutions are too slow or out-dated

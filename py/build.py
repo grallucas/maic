@@ -22,7 +22,7 @@ def common_metadata(page_name):
     return elems(
         title('MSOE AI Club') if page_name == 'index'
         else title(f'MAIC - {get_page_display_name(page_name)}'),
-        link(rel='icon', type='image/png', href='./img/misc/logo.png'),
+        link(rel='icon', type='image/png', href='./img/misc/Sticker.png'),
         meta(charset="UTF-8"),
         meta(name='viewport', content='width=device-width, initial-scale=1.0'),
         link(rel='stylesheet', href='./js-css/style.css'),
@@ -47,7 +47,7 @@ def common_content_to_card(entry, extra=''):
     return div(
         div(h1(entry['title'])),
         div(class_='break'),
-        div(img(src=entry['img'], height='170'), style = 'float: left; padding-right: 20px;') if 'img' in entry else '',
+        div(img(src=entry['img'], height='170'), style = 'float: left; padding-right: 20px; padding-bottom: 20px;') if 'img' in entry else '',
         div(
             entry['body']+extra,
             # hr(),

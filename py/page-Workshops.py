@@ -20,7 +20,7 @@ html(
             in how AI is going to shape the world of tomorrow. While our research groups are more dedicated to getting members hands-on with developing this new technology and understanding underlying AI concepts, workshops
             are a great way to learn about high-level details of the newest technologies that are coming out from other research groups and companies around the globe.<br><br>
 
-            <span style = 'font-weight: bold;'>Workshops are held on Thursdays from 6-7pm. Check the calendar at __________.</span><br><br>
+            <span style = 'font-weight: bold;'>Workshops are held on Thursdays from 6:30-7:30pm in the <a href='map.html'>Great Hall of the ITC (Direct Supply Building)</a></span><br><br>
         """),
         h1("Our Research Groups"),
         div("""
@@ -34,8 +34,8 @@ html(
             entry,
             elems(
                 a('⇩ Download', href=f'./data/downloads/{entry["fname"]}.zip', download='', style = 'font-weight: bold;'), br(),
-                b(f'By: '), ', '.join(entry['authors']), br(),
-                b('Date: '), entry['date'].strftime("%b %d, %Y")
+                b(f'Developer: '), ', '.join(entry['authors']), br(),
+                b('Workshop Date: '), entry['date'].strftime("%M-%d-%Y")
             )
         ) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
     )
