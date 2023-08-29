@@ -2,7 +2,7 @@ summary: Using Rosie has a bit of a learning curve, so make sure you read this g
 order: 1
 date: 08/27/2023
 title: How to use Rosie
-image: ../maic/img/thumbnails/using-rosie-thumbnail.jpg
+image: ../maic/img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy
 authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction
