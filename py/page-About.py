@@ -25,9 +25,25 @@ html(
             p("""To accomplish this goal, MAIC hopes to frequently communicate with many industry partners, including local companies, 
             to understand what skills they are looking for in their employees. We also hope to bring in speakers from these companies to talk about what they do.
             Below is a list of previous industry partners that we have worked with:"""),
+            div(
+                div(
+                    a(
+                        "hello",
+                        style="min-width:200px;"
+                    ),
+                div(
+                    p(
+                        "hi" 
+                    ),
+                    style = "padding-top: 7px;"
+                ),
+                class_='card',
+                style = "margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 10px; margin-bottom: 10px;"
+                ),
 
 
-            style = 'padding: 40px;'
-        ),
-    )
+                style = 'padding: 40px;'
+            ),
+        )
+    )      
 )
