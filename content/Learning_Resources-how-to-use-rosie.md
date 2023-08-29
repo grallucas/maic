@@ -93,4 +93,4 @@ In general, this process only involves running jernel and connecting a notebook 
 3. Use the command jernel to start a jupyter server.
 4. Connect an open Jupyter notebook to your server.
 
-Ask eboard if you have any questions. We are happy to help.
+Ask the eboard if you have any questions. We are happy to help.

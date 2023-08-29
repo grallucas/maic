@@ -13,7 +13,7 @@ categories: Rosie,Topic Introduction
 
 Slurm is the tool MSOE uses to manage jobs on Rosie, we will use it to allocate resources and start / monitor our jobs
 
-# -Connect to a Rosie Terminal
+## Connect to a Rosie Terminal
 
 If you've already gone through the steps to get logged in to Rosie for the first time then this is familiar.
 Open up your terminal of choice and enter the following command changing username to your username:
