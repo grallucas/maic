@@ -1,10 +1,10 @@
-img: ./img/board_members/Lucas G Portrait.png
+img: ./img/board_members/Ella B Portrait.png
 date: 14/11/2023
 order: 6
 not_in_recent:
 
-### Focus
+### Workshop Developer
 
-(about me?)
+(About Me)
 
-<a href=".">Contact</a>
+<a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>brucee@msoe.edu</a>

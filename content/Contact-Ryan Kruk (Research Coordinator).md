@@ -1,10 +1,10 @@
-img: ./img/board_members/Lucas G Portrait.png
+img: ./img/board_members/Ryan K Portrait.jpg
 date: 14/11/2023
 order: 5
 not_in_recent:
 
-### Focus
+### Lead Researcher & Coordinator
 
-(about me?)
+(About Me)
 
-<a href=".">Contact</a>
+<a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>krukr@msoe.edu</a>

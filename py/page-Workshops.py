@@ -33,7 +33,7 @@ html(
         common_content_to_card(
             entry,
             elems(
-                a('Download', href=f'./data/downloads/{entry["fname"]}.zip', download=''), br(),
+                a('⇩ Download', href=f'./data/downloads/{entry["fname"]}.zip', download='', style = 'font-weight: bold;'), br(),
                 b(f'By: '), ', '.join(entry['authors']), br(),
                 b('Date: '), entry['date'].strftime("%b %d, %Y")
             )

@@ -4,7 +4,7 @@ date: 08/28/2023
 title: How to use Jupyter notebooks
 image: ../maic/img/thumbnails/Jupyter_logo.png
 difficulty: easy
-author: Thomas Benzshawel
+authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction
 
 

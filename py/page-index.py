@@ -20,7 +20,9 @@ html(
             h1('About Us'),
             hr(),
             p(b('MSOE AI Club (MAIC)', style='color: rgb(var(--hl-2));'), 'is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups.'),
-            a('Learn More', href='./About.html', style = 'color: #0099ff; font-weight: bold;'),
+            a('💡 Learn More', href='./About.html', style = 'color: #0099ff; font-weight: bold;'),
+            br(),
+            a('📣 Speak At An Upcoming Event', href='https://forms.office.com/Pages/ResponsePage.aspx?id=rM5GQNP9yUasgLfEpJurcGAyFplwhXJCtqB2wsxmGVlUMVNaRkVPUUtNOEsyS1oxMTIwRUpKQkoyNi4u', style = 'color: #0099ff; font-weight: bold;'),
             id='splash-abt'
         ),
 

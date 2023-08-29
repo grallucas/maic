@@ -1,10 +1,10 @@
-img: ./img/board_members/Sydney B Portrait.jpg
+img: ./img/board_members/John C Portrait.png
 date: 14/11/2023
 order: 8
 not_in_recent:
 
-### Focus
+### Campus-Life Relations & Finances
 
-(about me?)
+(About Me)
 
-<a href=".">Contact</a>
+<a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>cislerj@msoe.edu</a>

@@ -3,8 +3,8 @@ date: 14/11/2023
 order: 4
 not_in_recent:
 
-### Focus
+### Campus-Community Outreach & Marketing
 
-(about me?)
+(About Me)
 
-<a href=".">Contact</a>
+<a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>benzshawelt@msoe.edu</a>

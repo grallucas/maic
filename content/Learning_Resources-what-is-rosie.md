@@ -4,7 +4,7 @@ date: 08/28/2023
 title: What (or who) is ROSIE?
 image: ../maic/img/thumbnails/rosie-thumbnail.jpg
 difficulty: easy
-author: Thomas Benzshawel
+authors: Thomas Benzshawel
 categories: Rosie, What is Rosie?
 
 

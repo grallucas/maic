@@ -4,7 +4,7 @@ date: 08/27/2023
 title: Getting access to Rosie?
 image: ../maic/img/thumbnails/rosie-thumbnail.jpg
 difficulty: easy
-author: Thomas Benzshawel
+authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction
 
 
