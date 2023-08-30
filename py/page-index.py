@@ -43,6 +43,7 @@ html(
                 ),
                 div(
                     h1('Leaderboard', style = 'display: inline;'),
+                    br(),
                     a('What Are Points?', href='about_points.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
                     # button('Search', onclick='alert(\'Use Ctrl-F\')'),
                     div(LEADERBOARD_HTML, id='df_data'),
@@ -57,7 +58,7 @@ html(
                             div(
                                 a(
                                     h2(entry['title']),
-                                    href=common_get_article_link(entry['fname']),
+                                    href=common_get_article_link(entry['fname'], entry['type']),
                                     style='color: #0099ff; font-weight: bold;'
                                 ), 
                                 p(entry['summary']),

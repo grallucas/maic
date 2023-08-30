@@ -53,6 +53,7 @@ def common_content_to_card(entry, extra=''):
             # hr(),
             style='max-width:80%;'
         ),
+        id=entry['fname'],
         style="background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
     )
 
@@ -63,7 +64,9 @@ def common_content_group_to_page(page_name, content):
         )
     )
 
-def common_get_article_link(fname):
+def common_get_article_link(fname, entry_type=None):
+    if entry_type == 'Workshops':
+        return f'./Workshops.html#{fname}'
     return f'./articles-{fname}.html'
 
 ### Aggregate page content
