@@ -39,7 +39,7 @@ html(
                                 a(
                                     h2(
                                         entry['title']), 
-                                        href=common_get_article_link(entry["fname"])
+                                        href=common_get_article_link(entry["fname"], link=entry["link"])
                                     ), 
                                     b(
                                         f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height ="35">'
