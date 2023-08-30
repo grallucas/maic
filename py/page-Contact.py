@@ -13,8 +13,11 @@ html(
             ),
             class_='card'
         ),
-        elems(*[
-            common_content_to_card(entry) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
-        ])
+        div(
+            elems(*[
+                common_content_to_card(entry) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
+            ]),
+            style = 'margin-right: 40px; margin-left: 40px;'
+       )
     )
 )

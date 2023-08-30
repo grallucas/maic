@@ -124,8 +124,8 @@ tr:nth-child(even), th {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
     /* border-bottom: rgb(var(--text-2)) solid 1px; */
     /* align-items: center; */
     /* justify-content:center; */

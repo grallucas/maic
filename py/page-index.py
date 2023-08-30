@@ -26,7 +26,10 @@ html(
             id='splash-abt'
         ),
 
-        div(h3('↓ Scroll Down ↓'), id='splash-scroll'),
+        div(
+            h3('↓ Scroll Down ↓'), 
+            id='splash-scroll'
+        ),
 
         div(
             img(src='./img/misc/transition.png', class_='transition'),
@@ -39,9 +42,11 @@ html(
                     style='max-width: 400px;'
                 ),
                 div(
-                    h1('Leaderboard'),
+                    h1('Leaderboard', style = 'display: inline;'),
+                    a('What Are Points?', href='about_points.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
                     # button('Search', onclick='alert(\'Use Ctrl-F\')'),
                     div(LEADERBOARD_HTML, id='df_data'),
+                    style = 'margin-top: 20px; margin-bottom: 5px;',
                     id='leaderboard',
                 ),
                 div(class_='break'),

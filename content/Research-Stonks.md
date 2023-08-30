@@ -2,7 +2,7 @@
 # date: 8/8/2023
 not_in_recent:
 title: sToNKs  : Stock prediction​
-img: ./img/thumbnails/Stonks_Team.PNG
+img: ./img/thumbnails/Stonks_Team.png
 
 **Members:** Ben Fouch, Luka Harwood, Kevin Paganini, John Webmeier, Ryan Peter, Hunter Fritchen, Jackson Rolando
 
