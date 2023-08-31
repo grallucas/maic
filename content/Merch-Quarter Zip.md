@@ -2,7 +2,7 @@ img: ./img/thumbnails/MAIC-QuarterZip.png
 date: 14/11/2023
 not_in_recent:
 
-**_ Points**
+**40 Points**
 
 Introducing the MAIC Quarter Zip Sweatshirt – the digital drapery that zips up your zest for code, one pixel at a time! This isn't your run-of-the-mill sweatshirt; it's a byte-sized burst of brilliance that's all about keeping you cozy while you compute.
 

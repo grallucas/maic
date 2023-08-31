@@ -1,4 +1,4 @@
-summary: Start here if you want to start your AI journey. We'll go over what AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
+summary: Start here if you're new! What AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
 order: 1
 date: 8/22/2023
 title: Learning AI (Pt. 1): What Is AI?

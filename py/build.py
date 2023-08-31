@@ -48,7 +48,7 @@ def common_content_to_card(entry, extra=''):
     return div(
         div(h1(entry['title'])),
         div(class_='break'),
-        div(img(src=entry['img'], height='170'), style = 'float: left; padding-right: 20px; padding-bottom: 20px;') if 'img' in entry else '',
+        div(img(src=entry['img'], height='170'), style = 'float: left; padding-right: 20px; margin-right: 10px; margin-bottom: 10px; display: block;') if 'img' in entry else '',
         div(
             entry['body']+extra,
             # hr(),
