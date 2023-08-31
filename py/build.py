@@ -31,7 +31,8 @@ def common_metadata(page_name):
 
 def common_toolbar(page_name):
     return div(
-        h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
+        # h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
+        h3(a(img(src = 'img/misc/Sticker.png', height='25', style='float: left; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;'))),
         elems(
             a(
                 p(get_page_display_name(page)),

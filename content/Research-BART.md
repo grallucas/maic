@@ -4,7 +4,7 @@ not_in_recent:
 title: Bot Automated Response Technology​ (BART): MSOE Chat Bot ​
 img: ./img/thumbnails/chat_bot.jpg
 
-**Members:** Mazen Hamid, Nikhil Gajghate, Bark Gebka, Matej Koncos, Justin Benning
+**Members:** Mazen Hamid, Nikhil Gajghate, Bart Gebka, Matej Koncos, Justin Benning
 
 **Problem:** Researching through the Academic Catalog is tedious when wanting to find information about the university​
 
