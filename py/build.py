@@ -31,7 +31,8 @@ def common_metadata(page_name):
 
 def common_toolbar(page_name):
     return div(
-        h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
+        # h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
+        h3(a(img(src = 'img/misc/Sticker.png', height='25', style='float: left; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;'))),
         elems(
             a(
                 p(get_page_display_name(page)),
@@ -97,7 +98,7 @@ def build_leaderboard_html(user_data_path):
         itr = 0
         for i in range(len(awards_df)):
             itr += 1
-            if itr > 5:
+            if itr > 7:
                 username += "..." # Ellipses wrap so doesn't go over to points column
                 break
             else:
@@ -108,7 +109,10 @@ def build_leaderboard_html(user_data_path):
         return username
 
     user_data_df = pd.read_csv(user_data_path)
-    leaderboard_df = user_data_df[['User', 'All-Time Points']]
+    leaderboard_df = user_data_df[['User', 'All-Time Points', 'Current Points']]
+    leaderboard_df = leaderboard_df.rename(columns = {'All-Time Points': 'All-Time'})
+    leaderboard_df = leaderboard_df.rename(columns = {'Current Points': 'Current'})
+
     icons_library = pd.read_csv('./data/Icons_Data.csv')
 
     # Add the images for icons that the player has
@@ -122,7 +126,7 @@ def build_leaderboard_html(user_data_path):
             print("USERNAME:", leaderboard_df.iloc[i]['User'])
 
     # Sort so players with the most point sare at the top
-    leaderboard_df = leaderboard_df.sort_values(by='All-Time Points', ascending=False)  
+    leaderboard_df = leaderboard_df.sort_values(by='All-Time', ascending=False)  
     
     # Add finishing touches
     # leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
@@ -131,7 +135,7 @@ def build_leaderboard_html(user_data_path):
     leaderboard_df['User'].iloc[2] = f'🥉 {leaderboard_df["User"].iloc[2]}'
     
 
-    leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table')
+    leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table', col_space = 20)
     return leaderboard_html    
 
 LEADERBOARD_HTML = build_leaderboard_html('./data/User_Data.csv')
