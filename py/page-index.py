@@ -20,9 +20,17 @@ html(
             h1('About Us'),
             hr(),
             p(b('MSOE AI Club (MAIC)', style='color: rgb(var(--hl-2));'), 'is built upon a foundation of teaching as many students as possible about the innovative space of artificial intelligence, regardless of their previous experience within the space. We do this through a combination of workshops, speaker events, and research groups.'),
-            a('💡 Learn More', href='./About.html', style = 'color: #0099ff; font-weight: bold;'),
+            a(
+                '💡 ',
+                span('Learn More', style = 'color: #0099ff; font-weight: bold;'),
+                href='./About.html', style = 'text-decoration: none;'
+            ),
             br(),
-            a('📣 Speak At An Upcoming Event', href='https://forms.office.com/Pages/ResponsePage.aspx?id=rM5GQNP9yUasgLfEpJurcGAyFplwhXJCtqB2wsxmGVlUMVNaRkVPUUtNOEsyS1oxMTIwRUpKQkoyNi4u', style = 'color: #0099ff; font-weight: bold;'),
+            a(
+                '📣 ',
+                span('Speak At An Upcoming Event', style = 'color: #0099ff; font-weight: bold;'),
+                href='https://forms.office.com/Pages/ResponsePage.aspx?id=rM5GQNP9yUasgLfEpJurcGAyFplwhXJCtqB2wsxmGVlUMVNaRkVPUUtNOEsyS1oxMTIwRUpKQkoyNi4u', style = 'text-decoration: none;'
+            ),
             id='splash-abt'
         ),
 
@@ -44,6 +52,7 @@ html(
                 div(
                     h1('Leaderboard', style = 'display: inline;'),
                     a('What Are Points?', href='about_points.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
+                    a('Where Are My Achievements?', href='about_achievements.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
                     # button('Search', onclick='alert(\'Use Ctrl-F\')'),
                     div(LEADERBOARD_HTML, id='df_data'),
                     style = 'margin-top: 20px; margin-bottom: 5px;',

@@ -92,7 +92,7 @@ def build_leaderboard_html(user_data_path):
         itr = 0
         for i in range(len(awards_df)):
             itr += 1
-            if itr > 5:
+            if itr > 7:
                 username += "..." # Ellipses wrap so doesn't go over to points column
                 break
             else:
@@ -103,7 +103,10 @@ def build_leaderboard_html(user_data_path):
         return username
 
     user_data_df = pd.read_csv(user_data_path)
-    leaderboard_df = user_data_df[['User', 'All-Time Points']]
+    leaderboard_df = user_data_df[['User', 'All-Time Points', 'Current Points']]
+    leaderboard_df = leaderboard_df.rename(columns = {'All-Time Points': 'All-Time'})
+    leaderboard_df = leaderboard_df.rename(columns = {'Current Points': 'Current'})
+
     icons_library = pd.read_csv('./data/Icons_Data.csv')
 
     # Add the images for icons that the player has
@@ -117,7 +120,7 @@ def build_leaderboard_html(user_data_path):
             print("USERNAME:", leaderboard_df.iloc[i]['User'])
 
     # Sort so players with the most point sare at the top
-    leaderboard_df = leaderboard_df.sort_values(by='All-Time Points', ascending=False)  
+    leaderboard_df = leaderboard_df.sort_values(by='All-Time', ascending=False)  
     
     # Add finishing touches
     # leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
@@ -126,7 +129,7 @@ def build_leaderboard_html(user_data_path):
     leaderboard_df['User'].iloc[2] = f'🥉 {leaderboard_df["User"].iloc[2]}'
     
 
-    leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table')
+    leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table', col_space = 20)
     return leaderboard_html    
 
 LEADERBOARD_HTML = build_leaderboard_html('./data/User_Data.csv')
