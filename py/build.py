@@ -53,6 +53,7 @@ def common_content_to_card(entry, extra=''):
             # hr(),
             style='max-width:80%;'
         ),
+        id=entry['fname'],
         style="background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
     )
 
@@ -63,7 +64,11 @@ def common_content_group_to_page(page_name, content):
         )
     )
 
-def common_get_article_link(fname):
+def common_get_article_link(fname, entry_type=None, link=None):
+    if entry_type == 'Workshops':
+        return f'./Workshops.html#{fname}'
+    if link is not None:
+        return link
     return f'./articles-{fname}.html'
 
 ### Aggregate page content
@@ -142,7 +147,7 @@ for fname in listdir('./content'):
 
     with open(fname, 'r', encoding='utf-8') as f:
         lines = f.read().split('\n')
-        while ':' in lines[0]:
+        while lines and ':' in lines[0]:
             colon_idx = lines[0].index(':')
             entry[lines[0][:colon_idx].strip()] = lines[0][colon_idx+1:].strip()
             lines = lines[1:]
@@ -156,6 +161,12 @@ for fname in listdir('./content'):
         entry['categories'] = [s.strip() for s in entry['categories'].split(',')]
     if 'authors' in entry:
         entry['authors'] = [s.strip() for s in entry['authors'].split(',')]
+    if 'summary' in entry:
+        entry['summary'] = markdown(entry['summary'])
+    if 'link' in entry:
+        del entry['body']
+    else:
+        entry['link'] = None
 
     CONTENT += [entry]
 CONTENT.sort(key = lambda x:(x['order'], x['date']), reverse=True)
@@ -185,6 +196,7 @@ for page_name in TOP_PAGES:
         print('Missing expected top page:', f'./py/page-{page_name}.py')
 
 for entry in CONTENT_GROUPS['Learning_Resources']:
+    if 'body' not in entry: continue
     with open(common_get_article_link(entry["fname"]), 'w', encoding='utf-8') as f:
         f.write(
             html(
