@@ -38,24 +38,19 @@ html(
                             div(
                                 a(
                                     h2(
-                                        entry['title']), 
-                                        href=common_get_article_link(entry["fname"], link=entry["link"])
+                                        entry['title'] + f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height = "35" style = "margin-left: 20px;">' + '<a style = "margin-left: 100px; color: white; size: 10px;">Categories: ' + ', '.join(entry['categories']) + '</a>',
                                     ), 
-                                    b(
-                                        f'<img src="{"../maic/img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height ="35">'
-                                    ),  
-                                    br(),
-                                    b(
-                                        'Categories: ' + ', '.join(entry['categories'])
+                                    href=common_get_article_link(entry["fname"], link=entry["link"])
+                                ), 
+                                a(
+                                    p(
+                                        entry['summary'] 
                                     ),
-                                    style="min-width:200px;"
+                                    style = "padding-top: 7px; color: white; text-color: white;"
                                 ),
-                            div(
-                                p(
-                                    entry['summary'] 
-                                ),
-                                style = "padding-top: 7px;"
+                                style="min-width:200px;"
                             ),
+                            
                             class_='card',
                             style = "margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 10px; margin-bottom: 10px;"
                         )

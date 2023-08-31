@@ -1,7 +1,7 @@
-summary: In this article, we'll go over the history, present, and future of AI. As AI continues to develop, it's important to understand the context of the field and how it has evolved over time
+summary: Start here if you want to start your AI journey. We'll go over what AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
 order: 1
 date: 8/22/2023
-title: Learning AI (Pt. 2): What Is AI?
+title: Learning AI (Pt. 3): Inferencing
 image: ../maic/img/thumbnails/what_is_ai_2.png
 difficulty: easy
 authors: Ben Paulson
