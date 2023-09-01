@@ -42,7 +42,7 @@ def common_toolbar(page_name):
         ),
         id='toolbar',
         style = 'text-align: center;'
-)
+    )
 
 def common_content_to_card(entry, extra=''):
     return div(
@@ -155,7 +155,7 @@ for fname in listdir('./content'):
         entry['body'] = markdown('\n'.join(lines).strip())
 
     if 'order' not in entry: entry['order'] = '0'
-    entry['date'] = datetime.strptime(entry['date'], '%d/%M/%Y') if 'date' in entry else datetime.min
+    entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
     if 'title' not in entry:
         entry['title'] = '.'.join(' '.join(fname.split('/')[-1].split('-')[1:]).split('.')[:-1])
     if 'categories' in entry:
@@ -179,6 +179,11 @@ for entry in CONTENT:
         CONTENT_GROUPS[t] = [entry]
     else:
         CONTENT_GROUPS[t] += [entry]
+
+# for c in CONTENT:
+#     for k,v in c.items():
+#         print(k,v)
+#     print('\n\n\n')
 
 ### Generate HTML
 
@@ -210,7 +215,8 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                         h1(entry['title'], style="text-align:center;"),
                         h3(entry['summary'], style="text-align:center;"),
                         hr(),
-                        div("By: <a style=font-weight:bold;>" + ', '.join(entry['authors']) + '</a>', style="text-align:center; padding-bottom: 20px;"),
+                        div("By: <a style=font-weight:bold;>" + ', '.join(entry['authors']) + '</a>', style="text-align:center;"),
+                        div("Published: " + entry['date'].strftime("%b %d, %Y"), style="text-align:center; padding-bottom: 20px;"),
                         entry['body'],
                         style="padding-left: 40px; padding-right: 40px;"
                     )

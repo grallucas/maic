@@ -1,6 +1,6 @@
 summary: Using Jupyter notebooks is a skill that every data scientist and computer scientist should have!
 order: 1
-date: 08/28/2023
+date: 28/8/2023
 title: How to use Jupyter notebooks
 image: ../maic/img/thumbnails/Jupyter_logo.png
 difficulty: easy

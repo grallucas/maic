@@ -1,6 +1,6 @@
 summary: If you have not had a class that has used rosie yet, you will need to request access to Rosie in order to do many AI workshops
 order: 1
-date: 08/27/2023
+date: 27/8/2023
 title: Getting access to Rosie?
 image: ../maic/img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy

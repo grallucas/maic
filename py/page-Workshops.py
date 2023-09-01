@@ -37,7 +37,7 @@ html(
             elems(
                 a('⇩ Download', href=f'./data/downloads/{entry["fname"]}.zip', download='', style = 'font-weight: bold;'), br(),
                 b(f'Developer: '), ', '.join(entry['authors']), br(),
-                b('Workshop Date: '), entry['date'].strftime("%M-%d-%Y")
+                b('Workshop Date: '), entry['date'].strftime("%b %d, %Y")
             )
         ) for entry in CONTENT_GROUPS[CURRENT_PAGE_NAME]
     )

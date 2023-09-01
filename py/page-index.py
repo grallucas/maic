@@ -52,8 +52,12 @@ html(
                 div(
                     h1('Leaderboard', style = 'display: inline;'),
                     br(),
-                    a('What Are Points?', href='about_points.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
-                    a('Where Are My Achievements?', href='about_achievements.html', style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
+                    a('What Are Points?', href='about_points.html'),#, style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
+                    br(),
+                    a('Where Are My Achievements?', href='about_achievements.html'),#, style = 'color: #0099ff; font-weight: bold; margin-bottom: 10px; margin-left: 15px;'),
+                    br(),
+                    a('Go To Leaderboard Page', href='./Leaderboard.html'),
+                    br(),
                     # button('Search', onclick='alert(\'Use Ctrl-F\')'),
                     div(LEADERBOARD_HTML, id='df_data'),
                     style = 'margin-top: 20px; margin-bottom: 5px;',
@@ -63,21 +67,19 @@ html(
                 div(
                     h1('Recent Activity'),
                     elems(
-                        (
-                            div(
-                                a(
-                                    h2(entry['title']),
-                                    href=common_get_article_link(entry['fname'], entry['type']),
-                                    style='color: #0099ff; font-weight: bold;'
-                                ), 
-                                p(entry['summary']),
-                                style="margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
-                            )
-                            for entry in sorted(
-                                list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT)),
-                                key=lambda entry: entry['date'], reverse=True
-                            )[:HOME_RECENT_LENGTH]
+                        div(
+                            a(
+                                h2(entry['title']),
+                                href=common_get_article_link(entry['fname'], entry['type']),
+                                style='color: #0099ff; font-weight: bold;'
+                            ), 
+                            p(entry['summary']),
+                            style="margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
                         )
+                        for entry in sorted(
+                            list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT)),
+                            key=(lambda entry: entry['date']), reverse=True
+                        )[:HOME_RECENT_LENGTH]
                     ),
                     style = 'width: 65%;'
                 ),

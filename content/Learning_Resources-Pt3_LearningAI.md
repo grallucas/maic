@@ -1,6 +1,6 @@
 summary: Start here if you want to start your AI journey. We'll go over what AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
 order: 1
-date: 8/22/2023
+date: 22/8/2023
 title: Learning AI (Pt. 3): Inferencing
 image: ../maic/img/thumbnails/what_is_ai_2.png
 difficulty: easy
