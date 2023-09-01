@@ -5,7 +5,7 @@ title: How to use Jupyter notebooks
 image: ../maic/img/thumbnails/Jupyter_logo.png
 difficulty: easy
 authors: Thomas Benzshawel
-categories: Rosie,Topic Introduction
+categories: Jupyter,Topic Introduction
 
 
 

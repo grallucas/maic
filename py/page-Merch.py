@@ -3,7 +3,9 @@ body(
     common_toolbar(CURRENT_PAGE_NAME),
     body(
         h1("Merch"),
-        div("This is a sub header", style='padding-bottom: 50px;'),
+        div("MAIC merchandise is a way for you to show off your dedication to learning about artificial intelligence! All merchandise can be acquired by completing MAIC activities, either through the acquirement of enough points or being awarded the merch when an achievement is reached!"),
+        br(),
+        div("If you're wondering how to acquire points, please <a href = 'about_points.html'>refer to this page</a>", style='padding-bottom: 50px;'),
         style = 'padding-left: 20px;'
     ),
     div(

@@ -20,11 +20,11 @@ The first step is to install python, <strong>make sure you don't use the version
 You can go <a href="https://www.python.org/downloads/">here</a> for the latest python download. <strong>Make sure you add python to your Path variable (see below)!</strong> 
 After installing, you'll also want to hit the "Disable path length limit" button if it is shown.
 
-<img src = '..\img\article_content\Python Installer.png' height="60%" width="60%">
+<img src = '../maic/img/article_content/Python Installer.png' height="60%" width="60%">
 
 To test your python installation, type `python` into your terminal and you should get a result similar to the image below. If you get an error instead, your likely issue is not having the python path variable set.
 
-<img src = '..\img\article_content\python test.png' height="70%" width="70%">
+<img src = '../maic/img/article_content/python test.png' height="70%" width="70%">
 
 ## Installing Visual Studio Code
 
@@ -33,8 +33,8 @@ You can go <a href="https://code.visualstudio.com/download">here</a> for the lat
 After downloading, you'll want to install at least the two extensions: Python and Jupyter.
 You can find them by opening the extensions tab on the left sidebar and they should be under the "Popular" submenu, or you can search for them.
 
-<img src = '..\img\article_content\Python Extension.png' height="5%">
-<img src = '..\img\article_content\Jupyter Extension.png' height="5%">
+<img src = '../maic/img\article_content/Python Extension.png' height="5%">
+<img src = '../maic/img/article_content/Jupyter Extension.png' height="5%">
 
 
 ## Lets Learn Python!
