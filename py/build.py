@@ -274,5 +274,6 @@ print(
     f'{100*(t3-t2)/(t5-t1):.2f}% spent in leaderboard.',
     f'{100*(t4-t3)/(t5-t1):.2f}% spent in content aggregation.',
     f'{100*(t5-t4)/(t5-t1):.2f}% spent in html generation.',
+    f'Total: {t5-t1:.2f}s',
     sep = '\n'
 )
