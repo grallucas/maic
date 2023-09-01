@@ -5,6 +5,10 @@ import os
 from datetime import datetime
 import traceback
 
+from time import time # profiling
+
+t1 = time()
+
 TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
 
 def get_page_display_name(name):
@@ -138,7 +142,11 @@ def build_leaderboard_html(user_data_path):
     leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table', col_space = 20)
     return leaderboard_html    
 
+t2 = time()
+
 LEADERBOARD_HTML = build_leaderboard_html('./data/User_Data.csv')
+
+t3 = time()
 
 CONTENT = []
 for fname in listdir('./content'):
@@ -186,6 +194,8 @@ for entry in CONTENT:
 #     print('\n\n\n')
 
 ### Generate HTML
+
+t4 = time()
 
 HOME_RECENT_LENGTH = 5
 
@@ -241,3 +251,12 @@ with open('./404.html', 'w') as f:
             )
         )
     )
+
+t5 = time()
+
+print(
+    f'{100*(t3-t2)/(t5-t1):.2f}% spent in leaderboard.',
+    f'{100*(t4-t3)/(t5-t1):.2f}% spent in content aggregation.',
+    f'{100*(t5-t4)/(t5-t1):.2f}% spent in html generation.',
+    sep = '\n'
+)
