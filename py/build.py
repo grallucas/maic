@@ -90,7 +90,7 @@ def common_get_article_link(fname, entry_type=None, link=None):
 #     extensions=['tables']
 # )
 
-def build_leaderboard_html(user_data_path):
+def build_leaderboard_html(user_data_path, icons_data_path):
     
     def create_award_user_string(username, awards_df):
         """
@@ -117,7 +117,7 @@ def build_leaderboard_html(user_data_path):
     leaderboard_df = leaderboard_df.rename(columns = {'All-Time Points': 'All-Time'})
     leaderboard_df = leaderboard_df.rename(columns = {'Current Points': 'Current'})
 
-    icons_library = pd.read_csv('./data/Icons_Data.csv')
+    icons_library = pd.read_csv(icons_data_path)
 
     # Add the images for icons that the player has
     for i in range(len(user_data_df)):
@@ -142,9 +142,24 @@ def build_leaderboard_html(user_data_path):
     leaderboard_html = leaderboard_df.to_html(index = False, table_id= 'df_data', escape = False, classes = 'leaderboard-table', col_space = 20)
     return leaderboard_html    
 
+def build_leaderboard_html_cached(cache_path, user_data_path, icons_data_path):
+    cache_valid = os.path.exists(cache_path)
+    if cache_valid:
+        mtime_diff = max(os.path.getmtime(user_data_path), os.path.getmtime(icons_data_path)) - os.path.getmtime(cache_path)
+        cache_valid = mtime_diff < 0
+    
+    if cache_valid:
+        print("Don't have to regenerate leaderboard. Skipping...")
+        with open(cache_path, 'r', encoding='utf-8') as f: return f.read()
+    else:
+        result = build_leaderboard_html(user_data_path, icons_data_path)
+        with open(cache_path, 'w', encoding='utf=8') as f:
+            f.write(result)
+        return result
+
 t2 = time()
 
-LEADERBOARD_HTML = build_leaderboard_html('./data/User_Data.csv')
+LEADERBOARD_HTML = build_leaderboard_html_cached('./data/Leaderboard_Cache.html', './data/User_Data.csv', './data/Icons_Data.csv')
 
 t3 = time()
 
@@ -255,6 +270,7 @@ with open('./404.html', 'w') as f:
 t5 = time()
 
 print(
+    '\nprofiling:',
     f'{100*(t3-t2)/(t5-t1):.2f}% spent in leaderboard.',
     f'{100*(t4-t3)/(t5-t1):.2f}% spent in content aggregation.',
     f'{100*(t5-t4)/(t5-t1):.2f}% spent in html generation.',
