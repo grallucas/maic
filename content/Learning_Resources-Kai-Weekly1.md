@@ -2,7 +2,7 @@ summary: Explore a paper showing a model that can simulate believable human beha
 # order: 1
 date: 24/8/2023
 title: Generative AI in Simulated Environments (kAi)
-image: ../maic/img/thumbnails/kAi-Aug24-2023.png
+image: ./img/thumbnails/kAi-Aug24-2023.png
 difficulty: normal
 authors: Kourosh Sharifi
 categories: News, LLM

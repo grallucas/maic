@@ -2,7 +2,7 @@ summary: Using Rosie has a bit of a learning curve, so make sure you read this g
 order: 1
 date: 27/8/2023
 title: How to use Slurm and Linux
-image: ../maic/img/thumbnails/ROSIE Supercomputer.jpg
+image: ./img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy
 authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction

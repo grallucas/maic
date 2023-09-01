@@ -74,7 +74,7 @@ html(
                                 style='color: #0099ff; font-weight: bold;'
                             ), 
                             p(entry['summary']),
-                            style="margin-bottom: 15px; background-image: url(../maic/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
+                            style="margin-bottom: 15px; background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
                         )
                         for entry in sorted(
                             list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT)),

@@ -48,7 +48,7 @@ html(
                                     ),
                                     style = "padding-top: 7px; color: white; text-color: white;"
                                 ),
-                                style="min-width:200px;"
+                                style="min-width:200px; max-width:80%;"
                             ),
                             
                             class_='card',

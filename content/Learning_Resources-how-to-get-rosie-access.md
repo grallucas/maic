@@ -2,7 +2,7 @@ summary: If you have not had a class that has used rosie yet, you will need to r
 order: 1
 date: 27/8/2023
 title: Getting access to Rosie?
-image: ../maic/img/thumbnails/ROSIE Supercomputer.jpg
+image: ./img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy
 authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction
@@ -42,7 +42,7 @@ You will then see a screen like the image below, for each number in the image yo
     4. Create a new password
     5. Enter the new password again
 
-![Alt text](../img/thumbnails/rosie-thumbnail.jpg)
+![Alt text](./img/thumbnails/rosie-thumbnail.jpg)
 
 Once you see the message that it's creating directory 'home/username' followed by the big ROSIE, you're all set!
 

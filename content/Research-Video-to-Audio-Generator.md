@@ -2,7 +2,7 @@
 # date: 8/8/2023
 not_in_recent:
 title: Team 7: Video to Audio Generator​
-img: ../maic/img/thumbnails/AI_Electronic_Beats.png
+img: ./img/thumbnails/AI_Electronic_Beats.png
 
 **Members:** Samir Mahmud, Kong Xiong, Konrad Rozpadek, Adam Haile, Xander Neuwirth
 

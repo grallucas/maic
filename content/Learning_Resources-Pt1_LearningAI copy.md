@@ -1,8 +1,8 @@
 summary: Start here if you're new! What AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
-order: 1
+order: 3
 date: 22/8/2023
 title: Learning AI (Pt. 1): What Is AI?
-image: ../maic/img/thumbnails/what_is_ai.png
+image: ./img/thumbnails/what_is_ai.png
 difficulty: easy
 authors: Ben Paulson
 categories: AI,Walkthrough,Overview
@@ -23,14 +23,14 @@ Academic and industry researchers primarily use Python for AI development due to
 
 Therefore, this is why we (and industry) use Python for AI-related topics. However, once you begin moving into industry, it's important to recognize Python is good for **experimental** systems. Once a system moves into production, you'll likely need to change your implementation to a more computationally-efficient language (see image below).
 
-<img src = '../maic/img/article_content/language_efficiency.png' height = 300px><br/><br/>
+<img src = './img/article_content/language_efficiency.png' height = 300px><br/><br/>
 
 
 ## Difference Between AI/ML/DL
 Next, before diving into an overview of AI, you should understand the different between Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL).
 We've built-out this graphic below (feel free to share around) to encapsulate these differences in a quick way. 
 
-<img src = '../maic/img/article_content/ai-vs-ml-vs-dl.png' height = 450px style = "text-align: center;"><br/>
+<img src = './img/article_content/ai-vs-ml-vs-dl.png' height = 450px style = "text-align: center;"><br/>
 *Basically, they're not necessarily compeltely different, it's just they represent varying aspects of this grand field of artificial intelligence.*<br/><br/>
 
 
@@ -39,7 +39,7 @@ It's quite challenging to find a global similarity between all portions of a fie
 
 Look at the below image to visualize this "loss" process. This short gif is a visualization of an AI network learning. As the network gets closer to the bottom of the hill, it gets closer to an answer we want it to achieve. Therefore, "height" in this scenario is the "loss" or **difference between what the AI network achieved and what we wanted it to achieve**, and the other dimensions in this graphic are the weights/parameters the AI network can change to get to the bottom of the hill.
 
-<img src = '../maic/img/article_content/grad_descent.gif' height = 200px style = "text-align: center;"><br/><br/>
+<img src = './img/article_content/grad_descent.gif' height = 200px style = "text-align: center;"><br/><br/>
 
 To recap, **all AI algorithms have the goal of reaching the bottom of hills like this!** We will go over the details of this "loss", as well as how the AI knows how to travel down it, in a later module.
 
@@ -49,7 +49,7 @@ When creating different machine learning algorithms, there are many different ap
 
 Do not worry about fully comprehending this chart now, this is just another graphic to show you the "breadth" that AI has on new algorithms.
 
-<img src = '../maic/img/article_content/Types-of-AI-Learning.png' height = 400px style = "text-align: center;"><br/><br/>
+<img src = './img/article_content/Types-of-AI-Learning.png' height = 400px style = "text-align: center;"><br/><br/>
 
 
 ## Conclusion

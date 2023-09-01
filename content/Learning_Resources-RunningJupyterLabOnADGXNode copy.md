@@ -2,7 +2,7 @@ summary: How to run a Jupyter Notebook while using a DGX node on ROSIE. Remember
 order: 1
 date: 2/8/2023
 title: Developing with Jupyter Notebooks on DGX Nodes
-image: ../maic/img/thumbnails/DGX Node.png
+image: ./img/thumbnails/DGX Node.png
 difficulty: hard
 authors: Bart Gebka
 categories: Rosie,DGX,Jupyter
@@ -20,7 +20,7 @@ ROSIE offers a remarkable platform for executing python scripts and functions vi
 ## Rosie Architecture
 ROSIE's firewall does not allow direct connections to compute nodes meaning that we will need to connect to our job via a managment node. We can do this via an SSH tunnel.
 
-<img src = '../maic/img/thumbnails/ROSIE Architecture.png' height = 600>
+<img src = './img/thumbnails/ROSIE Architecture.png' height = 600>
 
 
 ## DGX Notebook Steps
