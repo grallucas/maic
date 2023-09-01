@@ -6,6 +6,9 @@ image: ./img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy
 authors: Thomas Benzshawel
 categories: Rosie, What is Rosie?
+link: https://www.msoe.edu/about-msoe/news/details/meet-rosie/
+
+^ makes is a link instead of a whole page
 
 
 

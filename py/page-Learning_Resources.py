@@ -38,8 +38,12 @@ html(
                             div(
                                 a(
                                     h2(
-                                        entry['title'] + f'<img src="{"./img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height = "35" style = "margin-left: 20px;">' + '<a style = "margin-left: 100px; color: white; size: 10px;">Categories: ' + ', '.join(entry['categories']) + '</a>',
+                                        # entry['title'] + f'<img src="{"./img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height = "35" style = "margin-left: 20px;">' + '<a style = "margin-left: 100px; color: white; size: 10px;">Categories: ' + ', '.join(entry['categories']) + '</a>',
+                                        entry['title'] + f'<img src="{"./img/Difficulties/" + entry["difficulty"] + ".png"}" title="{entry["difficulty"].title()}" class="custom-emoji" height = "35" style = "margin-left: 20px;">',
                                     ), 
+                                    a(
+                                        '<a style = "color: white; font-weight: bold;">Categories: ' + ', '.join(entry['categories']) + '</a>'
+                                    ),
                                     href=common_get_article_link(entry["fname"], link=entry["link"])
                                 ), 
                                 a(
@@ -52,7 +56,8 @@ html(
                             ),
                             
                             class_='card',
-                            style = "margin-bottom: 15px; background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 10px; margin-bottom: 10px;"
+                            # style = "margin-bottom: 15px; background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 10px; margin-bottom: 10px;"
+                            style = "margin-bottom: 30px; background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 20px; padding-right: 20px; padding-left: 20px; padding-top: 15px; margin-top: 20px; margin-bottom: 10px;"
                         )
                     ) for entry in CONTENT_GROUPS['Learning_Resources'] if entry['categories'][0] == section
                 )

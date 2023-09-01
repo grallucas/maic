@@ -13,6 +13,7 @@ AI's continual evolution promises ongoing advancements that will redefine our cu
 
 By completing this "Learning AI" series, you'll be capable of communicating with researchers and industry leaders about the AI-topics of today. Let's get started...<br/><br/>
 
+**Warning: This article is still a work in progress -- we plan to complete this module before our first Introductory workshop on (9/7)**
 
 ## Why Do We (And Industry) Use Python?
 Academic and industry researchers primarily use Python for AI development due to its numerous advantages:<br/>
