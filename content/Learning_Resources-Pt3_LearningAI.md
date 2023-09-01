@@ -1,5 +1,5 @@
 summary: Inferencing is the process of an algorithm reaching a final answer -- the important part is if it's right or wrong.
-order: 1
+order: 3
 date: 22/8/2023
 title: Learning AI (Pt. 3): Inferencing
 image: ./img/thumbnails/what_is_ai_3.png

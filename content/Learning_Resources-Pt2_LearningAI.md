@@ -1,5 +1,5 @@
 summary: In this article, we'll go over the history, present, and future of AI. As AI develops, it's important to understand the context of the field and how it has evolved over time
-order: 1
+order: 4
 date: 22/8/2023
 title: Learning AI (Pt. 2): What Is AI?
 image: ./img/thumbnails/what_is_ai_2.png
