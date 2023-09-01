@@ -5,6 +5,6 @@ not_in_recent:
 
 ### Internal Organizational Maintenance
 
-(About Me)
+Hi! I am Sydney Balboni, and I am a junior Computer Engineering student. I joined AI Club to learn about AI concepts that are outside of my major. I am a swimmer on the MSOE swim team and a Data Scientist at Direct Supply.
 
 <a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>balbonis@msoe.edu</a>

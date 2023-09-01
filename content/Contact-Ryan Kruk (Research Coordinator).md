@@ -5,6 +5,5 @@ not_in_recent:
 
 ### Lead Researcher & Coordinator
 
-(About Me)
 
 <a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>krukr@msoe.edu</a>

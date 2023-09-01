@@ -5,6 +5,6 @@ not_in_recent:
 
 ### Lead Workshop Developer & Coordinator
 
-(About Me)
+Hey! I'm Lucas Gral, and I'm a junior majoring in Computer Science. I joined AI club because I was intrigued by the opportunity of gaining experience in AI through a research team. Outside of AI Club, you'll find me at Direct Supply as a data science intern. I also enjoy tinkering with Linux, programming language design, and making music.
 
 <a style = 'font-weight: bold; color: white;'>Contact Me Here:</a> <a style = 'color: blue eyes;'>grall@msoe.edu</a>
