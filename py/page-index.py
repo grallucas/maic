@@ -32,7 +32,7 @@ html(
                 href='https://forms.office.com/Pages/ResponsePage.aspx?id=rM5GQNP9yUasgLfEpJurcGAyFplwhXJCtqB2wsxmGVlUMVNaRkVPUUtNOEsyS1oxMTIwRUpKQkoyNi4u', style = 'text-decoration: none;'
             ),
             id='splash-abt'
-        ),
+        ), #
 
         div(
             h3('↓ Scroll Down ↓'), 
