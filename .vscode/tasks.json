@@ -9,7 +9,7 @@
     ],
     "tasks": [
         {
-            "label": "explorer",
+            "label": "explorer.exe",
             "args": [
                 "index.html"
             ],

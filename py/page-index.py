@@ -44,7 +44,7 @@ html(
             div(
                 div(
                     h1('Meet the Eboard!'),
-                    # img(src="./img/misc/eboard.png", style='width:100%'),
+                    img(src="./img/misc/2023 Org Fair.jpg", style='width:100%'),
                     p("A passionate team of MSOE univsersity students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential."),
                     a('Contact Us', href='./contact.html', style = 'color: #0099ff; font-weight: bold;'),
                     style='max-width: 400px;'
