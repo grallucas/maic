@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../resources/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/index.css" />
+    <title>MAIC</title>
+</head>
+<body>
+    <img src="../resources/images/logo.png" class="logo"/>
+    <h1>MSOE Artificial Intelligence Club</h1>
+    <h5><a href="../index.html">Back to the homepage</a></h5>
+    <h1>Introduction to Slurm And Linux</h1>
+    <div class="column">
+        <h2>Simple Linux Utility for Resource Management - SLURM</h2>
+        <p>Slurm is our tool of choice to manage jobs on Rosie, we will use it to allocate resources and start / monitor our jobs</p>
+        <ul>
+            <li>
+                <h3>Connect To A Rosie Terminal</h3>
+                <p>
+                    If you've already gone through the steps to get logged in to Rosie for the first time then this is familiar.<br/>
+                    Open up your terminal of choice and enter the following command changing username to your username:<br/><br/>
+                    ssh username@dh-mgmt2.hpc.msoe.edu<br/><br/>
+                    You'll be prompted for your password and then be greeted with the login text.<br/>
+                    Note that you will need to be on the school network, if you are not, open up globalprotect as described <a href="rosie.html#globalprotect" target="blank">here</a>.<br/>
+                    Alternatively, you can use the VSCode terminal after following the steps <a href="rosie.html#ssh" target="blank">here.</a>
+                </p>
+            </li>
+            <li>
+                <h3>Useful SLURM Commands</h3>
+                <ul>
+                    <li>
+                        <h4>squeue</h4>
+                        This command will show details on all currently running jobs.<br/>
+                        This is useful for finding details on jobs you've started.<br/>
+                        To filter jobs to only your, you can add the following arguements to the command replacing username with your username.<br/>
+                        squeue -l -u username<br/>
+                        An example output is below.<br/><br/>
+                        <img src="../resources/images/squeue.png" class="wider-img"/>
+                    </li>
+                    <li>
+                        <h4>scancel &lt;jobid&gt;</h4>
+                        This will cancel a job, enter the command followed by the jobid as can be found with squeue
+                    </li>
+                    <li>
+                        <h4>sbatch script.sh</h4>
+                        This will submit a batch script to be run. This is useful for creating job templates and submitting multiple jobs at once.<br/>
+                        An example can be downloaded <a href="../resources/downloads/sbatch.zip" download target="_blank">here</a>.<br/>
+                        Unzip the folder and drop it's contents somewhere onto Rosie<br/>
+                        In a Rosie connected terminal, cd into the directory that you dropped the files<br/>
+                        Run the command sbatch batch.sh<br/>
+                        You'll notice that you not have a .out file with the name of your job id that has the output of the python file.<br/>
+                        You can view this file by running the command <code>$ tail -f slurm-(job-id).out</code> which will show the output in real time.<br/>
+						You can also use the squeue command to see that your job is running.<br/>
+						
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Quick Links</h2>
+        <ul>
+            <li><h3><a href="rosie.html">Rosie Guide</a></h3></li>
+        </ul>
+    </div>
+    <h4 class="sticky"><a href="rosie.html">Back to Top</a></h4>
+</body>

@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 2%;
+    font-family: Helvetica
+}
+
+h1, h5 {
+    text-align: center;
+}
+
+a { 
+    color: inherit; 
+} 
+
+img {
+    width: 30%;
+}
+
+.wider-img {
+    width:75%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.logo {
+    position: fixed;
+    width: 15%;
+    right:0;
+}
+
+.sticky {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+}

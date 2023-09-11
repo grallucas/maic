@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--<style>
+	html {
+		background:#222;
+		color: #fff;
+	  max-width: 70ch;
+	  padding: 3em 1em;
+	  margin: auto;
+	  line-height: 1.75;
+	  font-size: 1.25em;
+	}
+		h1,h2,h3,h4,h5,h6 {
+	  margin: 3em 0 1em;
+	}
+
+	p,ul,ol {
+	  margin-bottom: 2em;
+	  color: #ddd;
+	  font-family: sans-serif;
+	}
+    </style>-->
+    <link rel="icon" href="../resources/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/index.css" />
+    <title>MAIC</title>
+</head>
+<body>
+    <img src="../resources/images/logo.png" class="logo"/>
+    <h1>MSOE Artificial Intelligence Club</h1>
+    <h5><a href="../index.html">Back to the homepage</a></h5>
+    <p>The official but lacking rosie guide can be found <a href="https://msoe.dev/#/">here.</a></p>
+    <h1>Getting Started With Rosie - Work in Progress</h1>
+    <div class="column">
+        <ul>
+            <li>
+                <h2 id="firsttime">Getting Onto Rosie For The First Time</h2>
+                <ul>
+                    <li>
+                        <h3>Gaining Access</h3>
+                        <p>
+                            In order to gain access to Rosie, you must fill out the request form that is linked on <a href="https://msoe.dev/#/requestaccess" target="blank" >this page</a>.<br/><br/>
+                            Under the section "Please describe why you are requesting access to Rosie.  In this description, please include why Rosie is needed beyond what your campus-issued laptop provides"<br/>
+                            you may put "AI club workshops".<br/><br/>
+                            Under the section "Please select all of the tools you need", select Jupyter CPU-based Notebooks, Jupyter GPU-based Notebooks, Command Line, and Tensorflow/Keras. Plus any other tools you will need.<br/>
+                            Under the section "If you plan to use GPUs, please describe what acceleration libraries you need.", enter tensorflow/keras<br/><br/>
+                            Under the section "How much storage do you require (list MB, GB, TB)?" Enter what amount applies to yo.u<br/>
+                            If you do not know how much storage you will need, 10GB is a reasonable amount.<br/><br/>
+                            After requesting access you will likely get a response from Dr.Retert between 12am and 4am with instructions on logging in for the first time. <br/>
+                            Logging onto Rosie for the first time sucks, see more details below
+                        </p>
+                    </li>
+                    <li>
+                        <h3>First Login</h3>
+                        <h4>(If you are not on campus, skip down to the global protect section first!)</h4>
+                        <p>
+                            In order to log in to Rosie for the first time and reset your password, you must do so via SSH.<br/>
+                            To use SSH you will need an SSH client. My tool of choice (that you will need for other classes as well) is Git<br/>
+                            Start by downloading and installing git from <a href="https://git-scm.com/" target="blank">here</a>.<br/>
+                            Open up the new program you have called git bash. Then enter the following command, replacing username with your username (beginning of your email)<br/>
+                            $ ssh username@dh-mgmt2.hpc.msoe.edu<br/>
+                            You will then see a screen like the image below, for each number in the image you will:
+                            <ol>
+                                <li>SSH into Rosie</li>
+                                <li>Enter the one time password that you recieved from Dr. Retert</li>
+                                <li>Reenter your one time password</li>
+                                <li>Create a new password</li>
+                                <li>Enter the new password again</li>
+                            </ol><br/>
+                            Once you see the message that it's creating directory 'home/username' followed by the big ROSIE, you're all set!<br/><br/>
+                            <img src="../resources/images/rosie-first-login.png" class="wider-img"/>
+                        </p>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <h2 id="globalprotect">Global Protect - Access Rosie From Off Campus</h2>
+                <p>
+                    Rosie can only be accessed from the schools network.<br/>
+                    Therefore if you would like to log in to Rosie from offcampus you must use a VPN.<br/>
+                    The VPN MSOE uses is called Global Protect and can be downloaded from <a href="https://vpn.msoe.edu/" target="blank">here</a>.<br/>
+                    Choose the Windows 64bit download and follow the installation instructions<br/><br/>
+                    When you first open global protect, you will need to enter the address you wish to connect to at the bottom of the window<br/>
+                    For us, this is vpn.msoe.edu<br/><br/>
+                    <img src="../resources/images/globalprotect1.png"/><br/><br/>
+                    When you hit connect you may be asked for your msoe credentials.<br/>
+                    Afterwards your global protect window will say you are connected. Then you're good to go!
+                </p>
+            </li>
+            <li>
+                <h2 id="gui">Working with the Rosie GUI</h2>
+                <p>
+                    The simplest way to interact with Rosie (what you'll likely learn in classes) is via the web portal.<br/>
+                    I think this way is bad and almost never use it, but it's simple and good to know.<br/>
+                    If you are off campus, make sure to VPN onto MSOE's network with Global Protect as described in the Global Protect section above.<br/>
+                    First, open the Rosie web portal <a href="https://dh-ood.hpc.msoe.edu/pun/sys/dashboard" target="blank">here</a>.<br/>
+                    You'll have to enter your Rosie login credentials as well (note that these are not the same as your msoe email login unless you set them that way)<br/>
+                    You should then see a page that looks like the image below<br/><br/>
+                    <img src="../resources/images/rosie-webportal-home.png" class="wider-img"/><br/><br/>
+                    Next you'll want to select the Interactive Apps dropdown at the top of the page and select the Jupyter Notebook - Containerized option.<br/><br/>
+                    <img src="../resources/images/guijupnotecontain.png" /><br/><br/>
+                    Then you can select your number of GPUs (only do one unless you know what you're doing), and time to have your allocation (pick something reasonable, you can always start another).<br/>
+                    For container image, select Tensorflow 2.x<br/>
+                    For Job Description, select AI Club Project or Other<br/>
+                    Finally hit launch<br/><br/>
+                    <img src="../resources/images/guijupnotecontainalloc.png" class="wider-img"/><br/><br/>
+                    Once you hit launch, wait for your resources to be allocated (the blue stuff will turn green), then hit Connect to Jupyter Notebook<br/><br/>
+                    <img src="../resources/images/connecttojupbutton.png" class="wider-img"/><br/><br/>
+                    After hitting launch you'll see a file explorer which will show your Rosie home directory. From here you can select a notebook to run.<br/>
+                    I would suggest first creating a repos folder, and then a subfolder for maic (this is also a good spot to put folders for different classes like CS 2300)<br/><br/>
+                    To create new directories, go to the New dropdown at the top right of the file explorer and select Folder<br/>
+                    Afterwards you can check the box next to the new Untitled directory on the left and select Rename which will appear under the Files | Running | Clusters tabs.<br/><br/>
+                    You can use the Upload button to upload your own files, or hit New > Python 3 (ipykernel) to create a new jupyter notebook.<br/><br/>
+                    When you open a notebook, if you go back to the file explorer you'll notice that the notebook icon on the left has turned green, this means you Rosie session is using resources to have that notebook running.<br/>
+                    If you hit the Running tab at the top of the page you can check if you have multiple notebooks running. Having multiple notebooks running is a bad idea so this menu can help you shut down all notebooks but the one you want to run.<br/><br/>
+                    <img src="../resources/images/rosie-fileexplore-gui.png" class="wider-img"/><br/><br/>
+                    Once you open a notebook, you can start running cells like normal.<br/>
+                    Type some code in and hit Shift+Enter to run the cell (or the play icon by the top of the screen), you can tell a cell is running because a [*] will be displayed next to the cell, when it finishes the * will be replaced with a number.<br/>
+                    To insert a new cell, use the Alt+Enter command or hit the plus by the top of the screen.<br/>
+                    To delete a cell, highlight the cell (so it is highlighted blue and not green), and press the D key twice, or hit the scissors by the top of the screen.<br/>
+                    If you run into issues running code, you can restart by opening the kernel menu and selecting restart.<br/>
+                    Make sure to periodically hit Ctrl+S to save your notebook as well, you can see when your notebook was last saved at the top of the screen.<br/><br/>
+                    <img src="../resources/images/jupyterlab.png" class="wider-img"/><br/><br/>
+                </p>
+            </li>
+            <li>
+                <h2 id="ssh">Using SSH To Connect To Rosie In VS Code</h2>
+                <p>
+                    From here on everything is completely optional and more difficult than just using the GUI from the section above, but these tools can be nice.<br/><br/>
+                    First you'll need to install the SSH extension for VSCode, open up the extensions panel, search SSH, and install the Remote - SSH extension.<br/><br/>
+                    <img src="../resources/images/sshextension.png" class="wider-img"/><br/><br/>
+                    Next, you'll want to hit the small green icon on the bottom left of the VSCode window to bring up the SSH menu, <br/>then select Connect to Host, <br/>then hit + Add New SSH Host...<br/>
+                    Then enter dh-mgmt2.hpc.msoe.edu<br/>
+                    If prompted for the platform of the remote host, select Linux<br/>
+                    <!--Then select the SSH config made earlier (most likely stored at the C:\Users\yourname\.ssh\config file)<br/>-->
+                    You should see a popup on the bottom right of the screen saying Host Added!<br/><br/>
+                    <img src="../resources/images/vscodessh.png" class="wider-img"/><br/><br/>
+                    You can then go back to the small green icon, select Connect Current Window to Host..., and select dh-mgmt2.hpc.msoe.edu<br/>
+                    You will then be prompted for your password, enter your Rosie password<br/>
+                    Your VSCode may take a few seconds to do some setup, once it's done the file explorer should open on the left of the VSCode window<br/>
+                    In the file explorer, select Open Folder, and choose the folder you'd like to work in (I usually just open my home folder), you will be prompted for your password again<br/>
+                    From here you can edit files and use the Rosie terminal right in VSCode!<br/><br/>
+                    <h3>IMPORTANT, This is running on a management node, do not run python files or jupyter notebooks from here, use <a href="slurm.html">slurm jobs</a> or follow the <a href="#localjupyter">Start a Jupyter Kernel For Local VSCode Development</a> section.</h3>
+                </p>
+            </li>
+            <li>
+                <h2 id="localjupyter">Start a Jupyter Kernel For Easy VSCode Development</h2>
+                <p>
+                    This is a (better) alternative to the Rosie dashboard and Google Collab for running Jupyter notebooks. Start by opening a terminal in VSCode <i>AFTER</i> <a href="#ssh">connecting via ssh.</a><br/>
+					You can open a terminal by going to the toolbar and pressing <code>Terminal > New Terminal</code>, or by holding ctrl and the key to the left of 1 (the tilde key).<br/><br/>
+					Once a terminal is open, run this command if you haven't already:<br/>
+					<code>/data/ai_club/util/setup</code></br>
+					This command lets you use more commands made by MAIC (jernel in this case). After running this command, you have to exit this terminal and start a new one for this to work.<br/><br/>
+					Afterwards, you need to install the "Jupyter" extension within VSCode. Even if you've already installed it locally, you'll have to go through the installation process once again to install it on the Rosie side of things.<br/>
+					Next, open or create a Jupyter notebook (.ipynb extention) in vscode. With the notebook open, in the bottom bar of VSCode and towards the right, you should see a button that says something like "Jupyter Server: Local." Take note of its existence, but there is no need to press it yet.<br/><br/>
+					Now, with a new terminal open, run this command:<br/>
+					<code>jernel</code><br/>
+					"Jernel (Jupyter kERNEL)" is a MAIC-made tool for starting juyter servers on rosie. The default options should be fine for most cases, but you can run <code>jernel -h</code> to see what options you have. An example usage of options could be <code>jernel --time 0-2:0</code> to run the server for two hours instead of one.<br/><br/>
+					Once Jernel outputs a URL, ensure your notebook is open and press the "Jupyter Server: Local" button. You will be prompted to enter a URI, and this is where Jernel's output should go. After copying and pasting, press enter and the prompt should go away.<br/>
+					There is one more thing to do before running Juyter notebook cells. You have to set the notebook's kernel to use the server. To do this, press the button near the upper right which should say a python version. Doing so should allow you to select a kernel; select the one which says "Remote" in the same row as the kernel name.<br/><br/>
+					In general, this process only involves running jernel and connecting a notebook once all setup has been done.<br/>
+					<br/>
+					<h3>tl;dr</h3>
+					Run this command if you haven't already: <code>/data/ai_club/util/setup</code><br/>
+					Restart your terminal.<br/>
+					Use the command <code>jernel</code> to start a jupyter server.<br/>
+					Connect an open Jupyter notebook to your server.<br/><br/>
+					Ask eboard if you have any questions. We are happy to help.
+				</p>
+            </li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Quick Links</h2>
+        <ul>
+            <li><h3><a href="#firsttime">Getting Onto Rosie For The First Time</a></h3></li>
+            <li><h3><a href="#globalprotect">Global Protect - Access Rosie From Off Campus</a></h3></li>
+            <li><h3><a href="#gui">Working with the Rosie GUI</a></h3></li>
+            <li><h3><a href="#ssh">Using SSH To Connect To Rosie In VS Code</a></h3></li>
+            <li><h3><a href="#localjupyter">Start a Jupyter Kernel For Local VSCode Development</a></h3></li>
+            <li><h3><a href="slurm.html">Slurm and Linux</a></h3></li>
+        </ul>
+    </div>
+    <h4 class="sticky"><a href="rosie.html">Back to Top</a></h4>
+</body>
+</html>
