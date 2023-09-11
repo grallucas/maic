@@ -1,4 +1,4 @@
-body(
+html(
     head(common_metadata(CURRENT_PAGE_NAME)),
     common_toolbar(CURRENT_PAGE_NAME),
     body(

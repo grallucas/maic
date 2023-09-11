@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: build.py
+      run : |
+        python ./py/build.py
     - name: Setup AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -17,5 +20,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: Sync files to S3 bucket
-      run: |
-        aws s3 sync . s3://msoe-maic.com --delete
+      run: >
+        aws s3 sync ./ s3://msoe-maic.com --delete
+        --exclude "py"
+        --exclude "py/*"
+        --exclude "data/*"
+        --exclude "content/*"
+        --exclude ".vscode/*"
+        --exclude ".github/*"
+        --include "data/downloads/*"
+        --include "data/custom_icons/*"

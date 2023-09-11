@@ -1,2 +1,13 @@
 py/__pycache__/
 .vscode
+
+404.html
+About.html
+Contact.html
+Leaderboard.html
+Learning_Resources.html
+Merch.html
+Research.html
+Workshops.html
+articles-*.html
+index.html
