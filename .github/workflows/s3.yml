@@ -12,6 +12,8 @@ jobs:
       uses: actions/checkout@v2
     - name: build.py
       run : |
+        pip install pandas markdown
+      run : |
         python ./py/build.py
     - name: Setup AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
