@@ -1,8 +1,8 @@
 User,Description,Awards,All-Time Points,Current Points
-Ben Paulson,test description,eboard2022|eboard2023|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,20,19
-Lucas Gral,test description,eboard2022|eboard2023|2022 Researcher|2023 Researcher|2022 MICS Attendee,37,37
-Sydney Balboni,test description,eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee,20,19
-John Cisler,test description,eboard2023|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,10,9
+Ben Paulson,test description,ROSIE Presenter|eboard2022|eboard2023|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,20,19
+Lucas Gral,test description,Overlord|eboard2022|eboard2023|2022 Researcher|2023 Researcher|2022 MICS Attendee,37,37
+Sydney Balboni,test description,ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee,20,19
+John Cisler,test description,ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,10,9
 Evan Schubert,test description,,4,4
 JT Wehmeier,test description,,8,5
 Aidan Schneider,test description,,3,3
@@ -10,19 +10,19 @@ Dom Palermo,test description,,3,3
 Jonathon Keane,test description,,3,3
 Robert Myers Jr.,test description,,4,4
 Ted Colwell ,test description,,2,2
-Mitchell Johnstone,test description,,58,15
+Mitchell Johnstone,test description,2023 MICS Attendee|2023 Researcher,58,15
 Autumn Beyer,test description,,42,5
 Joseph Barganz,test description,,2,2
 Tyler Schreiber,test description,,12,0
-Adam Haile,test description,,19,17
+Adam Haile,test description,2023 MICS Attendee,19,17
 Micah Pollnow,test description,,2,2
 Collin Schmocker,test description,,24,13
 Eric Van Zant,test description,,38,29
 Alexander Knepprath,test description,,6,6
-Michael Conner,test description,Overlord,32,32
-Xander Neuwirth,test description,Founder,17,2
+Michael Conner,test description,Overlord|2023 Researcher|2023 MICS Attendee|ROSIE Competition Finalist 2023|ROSIE Presenter,32,32
+Xander Neuwirth,test description,Founder|2022 Researcher|2023 Researcher|ROSIE Competition Finalist 2022|eboard2019|eboard2020,17,2
 John Olson,test description,,10,0
-Aydin Ruppe,test description,,8,2
+Aydin Ruppe,test description,2023 MICS Attendee|2023 Researcher|ROSIE Presenter,8,2
 Estevan Onorato ,test description,,3,3
 Thomas Benzshawel ,test description,,12,12
 Alex Moran,test description,,3,3
@@ -36,15 +36,15 @@ Sam Keyser,test description,,36,1
 Kaden Young,test description,,1,1
 David Hunger,test description,,17,7
 Kevin Adams,test description,,1,1
-Aiden Miller,test description,,23,23
+Aiden Miller,test description,2023 MICS Attendee|ROSIE Presenter|2023 Researcher,23,23
 Rudolph Evonich,test description,,6,6
-Benjamin Weber,test description,,13,13
+Benjamin Weber,test description,2023 MICS Attendee|ROSIE Presenter|2023 Researcher,13,13
 Kong Xiong,test description,,1,1
 Andy Dao,test description,,25,25
-Ryan Kruk,test description,,8,5
+Ryan Kruk,test description,2023 MICS Attendee|2023 Researcher|ROSIE Presenter|2022 Researcher,8,5
 Luke Harwood,test description,,3,3
 Matej Koncos,test description,,16,11
-Bart Gebka,test description,,38,24
+Bart Gebka,test description,2023 Researcher|ROSIE Presenter,38,24
 Adam Buker,test description,,4,4
 Luka Malovic,test description,,3,3
 Michael Kirkton,test description,,1,0
@@ -54,14 +54,14 @@ Mazen Hamid,test description,,7,3
 Samuel Scheele,test description,,7,7
 Marta Craviotto,test description,,6,0
 Nathan Johnson,test description,,1,1
-Hugo Garrido-Lestache,test description,,8,3
+Hugo Garrido-Lestache,test description,2023 Researcher,8,3
 Jackson Rolando,test description,,7,7
 Travis Jankowski,test description,,10,10
 Hunter Fritchen,test description,,1,1
 Jiri Liska,test description,,3,3
 Kevin Paganini,test description,,10,10
 Nigel Nelson,test description,,5,5
-Alexander Chapovalov,test description,,3,3
+Alexander Chapovalov,test description,2023 Researcher|2022 Researcher,3,3
 Alexander Drobek,test description,,0,0
 Alexander Lopez,test description,,4,4
 Caden Kautza,test description,,2,2
@@ -72,7 +72,7 @@ Cody Steinmetz,test description,,5,5
 David Oleksy,test description,,4,4
 Duaa Aljalous,test description,,8,8
 Georgia Wood,test description,,2,2
-Konrad Rozpadek,test description,,4,4
+Konrad Rozpadek,test description,2023 MICS Attendee|2023 Researcher,4,4
 Patrick Rafferty,test description,,3,3
 Ryan Peter,test description,,3,3
 Theophanes Zinos,test description,,3,3
@@ -163,7 +163,7 @@ Gavin Woodgate,test description,,1,1
 David Salzman,test description,,1,1
 Michael Wood,test description,,1,1
 Vincenzo Bean ,test description,,1,1
-Asher Sprigler,test description,,1,1
+Asher Sprigler,test description,2022 Researcher,1,1
 Kalki Sarangan,test description,,1,1
 Dara Davis,test description,,1,1
 Krueger Williams (Mac),test description,,1,1
