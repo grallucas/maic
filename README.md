@@ -1,4 +1,4 @@
-# How to MAIC site
+# How to Work With the MAIC Site
 
 ## Requirements
 
