@@ -87,6 +87,8 @@ There is one more thing to do before running Juyter notebook cells. You have to 
 
 In general, this process only involves running jernel and connecting a notebook once all setup has been done.
 
+
+
 ## TL;DR
 1. Run this command if you haven't already: /data/ai_club/util/setup
 2. Restart your terminal.

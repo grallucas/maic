@@ -1,7 +1,7 @@
 summary: Rosie is MSOE's supercomputer! Learn more here!
-order: 1
+order: 99
 date: 28/8/2023
-title: What (or who) is ROSIE?
+title: What (or Who) is ROSIE?
 image: ./img/thumbnails/ROSIE Supercomputer.jpg
 difficulty: easy
 authors: Thomas Benzshawel

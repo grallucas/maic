@@ -4,7 +4,7 @@ date: 28/8/2023
 title: How to use Jupyter notebooks
 image: ./img/thumbnails/Jupyter_logo.png
 difficulty: easy
-authors: Thomas Benzshawel
+authors: Thomas Benzshawel,Ben Paulson
 categories: Jupyter,Topic Introduction
 
 
@@ -22,3 +22,16 @@ I recomend clicking "New" and then "Folder". Then renaming the untitled folder t
 ## How are notebooks different than normal code?
 
 Each piece of code within each cell, will execute without executing any other code. This allows you to "mess around" and experiment with code that you know is flawed. Without jupyter notebooks, every time you fixed a small error anywhere in your code, we would have to re-run the whole entire file! When we are dealing with large data-sets, this could cost us hours!
+
+## Common Juypter Notebook Commands
+
+-  `Shift + Enter` - Run the cell and move to the next cell
+-  `Ctrl + Enter` - Run the cell and stay on the same cell
+-  `Alt + Enter` - Run the cell and make a new cell below it
+-  `Ctrl + S` - Save the notebook
+-  `Ctrl + Z` - Undo
+-  `Ctrl + Y` - Redo
+-  `Ctrl + Shift + -` - Split the cell at the cursor
+-  `Ctrl + Shift + P` - Open the command palette
+-  `Ctrl + Shift + F` - Open the search box
+-  `Ctrl + Shift + P` - Open the command palette
