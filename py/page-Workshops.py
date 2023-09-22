@@ -10,7 +10,7 @@ html(
             Workshops provide a <span style = 'font-weight: bold; color: yellow;'>learning environment</span> for students to hear about the <span style = 'font-weight: bold; color: rgb(var(--hl-2));'>latest AI innovations</span> in a condensed format -- all while using <span style = 'font-weight: bold; color: red;'>ROSIE</span>.<br>
             """),
             div("""          
-                In just 1-hour sessions from 6-7pm, workshops have content ranging from reviews of recent AI innovations,
+                In just 1-hour sessions from 6:30-7:30pm, workshops have content ranging from reviews of recent AI innovations,
                 interacting with technical details in Jupyter notebooks,
                 or listening to a visiting industry partner about advancements they've made using AI at their company.
                 
