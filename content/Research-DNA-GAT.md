@@ -4,7 +4,7 @@ not_in_recent:
 title: DNA GAT
 img: ./img/thumbnails/DNA-GAT.PNG
 
-**Members:** Alex Drobek, Arman Hossain, Collin Schmocker
+**Members:** Alex Drobek, Arman Hossain, Collin Schmocker, Alex Moran
 
 **Problem:​** Genomic Inversion Detection​
 
