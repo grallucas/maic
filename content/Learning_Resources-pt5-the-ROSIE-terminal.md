@@ -41,7 +41,7 @@ This will cancel a job, enter the command followed by the jobid as can be found 
 ### - sbatch script.sh
 This will submit a batch script to be run. This is useful for creating job templates and submitting multiple jobs at once
 
-An example can be downloaded [here](http://msoe-maic.com/data/downloads/sbatch.zip).
+An example can be downloaded [here](https://drive.google.com/file/d/1Nu-_6Oa1_iZV2gFkuhSLheB7cEtXfEmM/view?usp=sharing).
 Unzip the folder and drop it's contents somewhere onto Rosie
 In a Rosie connected terminal, cd into the directory that you dropped the files
 Run the command sbatch batch.sh
