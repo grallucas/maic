@@ -119,19 +119,29 @@ def build_leaderboard_html(user_data_path, icons_data_path):
 
     icons_library = pd.read_csv(icons_data_path)
 
+    # Sort so players with the most point sare at the top
+    leaderboard_df = leaderboard_df.sort_values(by='All-Time', ascending=False)  
+    user_data_df = user_data_df.sort_values(by='All-Time Points', ascending=False)
+
     # Add the images for icons that the player has
     for i in range(len(user_data_df)):
         if type(user_data_df.iloc[i]['Awards']) != float:
             award_names = user_data_df.iloc[i]['Awards'].split("|")
+
+            if 'eboard2023' in award_names:
+                print("EBOARD MEMBER:", leaderboard_df['User'].iloc[i])
+                leaderboard_df['All-Time'].iloc[i] = 'EBOARD'
+                leaderboard_df['Current'].iloc[i] = 'EBOARD'
+
             awards_df = icons_library[icons_library['Icon Name'].isin(award_names)]
-            print("NUM AWARDS: ", len(awards_df))
             awards_df = awards_df.sort_values(by = 'Priority', ascending=False)
             leaderboard_df['User'].iloc[i] = create_award_user_string(leaderboard_df['User'].iloc[i], awards_df) 
-            print("USERNAME:", leaderboard_df.iloc[i]['User'])
 
-    # Sort so players with the most point sare at the top
-    leaderboard_df = leaderboard_df.sort_values(by='All-Time', ascending=False)  
-    
+    # Move anyone with 'All-Time' == 'EBOARD' to the bottom, but keep everyone else in order
+    eboard_df = leaderboard_df[leaderboard_df['All-Time'] == 'EBOARD']
+    leaderboard_df = leaderboard_df[leaderboard_df['All-Time'] != 'EBOARD']
+    leaderboard_df = leaderboard_df._append(eboard_df)
+
     # Add finishing touches
     # leaderboard_df['User'] = leaderboard_df['User'].apply(lambda user: f'\t\t{user}', axis = 1)
     leaderboard_df['User'].iloc[0] = f'🏆 {leaderboard_df["User"].iloc[0]}'
@@ -143,19 +153,19 @@ def build_leaderboard_html(user_data_path, icons_data_path):
     return leaderboard_html    
 
 def build_leaderboard_html_cached(cache_path, user_data_path, icons_data_path):
-    cache_valid = os.path.exists(cache_path)
-    if cache_valid:
-        mtime_diff = max(os.path.getmtime(user_data_path), os.path.getmtime(icons_data_path)) - os.path.getmtime(cache_path)
-        cache_valid = mtime_diff < 0
+    # cache_valid = os.path.exists(cache_path)
+    # if cache_valid:
+    #     mtime_diff = max(os.path.getmtime(user_data_path), os.path.getmtime(icons_data_path)) - os.path.getmtime(cache_path)
+    #     cache_valid = mtime_diff < 0
     
-    if cache_valid:
-        print("Don't have to regenerate leaderboard. Skipping...")
-        with open(cache_path, 'r', encoding='utf-8') as f: return f.read()
-    else:
-        result = build_leaderboard_html(user_data_path, icons_data_path)
-        with open(cache_path, 'w', encoding='utf=8') as f:
-            f.write(result)
-        return result
+    # if cache_valid:
+    #     print("Don't have to regenerate leaderboard. Skipping...")
+    #     with open(cache_path, 'r', encoding='utf-8') as f: return f.read()
+    # else:
+    result = build_leaderboard_html(user_data_path, icons_data_path)
+    # with open(cache_path, 'w', encoding='utf=8') as f:
+    #     f.write(result)
+    return result
 
 t2 = time()
 

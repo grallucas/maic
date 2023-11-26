@@ -1,4 +1,4 @@
-summary: COMING SOON! (9/7)
+summary: COMING SOON! (WINTER 2023)
 order: 2
 date: 22/8/2023
 title: Learning AI (Pt. 4): Training (Loss & Backprop)
