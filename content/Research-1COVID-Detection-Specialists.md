@@ -1,4 +1,4 @@
-# date: 999999
+# date: 1000
 not_in_recent:
 title: COVID Detection Specialists
 img: ./img/thumbnails/COVID_Detection_Specialists.png"
