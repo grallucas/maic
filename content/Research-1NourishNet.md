@@ -3,7 +3,7 @@ not_in_recent:
 title: NourishNet
 img: ./img/thumbnails/Nourish_Team_Logo.png"
 
-**Using AI models to forecast spikes in commodity food prices, aiding underdeveloped communities.**<br/>
+**Empowering underdeveloped communities with AI: Predicting food price spikes to combat global hunger and improve nutrition security.**<br/>
 **Team Lead:** Ben Paulson<br/>
 **Year:** 2023-2024
 
