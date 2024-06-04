@@ -1,5 +1,5 @@
 # img: ./img/thumbnails/Transformer-Troubadours.png
-# date: 8/8/2023
+# date: 9999999
 not_in_recent:
 title: Bot Automated Response Technology​ (BART): MSOE Chat Bot ​
 img: ./img/thumbnails/chat_bot.jpg

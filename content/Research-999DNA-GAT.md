@@ -1,5 +1,5 @@
 # img: ./img/thumbnails/Transformer-Troubadours.png
-# date: 8/8/2023
+# date: 9999999
 not_in_recent:
 title: DNA GAT
 img: ./img/thumbnails/DNA-GAT.PNG
