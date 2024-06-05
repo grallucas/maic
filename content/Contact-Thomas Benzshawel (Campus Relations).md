@@ -1,6 +1,6 @@
 img: ./img/board_members/Thomas B Portrait.png
 date: 14/11/2023
-order: 4
+order: 7
 not_in_recent:
 
 ### Campus-Community Outreach & Marketing
