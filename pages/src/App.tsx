@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Library from "./Library.jsx";
+import Library from "./Library";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LearningTree from "./LearningTree.jsx";
+import LearningTree from "./LearningTree";
 
 function App() {
   return (
