@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## MAIC-Specific
 
-LearningTree.js and Library.js are set up as templates from the create react app. These files can be modified right now
+LearningTree.jsx and Library.jsx are set up as templates from the create react app. These files can be modified right now
 to set up.
 
 ## Available Scripts

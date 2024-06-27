@@ -21,6 +21,26 @@ Additional API scripts:
 - format: `pipenv run format` - Reformats the API code to be in PEP 8 standard formatting
 - lint: `pipenv run lint` - Checks for formatting errors and flags lines
 
+## React Frontend Development
+
+How to make setup development for the React pages
+
+1. Ensure [Node.js](https://nodejs.org/en) is installed
+2. From the root directory, run `cd pages`
+3. While in the pages directory, run `npm install`
+
+To run the React pages locally, run `npm start`. Any changes made will automatically be refreshed.
+
+> If API calls are needed, ensure the API is running in the background. (See [API (New)](#api-new)
+
+How to build the React pages for the API.
+
+1. While in the pages directory, run `npm run build`
+   > All pages built should be output to `pages/build`
+2. Run the API and go to the corresponding page's route. Ex: [localhost:8000/library](http://localhost:8000/library)
+
+The build pages will be visible from their corresponding endpoints.
+
 ## Requirements
 
 - `pip install markdown`
