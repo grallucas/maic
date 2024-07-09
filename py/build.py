@@ -9,7 +9,7 @@ from time import time # profiling
 
 t1 = time()
 
-TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
+TOP_PAGES = ['index', 'Learning_Resources', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Blank_Page', 'Leaderboard']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
