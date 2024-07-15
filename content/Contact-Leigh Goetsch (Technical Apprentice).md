@@ -1,4 +1,4 @@
-img: ./img/board_members/Leigh Goetsch Portrait.png
+img: ./img/board_members/Leigh Goetsch Portrait.jpg
 date: 14/11/2023
 order: 5
 not_in_recent:
