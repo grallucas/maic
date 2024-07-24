@@ -1,5 +1,5 @@
 import "./assets/library/css/modal.css";
-import { ButtonGroup } from "@mui/material";
+import { ButtonGroup, Card, CardContent } from "@mui/material";
 import { useState, useEffect } from "react";
 
 interface ModalProps {
@@ -32,19 +32,21 @@ const Modal = (props: ModalProps) => {
   }, [width]);
 
   return (
-    <section className="modal">
-      <div className="modal-top-bar">
-        <h2 className="modal-header">{props.title}</h2>
-        {props.chip}
-      </div>
-      <ButtonGroup
-        variant="text"
-        color="inherit"
-        sx={{ width: "100%", marginTop: "1rem" }}
-      >
-        {props.items.slice(0, columns)}
-      </ButtonGroup>
-    </section>
+    <Card className="modal">
+      <CardContent>
+        <div className="modal-top-bar">
+          <h2 className="modal-header">{props.title}</h2>
+          {props.chip}
+        </div>
+        <ButtonGroup
+          variant="text"
+          color="inherit"
+          sx={{ width: "100%", marginTop: "1rem" }}
+        >
+          {props.items.slice(0, columns)}
+        </ButtonGroup>
+      </CardContent>
+    </Card>
   );
 };
 

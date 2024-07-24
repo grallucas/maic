@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Divider } from "@mui/material";
 import "./assets/library/css/left-panel.css";
@@ -11,34 +10,32 @@ import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import HelpIcon from "@mui/icons-material/Help";
 import { Link, useLocation } from "react-router-dom";
 
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
-};
+interface LeftPanelProps {
+  query: any;
+  setQuery: any;
+}
 
-const LeftPanel = () => {
-  const query = useQuery();
-  const [nav, setNav] = useState<string | null>(query.get('nav'));
-  const [articlesDropdown, areArticlesDropdowned] = useState<boolean>(query.get('nav') === "Articles");
+const LeftPanel = (props: LeftPanelProps) => {
+  const [articlesDropdown, areArticlesDropdowned] = useState<boolean>(props.query.get('nav') === "Articles");
 
   useEffect(() => {
-    if(query.get('nav') === "Articles") {
+    if(props.query.get('nav') === "Articles") {
       areArticlesDropdowned(true);
       return;
     }
     areArticlesDropdowned(false);
-  },[nav])
+  },[props.query.get('nav')])
 
   return (
     <div className="left-panel">
       <h1 className="header">
-        <a href="/library">MAI Archive</a>
+        <a href="/library">MArXiv</a>
       </h1>
       <div className="navigation">
         <Button
           component={Link}
           to="/library?nav=Featured"
           startIcon={<EmojiEventsIcon />}
-          onClick={() => {setNav("Featured")}}
         >
           Featured
         </Button>
@@ -46,7 +43,6 @@ const LeftPanel = () => {
           component={Link}
           to="/library?nav=Research"
           startIcon={<ScienceIcon />}
-          onClick={() => {setNav("Research")}}
         >
           Research
         </Button>
@@ -54,7 +50,6 @@ const LeftPanel = () => {
           component={Link}
           to="/library?nav=Articles"
           startIcon={<DescriptionIcon />}
-          onClick={() => {setNav("Articles")}}
         >
           Articles
         </Button>
@@ -64,34 +59,30 @@ const LeftPanel = () => {
             <Button
               component={Link}
               to="/library?nav=Articles&type=ROSIE"
-              onClick={() => {setNav("ROSIE")}}
             >
               ROSIE
             </Button>
             <Button
               component={Link}
               to="/library?nav=Articles&type=Workshops"
-              onClick={() => {setNav("Workshops")}}
             >
               Workshops
             </Button>
             <Button
               component={Link}
               to="/library?nav=Articles&type=NLP"
-              onClick={() => {setNav("NLP")}}
             >
               NLP
             </Button>
           </div>
         }
-        <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />} onClick={() => {setNav("Videos")}}>
+        <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
         <Button
           component={Link}
           to="/library?nav=Favorites"
           startIcon={<Favorite />}
-          onClick={() => {setNav("Favorites")}}
         >
           Favorites
         </Button>
@@ -103,7 +94,6 @@ const LeftPanel = () => {
           component={Link}
           to="/library?nav=Submit"
           startIcon={<NoteAddIcon />}
-          onClick={() => {setNav("Submit")}}
         >
           Submit
         </Button>
@@ -111,7 +101,6 @@ const LeftPanel = () => {
           component={Link}
           to="/library?nav=Help"
           startIcon={<HelpIcon />}
-          onClick={() => {setNav("Help")}}
         >
           Help
         </Button>
