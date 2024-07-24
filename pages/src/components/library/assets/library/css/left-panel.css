@@ -36,10 +36,29 @@
   justify-content: left;
   padding-left: 0.5rem;
   color: white;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  margin: 0 1rem;
+}
+
+.navigation > div {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.navigation > div > a {
+  justify-content: left;
+  padding-left: 0.5rem;
+  color: white;
+  font-size: 0.75rem;
   margin: 0 1rem;
 }
 
 .navigation > a > span > svg {
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
+}
+
+.navigation > div > a > span > svg {
+  font-size: 1.5rem !important;
 }
