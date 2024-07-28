@@ -35,3 +35,113 @@
   font-style: italic;
   margin: 0;
 }
+
+/* Modal Item Preview Styling */
+
+/* Page Preview animation set up source, Dao utilized:
+ Mitul Garg's answer
+ https://stackoverflow.com/questions/68372798/reactjs-showing-sidebar-menu-with-animation*/
+.page-preview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  transition: all 2s ease;
+  background-color: #293562;
+  color: white;
+  padding: 1rem 0.5rem 0.5rem;
+  text-align: center;
+  overflow-y:scroll;
+  transform : translate(100%);
+}
+
+.show-page-preview {
+  transform : translate(0);
+}
+
+.modal-item-preview-image {
+  object-fit: contain;
+  max-width:90%;
+  max-height:33%;
+  width: auto;
+  height: auto;
+}
+
+.modal-item-preview-header {
+  display:grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  justify-items: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  text-align: left;
+
+}
+
+.modal-item-preview-header h2 {
+  padding-right: 1rem;
+}
+
+.like-button {
+  width: 80%;
+}
+
+.like-image {
+  width: 100%;
+}
+
+.page-preview .authors {
+  text-align: center;
+  color: white;
+  font-style: normal;
+}
+
+.page-reading-information {
+  display:grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+}
+
+.page-reading-information p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.page-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.5rem;
+  line-height:0.8rem;
+  text-align: justify;
+}
+
+.read-now-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+}
+.page-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  height:1em;
+  margin-top: 0.5em;
+}
+
+.tag-button {
+  width: 25%;
+}
+
+.page-tag {
+  border-radius: 3px;
+  padding: 0.1rem;
+  font-size: 0.5rem;
+  color: white;
+  background-color: #0578FF;
+  text-decoration-line: none;
+}
