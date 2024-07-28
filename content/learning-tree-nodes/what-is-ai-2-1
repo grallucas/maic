@@ -1,0 +1,7 @@
+name="intro-to-ai-club"
+image_path="img\misc\logo.png"
+description="AI CLUB DESCRIPTION"
+category="intro"
+category_color="purple"
+highlighted_path="True"
+position="0"
