@@ -1,5 +1,21 @@
 import { useState, useEffect } from "react";
-import { ReactFlow, Background, Controls } from '@xyflow/react';
+import {
+    ReactFlow, 
+    Background, 
+    Controls,
+    addEdge,
+    applyNodeChanges,
+    applyEdgeChanges,
+    type Node,
+    type Edge,
+    type FitViewOptions,
+    type OnConnect,
+    type OnNodesChange,
+    type OnEdgesChange,
+    type OnNodeDrag,
+    type NodeTypes,
+    type DefaultEdgeOptions,
+  } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import LearningTreeNode from "./LearningTreeNode"
 import "./assets/library/css/tree.css";
@@ -8,7 +24,7 @@ interface TreeProps {
 
 }
 
-const nodeTypes = {
+const nodeTypes: NodeTypes = {
     treeNode: LearningTreeNode,
   };
 
