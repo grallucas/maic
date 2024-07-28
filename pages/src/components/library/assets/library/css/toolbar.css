@@ -2,11 +2,10 @@
 
 .toolbar {
     width: 100vw;
-    height: 5vh;
+    height: 8vh;
     background: linear-gradient(to top, #0c0d0e, #202427);
     box-shadow: 1px 0px 3px 1px #202427;
     position: sticky;
-    padding: 1em;
     top: 0; /* This is needed to ensure the sticky positioning works as intended */
     z-index: 1; /* This property ensures the toolbar always appears over the React Flow Graph */
 }
