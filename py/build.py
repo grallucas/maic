@@ -254,7 +254,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                                 div(b("By: ") + ', '.join(entry['authors'])),
                                 div(b("Published: ") + entry['date'].strftime("%b %d, %Y")),
                                 div(entry['summary']),
-                                style="padding-bottom: 30px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.75rem;"
+                                style="padding-bottom: 25px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.25rem;"
                             ),
                             entry['body'],
                             style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
