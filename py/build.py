@@ -257,7 +257,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                                 style="padding-bottom: 20px; color: rgb(var(--text-2)); font-size: 1.25rem; line-height: 1.75rem;"
                             ),
                             entry['body'],
-                            style="max-width: 72rem; padding-left: 30px; padding-right: 30px;"
+                            style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
                         ),
                         style="width:100%; display: flex; justify-content: center;"
                     ),
