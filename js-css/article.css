@@ -1,14 +1,17 @@
 p, ul, ol, code {
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     font-style: normal;
+    color: #eee;
 }
 
 h1{
     font-size: 50px; line-height: 50px; letter-spacing: -.025em;
+    margin-bottom: 10px;
 }
 h2{
     font-size: 37px; line-height: 37px;
+    margin-bottom: 0px;
 }
 h3{
     font-size: 29px;
