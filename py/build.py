@@ -153,18 +153,18 @@ def build_leaderboard_html(user_data_path, icons_data_path):
     return leaderboard_html    
 
 def build_leaderboard_html_cached(cache_path, user_data_path, icons_data_path):
-    # cache_valid = os.path.exists(cache_path)
-    # if cache_valid:
-    #     mtime_diff = max(os.path.getmtime(user_data_path), os.path.getmtime(icons_data_path)) - os.path.getmtime(cache_path)
-    #     cache_valid = mtime_diff < 0
+    cache_valid = os.path.exists(cache_path)
+    if cache_valid:
+        mtime_diff = max(os.path.getmtime(user_data_path), os.path.getmtime(icons_data_path)) - os.path.getmtime(cache_path)
+        cache_valid = mtime_diff < 0
     
-    # if cache_valid:
-    #     print("Don't have to regenerate leaderboard. Skipping...")
-    #     with open(cache_path, 'r', encoding='utf-8') as f: return f.read()
-    # else:
-    result = build_leaderboard_html(user_data_path, icons_data_path)
-    # with open(cache_path, 'w', encoding='utf=8') as f:
-    #     f.write(result)
+    if cache_valid:
+        print("Don't have to regenerate leaderboard. Skipping...")
+        with open(cache_path, 'r', encoding='utf-8') as f: return f.read()
+    else:
+        result = build_leaderboard_html(user_data_path, icons_data_path)
+        with open(cache_path, 'w', encoding='utf=8') as f:
+            f.write(result)
     return result
 
 t2 = time()
@@ -185,7 +185,7 @@ for fname in listdir('./content'):
             colon_idx = lines[0].index(':')
             entry[lines[0][:colon_idx].strip()] = lines[0][colon_idx+1:].strip()
             lines = lines[1:]
-        entry['body'] = markdown('\n'.join(lines).strip())
+        entry['body'] = markdown('\n'.join(lines).strip(), extensions=['fenced_code'])
 
     if 'order' not in entry: entry['order'] = '0'
     entry['date'] = datetime.strptime(entry['date'], '%d/%m/%Y') if 'date' in entry else datetime.min
@@ -239,33 +239,51 @@ for page_name in TOP_PAGES:
 for entry in CONTENT_GROUPS['Learning_Resources']:
     if 'body' not in entry: continue
     with open(common_get_article_link(entry["fname"]), 'w', encoding='utf-8') as f:
-        f.write(
-            html(
-                head(
-                    common_metadata(entry['title']),
-                    link(rel='stylesheet', href='./js-css/article.css')
-                ),
-                body(
-                    common_toolbar(entry['title']),
+        content = html(
+            head(
+                common_metadata(entry['title']),
+                link(rel='stylesheet', href='./js-css/article.css')
+            ),
+            body(
+                common_toolbar(entry['title']),
+                div(
                     div(
+                        h1(entry['title']),
                         div(
-                            h1(entry['title']),
-                            div(
-                                div(b("By: ") + ', '.join(entry['authors'])),
-                                div(b("Published: ") + entry['date'].strftime("%b %d, %Y")),
-                                div(entry['summary']),
-                                style="padding-bottom: 25px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.25rem;"
-                            ),
-                            entry['body'],
-                            style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
+                            div(b("By: ") + ', '.join(entry['authors'])),
+                            div(b("Published: ") + entry['date'].strftime("%b %d, %Y")),
+                            div(entry['summary']),
+                            style="padding-bottom: 25px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.25rem;"
                         ),
-                        style="width:100%; display: flex; justify-content: center;"
+                        entry['body'],
+                        style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
                     ),
-                    script("document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))"),
-                    script(src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
-                )
+                    style="width:100%; display: flex; justify-content: center;"
+                ),
+                script("""
+                    document.querySelectorAll('code').forEach(e => {
+                        if(e.parentElement.textContent.trim() == e.textContent.trim()){
+                            e.style.display='inline-block';
+                            e.style.padding='10px';
+                        }
+                    });
+                """),
+                script("document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))"),
+                script(src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
             )
         )
+        lines = content.split('\n')
+        content = ''
+        dedent_amt = 0
+        for l in lines:
+            content += l[dedent_amt:]+'\n'
+            if dedent_amt == 0:
+                if l.strip().startswith('<pre><code'):
+                    dedent_amt = l.index('<pre><code')
+            else:
+                if l.strip().startswith('</code></pre>'):
+                    dedent_amt = 0
+        f.write(content)
 
 with open('./404.html', 'w') as f:
     f.write(

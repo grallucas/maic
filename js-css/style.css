@@ -144,4 +144,10 @@ tr:nth-child(even), th {
 
 code{
     background: rgb(35, 39, 42);
+    width: 100%;
+    border-radius: 1rem;
+    overflow-x: scroll;
+    text-overflow: ellipsis;
+    
+    padding: 5px;
 }
