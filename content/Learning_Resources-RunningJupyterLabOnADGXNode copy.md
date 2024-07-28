@@ -60,7 +60,7 @@ From the same terminal you ran the previous commands, run
 ssh dg-dgx1-1
 ```
 
-You can verify your connected by listing the GPUs available on the linux device with
+You can verify you're connected by listing the GPUs available on the linux device with
 
 ```
 nvidia-smi
@@ -111,4 +111,4 @@ In a browser access `localhost:8888`, enter your password, and you should be run
 
 ## 7. Cleanup
 
-Once your done with your instance, you can press `Ctrl+D` on every terminal you have opened. This will log out of any nodes and relinquish any allocated resources.
+Once you're done with your instance, you can press `Ctrl+D` on every terminal you have opened. This will log out of any nodes and relinquish any allocated resources.
