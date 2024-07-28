@@ -6,6 +6,7 @@ import Modal from "./components/library/Modal";
 import ModalItem from "./components/library/ModalItem";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowForward } from "@mui/icons-material";
+import ModalItemPreview from "./components/library/ModalItemPreview";
 
 const Library = () => {
   const rosieItems = [
@@ -20,7 +21,6 @@ const Library = () => {
   const location = useLocation();
   const [query, setQuery] = useState<URLSearchParams>(new URLSearchParams(location.search));
   const [category, setCategory] = useState<number>(1);
-
   useEffect(() => {
     setQuery(new URLSearchParams(location.search));
   }, [location.search])
@@ -33,7 +33,9 @@ const Library = () => {
     <div className="App">
       <nav style={{ display: "flex" }}>
         <LeftPanel query={query} setQuery={setQuery} />
-        <section className="modals" style={{maxWidth: "93.25vw"}}>{query.get("nav") === "Featured" && <div><Modal
+        <section className="modals" style={{maxWidth: "93.25vw"}}>
+          {query.get("nav") === "Featured" && <div>
+          <Modal
           title="ROSIE 2024 Finalists"
           chip={
             <Chip
@@ -110,6 +112,7 @@ const Library = () => {
           />
         </div>}
         </section>
+        <ModalItemPreview/>
       </nav>
     </div>
   );
