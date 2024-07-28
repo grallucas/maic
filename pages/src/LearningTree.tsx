@@ -1,11 +1,12 @@
 import logo from "./logo.png";
-import NavBar from "./components/library/NavBar"
-import Library from "./Library";
+import Toolbar from "./components/library/Toolbar"
+import Tree from "./components/library/Tree"
 
 const LearningTree = () => {
   return (
     <div className="App">
-      <NavBar/>
+      <Toolbar/>
+      <Tree />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
