@@ -45,7 +45,7 @@ def common_toolbar(page_name):
             ) for page in TOP_PAGES[:-1]
         ),
         id='toolbar',
-        style = 'text-align: center;'
+        style = 'text-align: center; backdrop-filter: blur(5px);'
     )
 
 def common_content_to_card(entry, extra=''):
@@ -196,7 +196,7 @@ for fname in listdir('./content'):
     if 'authors' in entry:
         entry['authors'] = [s.strip() for s in entry['authors'].split(',')]
     if 'summary' in entry:
-        entry['summary'] = markdown(entry['summary'])
+        entry['summary'] = entry['summary']
     if 'link' in entry:
         del entry['body']
     else:
@@ -242,19 +242,27 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
         f.write(
             html(
                 head(
-                    common_metadata(entry['title'])
+                    common_metadata(entry['title']),
+                    link(rel='stylesheet', href='./js-css/article.css')
                 ),
                 body(
                     common_toolbar(entry['title']),
                     div(
-                        h1(entry['title'], style="text-align:center;"),
-                        h3(entry['summary'], style="text-align:center;"),
-                        hr(),
-                        div("By: <a style=font-weight:bold;>" + ', '.join(entry['authors']) + '</a>', style="text-align:center;"),
-                        div("Published: " + entry['date'].strftime("%b %d, %Y"), style="text-align:center; padding-bottom: 20px;"),
-                        entry['body'],
-                        style="padding-left: 40px; padding-right: 40px;"
-                    )
+                        div(
+                            h1(entry['title'], style="font-size: 50px; line-height: 50px; letter-spacing: -.025em;"),
+                            div(
+                                div("By: " + ', '.join(entry['authors'])),
+                                div("Published: " + entry['date'].strftime("%b %d, %Y")),
+                                div(entry['summary']),
+                                style="padding-bottom: 20px; color: rgb(var(--text-2)); font-size: 1.25rem; line-height: 1.75rem;"
+                            ),
+                            entry['body'],
+                            style="max-width: 72rem; padding-left: 30px; padding-right: 30px;"
+                        ),
+                        style="width:100%; display: flex; justify-content: center;"
+                    ),
+                    script("document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))"),
+                    script(src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
                 )
             )
         )

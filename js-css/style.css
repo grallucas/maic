@@ -5,14 +5,14 @@
 }
 
 :root{
-    --bg-1: 35, 39, 42;
+    --bg-1: 25, 25, 30;
     --bg-2: 18, 22, 25;
 
     --hl-1: 141, 224, 254;
     --hl-2: 224, 132, 255;
 
     --text-1: 255, 255, 255;
-    --text-2: 187, 187, 187;
+    --text-2: 139, 140, 173;
 
     --transition-height: 80px;
 }
@@ -140,4 +140,8 @@ tr:nth-child(even), th {
 .break{
     flex-basis: 100%;
     height:0;
+}
+
+code{
+    background: rgb(35, 39, 42);
 }
