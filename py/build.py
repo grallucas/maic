@@ -249,7 +249,7 @@ for entry in CONTENT_GROUPS['Learning_Resources']:
                     common_toolbar(entry['title']),
                     div(
                         div(
-                            h1(entry['title'], style="font-size: 50px; line-height: 50px; letter-spacing: -.025em;"),
+                            h1(entry['title']),
                             div(
                                 div("By: " + ', '.join(entry['authors'])),
                                 div("Published: " + entry['date'].strftime("%b %d, %Y")),

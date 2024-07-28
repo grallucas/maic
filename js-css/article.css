@@ -4,6 +4,25 @@ p, ul, ol, code {
     font-style: normal;
 }
 
+h1{
+    font-size: 50px; line-height: 50px; letter-spacing: -.025em;
+}
+h2{
+    font-size: 37px; line-height: 37px;
+}
+h3{
+    font-size: 29px;
+}
+h4{
+    font-size: 25px;
+}
+h5{
+    font-size: 21px;
+}
+h6{
+    font-size: 17px;
+}
+
 img {
     border-radius: 1rem;
 }
