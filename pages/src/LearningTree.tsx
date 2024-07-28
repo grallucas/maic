@@ -1,9 +1,12 @@
 import logo from "./logo.png";
+import NavBar from "./components/library/NavBar"
+import Library from "./Library";
 
 const LearningTree = () => {
   return (
     <div className="App">
-      <header className="App-header">
+      <NavBar/>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/LearningTree.js</code> and save to reload LearningTree.
@@ -16,7 +19,7 @@ const LearningTree = () => {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 };
