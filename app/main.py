@@ -13,7 +13,9 @@ app = FastAPI()
 path_static = "pages/build"
 
 # Mount the static files directory
-app.mount("/static", StaticFiles(directory=os.path.join(path_static, "static")), name="static")
+app.mount(
+    "/static", StaticFiles(directory=os.path.join(path_static, "static")), name="static"
+)
 
 # Add CORS middleware if your React app and API are served from different origins
 app.add_middleware(
@@ -24,11 +26,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Serve the index.html for the base route and all other routes
 @app.get("/{full_path:path}")
 async def serve_index(full_path: str = ""):
     file_path = os.path.join(path_static, "index.html")
     return FileResponse(file_path)
+
 
 # Include the API router
 app.include_router(api_router, prefix="/api/v1")
