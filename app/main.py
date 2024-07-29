@@ -26,9 +26,16 @@ app.add_middleware(
 
 # Serve the index.html for the base route and all other routes
 @app.get("/{full_path:path}")
-async def serve_index(full_path: str = ""):
-    file_path = os.path.join(path_static, "index.html")
-    return FileResponse(file_path)
+async def serve_index(full_path: str):
+    if full_path != "":
+        if full_path == "library" or full_path == "learning-tree":
+            file_path = os.path.join(path_static, "index.html")
+        elif not os.path.exists(f"./{full_path}"):
+            return None
+        else:
+            file_path = full_path
+        return FileResponse(file_path)
+    return FileResponse("index.html")
 
 # Include the API router
 app.include_router(api_router, prefix="/api/v1")
