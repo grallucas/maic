@@ -1,0 +1,47 @@
+#toolbar {
+  position: fixed;
+  width: 100%;
+  align-content: center;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(25, 25, 30, 0.5);
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  backdrop-filter: blur(5px);
+}
+
+#toolbar h3 {
+  display: inline;
+}
+
+#toolbar > h3 > a {
+  display: inline;
+}
+
+#toolbar a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: 5px 12px 5px 12px;
+  margin: 5px 3px 0 3px;
+}
+
+#toolbar p {
+  margin: 0;
+}
+
+.active {
+  background-color: rgb(55, 34, 107);
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 12px 5px 12px;
+  margin: 5px 3px 0 3px;
+}
+
+#toolbar > a:hover {
+  background-color: rgb(77, 52, 139);
+  border-radius: 10px;
+  padding: 5px 12px 5px 12px;
+  margin: 5px 3px 0 3px;
+}

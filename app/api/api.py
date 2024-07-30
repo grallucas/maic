@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from .endpoints import library, learning_tree
+from .routers import library, learning_tree
 
 router = APIRouter()
 

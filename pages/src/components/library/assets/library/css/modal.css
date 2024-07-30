@@ -43,6 +43,7 @@
  Mitul Garg's answer
  https://stackoverflow.com/questions/68372798/reactjs-showing-sidebar-menu-with-animation*/
 .page-preview {
+  padding-top: 60px;
   position: fixed;
   top: 0;
   right: 0;
@@ -64,7 +65,7 @@
 .modal-item-preview-image {
   object-fit: contain;
   max-width: 100%;
-  max-height: 45vh;
+  max-height: 37.5vh;
   width: auto;
   height: auto;
 }

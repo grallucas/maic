@@ -1,7 +1,7 @@
 import os
 from fastapi import APIRouter, HTTPException
 from ..modules.modules import Modal, SearchContent, SubmitContent
-from fastapi.responses import Response
+from fastapi.responses import Response, FileResponse
 from PIL import Image
 import io
 
@@ -43,7 +43,7 @@ async def get_modals():
 )
 async def get_content(content_id: str):
     try:
-        return {"response": read_markdown_file(content_id)}
+        return read_markdown_file(content_id)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Requested content not found.")
     except Exception as e:
@@ -64,6 +64,21 @@ async def get_content_preview(content_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {e}")
 
+@router.get(
+    "/{content_id}/image",
+    tags=["Content"],
+    description="Get an image located in the img folder"
+)
+async def get_image(content_id: str) -> FileResponse:
+    file_options = ["png", "jpg", "gif"]
+
+    for folder in os.listdir("img/"):
+        for option in file_options:
+            file_path = f"img/{folder}/{content_id}.{option}"
+            if os.path.exists(file_path):
+                return FileResponse(file_path)
+    
+    raise HTTPException(status_code=404, detail="Image not found.")
 
 @router.get(
     "/{content_id}/title-and-authors",

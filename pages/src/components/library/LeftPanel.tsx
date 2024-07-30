@@ -8,7 +8,7 @@ import Movie from "@mui/icons-material/Movie";
 import Favorite from "@mui/icons-material/Favorite";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import HelpIcon from "@mui/icons-material/Help";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface LeftPanelProps {
   query: any;
@@ -16,15 +16,17 @@ interface LeftPanelProps {
 }
 
 const LeftPanel = (props: LeftPanelProps) => {
-  const [articlesDropdown, areArticlesDropdowned] = useState<boolean>(props.query.get('nav') === "Articles");
+  const [articlesDropdown, areArticlesDropdowned] = useState<boolean>(
+    props.query.get("nav") === "Articles"
+  );
 
   useEffect(() => {
-    if(props.query.get('nav') === "Articles") {
+    if (props.query.get("nav") === "Articles") {
       areArticlesDropdowned(true);
       return;
     }
     areArticlesDropdowned(false);
-  },[props.query.get('nav')])
+  }, [props.query.get("nav")]);
 
   return (
     <div className="left-panel">
@@ -53,29 +55,19 @@ const LeftPanel = (props: LeftPanelProps) => {
         >
           Articles
         </Button>
-        {
-          articlesDropdown && 
+        {articlesDropdown && (
           <div>
-            <Button
-              component={Link}
-              to="/library?nav=Articles&type=ROSIE"
-            >
+            <Button component={Link} to="/library?nav=Articles&type=ROSIE">
               ROSIE
             </Button>
-            <Button
-              component={Link}
-              to="/library?nav=Articles&type=Workshops"
-            >
+            <Button component={Link} to="/library?nav=Articles&type=Workshops">
               Workshops
             </Button>
-            <Button
-              component={Link}
-              to="/library?nav=Articles&type=NLP"
-            >
+            <Button component={Link} to="/library?nav=Articles&type=NLP">
               NLP
             </Button>
           </div>
-        }
+        )}
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
