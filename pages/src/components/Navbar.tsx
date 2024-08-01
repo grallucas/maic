@@ -1,4 +1,5 @@
 import "./assets/css/navbar.css";
+pages\src\components\library\assets\library\css\navbar.css
 
 interface NavBarProps {
   page: string;
