@@ -1,9 +1,3 @@
 .treeNode {
-    width: 15vw;
-    border: 1px solid #eee;
-    padding: 5px;
-    border-radius: 5px;
-    border-color: rgb(213, 213, 213);
-    background: white;
-    text-align: center;
+    width: 20vw;
   }

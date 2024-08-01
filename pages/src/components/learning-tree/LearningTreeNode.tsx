@@ -5,6 +5,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import CardActions from '@mui/material/CardActions';
 import { CardActionArea } from '@mui/material';
 import type { Node, NodeProps } from '@xyflow/react';
 import "./assets/css/learningTreeNode.css";
@@ -27,15 +29,16 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     return (
         <div className = "treeNode">
             <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
+                <CardActionArea href = "./library">
                     <CardMedia
                     component="img"
-                    height="140"
+                    height="200"
                     image={
                         window.location.href.includes("3000") ? "/tree-thumbnails/ROSIE Supercomputer.jpg" : "/api/v1/library/Sticker/image"
                       }
                     alt="Picture of ROSIE"
                     />
+                    <Divider/>
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         Who is ROSIE?
@@ -46,10 +49,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     </CardContent>
                 </CardActionArea>
             </Card>
-            {/* <Stack spacing={0.5}>
-                <img src = "logo.png" ></img>
-                <h1>{data.name}</h1>
-            </Stack> */}
         </div>
     );
 };

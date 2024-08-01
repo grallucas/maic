@@ -24,15 +24,19 @@ interface TreeProps {
 
 }
 
+const fitViewOptions = {
+  minZoom: 0.1,
+  maxZoom: 1,
+  nodes: [{id: 'root'}], // node(s) to fit
+ };
+
 const nodeTypes: NodeTypes = {
     treeNode: LearningTreeNode,
   };
 
-const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
-
 const initialNodes = [
     {
-      id: 'node-1',
+      id: 'root',
       type: 'treeNode',
       position: { x: 0, y: 0 },
       data: { name: 'Testing123' },
@@ -43,9 +47,11 @@ const Tree = (props: TreeProps) => {
       const [nodes, setNodes] = useState(initialNodes);
     return (
         <div className = 'tree'>
-                <ReactFlow
-                nodes = {nodes}
+                <ReactFlow 
+                nodes = {nodes} 
                 nodeTypes={nodeTypes}
+                fitView = {true}
+                fitViewOptions={fitViewOptions}
                 >
                     <Background />
                     <Controls />
