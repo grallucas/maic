@@ -29,6 +29,20 @@ type treeNode = Node<{
     'treeNode'>;
 
 const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
+    
+    //This switch statement below dynamically sets the color of the tags for each node based on data.category_color
+    //This statement will be added to when needed to add in more colors
+    let chip = [];
+    switch(data.category_color) { 
+        case 'red': { 
+            chip.push(<Chip color = "error" size = "small" label={data.category} />)
+            break; 
+        } 
+        default: { 
+            chip.push(<Chip color = "default" size = "small" label={data.category} />)
+            break; 
+        } 
+    } 
 
     return (
         <div className = "treeNode">
@@ -54,7 +68,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     <Divider variant='middle'/>
                     <div className='tags'>
                         <Stack direction="column" spacing={1.5}>
-                            <Chip size = "small" label={data.category} />
+                            {chip}
                         </Stack>
                     </div>
                 </CardActionArea>
