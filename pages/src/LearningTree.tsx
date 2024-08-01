@@ -6,7 +6,7 @@ const LearningTree = () => {
   return (
     <div className="App">
       <NavBar page = 'LearningTree'/>
-      <Tree />
+      <Tree/>
     </div>
   );
 };
