@@ -1,5 +1,4 @@
 import "./assets/css/navbar.css";
-pages\src\components\library\assets\library\css\navbar.css
 
 interface NavBarProps {
   page: string;
@@ -13,9 +12,7 @@ const NavBar = (props: NavBarProps) => {
           <img
             className="logo"
             src={
-              window.location.href.includes("3000")
-                ? "/Sticker.png"
-                : "/api/v1/library/Sticker/image"
+              window.location.href.includes("3000") ? "/Sticker.png" : "/api/v1/library/Sticker/image"
             }
             alt="Logo"
             height="25px"
@@ -39,6 +36,12 @@ const NavBar = (props: NavBarProps) => {
         href="/library"
       >
         <p>Library</p>
+      </a>
+      <a
+        className={`${props.page === "LearningTree" ? "active" : ""}`}
+        href="/learning-tree"
+      >
+        <p>Learning Tree</p>
       </a>
       <a
         className={`${props.page === "Research" ? "active" : ""}`}

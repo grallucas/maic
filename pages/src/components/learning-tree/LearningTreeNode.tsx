@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Handle, Position } from '@xyflow/react';
 import Stack from '@mui/material/Stack';
 import type { Node, NodeProps } from '@xyflow/react';
-import "./assets/library/css/learningTreeNode.css";
+import "./assets/css/learningTreeNode.css";
  
 type treeNode = Node<{ 
     name: string;

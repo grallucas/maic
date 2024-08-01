@@ -18,7 +18,7 @@ import {
   } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import LearningTreeNode from "./LearningTreeNode"
-import "./assets/library/css/tree.css";
+import "./assets/css/tree.css";
 
 interface TreeProps {
 
