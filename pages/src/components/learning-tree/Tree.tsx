@@ -57,10 +57,11 @@ const initialNodes = [
         name: "Who is ROSIE?",
         image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
         description: "Rosie is MSOE's supercomputer! Learn more here!",
-        category: "rosie",
+        category: "ROSIE",
         category_color: "red",
         highlighted_path: "null",
         position: "null",
+        link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
         },
     },
     {

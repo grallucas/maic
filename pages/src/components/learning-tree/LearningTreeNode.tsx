@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import CardActions from '@mui/material/CardActions';
+import Chip from '@mui/material/Chip';
 import { CardActionArea } from '@mui/material';
 import type { Node, NodeProps } from '@xyflow/react';
 import "./assets/css/learningTreeNode.css";
@@ -24,6 +24,7 @@ type treeNode = Node<{
     category_color: string;
     highlighted_path: string;
     position: string;
+    link: string;
     }, 
     'treeNode'>;
 
@@ -31,8 +32,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
 
     return (
         <div className = "treeNode">
-            <Card sx={{maxWidth: 345}}>
-                <CardActionArea href = "./library">
+            <Card raised = {true} sx={{maxWidth: 345}}>
+                <CardActionArea href = {data.link}>
                     <CardMedia
                     component="img"
                     height="200"
@@ -50,6 +51,12 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                         {data.description}
                     </Typography>
                     </CardContent>
+                    <Divider variant='middle'/>
+                    <div className='tags'>
+                        <Stack direction="column" spacing={1.5}>
+                            <Chip size = "small" label={data.category} />
+                        </Stack>
+                    </div>
                 </CardActionArea>
             </Card>
         </div>
