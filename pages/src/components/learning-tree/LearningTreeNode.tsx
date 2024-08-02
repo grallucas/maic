@@ -11,7 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, useThemeProps } from '@mui/material';
 import type { Node, NodeProps } from '@xyflow/react';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import "./assets/css/learningTreeNode.css";
@@ -51,7 +51,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const chip = [];
     switch(data.category_color) { 
         case 'red': { 
-            chip.push(<Chip color = "error" size = "small" label={data.category} />)
+            chip.push(<Chip color = "error" size = "small" label={data.category}/>)
             break; 
         } 
         default: { 
@@ -76,21 +76,21 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                         sx={{borderRadius: 2}}
                     />
                 </Grid>
-                <Grid xs={6}>
-                    <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                        {data.description}
-                    </Typography>
+                <Grid xs={6} sx={{mt:7, p:3}}>
+                    <CardContent >
+                        <Typography variant="body2" color="text.secondary">
+                            {data.description}
+                        </Typography>
                     </CardContent>
                 </Grid>
-                <Grid xs={6}>
+                <Grid xs={6} sx={{mt:2}}>
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {data.name}
                     </Typography>
                     </CardContent>
                 </Grid>
-                <Grid xs={6}>
+                <Grid xs={6} sx={{mt:3.65}}>
                     <div className='tags'>
                         <Stack direction="column" spacing={1.5}>
                             {chip}
@@ -101,7 +101,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         </CardActionArea>)
     } else {
         card.push(
-        <CardActionArea href = {data.link} sx={{p: 0.75}}>
+        <CardActionArea href = {data.link} sx={{p: 0.5}}>
                 <CardMedia
                     component="img"
                     height="200"
@@ -123,14 +123,14 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     return (
         <div className={state.className}>
             <Card 
-            sx={{border: 3, borderRadius: 4, borderColor: 'error.main'}}
+            sx={{border: 3, borderRadius: 4, borderColor: data.category_color}}
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
             onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
             raised = {state.raised}
             >
-                <div className="border">
+                
                     {card}
-                </div>
+                
             </Card>
         </div>
     );
