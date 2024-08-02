@@ -15,7 +15,9 @@ router = APIRouter()
 path_static = "pages/build"
 
 # Mount the static files directory
-app.mount("/static", StaticFiles(directory=os.path.join(path_static, "static")), name="static")
+app.mount(
+    "/static", StaticFiles(directory=os.path.join(path_static, "static")), name="static"
+)
 
 # Add CORS middleware if your React app and API are served from different origins
 app.add_middleware(
@@ -26,9 +28,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Serve the index.html for the base route and all other routes
 @router.get("/{full_path:path}")
-async def serve_index(full_path: str):    
+async def serve_index(full_path: str):
     if full_path != "":
         if full_path == "library" or full_path == "learning-tree":
             file_path = os.path.join(path_static, "index.html")
@@ -38,6 +41,7 @@ async def serve_index(full_path: str):
             file_path = full_path
         return FileResponse(file_path)
     return FileResponse("index.html")
+
 
 # Include the API router
 app.include_router(api_router, prefix="/api/v1")

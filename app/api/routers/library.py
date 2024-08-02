@@ -21,17 +21,38 @@ async def get_modals():
             Modal(
                 title="ROSIE Competition 2024",
                 tags=["ROSIE 24'"],
-                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
+                content_ids=[
+                    "Learning_Resources-RunningJupyterLabOnADGXNode copy",
+                    "Learning_Resources-global-protect",
+                    "Learning_Resources-how-to-use-jupyter-notebooks",
+                    "Learning_Resources-how-to-use-rosie",
+                    "Learning_Resources-Pt1_LearningAI copy",
+                    "Learning_Resources-pt1-how-to-get-rosie-access",
+                ],
             ),
             Modal(
                 title="MICS 2024",
                 tags=["MICS 24'"],
-                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
+                content_ids=[
+                    "Learning_Resources-RunningJupyterLabOnADGXNode copy",
+                    "Learning_Resources-global-protect",
+                    "Learning_Resources-how-to-use-jupyter-notebooks",
+                    "Learning_Resources-how-to-use-rosie",
+                    "Learning_Resources-Pt1_LearningAI copy",
+                    "Learning_Resources-pt1-how-to-get-rosie-access",
+                ],
             ),
             Modal(
                 title="23-24 Research Groups",
                 tags=["RG-24"],
-                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
+                content_ids=[
+                    "Learning_Resources-RunningJupyterLabOnADGXNode copy",
+                    "Learning_Resources-global-protect",
+                    "Learning_Resources-how-to-use-jupyter-notebooks",
+                    "Learning_Resources-how-to-use-rosie",
+                    "Learning_Resources-Pt1_LearningAI copy",
+                    "Learning_Resources-pt1-how-to-get-rosie-access",
+                ],
             ),
         ]
     }
@@ -54,7 +75,7 @@ async def get_content(content_id: str):
 @router.get(
     "/{content_id}/image",
     tags=["Content"],
-    description="Get an image located in the img folder"
+    description="Get an image located in the img folder",
 )
 async def get_image(content_id: str) -> FileResponse:
     file_options = ["png", "jpg", "gif"]
@@ -64,7 +85,7 @@ async def get_image(content_id: str) -> FileResponse:
             file_path = f"img/{folder}/{content_id}.{option}"
             if os.path.exists(file_path):
                 return FileResponse(file_path)
-    
+
     raise HTTPException(status_code=404, detail="Image not found.")
 
 
@@ -94,6 +115,7 @@ async def get_content_abstract(content_id: str):
     pages = calculate_pages("\n".join(text))
 
     return {"response": {"abstract": summary, "reading_time": time, "pages": pages}}
+
 
 @router.get(
     "/{content_id}/tags",
@@ -158,12 +180,14 @@ def read_image_to_bytes(file_name: str):
         img_bytes = img_byte_arr.getvalue()
 
         return img_bytes
-    
+
+
 def calculate_reading_speed(text: str, words_per_minute: int = 300) -> int:
     words = text.split()
     num_words = len(words)
     reading_time = num_words / words_per_minute
     return math.ceil(reading_time)
+
 
 def calculate_pages(text: str, words_per_length: int = 250) -> int:
     img_count = text.count("<img")
@@ -171,5 +195,3 @@ def calculate_pages(text: str, words_per_length: int = 250) -> int:
     num_words = len(words)
     pages = num_words / words_per_length + (img_count * 0.5)
     return math.ceil(pages)
-
-
