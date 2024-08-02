@@ -3,7 +3,7 @@
  * Link to ReactFlow custom node documentation (General): https://reactflow.dev/learn/customization/custom-nodes
  */
 import React, { useState } from 'react';
-import { Handle, Position } from '@xyflow/react';
+import { Background, Handle, Position } from '@xyflow/react';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -127,6 +127,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
             onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
             raised = {state.raised}
+            style={{background: '#404040'}}
             >
                 
                     {card}
