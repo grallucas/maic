@@ -87,7 +87,7 @@ const Article = (props: ArticleProps) => {
             const imageUrl = URL.createObjectURL(blob);
             img.src = imageUrl;
           } catch (error) {
-            console.error("Error fetching the image:", error);
+            return;
           }
         };
         fetchImage();
@@ -154,7 +154,7 @@ const Article = (props: ArticleProps) => {
           setContents(elements.slice(9).join("\n").slice(0, -1));
         })
         .catch((error: Error) => {
-          console.error("Error fetching file:", error);
+          // pass
         });
     }
   }, [props.articleId]);

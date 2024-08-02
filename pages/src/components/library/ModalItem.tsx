@@ -75,7 +75,7 @@ const ModalItem = (props: ModalItemProps) => {
             }
           });
         } catch (error) {
-          console.error("Error fetching the image:", error);
+          // pass
         }
       };
       fetchImage();
@@ -106,7 +106,7 @@ const ModalItem = (props: ModalItemProps) => {
         setAuthors(json["authors"]);
       })
       .catch((error: Error) => {
-        console.error("Error fetching file:", error);
+        // pass
       });
   }, [props.articleId]);
 
@@ -127,7 +127,7 @@ const ModalItem = (props: ModalItemProps) => {
         <img
           src={img}
           alt="Preview"
-          style={{ width: "90%" }}
+          style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
           className={props.articleId}
         ></img>
         <h3 className="modal-item-header">{title}</h3>

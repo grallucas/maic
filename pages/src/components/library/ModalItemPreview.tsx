@@ -73,7 +73,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
               component={Link}
               color="primary"
               label={tag}
-              to={"/library?nav=Articles&tags=" + tag.replace(" ", "_")}
+              to={"/library?nav=Articles&type=" + tag.replace(" ", "_")}
               clickable
               onClick={() => props.hidePreview()}
             />
@@ -141,7 +141,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
         }
       })
       .catch((error: Error) => {
-        console.error("Error fetching file:", error);
+        // pass
       });
   }, [props.articleId]);
 
@@ -168,7 +168,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
         setTags(createTag(json));
       })
       .catch((error: Error) => {
-        console.error("Error fetching file:", error);
+        // pass
       });
   }, [props.articleId]);
 

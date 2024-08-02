@@ -11,7 +11,16 @@ router = APIRouter()
 
 @router.get("/tags", description="Get all tags available in the library.")
 async def get_tags():
-    return {"response": ["tag1", "tag2", "tag3"]}
+    tags = []
+    for item in os.listdir(f"{os.getcwd()}\\content"):
+        if "Learning_Resources" in item:
+            markdown = read_markdown_file(item.replace(".md", "")).split("\n")
+            md_tags = markdown[7].replace("categories:", "").strip().split(",")
+            for tag in md_tags:
+                if tag not in tags:
+                    tags.append(tag)
+
+    return {"response": [tag.strip() for tag in tags]}
 
 
 @router.get("/modals", description='Get all modals to display on the "Featured" page.')
@@ -126,6 +135,25 @@ async def get_content_tags(content_id: str):
     markdown = read_markdown_file(content_id).split("\n")
     tags = markdown[7].replace("categories:", "").strip().split(",")
     return {"response": tags}
+
+@router.get(
+    "/{tag}/tagged-content",
+    tags=["Content"],
+    description="Get all content associated with a specific tag.",
+)
+async def get_tag_content(tag: str):
+    tag = tag.strip().lower()
+    articles = []
+    for item in os.listdir(f"{os.getcwd()}\\content"):
+        if "Learning_Resources" in item:
+            if tag == "all":
+                articles.append(item.replace(".md", ""))
+                continue
+            markdown = read_markdown_file(item.replace(".md", "")).split("\n")
+            tags = [tag.strip() for tag in markdown[7].replace("categories:", "").strip().lower().split(",")]
+            if tag in tags:
+                articles.append(item.replace(".md", ""))
+    return {"response": articles}
 
 
 @router.get(

@@ -24,6 +24,7 @@ interface LeftPanelProps {
  * @returns {JSX.Element} The LeftPanel component.
  */
 const LeftPanel = (props: LeftPanelProps) => {
+  const [categories, setCategories] = useState<any[]>([]);
   /**
    * The state of the articles dropdown based on the query.
    */
@@ -41,6 +42,38 @@ const LeftPanel = (props: LeftPanelProps) => {
     }
     areArticlesDropdowned(false);
   }, [props.query.get("nav")]);
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/tags`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        let buttons: any[] = [];
+        Object.keys(json).forEach((key: string) => {
+          buttons.push(
+            <Button style={{textAlign: "left"}} component={Link} to={`/library?nav=Articles&type=${json[key]}`}>
+              {json[key]}
+            </Button>
+          )
+        })
+        setCategories(buttons);
+      })
+      .catch((error: Error) => {
+        // pass
+      });
+  }, [])
 
   /**
    * The LeftPanel component.
@@ -74,15 +107,7 @@ const LeftPanel = (props: LeftPanelProps) => {
         </Button>
         {articlesDropdown && (
           <div>
-            <Button component={Link} to="/library?nav=Articles&type=ROSIE">
-              ROSIE
-            </Button>
-            <Button component={Link} to="/library?nav=Articles&type=Workshops">
-              Workshops
-            </Button>
-            <Button component={Link} to="/library?nav=Articles&type=NLP">
-              NLP
-            </Button>
+            {categories}
           </div>
         )}
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>

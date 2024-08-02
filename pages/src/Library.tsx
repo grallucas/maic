@@ -27,6 +27,8 @@ const Library = () => {
   /**
    * The states of the Library component, including the current article, previewed article, and whether to show the preview.
    */
+  const [categoryItems, setCategoryItems] = useState<any[]>([]);
+  const [categoryTags, setCategoryTags] = useState<any[]>([]);
   const [currentArticle, setCurrentArticle] = useState("");
   const [previewedArticle, setPreviewedArticle] = useState<string>("");
   const [showPreview, setShowPreview] = useState<boolean>(false);
@@ -70,7 +72,7 @@ const Library = () => {
   const [query, setQuery] = useState<URLSearchParams>(
     new URLSearchParams(location.search)
   );
-  const [category, setCategory] = useState<number>(1);
+  const [category, setCategory] = useState<string>("All");
   const [modals, setModals] = useState<any[] | undefined>(undefined);
 
   /**
@@ -143,7 +145,70 @@ const Library = () => {
         setModals(modals);
       })
       .catch((error: Error) => {
-        console.error("Error fetching file:", error);
+        // pass
+      });
+  }, []);
+
+  /***
+   * Fetches the articles from the server and updates the categoryItems state.
+   */
+  useEffect(() => {
+    console.log(category);
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/${category}/tagged-content`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        let tempCategoryItems: any[] = [];
+        Object.keys(json).forEach((key, index) => {
+          tempCategoryItems.push(
+            <ModalItem
+              key={json[key]}
+              articleId={json[key]}
+              openPreview={() => openPreview(json[key])}
+            />
+          )
+        })
+        setCategoryItems(tempCategoryItems);
+      })
+      .catch((error: Error) => {
+        // pass
+      });
+  }, [category])
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/tags`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        const modifiedJson = ["All", ...json];
+        setCategoryTags(modifiedJson);
+      })
+      .catch((error: Error) => {
+        // pass
       });
   }, []);
 
@@ -163,66 +228,22 @@ const Library = () => {
             {(query.get("nav") === "Featured" || query.get("nav") === null) && (
               <div>
                 {modals}
-                {/* <Modal
+                <Modal
                   title="Categories"
-                  chips={[
-                    <Chip
-                      variant={category === 1 ? "filled" : "outlined"}
+                  chips={categoryTags.map((tag, index) => {
+                    return <Chip
+                      key={index + 1}
+                      variant={category === tag ? "filled" : "outlined"}
                       component={Link}
                       color="primary"
-                      label="All"
-                      onClick={() => setCategory(1)}
+                      label={tag}
+                      onClick={() => setCategory(tag)}
                       to="/library?nav=Featured"
                       clickable
-                    />,
-                    <Chip
-                      variant={category === 2 ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label="CNNs"
-                      onClick={() => setCategory(2)}
-                      to="/library?nav=Featured"
-                      clickable
-                    />,
-                    <Chip
-                      variant={category === 3 ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label="Transformers"
-                      onClick={() => setCategory(3)}
-                      to="/library?nav=Featured"
-                      clickable
-                    />,
-                    <Chip
-                      variant={category === 4 ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label="RL"
-                      onClick={() => setCategory(4)}
-                      to="/library?nav=Featured"
-                      clickable
-                    />,
-                    <Chip
-                      variant={category === 5 ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label="Medical"
-                      onClick={() => setCategory(5)}
-                      to="/library?nav=Featured"
-                      clickable
-                    />,
-                    <Chip
-                      variant={category === 6 ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label="Quantum"
-                      onClick={() => setCategory(6)}
-                      to="/library?nav=Featured"
-                      clickable
-                    />,
-                  ]}
-                  items={rosieItems}
-                /> */}
+                    />
+                  })}
+                  items={categoryItems}
+                />
               </div>
             )}
           </section>

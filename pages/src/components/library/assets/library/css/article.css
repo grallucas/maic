@@ -41,6 +41,7 @@
   padding: 0.5rem;
   border-radius: 1000rem;
   margin: 0.1rem;
+  line-height: 3;
 }
 
 .article p > a {
