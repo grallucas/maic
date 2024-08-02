@@ -48,40 +48,27 @@ const nodeTypes: NodeTypes = {
  * Sets up initial nodes: used for inital testing, may be scraped later on.
  * Note: type should always be the custom node type, which currently is 'treeNode'
  */
-const initialNodes = [
-    {
-      id: 'root',
-      type: 'treeNode',
-      position: { x: 0, y: 0 },
-      data: { 
-        name: "Who is ROSIE?",
-        image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
-        description: "Rosie is MSOE's supercomputer! Learn more here!",
-        category: "ROSIE",
-        category_color: "red",
-        highlighted_path: "null",
-        position: "null",
-        link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
-        },
-    },
-    {
-      id: 'child',
-      type: 'treeNode',
-      position: { x: 0, y: 500},
-      data: { 
-        name: "Child Node Test",
-        image_path: "string",
-        description: "string",
-        category: "string",
-        category_color: "string",
-        highlighted_path: "string",
-        position: "string",
-      },
-    },
-  ];
 
 const Tree = (props: TreeProps) => {
-      const [nodes, setNodes] = useState(initialNodes);
+      const [nodes, setNodes] = useState<Node[]>([]);
+
+      useEffect(() => {
+        const fetchNodes = async () => {
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/learning-tree/'); // Replace with your FastAPI endpoint
+                if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setNodes(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchNodes();
+    }, []);
+
     return (
         <div className = 'tree'>
                 <ReactFlow 
