@@ -1,6 +1,19 @@
-.treeNode {
-    width: 20vw;
-  }
+.smalltreeNode {
+  width: 25vw;  
+}
+
+.border{
+  border: 3px solid #fb5050;
+  border-radius: 7%;
+  z-index: 5;
+}
+
+.bigtreenode{
+  width: 40vw;
+  position: relative;
+  left: -12.5vw;
+  text-align: center;
+}
 
 .tags{
   padding: 2%;
@@ -9,3 +22,4 @@
   margin: auto;
   text-align: center;
 }
+
