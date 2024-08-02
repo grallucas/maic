@@ -18,19 +18,19 @@ async def get_modals():
     return {
         "response": [
             Modal(
-                title="Example Modal 1",
-                tags=["Example"],
-                content_ids=["content-id-1", "content-id-2", "content-id-3"],
+                title="ROSIE Competition 2024",
+                tags=["ROSIE 24'"],
+                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
             ),
             Modal(
-                title="Example Modal 2",
-                tags=["Modal"],
-                content_ids=["content-id-4", "content-id-5", "content-id-6"],
+                title="MICS 2024",
+                tags=["MICS 24'"],
+                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
             ),
             Modal(
-                title="Example Modal 3",
-                tags=["Horay!", "Modal!"],
-                content_ids=["content-id-7", "content-id-8", "content-id-9"],
+                title="23-24 Research Groups",
+                tags=["RG-24"],
+                content_ids=["Learning_Resources-RunningJupyterLabOnADGXNode copy", "Learning_Resources-global-protect", "Learning_Resources-how-to-use-jupyter-notebooks", "Learning_Resources-how-to-use-rosie", "Learning_Resources-Pt1_LearningAI copy", "Learning_Resources-pt1-how-to-get-rosie-access"],
             ),
         ]
     }
@@ -51,20 +51,6 @@ async def get_content(content_id: str):
 
 
 @router.get(
-    "/{content_id}/preview",
-    tags=["Content"],
-    description="Get a preview image of a given piece of content.",
-)
-async def get_content_preview(content_id: str):
-    try:
-        image_bytes: bytes = read_image_to_bytes(content_id)
-        return Response(content=image_bytes, media_type="image/png")
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="Requested content not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal Server Error: {e}")
-
-@router.get(
     "/{content_id}/image",
     tags=["Content"],
     description="Get an image located in the img folder"
@@ -80,13 +66,17 @@ async def get_image(content_id: str) -> FileResponse:
     
     raise HTTPException(status_code=404, detail="Image not found.")
 
+
 @router.get(
     "/{content_id}/title-and-authors",
     tags=["Content"],
     description="Get the title and authors of a specific peice of content.",
 )
 async def get_content_title_and_authors(content_id: str):
-    return {"response": "Adam Haile, Brett Storoe, Benjamin Paulson"}
+    markdown = read_markdown_file(content_id).split("\n")
+    title = markdown[3].replace("title:", "").strip()
+    authors = markdown[6].replace("authors:", "").strip().replace(",", ", ")
+    return {"response": {"title": title, "authors": authors}}
 
 
 @router.get(

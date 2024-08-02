@@ -4,25 +4,29 @@ import tempImage from "./assets/library/images/temp-image.jpg";
 import favoriteImage from "./assets/library/images/favorite.png";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Favorite } from "@mui/icons-material";
 
 interface ModalItemPreviewProps {
   articleId?: string;
+  showPreview: boolean;
   openPreview: (articleId: string) => boolean;
   hidePreview: () => void;
+  setShowPreview: (showPreview: boolean) => void;
 }
 
 const ModalItemPreview = (props: ModalItemPreviewProps) => {
   const [liked, isLiked] = React.useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  /* Creates a tag from a string that links to a page referring to all pages containing that tag*/
+  /* Creates a tag from a string that links to a page referring to all pages containing that tag */
   const createTag = (tags: string[]) => {
     return (
       <div className={"page-tags"}>
-        {tags.map((tag: string) => {
+        {tags.map((tag: string, index) => {
           return (
             <Chip
+              key={index}
               component={Link}
               color="primary"
               label={tag}
@@ -36,7 +40,26 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      setTimeout(() => {
+        if (
+          modalRef.current &&
+          !modalRef.current.contains(event.target as Node) &&
+          props.articleId
+        ) {
+          props.setShowPreview(false);
+        }
+      }, 10);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [props.articleId]);
+
+  useEffect(() => {
     const favorite = document.querySelector(".favorite") as HTMLElement;
     if (favorite) {
       if (liked) {
@@ -53,7 +76,8 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
 
   return (
     <div
-      className={`page-preview ${props.articleId ? "show-page-preview" : ""}`}
+      ref={modalRef}
+      className={`page-preview ${props.showPreview ? "show-page-preview" : ""}`}
     >
       <div style={{ padding: "1rem" }}>
         <img

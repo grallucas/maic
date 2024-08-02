@@ -60,7 +60,6 @@ const Article = (props: ArticleProps) => {
 
         const fetchImage = async () => {
           try {
-            console.log(`${baseUrl}/api/v1/library/${ogFile}/image`);
             const response = await fetch(
               `${baseUrl}/api/v1/library/${ogFile}/image`
             );

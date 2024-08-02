@@ -11,56 +11,44 @@ import Article from "./components/library/Article";
 import React from "react";
 import NavBar from "./components/Navbar";
 
-const Library = () => {
-  const [currentArticle, setCurrentArticle] = React.useState("");
-  const [previewedArticle, setPreviewedArticle] = React.useState<string>("");
+interface Modal {
+  title: string;
+  tags: string[];
+  content_ids: string[];
+}
 
-  function openPreview(articleId: string) {
-    if (previewedArticle === articleId) {
-      setPreviewedArticle("");
-      return true;
-    }
-    setPreviewedArticle(articleId);
-    return false;
+const Library = () => {
+  const [currentArticle, setCurrentArticle] = useState("");
+  const [previewedArticle, setPreviewedArticle] = useState<string>("");
+  const [showPreview, setShowPreview] = useState<boolean>(false);
+
+  function openPreview(articleId: string): boolean {
+    let returnValue = false;
+
+    setPreviewedArticle((prevArticleId) => {
+      if (prevArticleId === articleId) {
+        returnValue = true;
+        setShowPreview(false);
+        return "";
+      }
+      returnValue = false;
+      setShowPreview(true);
+      return articleId;
+    });
+
+    return returnValue;
   }
 
   function hidePreview() {
-    setPreviewedArticle("");
-    setCurrentArticle("");
+    setShowPreview(false);
   }
-
-  const rosieItems = [
-    <ModalItem
-      articleId={"Learning_Resources-RunningJupyterLabOnADGXNode copy"}
-      openPreview={openPreview}
-    />,
-    <ModalItem
-      articleId={"Learning_Resources-global-protect"}
-      openPreview={openPreview}
-    />,
-    <ModalItem
-      articleId={"Learning_Resources-how-to-use-jupyter-notebooks"}
-      openPreview={openPreview}
-    />,
-    <ModalItem
-      articleId={"Learning_Resources-how-to-use-rosie"}
-      openPreview={openPreview}
-    />,
-    <ModalItem
-      articleId={"Learning_Resources-Pt1_LearningAI copy"}
-      openPreview={openPreview}
-    />,
-    <ModalItem
-      articleId={"Learning_Resources-pt1-how-to-get-rosie-access"}
-      openPreview={openPreview}
-    />,
-  ];
 
   const location = useLocation();
   const [query, setQuery] = useState<URLSearchParams>(
     new URLSearchParams(location.search)
   );
   const [category, setCategory] = useState<number>(1);
+  const [modals, setModals] = useState<any[] | undefined>(undefined);
   useEffect(() => {
     setQuery(new URLSearchParams(location.search));
   }, [location.search]);
@@ -68,6 +56,63 @@ const Library = () => {
   useEffect(() => {
     setCurrentArticle(query.get("article") ?? "");
   }, [query]);
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/modals`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        let modals: any[] = [];
+        Object.keys(json).forEach((key, index) => {
+          const modal: Modal = json[key];
+          const chips = modal.tags.map((tag, index) => (
+            <Chip
+              key={index}
+              component={Link}
+              color="primary"
+              label={tag}
+              to={`/library?nav=Research&type=${tag
+                .replace(" ", "-")
+                .replace("'", "")}`}
+              clickable
+              deleteIcon={<ArrowForward />}
+              onDelete={() => {}}
+            />
+          ));
+          const content = modal.content_ids.map((contentId) => (
+            <ModalItem
+              key={contentId}
+              articleId={contentId}
+              openPreview={() => openPreview(contentId)}
+            />
+          ));
+          modals.push(
+            <Modal
+              key={index}
+              title={modal.title}
+              chips={chips}
+              items={content}
+            />
+          );
+        });
+        setModals(modals);
+      })
+      .catch((error: Error) => {
+        console.error("Error fetching file:", error);
+      });
+  }, []);
 
   return (
     <div style={{ margin: "0", padding: "0" }}>
@@ -81,24 +126,10 @@ const Library = () => {
           >
             {(query.get("nav") === "Featured" || query.get("nav") === null) && (
               <div>
-                <Modal
-                  title="ROSIE 2024 Finalists"
-                  chip={
-                    <Chip
-                      component={Link}
-                      color="primary"
-                      label="ROSIE 24'"
-                      to="/library?nav=Research&type=ROSIE-24"
-                      clickable
-                      deleteIcon={<ArrowForward />}
-                      onDelete={() => {}}
-                    />
-                  }
-                  items={rosieItems}
-                />
-                <Modal
+                {modals}
+                {/* <Modal
                   title="Categories"
-                  chip={[
+                  chips={[
                     <Chip
                       variant={category === 1 ? "filled" : "outlined"}
                       component={Link}
@@ -155,7 +186,7 @@ const Library = () => {
                     />,
                   ]}
                   items={rosieItems}
-                />
+                /> */}
               </div>
             )}
           </section>
@@ -164,8 +195,10 @@ const Library = () => {
           )}
           <ModalItemPreview
             articleId={previewedArticle}
+            showPreview={showPreview}
             openPreview={openPreview}
             hidePreview={hidePreview}
+            setShowPreview={setShowPreview}
           />
         </nav>
       </div>

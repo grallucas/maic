@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 interface ModalProps {
   title: string;
-  chip: JSX.Element | JSX.Element[];
+  chips: JSX.Element | JSX.Element[];
   items: JSX.Element[];
 }
 
@@ -36,7 +36,7 @@ const Modal = (props: ModalProps) => {
       <CardContent>
         <div className="modal-top-bar">
           <h2 className="modal-header">{props.title}</h2>
-          {props.chip}
+          {props.chips}
         </div>
         <ButtonGroup
           variant="text"
