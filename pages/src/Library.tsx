@@ -8,20 +8,34 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowForward } from "@mui/icons-material";
 import ModalItemPreview from "./components/library/ModalItemPreview";
 import Article from "./components/library/Article";
-import React from "react";
 import NavBar from "./components/Navbar";
 
+/**
+ * The Modal interface to represent the modal object.
+ */
 interface Modal {
   title: string;
   tags: string[];
   content_ids: string[];
 }
 
+/**
+ * The Library component displays the library page of the website.
+ * @returns {JSX.Element} The Library component.
+ */
 const Library = () => {
+  /**
+   * The states of the Library component, including the current article, previewed article, and whether to show the preview.
+   */
   const [currentArticle, setCurrentArticle] = useState("");
   const [previewedArticle, setPreviewedArticle] = useState<string>("");
   const [showPreview, setShowPreview] = useState<boolean>(false);
 
+  /**
+   * Opens the preview of the article with the given article ID.
+   * @param {string} articleId - The article ID to open the preview for.
+   * @returns {boolean} Whether the preview is open.
+   */
   function openPreview(articleId: string): boolean {
     let returnValue = false;
 
@@ -39,24 +53,43 @@ const Library = () => {
     return returnValue;
   }
 
+  /**
+   * Hides the preview of the article.
+   */
   function hidePreview() {
     setShowPreview(false);
   }
 
+  /**
+   * The location of the current page.
+   * The query parameters of the current page.
+   * The category of the current page.
+   * The modals to display on the page.
+   */
   const location = useLocation();
   const [query, setQuery] = useState<URLSearchParams>(
     new URLSearchParams(location.search)
   );
   const [category, setCategory] = useState<number>(1);
   const [modals, setModals] = useState<any[] | undefined>(undefined);
+
+  /**
+   * Gets the current query parameters from the URL.
+   */
   useEffect(() => {
     setQuery(new URLSearchParams(location.search));
   }, [location.search]);
 
+  /**
+   * Sets the current article based on the query parameters.
+   */
   useEffect(() => {
     setCurrentArticle(query.get("article") ?? "");
   }, [query]);
 
+  /**
+   * Fetches the modals from the server and updates the modals state.
+   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -114,6 +147,9 @@ const Library = () => {
       });
   }, []);
 
+  /**
+   * The Library component.
+   */
   return (
     <div style={{ margin: "0", padding: "0" }}>
       <NavBar page="Library" />

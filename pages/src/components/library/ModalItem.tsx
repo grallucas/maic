@@ -4,11 +4,19 @@ import tempImage from "./assets/library/images/temp-image.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+/**
+ * The ModalItemProps interface represents the props that the ModalItem component receives.
+ */
 interface ModalItemProps {
   articleId?: string;
   openPreview?: (articleId: string) => boolean;
 }
 
+/**
+ * Checks if an image exists at the given URL.
+ * @param {string} url - The URL of the image to check. 
+ * @param {void} callback - The callback function to execute after checking the image.
+ */
 function checkImage(url: string, callback: (exists: boolean) => void): void {
   const img = new Image();
 
@@ -23,7 +31,16 @@ function checkImage(url: string, callback: (exists: boolean) => void): void {
   img.src = url;
 }
 
+/**
+ * The ModalItem component displays an item in the modal with the given article ID.
+ * @param {ModalItemProps} props - The props to be passed to the ModalItem component.
+ * @returns {JSX.Element} The ModalItem component.
+ */
 const ModalItem = (props: ModalItemProps) => {
+  /**
+   * The states of the ModalItem component, including the title, authors, and image of the article.
+   * Also the navigate function to navigate to the article page.
+   */
   const navigate = useNavigate();
   const [title, setTitle] = useState<string>(
     "No title defined for this article"
@@ -33,6 +50,9 @@ const ModalItem = (props: ModalItemProps) => {
   );
   const [img, setImg] = useState<string>(tempImage);
 
+  /**
+   * Fetches the image from the server and updates the image states.
+   */
   useEffect(() => {
     if (props.articleId) {
       const parts: string[] = window.location.href.split("/");
@@ -62,6 +82,9 @@ const ModalItem = (props: ModalItemProps) => {
     }
   }, [props.articleId]);
 
+  /**
+   * Fetches the title and authors from the server and updates the title and authors states.
+   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -95,6 +118,9 @@ const ModalItem = (props: ModalItemProps) => {
     }
   }
 
+  /**
+   * The ModalItem component.
+   */
   return (
     <Button sx={{ width: "100%" }} onClick={() => handleRedict()}>
       <div style={{ padding: "1rem" }} id={props.articleId}>

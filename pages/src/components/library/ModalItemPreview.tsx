@@ -7,6 +7,9 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import React, { useRef, useEffect } from "react";
 import { Favorite } from "@mui/icons-material";
 
+/**
+ * The ModalItemPreviewProps interface represents the props that the ModalItemPreview component receives.
+ */
 interface ModalItemPreviewProps {
   articleId?: string;
   showPreview: boolean;
@@ -15,6 +18,11 @@ interface ModalItemPreviewProps {
   setShowPreview: (showPreview: boolean) => void;
 }
 
+/**
+ * Checks if an image exists at the given URL.
+ * @param {string} url - The URL of the image to check. 
+ * @param {void} callback - The callback function to execute after checking the image.
+ */
 function checkImage(url: string, callback: (exists: boolean) => void): void {
   const img = new Image();
 
@@ -29,7 +37,17 @@ function checkImage(url: string, callback: (exists: boolean) => void): void {
   img.src = url;
 }
 
+/**
+ * The ModalItemPreview component displays a preview of an item in the modal with the given article ID.
+ * @param {ModalItemPreviewProps} props - The props to be passed to the ModalItemPreview component.
+ * @returns {JSX.Element} The ModalItemPreview component.
+ */
 const ModalItemPreview = (props: ModalItemPreviewProps) => {
+  /**
+   * The states of the ModalItemPreview component, including the title, authors, abstract, reading time, page length, tags, and image of the article.
+   * Also the liked state of the article.
+   * Also the modal reference.
+   */
   const [title, setTitle] = React.useState<string>("No title defined for this article");
   const [authors, setAuthors] = React.useState<string>("No authors defined for this article");
   const [abstract, setAbstract] = React.useState<string>("No abstract defined for this article");
@@ -40,7 +58,11 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
   const [liked, isLiked] = React.useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  /* Creates a tag from a string that links to a page referring to all pages containing that tag */
+  /**
+   * Creates a tag from a string that links to a page referring to all pages containing that tag
+   * @param {string[]} tags - The tags to create links for.
+   * @returns {JSX.Element} The tags as Chips.
+   */
   const createTag = (tags: string[]) => {
     return (
       <div className={"page-tags"}>
@@ -61,6 +83,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     );
   };
 
+  /**
+   * Fetches the image from the item with the same ID and updates the state.
+   */
   useEffect(() => {
     const div = document.getElementById(props.articleId || "") as HTMLElement;
     if (div) {
@@ -73,6 +98,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     }
   }, [props.articleId]);
 
+  /**
+   * Fetches the title and authors from the item with the same ID and updates the state.
+   */
   useEffect(() => {
     const div = document.getElementById(props.articleId || "") as HTMLElement;
     if (div) {
@@ -83,6 +111,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     }
   }, [props.articleId]);
 
+  /**
+   * Fetches the abstract, reading time, and page length from the server and updates the states.
+   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -114,6 +145,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
       });
   }, [props.articleId]);
 
+  /**
+   * Fetches the tags from the server and updates the state.
+   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -138,6 +172,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
       });
   }, [props.articleId]);
 
+  /**
+   * Handles the click outside of the modal to close the preview.
+   */
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       setTimeout(() => {
@@ -157,6 +194,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     };
   }, [props.articleId]);
 
+  /**
+   * Updates the liked state of the article.
+   */
   useEffect(() => {
     const favorite = document.querySelector(".favorite") as HTMLElement;
     if (favorite) {
@@ -172,6 +212,9 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     }
   }, [liked]);
 
+  /**
+   * The ModalItemPreview component.
+   */
   return (
     <div
       ref={modalRef}

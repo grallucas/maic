@@ -1,10 +1,21 @@
 import "./assets/css/navbar.css";
 
+/**
+ * The NavBarProps interface represents the props that the NavBar component receives.
+ */
 interface NavBarProps {
   page: string;
 }
 
+/**
+ * The NavBar component displays the navigation bar of the website.
+ * @param {NavBarProps} props - The props to be passed to the NavBar component.
+ * @returns {JSX.Element} The NavBar component.
+ */
 const NavBar = (props: NavBarProps) => {
+  /**
+   * The NavBar component.
+   */
   return (
     <div id="toolbar" style={{ textAlign: "center" }}>
       <h3>

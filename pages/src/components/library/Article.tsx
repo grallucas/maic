@@ -6,10 +6,18 @@ import CopyAllIcon from "@mui/icons-material/CopyAll";
 import CheckIcon from "@mui/icons-material/Check";
 import { createRoot } from "react-dom/client";
 
+/**
+ * The ArticleProps interface represents the props that the Article component receives.
+ */
 interface ArticleProps {
   articleId: string;
 }
 
+/**
+ * Converts a date string in the format "dd/mm/yyyy" to a textual representation.
+ * @param {string} dateString - The date string in the format "dd/mm/yyyy".
+ * @returns {string} The textual representation of the date string.
+ */
 function convertDateToTextual(dateString: string) {
   const [day, month, year] = dateString.split("/");
   const months = [
@@ -31,13 +39,25 @@ function convertDateToTextual(dateString: string) {
   return `${monthName} ${day}, ${year}`;
 }
 
+/**
+ * The Article component displays an article with the given article ID.
+ * @param {ArticleProps} props - The props to be passed to the Article component.
+ * @returns {JSX.Element} The Article component.
+ */
 const Article = (props: ArticleProps) => {
+  /**
+   * The states of the Article component, including the title, summary, date, authors, and contents of the article.
+   */
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [date, setDate] = useState<string>("");
   const [authors, setAuthors] = useState<string>("");
   const [contents, setContents] = useState<string>("");
 
+  /**
+   * Fetches the images within the contents of the article from the server and updates the image srcs.
+   * Also adds a copy button to the code blocks in the article.
+   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -105,6 +125,9 @@ const Article = (props: ArticleProps) => {
     });
   }, [contents]);
 
+  /**
+   * Fetches the article with the given article ID from the server and updates the states of the Article component.
+   */
   useEffect(() => {
     if (props.articleId !== "") {
       const parts: string[] = window.location.href.split("/");
@@ -136,6 +159,9 @@ const Article = (props: ArticleProps) => {
     }
   }, [props.articleId]);
 
+  /**
+   * Returns the JSX for the Article component.
+   */
   return (
     <div className="article">
       {!title && !authors && !date && !summary && (

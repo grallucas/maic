@@ -10,16 +10,30 @@ import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import HelpIcon from "@mui/icons-material/Help";
 import { Link } from "react-router-dom";
 
+/**
+ * The LeftPanelProps interface represents the props that the LeftPanel component receives.
+ */
 interface LeftPanelProps {
   query: any;
   setQuery: any;
 }
 
+/**
+ * The LeftPanel component displays the left panel of the library page.
+ * @param {LeftPanelProps} props - The props to be passed to the LeftPanel component.
+ * @returns {JSX.Element} The LeftPanel component.
+ */
 const LeftPanel = (props: LeftPanelProps) => {
+  /**
+   * The state of the articles dropdown based on the query.
+   */
   const [articlesDropdown, areArticlesDropdowned] = useState<boolean>(
     props.query.get("nav") === "Articles"
   );
 
+  /**
+   * Updates the articles dropdown state based on the query.
+   */
   useEffect(() => {
     if (props.query.get("nav") === "Articles") {
       areArticlesDropdowned(true);
@@ -28,6 +42,9 @@ const LeftPanel = (props: LeftPanelProps) => {
     areArticlesDropdowned(false);
   }, [props.query.get("nav")]);
 
+  /**
+   * The LeftPanel component.
+   */
   return (
     <div className="left-panel">
       <h1 className="header">
