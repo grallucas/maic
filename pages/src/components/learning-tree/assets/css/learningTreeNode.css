@@ -2,12 +2,6 @@
   width: 25vw;  
 }
 
-.border{
-  border: 3px solid #fb5050;
-  border-radius: 7%;
-  z-index: 5;
-}
-
 .bigtreenode{
   width: 40vw;
   position: relative;
