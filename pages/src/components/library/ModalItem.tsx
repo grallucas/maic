@@ -97,7 +97,7 @@ const ModalItem = (props: ModalItemProps) => {
 
   return (
     <Button sx={{ width: "100%" }} onClick={() => handleRedict()}>
-      <div style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem" }} id={props.articleId}>
         <img
           src={img}
           alt="Preview"

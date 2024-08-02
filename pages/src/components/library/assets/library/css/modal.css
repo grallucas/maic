@@ -128,7 +128,6 @@
   font-size: 0.75rem;
   line-height: 1rem;
   text-align: justify;
-  height: 22.65vh;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -166,4 +165,8 @@
   background-color: #0578ff;
   text-decoration-line: none;
   box-sizing: border-box;
+}
+
+.bottom-elements {
+  margin-top: auto;
 }

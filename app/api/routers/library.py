@@ -1,4 +1,5 @@
 import os
+import math
 from fastapi import APIRouter, HTTPException
 from ..modules.modules import Modal, SearchContent, SubmitContent
 from fastapi.responses import Response, FileResponse
@@ -85,8 +86,14 @@ async def get_content_title_and_authors(content_id: str):
     description="Get the abstract/description of a specific piece of content.",
 )
 async def get_content_abstract(content_id: str):
-    return {"response": "This is the abstract"}
+    markdown = read_markdown_file(content_id).split("\n")
+    summary = markdown[0].replace("summary:", "").strip()
 
+    text = markdown[9:]
+    time = calculate_reading_speed("\n".join(text))
+    pages = calculate_pages("\n".join(text))
+
+    return {"response": {"abstract": summary, "reading_time": time, "pages": pages}}
 
 @router.get(
     "/{content_id}/tags",
@@ -94,7 +101,9 @@ async def get_content_abstract(content_id: str):
     description="Get all tags associated with a specific piece of content.",
 )
 async def get_content_tags(content_id: str):
-    return {"response": ["tag1", "tag2", "tag3"]}
+    markdown = read_markdown_file(content_id).split("\n")
+    tags = markdown[7].replace("categories:", "").strip().split(",")
+    return {"response": tags}
 
 
 @router.get(
@@ -149,3 +158,18 @@ def read_image_to_bytes(file_name: str):
         img_bytes = img_byte_arr.getvalue()
 
         return img_bytes
+    
+def calculate_reading_speed(text: str, words_per_minute: int = 300) -> int:
+    words = text.split()
+    num_words = len(words)
+    reading_time = num_words / words_per_minute
+    return math.ceil(reading_time)
+
+def calculate_pages(text: str, words_per_length: int = 250) -> int:
+    img_count = text.count("<img")
+    words = text.split()
+    num_words = len(words)
+    pages = num_words / words_per_length + (img_count * 0.5)
+    return math.ceil(pages)
+
+

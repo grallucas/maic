@@ -15,7 +15,28 @@ interface ModalItemPreviewProps {
   setShowPreview: (showPreview: boolean) => void;
 }
 
+function checkImage(url: string, callback: (exists: boolean) => void): void {
+  const img = new Image();
+
+  img.onload = function () {
+    callback(true);
+  };
+
+  img.onerror = function () {
+    callback(false);
+  };
+
+  img.src = url;
+}
+
 const ModalItemPreview = (props: ModalItemPreviewProps) => {
+  const [title, setTitle] = React.useState<string>("No title defined for this article");
+  const [authors, setAuthors] = React.useState<string>("No authors defined for this article");
+  const [abstract, setAbstract] = React.useState<string>("No abstract defined for this article");
+  const [readingTime, setReadingTime] = React.useState<string>("0 minute read");
+  const [pageLength, setPageLength] = React.useState<string>("0 pages");
+  const [tags, setTags] = React.useState<JSX.Element | undefined>();
+  const [img, setImg] = React.useState<string>(tempImage);
   const [liked, isLiked] = React.useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +60,83 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
       </div>
     );
   };
+
+  useEffect(() => {
+    const div = document.getElementById(props.articleId || "") as HTMLElement;
+    if (div) {
+      const img = div.children[0] as HTMLImageElement;
+      checkImage(img.src, function (exists: boolean) {
+        if (exists) {
+          setImg(img.src);
+        }
+      });
+    }
+  }, [props.articleId]);
+
+  useEffect(() => {
+    const div = document.getElementById(props.articleId || "") as HTMLElement;
+    if (div) {
+      const title = div.children[1] as HTMLElement;
+      setTitle(title.innerText);
+      const authors = div.children[2] as HTMLElement;
+      setAuthors(authors.innerText);
+    }
+  }, [props.articleId]);
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/${props.articleId}/abstract`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"]
+        setAbstract(json["abstract"]);
+        setReadingTime(`${json["reading_time"]} minute read`);
+        const pageLength = Number.parseInt(json["pages"]);
+        if (pageLength === 1) {
+          setPageLength("1 page");
+        } else {
+          setPageLength(`${pageLength} pages`);
+        }
+      })
+      .catch((error: Error) => {
+        console.error("Error fetching file:", error);
+      });
+  }, [props.articleId]);
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/${props.articleId}/tags`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        setTags(createTag(json));
+      })
+      .catch((error: Error) => {
+        console.error("Error fetching file:", error);
+      });
+  }, [props.articleId]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -79,15 +177,15 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
       ref={modalRef}
       className={`page-preview ${props.showPreview ? "show-page-preview" : ""}`}
     >
-      <div style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem", display: "flex", flexDirection: "column", height: "89%"}}>
         <img
-          src={tempImage}
+          src={img}
           alt="Preview"
           className="modal-item-preview-image"
         />
         <div className="modal-item-preview-header">
           <h2>
-            Demo Article - A Fantastic Search into the World of Web Development
+            {title}
           </h2>
           <Button
             startIcon={
@@ -110,43 +208,32 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
           />
         </div>
 
-        <p className="authors">Haile A., Paulson B., et al.</p>
+        <p className="authors">{authors}</p>
         <div className="page-reading-information">
-          <p className="page-length">9 Pages</p>
+          <p className="page-length">{pageLength}</p>
           <Divider orientation="vertical" flexItem />
-          <p className="page-time">15 Minute Read</p>
+          <p className="page-time">{readingTime}</p>
         </div>
         <p className="page-description">
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Quis augue non
-          non malesuada aptent leo dolor. Feugiat in quam torquent, ultrices
-          taciti montes. Eu class ullamcorper aenean eleifend donec. Lobortis
-          pretium curabitur elit; faucibus finibus rhoncus vehicula. Amet sit
-          lobortis iaculis amet, orci condimentum netus. Luctus ipsum nibh
-          convallis tristique per diam torquent. Lacus in dis ut adipiscing
-          suspendisse cras aliquet. Neque praesent rhoncus ullamcorper mattis
-          sapien etiam vehicula sapien ultrices. Enim netus ornare phasellus
-          cras nunc ridiculus massa. Habitant mauris duis, elit dapibus ad lorem
-          ornare augue. Neque quis aenean condimentum a odio cubilia magnis
-          dictum condimentum. Imperdiet felis luctus montes euismod duis
-          elementum. Turpis integer ut sit non imperdiet molestie augue duis.
-          Dignissim consequat molestie aliquam curae; amet gravida convallis
-          pulvinar? Fames himenaeos vestibulum ullamcorper dolor tempus.
+          {abstract}
         </p>
-        <Button
-          variant="contained"
-          sx={{ width: "100%" }}
-          component={Link}
-          to={`/library?nav=Articles&article=${props.articleId}`}
-          onClick={() =>
-            props.articleId ? props.openPreview(props.articleId) : {}
-          }
-        >
-          <div className="read-now-button">
-            Read Now
-            <AutoStoriesIcon />
-          </div>
-        </Button>
-        {createTag(["VQ-VAE", "Time Series", "Seq2Seq", "MICS"])}
+        <div className="bottom-elements">
+          <Button
+            variant="contained"
+            sx={{ width: "100%" }}
+            component={Link}
+            to={`/library?nav=Articles&article=${props.articleId}`}
+            onClick={() =>
+              props.articleId ? props.openPreview(props.articleId) : {}
+            }
+          >
+            <div className="read-now-button">
+              Read Now
+              <AutoStoriesIcon />
+            </div>
+          </Button>
+          {tags}
+        </div>
       </div>
     </div>
   );
