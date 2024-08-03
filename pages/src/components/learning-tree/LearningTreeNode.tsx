@@ -51,7 +51,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const chip = [];
     switch(data.category_color) { 
         case 'red': { 
-            chip.push(<Chip color = "error" size = "small" label={data.category}/>)
+            chip.push()
             break; 
         } 
         default: { 
@@ -63,7 +63,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const card = [];
     if(state.raised){
         card.push(
-        <CardActionArea href = {data.link} sx={{p: 1}}>
+        <CardActionArea href = {data.link} sx={{p: 1}} >
             <Grid container spacing={0.5}>
                 <Grid xs={6}>
                     <CardMedia
@@ -78,7 +78,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 </Grid>
                 <Grid xs={6} sx={{mt:7, p:3}}>
                     <CardContent >
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" >
                             {data.description}
                         </Typography>
                     </CardContent>
@@ -90,12 +90,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     </Typography>
                     </CardContent>
                 </Grid>
-                <Grid xs={6} sx={{mt:3.65}}>
-                    <div className='tags'>
-                        <Stack direction="column" spacing={1.5}>
-                            {chip}
-                        </Stack>
-                    </div>
+                <Grid xs={6} container direction={'column'} justifyContent={'flex-end'} alignItems={'stretch'}>
+                        <Chip sx={{position: 'relative', right: -8, bottom: -10, borderRadius: 4, borderBottomRightRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, backgroundColor: "#9A031E", color: '#fff'}} size = "small" label={data.category}/>
                 </Grid>
             </Grid>
         </CardActionArea>)
@@ -123,15 +119,12 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     return (
         <div className={state.className}>
             <Card 
-            sx={{border: 3, borderRadius: 4, borderColor: data.category_color}}
+            sx={{border: 3, borderRadius: 4, borderColor:'#9A031E', background: 'linear-gradient(to top, #0c0d0e, #750000)', color: '#fff'}}
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
             onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
             raised = {state.raised}
-            style={{background: '#404040'}}
             >
-                
-                    {card}
-                
+                {card}
             </Card>
         </div>
     );
