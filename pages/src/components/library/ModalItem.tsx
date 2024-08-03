@@ -65,7 +65,7 @@ const ModalItem = (props: ModalItemProps) => {
       const fetchImage = async () => {
         try {
           const response = await fetch(
-            `${baseUrl}/api/v1/library/${props.articleId}/image`
+            `${baseUrl}/api/v1/library/${props.articleId}/thumbnail`
           );
           const blob = await response.blob();
           const imageUrl = URL.createObjectURL(blob);

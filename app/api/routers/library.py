@@ -82,6 +82,20 @@ async def get_content(content_id: str):
 
 
 @router.get(
+    "/{content_id}/thumbnail",
+    tags=["Content"],
+    description="Get the thumbnail of an article located in the img folder",
+)
+async def get_thumbnailo(content_id: str) -> FileResponse:
+    markdown = read_markdown_file(content_id).split("\n")
+    file_path = markdown[4].replace("image:", "").strip("")[3:]
+    if os.path.exists(file_path):
+        return FileResponse(file_path)
+
+    raise HTTPException(status_code=404, detail="Image not found.")
+
+
+@router.get(
     "/{content_id}/image",
     tags=["Content"],
     description="Get an image located in the img folder",
