@@ -11,16 +11,23 @@ router = APIRouter()
 
 @router.get("/tags", description="Get all tags available in the library.")
 async def get_tags():
-    tags = []
+    tags = {}
     for item in os.listdir(f"{os.getcwd()}/content"):
         if "Learning_Resources" in item:
             markdown = read_markdown_file(item.replace(".md", "")).split("\n")
             md_tags = markdown[7].replace("categories:", "").strip().split(",")
             for tag in md_tags:
                 if tag not in tags:
-                    tags.append(tag)
+                    tags[tag] = 1
+                else:
+                    tags[tag] += 1
 
-    return {"response": [tag.strip() for tag in tags]}
+    valid_tags = []
+    for tag, value in tags.items():
+        if value >= 3:
+            valid_tags.append(tag)
+    
+    return {"response": [tag.strip() for tag in valid_tags]}
 
 
 @router.get("/modals", description='Get all modals to display on the "Featured" page.')
@@ -79,6 +86,20 @@ async def get_content(content_id: str):
         raise HTTPException(status_code=404, detail="Requested content not found.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {e}")
+
+
+@router.get(
+    "/{content_id}/thumbnail",
+    tags=["Content"],
+    description="Get the thumbnail of an article located in the img folder",
+)
+async def get_thumbnailo(content_id: str) -> FileResponse:
+    markdown = read_markdown_file(content_id).split("\n")
+    file_path = markdown[4].replace("image:", "").strip("")[3:]
+    if os.path.exists(file_path):
+        return FileResponse(file_path)
+
+    raise HTTPException(status_code=404, detail="Image not found.")
 
 
 @router.get(
@@ -153,7 +174,7 @@ async def get_tag_content(tag: str):
             tags = [tag.strip() for tag in markdown[7].replace("categories:", "").strip().lower().split(",")]
             if tag in tags:
                 articles.append(item.replace(".md", ""))
-    return {"response": articles}
+    return {"response": sorted(articles)}
 
 
 @router.get(

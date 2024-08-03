@@ -1,5 +1,5 @@
 import "./assets/library/css/modal.css";
-import { ButtonGroup, Card, CardContent } from "@mui/material";
+import { Box, ButtonGroup, Card, CardContent } from "@mui/material";
 import { useState, useEffect } from "react";
 
 /**
@@ -18,37 +18,6 @@ interface ModalProps {
  */
 const Modal = (props: ModalProps) => {
   /**
-   * The states of the Modal component, including the width of the window and the number of columns for modal items.
-   */
-  const [width, setWidth] = useState(window.innerWidth);
-  const [columns, setColumns] = useState<number>(6);
-
-  /**
-   * Updates the width state based on the window width.
-   */
-  useEffect(() => {
-    // Define a function to update the width state
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    // Add event listener for resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  /**
-   * Updates the number of columns based on the window width.
-   */
-  useEffect(() => {
-    setColumns(Math.round(window.innerWidth / 320));
-  }, [width]);
-
-  /**
    * The Modal component.
    */
   return (
@@ -61,9 +30,9 @@ const Modal = (props: ModalProps) => {
         <ButtonGroup
           variant="text"
           color="inherit"
-          sx={{ width: "100%", marginTop: "1rem" }}
+          sx={{ width: "100%", marginTop: "1rem", flexWrap: "wrap" }}
         >
-          {props.items.slice(0, columns)}
+          {props.items}
         </ButtonGroup>
       </CardContent>
     </Card>
