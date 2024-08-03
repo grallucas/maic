@@ -1,5 +1,5 @@
 .article {
-  width: calc(100% - 300px);
+  width: max(calc(100% - 300px), calc(100% - 12.5%));
   min-height: 100vh;
   padding-left: 50px;
   padding-right: 50px;
@@ -8,7 +8,7 @@
   text-align: left;
   padding-bottom: 3rem;
   padding-top: 40px;
-  margin-left: 200px;
+  margin-left: max(200px, 12.5%);
 }
 
 .article h1 {
