@@ -81,7 +81,7 @@
   margin-bottom: 15px;
 }
 
-ttyprint {
+prettyprint {
   font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace !important;
   border: 0 !important;
 }
