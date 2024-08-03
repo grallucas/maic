@@ -225,6 +225,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
           src={img}
           alt="Preview"
           className="modal-item-preview-image"
+          loading="lazy"
         />
         <div className="modal-item-preview-header">
           <h2>

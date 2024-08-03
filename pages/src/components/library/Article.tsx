@@ -11,6 +11,7 @@ import { createRoot } from "react-dom/client";
  */
 interface ArticleProps {
   articleId: string;
+  type: "markdown" | "pdf" | "link" | "video"
 }
 
 /**
@@ -164,24 +165,32 @@ const Article = (props: ArticleProps) => {
    */
   return (
     <div className="article">
-      {!title && !authors && !date && !summary && (
-        <div>
-          <h1>404 - Article Not Found</h1>
-          <p>No article was found here. Try again looking for the article.</p>
-        </div>
-      )}
-      {title && <span className="article-title"><Markdown>{`# ${title}`}</Markdown></span>}
-      {authors && <Markdown>{`### **Authors:** ${authors}`}</Markdown>}
-      {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
-      {summary && <Markdown>{`### ${summary}`}</Markdown>}
-      {title && authors && date && summary && (
-        <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
-      )}
+      <div style={{display: props.type === "markdown" ? "block" : "none"}}>
+        {!title && !authors && !date && !summary && (
+          <div>
+            <h1>404 - Article Not Found</h1>
+            <p>No article was found here. Try again looking for the article.</p>
+          </div>
+        )}
+        {title && <span className="article-title"><Markdown>{`# ${title}`}</Markdown></span>}
+        {authors && <Markdown>{`### **Authors:** ${authors}`}</Markdown>}
+        {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
+        {summary && <Markdown>{`### ${summary}`}</Markdown>}
+        {title && authors && date && summary && (
+          <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
+        )}
+      </div>
+      <div style={{display: props.type === "pdf" ? "block" : "none"}}>
+      {
+       <p>Test</p>
+      }
+      </div>
       {<script>
         // TODO: fix
         document.querySelectorAll('code').forEach(x =&gt; x.classList.add('prettyprint'))
       </script>}
       {<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>}
+
     </div>
   );
 };

@@ -182,7 +182,6 @@ const Library = () => {
    * Fetches the articles from the server and updates the categoryItems state.
    */
   useEffect(() => {
-    console.log(category);
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
     if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
@@ -243,6 +242,110 @@ const Library = () => {
   }, []);
 
   /**
+   * Gets the modals for a specific subsection
+   */
+  useEffect(() => {
+    if(currentArticle === "") {
+      const parts: string[] = window.location.href.split("/");
+      let baseUrl: string = "";
+      if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+        baseUrl = `${parts[0]}//127.0.0.1:8000`;
+      } else {
+        baseUrl = `${parts[0]}//${parts[2]}`;
+      }
+      fetch(`${baseUrl}/api/v1/library/subsection/${query.get("nav")}`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data: any) => {
+          const json = data["response"];
+          let modals: any[] = [];
+          Object.keys(json).forEach((key, index) => {
+            const modal: Modal = json[key];
+            console.log(modal);
+            const chips = modal.tags.map((tag, index) => (
+              <Chip
+                key={index}
+                component={Link}
+                color="primary"
+                label={tag}
+                to={`/library?nav=${query.get("nav")}`}
+                clickable
+                deleteIcon={<ArrowForward />}
+                onDelete={() => {}}
+              />
+            ));
+            const contentIds = modal.content_ids.sort()
+            const content = contentIds.map((contentId) => (
+              <ModalItem
+                key={contentId}
+                articleId={contentId}
+                openPreview={() => openPreview(contentId)}
+                columns={columns}
+              />
+            ));
+            modals.push(
+              <Modal
+                key={index}
+                title={modal.title}
+                chips={chips}
+                items={content}
+              />
+            );
+          });
+          setModals(modals);
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+      }
+  }, [query.get("nav")]);
+
+  /**
+   * Get the tagged content when type is set
+   */
+  useEffect(() => {
+    if(query.get("type") && currentArticle === "") {
+      const parts: string[] = window.location.href.split("/");
+      let baseUrl: string = "";
+      if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+        baseUrl = `${parts[0]}//127.0.0.1:8000`;
+      } else {
+        baseUrl = `${parts[0]}//${parts[2]}`;
+      }
+
+      fetch(`${baseUrl}/api/v1/library/${query.get("type")}/tagged-content`)
+      .then((response: Response) => {
+        if(!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data: any) => {
+        const json = data["response"];
+        const items: any[] = []
+        Object.keys(json).forEach((key, index) => {
+          items.push(
+            <ModalItem
+              key={index}
+              articleId={json[key]}
+              openPreview={() => openPreview(json[key])}
+              columns={columns}
+            />
+          )
+        })
+
+        const tag = query.get("type") || "defaultTitle";
+        const modal = <Modal title={tag} chips={[]} items={items}/>
+        setModals([modal])
+      })
+    }
+  }, [query.get("type")])
+
+  /**
    * The Library component.
    */
   return (
@@ -251,34 +354,37 @@ const Library = () => {
       <div className="App">
         <nav style={{ display: "flex" }}>
           <LeftPanel query={query} setQuery={setQuery} />
-          <section
-            className="modals"
-            style={{ maxWidth: "93.25vw", paddingTop: "40px" }}
-          >
-            {(query.get("nav") === "Featured" || query.get("nav") === null) && (
+          { query.get("article") === null &&
+            <section
+              className="modals"
+              style={{ maxWidth: "93.25vw", paddingTop: "40px" }}
+            >
               <div>
                 {modals}
-                <Modal
-                  title="Categories"
-                  chips={categoryTags.map((tag, index) => {
-                    return <Chip
-                      key={index + 1}
-                      variant={category === tag ? "filled" : "outlined"}
-                      component={Link}
-                      color="primary"
-                      label={tag}
-                      onClick={() => setCategory(tag)}
-                      to="/library?nav=Featured"
-                      clickable
+                {(query.get("nav") === "Featured" || query.get("nav") === null) && (
+                  
+                    <Modal
+                      title="Categories"
+                      chips={categoryTags.map((tag, index) => {
+                        return <Chip
+                          key={index + 1}
+                          variant={category === tag ? "filled" : "outlined"}
+                          component={Link}
+                          color="primary"
+                          label={tag}
+                          onClick={() => setCategory(tag)}
+                          to="/library?nav=Featured"
+                          clickable
+                        />
+                      })}
+                      items={categoryItems}
                     />
-                  })}
-                  items={categoryItems}
-                />
+                )}
               </div>
-            )}
-          </section>
+            </section>
+          }
           {query.get("article") !== null && (
-            <Article articleId={currentArticle} />
+            <Article articleId={currentArticle} type="markdown"/>
           )}
           <ModalItemPreview
             articleId={previewedArticle}
