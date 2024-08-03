@@ -42,7 +42,6 @@ async def serve_index(full_path: str):
         return FileResponse(file_path)
     return FileResponse("index.html")
 
-
 # Include the API router
 app.include_router(api_router, prefix="/api/v1")
 app.include_router(router)

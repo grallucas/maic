@@ -1,0 +1,11 @@
+.smalltreeNode {
+  width: 25vw;  
+}
+
+.bigtreenode{
+  width: 40vw;
+  position: relative;
+  left: -12.5vw;
+  text-align: center;
+  
+}

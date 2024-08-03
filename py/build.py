@@ -9,7 +9,7 @@ from time import time # profiling
 
 t1 = time()
 
-TOP_PAGES = ['index', 'library', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
+TOP_PAGES = ['index', 'library', 'learning-tree', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
@@ -39,8 +39,8 @@ def common_toolbar(page_name):
         h3(a(img(src = 'img/misc/Sticker.png', height='25', style='float: left; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;'))),
         elems(
             a(
-                p(get_page_display_name(page if page != "library" else page.title())),
-                href = ('#below-splash' if page_name=='index' and page=='index' else f'{page}.html' if page!="library" else page),
+                p(get_page_display_name(page if (page != "library" and page !="learning-tree") else page.replace("-", " ").title())),
+                href = ('#below-splash' if page_name=='index' and page=='index' else f'{page}.html' if (page!="library" and page!="learning-tree") else page),
                 style = 'background-color: rgb(55, 34, 107); font-weight: bold; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;' if page == page_name else ''
             ) for page in TOP_PAGES[:-1]
         ),
