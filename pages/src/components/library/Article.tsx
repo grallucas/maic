@@ -123,6 +123,14 @@ const Article = (props: ArticleProps) => {
         const root = createRoot(iconContainer);
         root.render(<CopyAllIcon color="inherit" />);
       }
+
+      const scriptPrettify1 = document.createElement('script');
+      scriptPrettify1.innerHTML = "document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))";
+      document.body.appendChild(scriptPrettify1);
+
+      const scriptPrettify2 = document.createElement('script');
+      scriptPrettify2.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+      document.body.appendChild(scriptPrettify2);
     });
   }, [contents]);
 
@@ -185,13 +193,7 @@ const Article = (props: ArticleProps) => {
        <p>Test</p>
       }
       </div>
-      {<script>
-        // TODO: fix
-        document.querySelectorAll('code').forEach(x =&gt; x.classList.add('prettyprint'))
-      </script>}
-      {<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>}
-
-    </div>
+      </div>
   );
 };
 
