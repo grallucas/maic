@@ -12,7 +12,7 @@ router = APIRouter()
 @router.get("/tags", description="Get all tags available in the library.")
 async def get_tags():
     tags = []
-    for item in os.listdir(f"{os.getcwd()}\\content"):
+    for item in os.listdir(f"{os.getcwd()}/content"):
         if "Learning_Resources" in item:
             markdown = read_markdown_file(item.replace(".md", "")).split("\n")
             md_tags = markdown[7].replace("categories:", "").strip().split(",")
@@ -144,7 +144,7 @@ async def get_content_tags(content_id: str):
 async def get_tag_content(tag: str):
     tag = tag.strip().lower()
     articles = []
-    for item in os.listdir(f"{os.getcwd()}\\content"):
+    for item in os.listdir(f"{os.getcwd()}/content"):
         if "Learning_Resources" in item:
             if tag == "all":
                 articles.append(item.replace(".md", ""))
@@ -197,12 +197,12 @@ async def submit_content(submission: SubmitContent):
 
 
 def read_markdown_file(file_name: str):
-    with open(f"{os.getcwd()}\\content\\{file_name}.md", "r", encoding="utf-8") as file:
+    with open(f"{os.getcwd()}/content/{file_name}.md", "r", encoding="utf-8") as file:
         return file.read()
 
 
 def read_image_to_bytes(file_name: str):
-    with Image.open(f"{os.getcwd()}\\img\\article_content\\{file_name}.png") as img:
+    with Image.open(f"{os.getcwd()}/img/article_content/{file_name}.png") as img:
         img_byte_arr = io.BytesIO()
         img.save(img_byte_arr, format=img.format)
         img_bytes = img_byte_arr.getvalue()

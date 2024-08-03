@@ -170,7 +170,7 @@ const Article = (props: ArticleProps) => {
           <p>No article was found here. Try again looking for the article.</p>
         </div>
       )}
-      {title && <Markdown>{`# ${title}`}</Markdown>}
+      {title && <span className="article-title"><Markdown>{`# ${title}`}</Markdown></span>}
       {authors && <Markdown>{`### **Authors:** ${authors}`}</Markdown>}
       {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
       {summary && <Markdown>{`### ${summary}`}</Markdown>}
