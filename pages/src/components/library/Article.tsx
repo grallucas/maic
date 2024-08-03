@@ -177,6 +177,11 @@ const Article = (props: ArticleProps) => {
       {title && authors && date && summary && (
         <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
       )}
+      {<script>
+        // TODO: fix
+        document.querySelectorAll('code').forEach(x =&gt; x.classList.add('prettyprint'))
+      </script>}
+      {<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>}
     </div>
   );
 };
