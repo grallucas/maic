@@ -1,0 +1,82 @@
+.article {
+  width: max(calc(100% - 300px), calc(100% - 12.5%));
+  min-height: 100vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgb(25, 25, 30);
+  color: white;
+  text-align: left;
+  padding-bottom: 3rem;
+  padding-top: 40px;
+  margin-left: max(200px, 12.5%);
+}
+
+.article h1 {
+  font-size: 3rem;
+}
+
+.article h3 {
+  color: rgb(139, 140, 173);
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.article pre {
+  background-color: rgb(35, 39, 42);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.article pre > code {
+  display: inline-block;
+  width: 100%;
+  overflow: auto;
+  padding-left: 1rem;
+  border-radius: 1rem;
+}
+
+.article p > code {
+  background-color: rgb(35, 39, 42);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: 0.1rem;
+  line-height: 3;
+}
+
+.article p > a {
+  color: rgb(224, 132, 255);
+}
+
+.article img {
+  margin: 1rem 0;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(25, 25, 30);
+  border: 0;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.copy-button span {
+  width: 24px;
+  height: 24px;
+}
+
+.copy-button:hover {
+  background-color: #1976d2;
+}
+
+.article-title > h1{
+  margin-bottom: 15px;
+}

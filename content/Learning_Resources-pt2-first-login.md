@@ -34,11 +34,11 @@ Open up the new program by tyoing git in your search bar, and clicking git bash.
 `ssh username@dh-mgmt2.hpc.msoe.edu`<br><br>
 Here's an overview of what we will be doing throughout this article:
 
-1. SSH into Rosie (`ssh username@dh-mgmt2.hpc.msoe.edu`)
-2. Enter the one time password that you recieved from Dr. Retert
-3. Reenter your one time password
-4. Create a new password
-5. Enter the new password again
+    1. SSH into Rosie (`ssh username@dh-mgmt2.hpc.msoe.edu`)
+    2. Enter the one time password that you recieved from Dr. Retert
+    3. Reenter your one time password
+    4. Create a new password
+    5. Enter the new password again
 
 #### 1. SSH Into ROSIE
 Once you have Git Bash open, type the following command, replacing username with your username (your email without the msoe.edu)<br>

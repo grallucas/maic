@@ -1,0 +1,172 @@
+.modal {
+  background-color: #d9d9d9 !important;
+  padding: 1rem !important;
+  border-radius: 1rem !important;
+  margin-left: 15%;
+  width: 82vw;
+}
+
+.modal-header {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.modal-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-item-header {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  text-align: justify;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.authors {
+  color: #0578ff;
+  width: 100%;
+  text-align: left;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Modal Item Preview Styling */
+
+/* Page Preview animation set up source, Dao utilized:
+ Mitul Garg's answer
+ https://stackoverflow.com/questions/68372798/reactjs-showing-sidebar-menu-with-animation*/
+.page-preview {
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  background-color: #293562;
+  color: white;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translate(100%);
+}
+
+.show-page-preview {
+  transform: translate(0);
+}
+
+.modal-item-preview-image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 37.5vh;
+  width: auto;
+  height: auto;
+}
+
+.modal-item-preview-header {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  justify-items: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+.modal-item-preview-header h2 {
+  padding-right: 1rem;
+}
+
+.like-button {
+  width: 100%;
+  height: 100%;
+}
+
+.favorite {
+  transition: 0.35s color ease-in-out !important;
+}
+
+.transition {
+  color: white !important;
+  scale: 1 !important;
+}
+
+.page-preview .authors {
+  text-align: center;
+  color: white;
+  font-style: normal;
+}
+
+.page-reading-information {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.page-reading-information p {
+  font-size: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+.page-reading-information hr {
+  border-color: white !important;
+}
+
+.page-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-now-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.page-tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  height: 1em;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.tag-button {
+  width: 25%;
+}
+
+.page-tag {
+  border-radius: 3px;
+  padding: 0.25rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #0578ff;
+  text-decoration-line: none;
+  box-sizing: border-box;
+}
+
+.bottom-elements {
+  margin-top: auto;
+}
