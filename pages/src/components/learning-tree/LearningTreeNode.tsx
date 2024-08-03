@@ -3,13 +3,9 @@
  * Link to ReactFlow custom node documentation (General): https://reactflow.dev/learn/customization/custom-nodes
  */
 import React, { useState } from 'react';
-import { Background, Handle, Position } from '@xyflow/react';
-import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import { CardActionArea, useThemeProps } from '@mui/material';
 import type { Node, NodeProps } from '@xyflow/react';
@@ -31,34 +27,19 @@ type treeNode = Node<{
 
 const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
 
-    // const useStyles = makeStyles({
-    //     root: {
-    //       maxWidth: 310,
-    //       transition: "transform 0.15s ease-in-out"
-    //     },
-    //     cardHovered: {
-    //       transform: "scale3d(1.05, 1.05, 1)"
-    //     }
-    //   });
+    //Default colors to use if nothing to specified
+    let baseColor = '#fff';
+    let gradientColor = '#fff';
+    let textColor = '#fff';
 
-    const [state, setState] = useState({
-        raised:false, 
-        className: 'smalltreenode',
-    })
-    
-    //This switch statement below dynamically sets the color of the tags for each node based on data.category_color
-    //This statement will be added to when needed to add in more colors
-    const chip = [];
-    switch(data.category_color) { 
-        case 'red': { 
-            chip.push()
-            break; 
-        } 
-        default: { 
-            chip.push(<Chip color = "default" size = "small" label={data.category} />)
-            break; 
-        } 
+    //Will eventually be a switch statement for each supported color
+    if(data.category_color === 'red'){
+        baseColor = '#9A031E'
+        gradientColor= '#750000'
+        textColor='#fff'
     }
+
+    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
     const card = [];
     if(state.raised){
@@ -76,22 +57,23 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                         sx={{borderRadius: 2}}
                     />
                 </Grid>
-                <Grid xs={6} sx={{mt:7, p:3}}>
-                    <CardContent >
-                        <Typography variant="body2" >
-                            {data.description}
-                        </Typography>
+                <Grid xs={6} sx={{mt:10}}>
+                    <CardContent>
+                        <div>
+                        {data.description}
+                        </div>
                     </CardContent>
                 </Grid>
                 <Grid xs={6} sx={{mt:2}}>
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                        <div className='title'>
                         {data.name}
-                    </Typography>
+                        </div>
                     </CardContent>
                 </Grid>
-                <Grid xs={6} container direction={'column'} justifyContent={'flex-end'} alignItems={'stretch'}>
-                        <Chip sx={{position: 'relative', right: -8, bottom: -10, borderRadius: 4, borderBottomRightRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, backgroundColor: "#9A031E", color: '#fff'}} size = "small" label={data.category}/>
+                <Grid xs={3}></Grid>
+                <Grid xs={3} container direction={'column'} justifyContent={'flex-end'} alignItems={'stretch'}>
+                    <Chip sx={{position: 'relative', right: -8, bottom: -10, borderRadius: 4, borderBottomRightRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, backgroundColor: baseColor, color: textColor}} size = "small" label={data.category}/>
                 </Grid>
             </Grid>
         </CardActionArea>)
@@ -107,19 +89,18 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     alt="Image"
                     sx={{borderRadius: 2}}
                 />
-            
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <div>
                     {data.name}
-                </Typography>
+                </div>
             </CardContent>
         </CardActionArea>)
     }
 
     return (
         <div className={state.className}>
-            <Card 
-            sx={{border: 3, borderRadius: 4, borderColor:'#9A031E', background: 'linear-gradient(to top, #0c0d0e, #750000)', color: '#fff'}}
+            <Card className='card'
+            sx={{border: 3, borderRadius: 4, borderColor: baseColor, background: `linear-gradient(to top, #0c0d0e, ${gradientColor})`, color: textColor}}
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
             onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
             raised = {state.raised}

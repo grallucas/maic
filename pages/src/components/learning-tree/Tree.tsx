@@ -72,10 +72,11 @@ const initialNodes = [
       name: "Child Node Test",
       image_path: "string",
       description: "string",
-      category: "string",
+      category: "ROSIE",
       category_color: "string",
       highlighted_path: "string",
       position: "string",
+      link: '/learning-tree',
     },
   },
 ];
