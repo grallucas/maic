@@ -298,8 +298,17 @@ async def submit_content(submission: SubmitContent):
 
 
 def read_markdown_file(file_name: str):
-    with open(f"{os.getcwd()}/content/{file_name}.md", "r", encoding="utf-8") as file:
-        return file.read()
+    folders = []
+    for folder in os.listdir(f"{os.getcwd()}/content"):
+        if ".md" not in folder:
+            folders.append(folder)
+    
+    for folder in folders:
+        for sub_folder in os.listdir(f"{os.getcwd()}/content/{folder}"):
+            for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
+                if file_name in file:
+                    with open(f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md", "r", encoding="utf-8") as file:
+                        return file.read()
 
 
 def read_image_to_bytes(file_name: str):
