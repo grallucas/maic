@@ -11,6 +11,7 @@ import { createRoot } from "react-dom/client";
  */
 interface ArticleProps {
   articleId: string;
+  type: "markdown" | "pdf" | "link" | "video"
 }
 
 /**
@@ -164,7 +165,7 @@ const Article = (props: ArticleProps) => {
    */
   return (
     <div className="article">
-      {!title && !authors && !date && !summary && (
+      {props.type === "markdown" && !title && !authors && !date && !summary && (
         <div>
           <h1>404 - Article Not Found</h1>
           <p>No article was found here. Try again looking for the article.</p>
@@ -177,6 +178,9 @@ const Article = (props: ArticleProps) => {
       {title && authors && date && summary && (
         <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
       )}
+      {
+        props.type === "pdf" && <p>Test</p>
+      }
     </div>
   );
 };

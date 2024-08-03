@@ -26,7 +26,7 @@ async def get_tags():
     for tag, value in tags.items():
         if value >= 3:
             valid_tags.append(tag)
-    
+
     return {"response": [tag.strip() for tag in valid_tags]}
 
 
@@ -157,6 +157,7 @@ async def get_content_tags(content_id: str):
     tags = markdown[7].replace("categories:", "").strip().split(",")
     return {"response": tags}
 
+
 @router.get(
     "/{tag}/tagged-content",
     tags=["Content"],
@@ -171,7 +172,14 @@ async def get_tag_content(tag: str):
                 articles.append(item.replace(".md", ""))
                 continue
             markdown = read_markdown_file(item.replace(".md", "")).split("\n")
-            tags = [tag.strip() for tag in markdown[7].replace("categories:", "").strip().lower().split(",")]
+            tags = [
+                tag.strip()
+                for tag in markdown[7]
+                .replace("categories:", "")
+                .strip()
+                .lower()
+                .split(",")
+            ]
             if tag in tags:
                 articles.append(item.replace(".md", ""))
     return {"response": sorted(articles)}
@@ -182,7 +190,79 @@ async def get_tag_content(tag: str):
     description="Get all modals and content associated with a specific subsection.",
 )
 async def get_subsection(subsection_name: str):
-    return {"response": subsection_name}
+    if subsection_name == "Featured":
+        return await get_modals()
+    if subsection_name == "Research":
+        return {
+            "response": [
+                Modal(
+                    title="Research",
+                    tags=[],
+                    content_ids=[
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                    ],
+                ),
+            ]
+        }
+    
+    if subsection_name == "Articles":
+        return {
+            "response": [
+                Modal(
+                    title="Articles",
+                    tags=[],
+                    content_ids=[
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                    ],
+                ),
+            ]
+        }
+    
+    if subsection_name == "Videos":
+        return {
+            "response": [
+                Modal(
+                    title="Videos",
+                    tags=[],
+                    content_ids=[
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                        "Learning_Resources-global-protect",
+                        "Learning_Resources-Pt5_LearningAI",
+                        "Learning_Resources-pt2-first-login",
+                        "Learning_Resources-how-to-use-rosie",
+                        "Learning_Resources-Pt1_LearningAI copy",
+                        "Learning_Resources-pt1-how-to-get-rosie-access",
+                    ],
+                ),
+            ]
+        }
 
 
 @router.post("/search", description="Search for content in the library.")

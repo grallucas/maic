@@ -2,7 +2,7 @@
 
 .left-panel {
   padding-top: 40px;
-  width: 12.5%;
+  width: max(200px, 12.5%);
   height: 100vh;
   background: linear-gradient(to top, #0c0d0e, #202427);
   box-shadow: 1px 0px 3px 1px #202427;

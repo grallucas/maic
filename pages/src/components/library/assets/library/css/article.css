@@ -1,5 +1,5 @@
 .article {
-  width: 100%;
+  width: max(calc(100% - 300px), calc(100% - 12.5%));
   min-height: 100vh;
   padding-left: 15%;
   padding-right: 1%;

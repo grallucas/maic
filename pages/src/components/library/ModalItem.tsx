@@ -130,6 +130,7 @@ const ModalItem = (props: ModalItemProps) => {
           alt="Preview"
           style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
           className={props.articleId}
+          loading="lazy"
         ></img>
         <h3 className="modal-item-header">{title}</h3>
         <p className="authors">{authors}</p>
