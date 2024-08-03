@@ -32,6 +32,34 @@ const Library = () => {
   const [currentArticle, setCurrentArticle] = useState("");
   const [previewedArticle, setPreviewedArticle] = useState<string>("");
   const [showPreview, setShowPreview] = useState<boolean>(false);
+  const [columns, setColumns] = useState<number>(6);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  /**
+  * Updates the width state based on the window width.
+  */
+  useEffect(() => {
+    // Define a function to update the width state
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    // Add event listener for resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  
+  /**
+   * Updates the number of columns based on the window width.
+   */
+  useEffect(() => {
+    setColumns(Math.round(window.innerWidth / 320));
+  }, [width]);
 
   /**
    * Opens the preview of the article with the given article ID.
@@ -131,6 +159,7 @@ const Library = () => {
               key={contentId}
               articleId={contentId}
               openPreview={() => openPreview(contentId)}
+              columns={columns}
             />
           ));
           modals.push(
@@ -177,6 +206,7 @@ const Library = () => {
               key={json[key]}
               articleId={json[key]}
               openPreview={() => openPreview(json[key])}
+              columns={columns}
             />
           )
         })

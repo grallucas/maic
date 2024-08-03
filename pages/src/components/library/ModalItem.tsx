@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 interface ModalItemProps {
   articleId?: string;
   openPreview?: (articleId: string) => boolean;
+  columns: number;
 }
 
 /**
@@ -122,7 +123,7 @@ const ModalItem = (props: ModalItemProps) => {
    * The ModalItem component.
    */
   return (
-    <Button sx={{ width: "100%" }} onClick={() => handleRedict()}>
+    <Button sx={{ width: "100%", flex: `1 0 ${100 / props.columns}%` }} onClick={() => handleRedict()}>
       <div style={{ padding: "1rem" }} id={props.articleId}>
         <img
           src={img}
