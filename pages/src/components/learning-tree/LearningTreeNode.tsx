@@ -51,7 +51,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                         component="img"
                         height='200'
                         image={
-                            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/Sticker/image"
+                            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
                         }
                         alt="Image"
                         sx={{borderRadius: 2}}
@@ -84,7 +84,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     component="img"
                     height="200"
                     image={
-                        window.location.href.includes("3000") ? data.image_path : "/api/v1/library/Sticker/image"
+                        window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
                     }
                     alt="Image"
                     sx={{borderRadius: 2}}
