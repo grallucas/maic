@@ -1,5 +1,5 @@
 summary: Inferencing is the process of an algorithm reaching a final answer -- the important part is if it's right or wrong.
-order: 3
+type: md
 date: 22/8/2023
 title: Learning AI (Pt. 3): Inferencing
 image: ./img/thumbnails/what_is_ai_3.png
@@ -12,6 +12,7 @@ Artificial Intelligence (AI) is transforming the way we interact with technology
 **Warning: This article is still a work in progress -- we plan to complete this module before our first Introductory workshop on (9/7)**
 
 # What is Inferencing?
+
 Inferencing can be thought of as the cognitive process of drawing conclusions, making predictions, or forming interpretations based on available information and using previously-compiled knowledge. Just like humans make informed decisions by considering various factors, AI systems employ inferencing to reach logical outcomes. In essence, **inferencing enables AI to bridge the gap between input data and meaningful output.**
 
 To connect this concept to real-world applications, let's consider the example of a self-driving car. The car's sensors collect data about the surrounding environment, such as the distance of other vehicles, the speed limit, and the presence of pedestrians. The AI system uses inferencing to analyze this data and make decisions about the car's speed, direction, and other driving actions. In this case, the input data is the information collected by the sensors, and the output is the car's driving decision.
@@ -19,6 +20,7 @@ To connect this concept to real-world applications, let's consider the example o
 Basically, "inferencing" is the process of an algorithm reaching a final answer -- what we do as AI developers is make sure that answer is right.
 
 ## Types of Input (And Output) Data
+
 While inferencing is a fairly basic concept, different AI models can be made to get interesting inference-results which allows AI to be such a powerful tool across across many industries.
 
 **1. Structured Data:**<br>

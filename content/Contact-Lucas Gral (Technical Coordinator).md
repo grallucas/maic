@@ -1,6 +1,6 @@
 img: ./img/board_members/Lucas G Portrait.png
 date: 14/11/2023
-order: 6
+type: md
 not_in_recent:
 
 ### Lead Workshop Developer & Coordinator

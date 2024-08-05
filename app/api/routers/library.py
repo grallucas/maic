@@ -1,5 +1,6 @@
 import os
 import math
+import requests
 from fastapi import APIRouter, HTTPException
 from ..modules.modules import Modal, SearchContent, SubmitContent
 from fastapi.responses import Response, FileResponse
@@ -11,23 +12,16 @@ router = APIRouter()
 
 @router.get("/tags", description="Get all tags available in the library.")
 async def get_tags():
-    tags = {}
-    for item in os.listdir(f"{os.getcwd()}/content"):
-        if "Learning_Resources" in item:
-            markdown = read_markdown_file(item.replace(".md", "")).split("\n")
-            md_tags = markdown[7].replace("categories:", "").strip().split(",")
-            for tag in md_tags:
-                if tag not in tags:
-                    tags[tag] = 1
-                else:
-                    tags[tag] += 1
+    folders = []
+    for folder in os.listdir(f"{os.getcwd()}/content"):
+        if ".md" not in folder and folder != "research" and folder != "videos":
+            folders.append(folder)
 
-    valid_tags = []
-    for tag, value in tags.items():
-        if value >= 3:
-            valid_tags.append(tag)
+    tags = []
+    for folder in folders:
+        tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))        
 
-    return {"response": [tag.strip() for tag in valid_tags]}
+    return {"response": [tag.strip() for tag in tags]}
 
 
 @router.get("/modals", description='Get all modals to display on the "Featured" page.')
@@ -139,10 +133,12 @@ async def get_content_title_and_authors(content_id: str):
 async def get_content_abstract(content_id: str):
     markdown = read_markdown_file(content_id).split("\n")
     summary = markdown[0].replace("summary:", "").strip()
+    response = await get_content_type(content_id)
+    content_type = response["response"]["type"]
 
     text = markdown[9:]
-    time = calculate_reading_speed("\n".join(text))
-    pages = calculate_pages("\n".join(text))
+    time = calculate_reading_speed("\n".join(text), content_type=content_type)
+    pages = calculate_pages("\n".join(text), content_type=content_type)
 
     return {"response": {"abstract": summary, "reading_time": time, "pages": pages}}
 
@@ -164,26 +160,35 @@ async def get_content_tags(content_id: str):
     description="Get all content associated with a specific tag.",
 )
 async def get_tag_content(tag: str):
-    tag = tag.strip().lower()
-    articles = []
-    for item in os.listdir(f"{os.getcwd()}/content"):
-        if "Learning_Resources" in item:
-            if tag == "all":
-                articles.append(item.replace(".md", ""))
-                continue
-            markdown = read_markdown_file(item.replace(".md", "")).split("\n")
-            tags = [
-                tag.strip()
-                for tag in markdown[7]
-                .replace("categories:", "")
-                .strip()
-                .lower()
-                .split(",")
-            ]
-            if tag in tags:
-                articles.append(item.replace(".md", ""))
-    return {"response": sorted(articles)}
+    tag = tag.lower().strip()
+    folders = []
+    for folder in os.listdir(f"{os.getcwd()}/content"):
+        if ".md" not in folder:
+            folders.append(folder)
 
+    content = []
+    for folder in folders:
+        for subfolder in os.listdir(f"{os.getcwd()}/content/{folder}"):
+            if subfolder.lower().strip() == tag or tag == "all":
+                items = os.listdir(f"{os.getcwd()}/content/{folder}/{subfolder}")
+                content.extend([item.replace(".md", "") for item in items])
+
+    return {"response": sorted(content)}
+
+
+@router.get(
+        "/{content_id}/content-type",
+        tags=["Content"],
+        description="Get the content type for proper display/rendering."
+)
+async def get_content_type(content_id: str):
+    markdown = read_markdown_file(content_id).split("\n")
+    content_type = markdown[1].replace("type:", "").strip()
+    if content_type == "link":
+        return {"response": {"type": content_type, "link": markdown[8].replace("link:", "").strip()}}
+    if content_type == "pdf":
+        return {"response": {"type": content_type, "pdf": markdown[8].replace("pdf:", "").strip()}}
+    return {"response": {"type": content_type}}
 
 @router.get(
     "/subsection/{subsection_name}",
@@ -192,21 +197,29 @@ async def get_tag_content(tag: str):
 async def get_subsection(subsection_name: str):
     if subsection_name == "Featured":
         return await get_modals()
-    if subsection_name == "Research":
+    elif subsection_name == "Articles":
+        tags = await get_tags()
+        tags = tags["response"]
+        contents = []
+        for tag in tags:
+           contents.extend(os.listdir(f"{os.getcwd()}/content/articles/{tag}"))
         return {
             "response": [
                 Modal(
-                    title="Research",
+                    title=subsection_name,
                     tags=[],
-                    content_ids=[
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                    ],
-                ),
+                    content_ids=[content.replace(".md", "") for content in contents]
+                )
+            ]
+        }
+    else:
+        return {
+            "response": [
+                Modal(
+                    title=subsection_name,
+                    tags=[],
+                    content_ids=[content.replace(".md", "") for content in os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{subsection_name}")]
+                )
             ]
         }
     
@@ -320,14 +333,19 @@ def read_image_to_bytes(file_name: str):
         return img_bytes
 
 
-def calculate_reading_speed(text: str, words_per_minute: int = 300) -> int:
+def calculate_reading_speed(text: str, words_per_minute: int = 300, content_type: str = "md") -> int:
     words = text.split()
     num_words = len(words)
     reading_time = num_words / words_per_minute
     return math.ceil(reading_time)
 
 
-def calculate_pages(text: str, words_per_length: int = 250) -> int:
+def calculate_pages(text: str, words_per_length: int = 250, content_type: str = "md") -> int:
+    if content_type == "pdf":
+        markdown = text.split("\n")
+        pages = int(markdown[0].replace("pages:", "").strip())
+        return math.ceil(pages)
+    
     img_count = text.count("<img")
     words = text.split()
     num_words = len(words)

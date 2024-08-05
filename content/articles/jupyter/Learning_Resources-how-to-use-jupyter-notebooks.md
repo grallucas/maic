@@ -1,13 +1,11 @@
 summary: Using Jupyter notebooks is a skill that every data scientist and computer scientist should have!
-order: 1
+type: md
 date: 28/8/2023
 title: How to use Jupyter notebooks
 image: ./img/thumbnails/Jupyter_logo.png
 difficulty: easy
 authors: Thomas Benzshawel,Ben Paulson
 categories: Jupyter,Topic Introduction
-
-
 
 ## Working with Jupyer notebooks
 
@@ -25,13 +23,13 @@ Each piece of code within each cell, will execute without executing any other co
 
 ## Common Juypter Notebook Commands
 
--  `Shift + Enter` - Run the cell and move to the next cell
--  `Ctrl + Enter` - Run the cell and stay on the same cell
--  `Alt + Enter` - Run the cell and make a new cell below it
--  `Ctrl + S` - Save the notebook
--  `Ctrl + Z` - Undo
--  `Ctrl + Y` - Redo
--  `Ctrl + Shift + -` - Split the cell at the cursor
--  `Ctrl + Shift + P` - Open the command palette
--  `Ctrl + Shift + F` - Open the search box
--  `Ctrl + Shift + P` - Open the command palette
+- `Shift + Enter` - Run the cell and move to the next cell
+- `Ctrl + Enter` - Run the cell and stay on the same cell
+- `Alt + Enter` - Run the cell and make a new cell below it
+- `Ctrl + S` - Save the notebook
+- `Ctrl + Z` - Undo
+- `Ctrl + Y` - Redo
+- `Ctrl + Shift + -` - Split the cell at the cursor
+- `Ctrl + Shift + P` - Open the command palette
+- `Ctrl + Shift + F` - Open the search box
+- `Ctrl + Shift + P` - Open the command palette

@@ -1,6 +1,6 @@
 img: ./img/board_members/Brett Storoe Portrait.png
 date: 14/11/2023
-order: 9
+type: md
 not_in_recent:
 
 ### Internal Organizational Maintenance

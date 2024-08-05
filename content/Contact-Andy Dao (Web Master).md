@@ -1,6 +1,6 @@
 img: ./img/board_members/Andy_Dao_Portrait.png
 date: 14/11/2023
-order: 2
+type: md
 not_in_recent:
 
 ### Lead Website Developer & Maintainer

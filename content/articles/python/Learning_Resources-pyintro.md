@@ -1,5 +1,5 @@
 summary: If you've never touched Python before, this is the perfect place to start! Learn how to install Python & beging using VSC for programming development.
-order: 1
+type: md
 date: 9/8/2023
 title: What's Python?
 image: ./img/thumbnails/Python_Introduction.png
@@ -7,17 +7,13 @@ difficulty: easy
 authors: Lucas Gral, Sydney Balboni
 categories: Python,Topic Introduction
 
-
-
 ## Installing Python
 
 Python is our programming language of choice for AI.
 If you haven't come across it yet, you will in your later classes but it's good to get a head start now.
 The first step is to install python, <strong>make sure you don't use the version from the windows store, it only causes problems.</strong>
 
-
-
-You can go <a href="https://www.python.org/downloads/">here</a> for the latest python download. <strong>Make sure you add python to your Path variable (see below)!</strong> 
+You can go <a href="https://www.python.org/downloads/">here</a> for the latest python download. <strong>Make sure you add python to your Path variable (see below)!</strong>
 After installing, you'll also want to hit the "Disable path length limit" button if it is shown.
 
 <img src = './img/article_content/Python Installer.png' height="60%" width="60%">
@@ -35,7 +31,6 @@ You can find them by opening the extensions tab on the left sidebar and they sho
 
 <img src = './img/article_content/Python Extension.png' height="5%">
 <img src = './img/article_content/Jupyter Extension.png' height="5%">
-
 
 ## Lets Learn Python!
 

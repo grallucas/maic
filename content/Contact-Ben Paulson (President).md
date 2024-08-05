@@ -1,6 +1,6 @@
 img: ./img/board_members/Ben P Portrait.jpg
 date: 14/11/2023
-order: 9.5
+type: md
 not_in_recent:
 
 ### Overall Management of Events & Wider-Community Outreach

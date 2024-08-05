@@ -1,5 +1,5 @@
 summary: Start here if you're new! What AI is capable of doing, a general overview of what certain terms mean, and will be discussing the relationship between AI/ML/DL
-order: 5
+type: md
 date: 22/8/2023
 title: Learning AI (Pt. 1): What Is AI?
 image: ./img/thumbnails/what_is_ai.png

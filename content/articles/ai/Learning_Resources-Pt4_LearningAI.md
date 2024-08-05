@@ -1,5 +1,5 @@
 summary: COMING SOON! (WINTER 2023)
-order: 2
+type: md
 date: 22/8/2023
 title: Learning AI (Pt. 4): Training (Loss & Backprop)
 image: ./img/thumbnails/what_is_ai_4.png
