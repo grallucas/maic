@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 import "./assets/library/css/modal.css";
 import tempImage from "./assets/library/images/temp-image.jpg";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ interface ModalItemProps {
 
 /**
  * Checks if an image exists at the given URL.
- * @param {string} url - The URL of the image to check. 
+ * @param {string} url - The URL of the image to check.
  * @param {void} callback - The callback function to execute after checking the image.
  */
 function checkImage(url: string, callback: (exists: boolean) => void): void {
@@ -43,13 +43,11 @@ const ModalItem = (props: ModalItemProps) => {
    * Also the navigate function to navigate to the article page.
    */
   const navigate = useNavigate();
-  const [title, setTitle] = useState<string>(
-    "No title defined for this article"
+  const [title, setTitle] = useState<string>("");
+  const [authors, setAuthors] = useState<string>("");
+  const [img, setImg] = useState<any>(
+    <Skeleton variant="rectangular" width={200} height={250} />
   );
-  const [authors, setAuthors] = useState<string>(
-    "No authors defined for this article"
-  );
-  const [img, setImg] = useState<string>(tempImage);
 
   /**
    * Fetches the image from the server and updates the image states.
@@ -123,15 +121,22 @@ const ModalItem = (props: ModalItemProps) => {
    * The ModalItem component.
    */
   return (
-    <Button sx={{ width: "100%", flex: `1 0 ${100 / props.columns}%` }} onClick={() => handleRedict()}>
+    <Button
+      sx={{ width: "100%", flex: `1 0 ${100 / props.columns}%` }}
+      onClick={() => handleRedict()}
+    >
       <div style={{ padding: "1rem" }} id={props.articleId}>
-        <img
-          src={img}
-          alt="Preview"
-          style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
-          className={props.articleId}
-          loading="lazy"
-        ></img>
+        {typeof img === "string" ? (
+          <img
+            src={img}
+            alt="Preview"
+            style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
+            className={props.articleId}
+            loading="lazy"
+          ></img>
+        ) : (
+          img
+        )}
         <h3 className="modal-item-header">{title}</h3>
         <p className="authors">{authors}</p>
       </div>

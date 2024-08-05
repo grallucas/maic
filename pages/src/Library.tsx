@@ -36,8 +36,8 @@ const Library = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   /**
-  * Updates the width state based on the window width.
-  */
+   * Updates the width state based on the window width.
+   */
   useEffect(() => {
     // Define a function to update the width state
     const handleResize = () => {
@@ -53,7 +53,6 @@ const Library = () => {
     };
   }, []);
 
-  
   /**
    * Updates the number of columns based on the window width.
    */
@@ -88,6 +87,14 @@ const Library = () => {
    */
   function hidePreview() {
     setShowPreview(false);
+  }
+
+  /**
+   * Close the article
+   */
+  function closeArticle() {
+    setCurrentArticle("");
+    setPreviewedArticle("");
   }
 
   /**
@@ -207,14 +214,14 @@ const Library = () => {
               openPreview={() => openPreview(json[key])}
               columns={columns}
             />
-          )
-        })
+          );
+        });
         setCategoryItems(tempCategoryItems);
       })
       .catch((error: Error) => {
         // pass
       });
-  }, [category])
+  }, [category]);
 
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
@@ -245,7 +252,7 @@ const Library = () => {
    * Gets the modals for a specific subsection
    */
   useEffect(() => {
-    if(currentArticle === "") {
+    if (currentArticle === "") {
       const parts: string[] = window.location.href.split("/");
       let baseUrl: string = "";
       if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
@@ -265,7 +272,6 @@ const Library = () => {
           let modals: any[] = [];
           Object.keys(json).forEach((key, index) => {
             const modal: Modal = json[key];
-            console.log(modal);
             const chips = modal.tags.map((tag, index) => (
               <Chip
                 key={index}
@@ -278,7 +284,7 @@ const Library = () => {
                 onDelete={() => {}}
               />
             ));
-            const contentIds = modal.content_ids.sort()
+            const contentIds = modal.content_ids.sort();
             const content = contentIds.map((contentId) => (
               <ModalItem
                 key={contentId}
@@ -301,14 +307,14 @@ const Library = () => {
         .catch((error: Error) => {
           // pass
         });
-      }
-  }, [query.get("nav")]);
+    }
+  }, [currentArticle || query.get("nav")]);
 
   /**
    * Get the tagged content when type is set
    */
   useEffect(() => {
-    if(query.get("type") && currentArticle === "") {
+    if (query.get("type") && currentArticle === "") {
       const parts: string[] = window.location.href.split("/");
       let baseUrl: string = "";
       if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
@@ -318,32 +324,32 @@ const Library = () => {
       }
 
       fetch(`${baseUrl}/api/v1/library/${query.get("type")}/tagged-content`)
-      .then((response: Response) => {
-        if(!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data: any) => {
-        const json = data["response"];
-        const items: any[] = []
-        Object.keys(json).forEach((key, index) => {
-          items.push(
-            <ModalItem
-              key={index}
-              articleId={json[key]}
-              openPreview={() => openPreview(json[key])}
-              columns={columns}
-            />
-          )
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
         })
+        .then((data: any) => {
+          const json = data["response"];
+          const items: any[] = [];
+          Object.keys(json).forEach((key, index) => {
+            items.push(
+              <ModalItem
+                key={index}
+                articleId={json[key]}
+                openPreview={() => openPreview(json[key])}
+                columns={columns}
+              />
+            );
+          });
 
-        const tag = query.get("type") || "defaultTitle";
-        const modal = <Modal title={tag} chips={[]} items={items}/>
-        setModals([modal])
-      })
+          const tag = query.get("type") || "defaultTitle";
+          const modal = <Modal title={tag} chips={[]} items={items} />;
+          setModals([modal]);
+        });
     }
-  }, [query.get("type")])
+  }, [query.get("type")]);
 
   /**
    * The Library component.
@@ -354,19 +360,20 @@ const Library = () => {
       <div className="App">
         <nav style={{ display: "flex" }}>
           <LeftPanel query={query} setQuery={setQuery} />
-          { query.get("article") === null &&
+          {query.get("article") === null && (
             <section
               className="modals"
               style={{ maxWidth: "93.25vw", paddingTop: "40px" }}
             >
               <div>
                 {modals}
-                {(query.get("nav") === "Featured" || query.get("nav") === null) && (
-                  
-                    <Modal
-                      title="Categories"
-                      chips={categoryTags.map((tag, index) => {
-                        return <Chip
+                {(query.get("nav") === "Featured" ||
+                  query.get("nav") === null) && (
+                  <Modal
+                    title="Categories"
+                    chips={categoryTags.map((tag, index) => {
+                      return (
+                        <Chip
                           key={index + 1}
                           variant={category === tag ? "filled" : "outlined"}
                           component={Link}
@@ -376,15 +383,16 @@ const Library = () => {
                           to="/library?nav=Featured"
                           clickable
                         />
-                      })}
-                      items={categoryItems}
-                    />
+                      );
+                    })}
+                    items={categoryItems}
+                  />
                 )}
               </div>
             </section>
-          }
+          )}
           {query.get("article") !== null && (
-            <Article articleId={currentArticle} type="markdown"/>
+            <Article articleId={currentArticle} closeArticle={closeArticle} />
           )}
           <ModalItemPreview
             articleId={previewedArticle}

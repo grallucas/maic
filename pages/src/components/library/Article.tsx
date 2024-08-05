@@ -5,13 +5,14 @@ import rehypeRaw from "rehype-raw";
 import CopyAllIcon from "@mui/icons-material/CopyAll";
 import CheckIcon from "@mui/icons-material/Check";
 import { createRoot } from "react-dom/client";
+import { useNavigate } from "react-router-dom";
 
 /**
  * The ArticleProps interface represents the props that the Article component receives.
  */
 interface ArticleProps {
   articleId: string;
-  type: "markdown" | "pdf" | "link" | "video"
+  closeArticle: () => void;
 }
 
 /**
@@ -54,6 +55,43 @@ const Article = (props: ArticleProps) => {
   const [date, setDate] = useState<string>("");
   const [authors, setAuthors] = useState<string>("");
   const [contents, setContents] = useState<string>("");
+  const [type, setType] = useState<string>("md");
+  const [pdfUrl, setPdfUrl] = useState<string>("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    fetch(`${baseUrl}/api/v1/library/${props.articleId}/content-type`)
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data: string) => {
+        const json = JSON.parse(data)["response"];
+        if (json["type"] === "link") {
+          const link = json["link"];
+          window.open(link, "_blank");
+          navigate("/library");
+          props.closeArticle();
+        }
+        if (json["type"] === "pdf") {
+          setPdfUrl(json["pdf"]);
+        }
+        window.scrollTo(0, 0);
+        setType(json["type"]);
+      })
+      .catch((error: Error) => {
+        // pass
+      });
+  }, [props.articleId]);
 
   /**
    * Fetches the images within the contents of the article from the server and updates the image srcs.
@@ -124,12 +162,14 @@ const Article = (props: ArticleProps) => {
         root.render(<CopyAllIcon color="inherit" />);
       }
 
-      const scriptPrettify1 = document.createElement('script');
-      scriptPrettify1.innerHTML = "document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))";
+      const scriptPrettify1 = document.createElement("script");
+      scriptPrettify1.innerHTML =
+        "document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))";
       document.body.appendChild(scriptPrettify1);
 
-      const scriptPrettify2 = document.createElement('script');
-      scriptPrettify2.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+      const scriptPrettify2 = document.createElement("script");
+      scriptPrettify2.src =
+        "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
       document.body.appendChild(scriptPrettify2);
     });
   }, [contents]);
@@ -172,28 +212,42 @@ const Article = (props: ArticleProps) => {
    * Returns the JSX for the Article component.
    */
   return (
-    <div className="article">
-      <div style={{display: props.type === "markdown" ? "block" : "none"}}>
-        {!title && !authors && !date && !summary && (
-          <div>
-            <h1>404 - Article Not Found</h1>
-            <p>No article was found here. Try again looking for the article.</p>
-          </div>
-        )}
-        {title && <span className="article-title"><Markdown>{`# ${title}`}</Markdown></span>}
-        {authors && <Markdown>{`### **Authors:** ${authors}`}</Markdown>}
-        {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
-        {summary && <Markdown>{`### ${summary}`}</Markdown>}
-        {title && authors && date && summary && (
-          <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
-        )}
-      </div>
-      <div style={{display: props.type === "pdf" ? "block" : "none"}}>
-      {
-       <p>Test</p>
-      }
-      </div>
-      </div>
+    <div className="content">
+      {type === "md" && (
+        <div className="article">
+          {!title && !authors && !date && !summary && (
+            <div>
+              <h1>404 - Article Not Found</h1>
+              <p>
+                No article was found here. Try again looking for the article.
+              </p>
+            </div>
+          )}
+          {title && (
+            <span className="article-title">
+              <Markdown>{`# ${title}`}</Markdown>
+            </span>
+          )}
+          {authors && <Markdown>{`### **Authors:** ${authors}`}</Markdown>}
+          {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
+          {summary && <Markdown>{`### ${summary}`}</Markdown>}
+          {title && authors && date && summary && (
+            <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
+          )}
+        </div>
+      )}
+      <iframe
+        src={pdfUrl}
+        title={pdfUrl}
+        width={"100%"}
+        style={{
+          display: type === "pdf" ? "block" : "none",
+          marginTop: "55px",
+          border: "none",
+          height: "calc(100vh - 55px)",
+        }}
+      />
+    </div>
   );
 };
 

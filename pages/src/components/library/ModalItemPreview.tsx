@@ -20,7 +20,7 @@ interface ModalItemPreviewProps {
 
 /**
  * Checks if an image exists at the given URL.
- * @param {string} url - The URL of the image to check. 
+ * @param {string} url - The URL of the image to check.
  * @param {void} callback - The callback function to execute after checking the image.
  */
 function checkImage(url: string, callback: (exists: boolean) => void): void {
@@ -48,9 +48,15 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
    * Also the liked state of the article.
    * Also the modal reference.
    */
-  const [title, setTitle] = React.useState<string>("No title defined for this article");
-  const [authors, setAuthors] = React.useState<string>("No authors defined for this article");
-  const [abstract, setAbstract] = React.useState<string>("No abstract defined for this article");
+  const [title, setTitle] = React.useState<string>(
+    "No title defined for this article"
+  );
+  const [authors, setAuthors] = React.useState<string>(
+    "No authors defined for this article"
+  );
+  const [abstract, setAbstract] = React.useState<string>(
+    "No abstract defined for this article"
+  );
   const [readingTime, setReadingTime] = React.useState<string>("0 minute read");
   const [pageLength, setPageLength] = React.useState<string>("0 pages");
   const [tags, setTags] = React.useState<JSX.Element | undefined>();
@@ -130,7 +136,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
         return response.text();
       })
       .then((data: string) => {
-        const json = JSON.parse(data)["response"]
+        const json = JSON.parse(data)["response"];
         setAbstract(json["abstract"]);
         setReadingTime(`${json["reading_time"]} minute read`);
         const pageLength = Number.parseInt(json["pages"]);
@@ -220,7 +226,14 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
       ref={modalRef}
       className={`page-preview ${props.showPreview ? "show-page-preview" : ""}`}
     >
-      <div style={{ padding: "1rem", display: "flex", flexDirection: "column", height: "89%"}}>
+      <div
+        style={{
+          padding: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          height: "89%",
+        }}
+      >
         <img
           src={img}
           alt="Preview"
@@ -228,9 +241,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
           loading="lazy"
         />
         <div className="modal-item-preview-header">
-          <h2>
-            {title}
-          </h2>
+          <h2>{title}</h2>
           <Button
             startIcon={
               liked ? (
@@ -258,9 +269,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
           <Divider orientation="vertical" flexItem />
           <p className="page-time">{readingTime}</p>
         </div>
-        <p className="page-description">
-          {abstract}
-        </p>
+        <p className="page-description">{abstract}</p>
         <div className="bottom-elements">
           <Button
             variant="contained"
