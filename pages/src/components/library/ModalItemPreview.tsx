@@ -110,10 +110,17 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
   useEffect(() => {
     const div = document.getElementById(props.articleId || "") as HTMLElement;
     if (div) {
-      const title = div.children[1] as HTMLElement;
-      setTitle(title.innerText);
-      const authors = div.children[2] as HTMLElement;
-      setAuthors(authors.innerText);
+      try {
+        const title = div.children[1] as HTMLElement;
+        setTitle(title.innerText);
+        const authors = div.children[2] as HTMLElement;
+        setAuthors(authors.innerText);
+      } catch (error) {
+        const title = div.children[1].children[0] as HTMLElement;
+        setTitle(title.innerText);
+        const authors = div.children[1].children[1] as HTMLElement;
+        setAuthors(authors.innerText);
+      }
     }
   }, [props.articleId]);
 

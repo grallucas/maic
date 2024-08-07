@@ -22,9 +22,10 @@ class Modal(BaseModel):
     title: str
     tags: List[str]
     content_ids: List[str]
+    decorative: bool = False
 
     def to_dict(self):
-        return {"title": self.title, "tags": self.tags, "content_ids": self.content_ids}
+        return {"title": self.title, "tags": self.tags, "content_ids": self.content_ids, "decorative": self.decorative}
 
 
 class ArticleCard(BaseModel):

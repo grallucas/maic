@@ -9,6 +9,7 @@ import { ArrowForward } from "@mui/icons-material";
 import ModalItemPreview from "./components/library/ModalItemPreview";
 import Article from "./components/library/Article";
 import NavBar from "./components/Navbar";
+import CanvasBackground from "./components/library/Background";
 
 /**
  * The Modal interface to represent the modal object.
@@ -17,6 +18,7 @@ interface Modal {
   title: string;
   tags: string[];
   content_ids: string[];
+  decorative: boolean;
 }
 
 /**
@@ -167,6 +169,7 @@ const Library = () => {
               articleId={contentId}
               openPreview={() => openPreview(contentId)}
               columns={columns}
+              decorative={modal.decorative}
             />
           ));
           modals.push(
@@ -175,6 +178,7 @@ const Library = () => {
               title={modal.title}
               chips={chips}
               items={content}
+              decorative={modal.decorative}
             />
           );
         });
@@ -291,6 +295,7 @@ const Library = () => {
                 articleId={contentId}
                 openPreview={() => openPreview(contentId)}
                 columns={columns}
+                decorative={modal.decorative}
               />
             ));
             modals.push(
@@ -299,6 +304,7 @@ const Library = () => {
                 title={modal.title}
                 chips={chips}
                 items={content}
+                decorative={modal.decorative}
               />
             );
           });
@@ -403,6 +409,7 @@ const Library = () => {
           />
         </nav>
       </div>
+      <CanvasBackground />
     </div>
   );
 };

@@ -10,18 +10,34 @@ import io
 router = APIRouter()
 
 
+
 @router.get("/tags", description="Get all tags available in the library.")
 async def get_tags():
     folders = []
     for folder in os.listdir(f"{os.getcwd()}/content"):
-        if ".md" not in folder and folder != "research" and folder != "videos":
+        if ".md" not in folder:
             folders.append(folder)
 
     tags = []
     for folder in folders:
         tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))        
 
-    return {"response": [tag.strip() for tag in tags]}
+    return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag])}
+
+
+
+@router.get("/tags/{subsection}", description="Get all tags associated with a particular subsection.")
+async def get_subsection_tags(subsection: str):
+    folders = []
+    for folder in os.listdir(f"{os.getcwd()}/content"):
+        if folder == subsection.lower().strip():
+            folders.append(folder)
+
+    tags = []
+    for folder in folders:
+        tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))        
+
+    return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag])}
 
 
 @router.get("/modals", description='Get all modals to display on the "Featured" page.')
@@ -29,40 +45,34 @@ async def get_modals():
     return {
         "response": [
             Modal(
-                title="ROSIE Competition 2024",
-                tags=["ROSIE 24'"],
+                title="Featured Research",
+                tags=["Research"],
                 content_ids=[
                     "Learning_Resources-RunningJupyterLabOnADGXNode copy",
                     "Learning_Resources-global-protect",
                     "Learning_Resources-how-to-use-jupyter-notebooks",
-                    "Learning_Resources-how-to-use-rosie",
-                    "Learning_Resources-Pt1_LearningAI copy",
-                    "Learning_Resources-pt1-how-to-get-rosie-access",
                 ],
+                decorative=True
             ),
             Modal(
-                title="MICS 2024",
-                tags=["MICS 24'"],
+                title="Featured Articles",
+                tags=["Articles"],
                 content_ids=[
                     "Learning_Resources-RunningJupyterLabOnADGXNode copy",
                     "Learning_Resources-global-protect",
                     "Learning_Resources-how-to-use-jupyter-notebooks",
-                    "Learning_Resources-how-to-use-rosie",
-                    "Learning_Resources-Pt1_LearningAI copy",
-                    "Learning_Resources-pt1-how-to-get-rosie-access",
                 ],
+                decorative=True
             ),
             Modal(
-                title="23-24 Research Groups",
-                tags=["RG-24"],
+                title="Featured Videos",
+                tags=["Videos"],
                 content_ids=[
                     "Learning_Resources-RunningJupyterLabOnADGXNode copy",
                     "Learning_Resources-global-protect",
                     "Learning_Resources-how-to-use-jupyter-notebooks",
-                    "Learning_Resources-how-to-use-rosie",
-                    "Learning_Resources-Pt1_LearningAI copy",
-                    "Learning_Resources-pt1-how-to-get-rosie-access",
                 ],
+                decorative=True
             ),
         ]
     }
@@ -74,12 +84,15 @@ async def get_modals():
     description="Get the textual content of a specific article.",
 )
 async def get_content(content_id: str):
-    try:
-        return read_markdown_file(content_id)
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="Requested content not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal Server Error: {e}")
+    if content_id and content_id != "":
+        try:
+            return read_markdown_file(content_id)
+        except FileNotFoundError:
+            raise HTTPException(status_code=404, detail="Requested content not found.")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Internal Server Error: {e}")
+
+    return None
 
 
 @router.get(
@@ -87,13 +100,16 @@ async def get_content(content_id: str):
     tags=["Content"],
     description="Get the thumbnail of an article located in the img folder",
 )
-async def get_thumbnailo(content_id: str) -> FileResponse:
-    markdown = read_markdown_file(content_id).split("\n")
-    file_path = markdown[4].replace("image:", "").strip("")[3:]
-    if os.path.exists(file_path):
-        return FileResponse(file_path)
+async def get_thumbnail(content_id: str) -> FileResponse:
+    if content_id and content_id != "":
+        markdown = read_markdown_file(content_id).split("\n")
+        file_path = markdown[4].replace("image:", "").strip("")[3:]
+        if os.path.exists(file_path):
+            return FileResponse(file_path)
 
-    raise HTTPException(status_code=404, detail="Image not found.")
+        raise HTTPException(status_code=404, detail="Image not found.")
+    
+    return None
 
 
 @router.get(
@@ -102,15 +118,18 @@ async def get_thumbnailo(content_id: str) -> FileResponse:
     description="Get an image located in the img folder",
 )
 async def get_image(content_id: str) -> FileResponse:
-    file_options = ["png", "jpg", "gif"]
+    if content_id and content_id != "":
+        file_options = ["png", "jpg", "gif"]
 
-    for folder in os.listdir("img/"):
-        for option in file_options:
-            file_path = f"img/{folder}/{content_id}.{option}"
-            if os.path.exists(file_path):
-                return FileResponse(file_path)
+        for folder in os.listdir("img/"):
+            for option in file_options:
+                file_path = f"img/{folder}/{content_id}.{option}"
+                if os.path.exists(file_path):
+                    return FileResponse(file_path)
 
-    raise HTTPException(status_code=404, detail="Image not found.")
+        raise HTTPException(status_code=404, detail="Image not found.")
+    
+    return None
 
 
 @router.get(
@@ -119,10 +138,13 @@ async def get_image(content_id: str) -> FileResponse:
     description="Get the title and authors of a specific peice of content.",
 )
 async def get_content_title_and_authors(content_id: str):
-    markdown = read_markdown_file(content_id).split("\n")
-    title = markdown[3].replace("title:", "").strip()
-    authors = markdown[6].replace("authors:", "").strip().replace(",", ", ")
-    return {"response": {"title": title, "authors": authors}}
+    if content_id and content_id != "":
+        markdown = read_markdown_file(content_id).split("\n")
+        title = markdown[3].replace("title:", "").strip()
+        authors = markdown[6].replace("authors:", "").strip().replace(",", ", ")
+        return {"response": {"title": title, "authors": authors}}
+    
+    return None
 
 
 @router.get(
@@ -131,16 +153,19 @@ async def get_content_title_and_authors(content_id: str):
     description="Get the abstract/description of a specific piece of content.",
 )
 async def get_content_abstract(content_id: str):
-    markdown = read_markdown_file(content_id).split("\n")
-    summary = markdown[0].replace("summary:", "").strip()
-    response = await get_content_type(content_id)
-    content_type = response["response"]["type"]
+    if content_id and content_id != "":
+        markdown = read_markdown_file(content_id).split("\n")
+        summary = markdown[0].replace("summary:", "").strip()
+        response = await get_content_type(content_id)
+        content_type = response["response"]["type"]
 
-    text = markdown[9:]
-    time = calculate_reading_speed("\n".join(text), content_type=content_type)
-    pages = calculate_pages("\n".join(text), content_type=content_type)
+        text = markdown[9:]
+        time = calculate_reading_speed("\n".join(text), content_type=content_type)
+        pages = calculate_pages("\n".join(text), content_type=content_type)
 
-    return {"response": {"abstract": summary, "reading_time": time, "pages": pages}}
+        return {"response": {"abstract": summary, "reading_time": time, "pages": pages}}
+    
+    return None
 
 
 @router.get(
@@ -149,9 +174,12 @@ async def get_content_abstract(content_id: str):
     description="Get all tags associated with a specific piece of content.",
 )
 async def get_content_tags(content_id: str):
-    markdown = read_markdown_file(content_id).split("\n")
-    tags = markdown[7].replace("categories:", "").strip().split(",")
-    return {"response": tags}
+    if content_id and content_id != "":
+        markdown = read_markdown_file(content_id).split("\n")
+        tags = markdown[7].replace("categories:", "").strip().split(",")
+        return {"response": tags}
+    
+    return None
 
 
 @router.get(
@@ -160,20 +188,23 @@ async def get_content_tags(content_id: str):
     description="Get all content associated with a specific tag.",
 )
 async def get_tag_content(tag: str):
-    tag = tag.lower().strip()
-    folders = []
-    for folder in os.listdir(f"{os.getcwd()}/content"):
-        if ".md" not in folder:
-            folders.append(folder)
+    if tag and tag != "":
+        tag = tag.lower().strip()
+        folders = []
+        for folder in os.listdir(f"{os.getcwd()}/content"):
+            if ".md" not in folder:
+                folders.append(folder)
 
-    content = []
-    for folder in folders:
-        for subfolder in os.listdir(f"{os.getcwd()}/content/{folder}"):
-            if subfolder.lower().strip() == tag or tag == "all":
-                items = os.listdir(f"{os.getcwd()}/content/{folder}/{subfolder}")
-                content.extend([item.replace(".md", "") for item in items])
+        content = []
+        for folder in folders:
+            for subfolder in os.listdir(f"{os.getcwd()}/content/{folder}"):
+                if (subfolder.lower().strip() == tag or tag == "all") and ".md" not in subfolder:
+                    items = os.listdir(f"{os.getcwd()}/content/{folder}/{subfolder}")
+                    content.extend([item.replace(".md", "") for item in items])
 
-    return {"response": sorted(content)}
+        return {"response": sorted(content)}
+    
+    return None
 
 
 @router.get(
@@ -182,100 +213,43 @@ async def get_tag_content(tag: str):
         description="Get the content type for proper display/rendering."
 )
 async def get_content_type(content_id: str):
-    markdown = read_markdown_file(content_id).split("\n")
-    content_type = markdown[1].replace("type:", "").strip()
-    if content_type == "link":
-        return {"response": {"type": content_type, "link": markdown[8].replace("link:", "").strip()}}
-    if content_type == "pdf":
-        return {"response": {"type": content_type, "pdf": markdown[8].replace("pdf:", "").strip()}}
-    return {"response": {"type": content_type}}
+    if content_id and content_id != "":
+        markdown = read_markdown_file(content_id).split("\n")
+        content_type = markdown[1].replace("type:", "").strip()
+        if content_type == "link":
+            return {"response": {"type": content_type, "link": markdown[8].replace("link:", "").strip()}}
+        if content_type == "pdf":
+            return {"response": {"type": content_type, "pdf": markdown[8].replace("pdf:", "").strip()}}
+        return {"response": {"type": content_type}}
+    
+    return None
 
 @router.get(
     "/subsection/{subsection_name}",
     description="Get all modals and content associated with a specific subsection.",
 )
 async def get_subsection(subsection_name: str):
-    if subsection_name == "Featured":
-        return await get_modals()
-    elif subsection_name == "Articles":
-        tags = await get_tags()
-        tags = tags["response"]
-        contents = []
-        for tag in tags:
-           contents.extend(os.listdir(f"{os.getcwd()}/content/articles/{tag}"))
-        return {
-            "response": [
-                Modal(
-                    title=subsection_name,
-                    tags=[],
-                    content_ids=[content.replace(".md", "") for content in contents]
-                )
-            ]
-        }
-    else:
-        return {
-            "response": [
-                Modal(
-                    title=subsection_name,
-                    tags=[],
-                    content_ids=[content.replace(".md", "") for content in os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{subsection_name}")]
-                )
-            ]
-        }
-    
-    if subsection_name == "Articles":
-        return {
-            "response": [
-                Modal(
-                    title="Articles",
-                    tags=[],
-                    content_ids=[
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                    ],
-                ),
-            ]
-        }
-    
-    if subsection_name == "Videos":
-        return {
-            "response": [
-                Modal(
-                    title="Videos",
-                    tags=[],
-                    content_ids=[
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                        "Learning_Resources-global-protect",
-                        "Learning_Resources-Pt5_LearningAI",
-                        "Learning_Resources-pt2-first-login",
-                        "Learning_Resources-how-to-use-rosie",
-                        "Learning_Resources-Pt1_LearningAI copy",
-                        "Learning_Resources-pt1-how-to-get-rosie-access",
-                    ],
-                ),
-            ]
-        }
+    if subsection_name and subsection_name != "":
+        if subsection_name == "Featured":
+            return await get_modals()
+        else:
+            print(os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}"))
+            tags = os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}")
+            contents = []
+            for tag in tags:
+                if ".md" not in tag:
+                    contents.extend(os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{tag}"))
+            return {
+                "response": [
+                    Modal(
+                        title=subsection_name,
+                        tags=[],
+                        content_ids=[content.replace(".md", "") for content in contents]
+                    )
+                ]
+            }
+        
+    return None
 
 
 @router.post("/search", description="Search for content in the library.")
@@ -318,10 +292,11 @@ def read_markdown_file(file_name: str):
     
     for folder in folders:
         for sub_folder in os.listdir(f"{os.getcwd()}/content/{folder}"):
-            for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
-                if file_name in file:
-                    with open(f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md", "r", encoding="utf-8") as file:
-                        return file.read()
+            if ".md" not in sub_folder:
+                for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
+                    if file_name in file:
+                        with open(f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md", "r", encoding="utf-8") as file:
+                            return file.read()
 
 
 def read_image_to_bytes(file_name: str):

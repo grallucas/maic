@@ -170,3 +170,55 @@
 .bottom-elements {
   margin-top: auto;
 }
+
+.sparkle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 1s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sparkle:nth-child(1) {
+  top: 60%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+  top: -2%;
+  left: 33%;
+  animation-delay: 0.2s;
+}
+
+.sparkle:nth-child(3) {
+  top: 100%;
+  left: 67%;
+  animation-delay: 0.4s;
+}
+
+.sparkle:nth-child(4) {
+  top: 40%;
+  left: 101%;
+  animation-delay: 0.6s;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+  }
+}

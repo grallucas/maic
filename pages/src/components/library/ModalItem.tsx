@@ -11,6 +11,7 @@ interface ModalItemProps {
   articleId?: string;
   openPreview?: (articleId: string) => boolean;
   columns: number;
+  decorative?: boolean;
 }
 
 /**
@@ -122,24 +123,79 @@ const ModalItem = (props: ModalItemProps) => {
    */
   return (
     <Button
-      sx={{ width: "100%", flex: `1 0 ${100 / props.columns}%` }}
+      sx={{
+        width: "100%",
+        flex: `1 0 ${100 / props.columns}%`,
+        padding: props.decorative ? "initial" : "0",
+      }}
       onClick={() => handleRedict()}
     >
-      <div style={{ padding: "1rem" }} id={props.articleId}>
-        {typeof img === "string" ? (
-          <img
-            src={img}
-            alt="Preview"
-            style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
-            className={props.articleId}
-            loading="lazy"
-          ></img>
-        ) : (
-          img
-        )}
-        <h3 className="modal-item-header">{title}</h3>
-        <p className="authors">{authors}</p>
-      </div>
+      {" "}
+      {!props.decorative ? (
+        <div style={{ padding: "1rem" }} id={props.articleId}>
+          {typeof img === "string" ? (
+            <img
+              src={img}
+              alt="Preview"
+              style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
+              className={props.articleId}
+              loading="lazy"
+            ></img>
+          ) : (
+            img
+          )}
+          <h3 className="modal-item-header">{title}</h3>
+          <p className="authors">{authors}</p>
+        </div>
+      ) : (
+        <div
+          style={{
+            overflow: "hidden",
+            height: "35vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+          id={props.articleId}
+        >
+          {typeof img === "string" ? (
+            <img
+              src={img}
+              alt="Preview"
+              style={{ width: "100%" }}
+              className={props.articleId}
+              loading="lazy"
+            ></img>
+          ) : (
+            img
+          )}
+          <div
+            style={{
+              position: "absolute",
+              background: "linear-gradient(to bottom, transparent, black)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              height: "50%",
+              width: "100%",
+              bottom: "0",
+            }}
+          >
+            <h3
+              style={{ textAlign: "center", color: "white" }}
+              className="modal-item-header"
+            >
+              {title}
+            </h3>
+            <p
+              style={{ textAlign: "center", marginBottom: "1rem" }}
+              className="authors"
+            >
+              {authors}
+            </p>
+          </div>
+        </div>
+      )}
     </Button>
   );
 };
