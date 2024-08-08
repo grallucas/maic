@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Chip from "@mui/material/Chip";
 import "./assets/library.css";
 import LeftPanel from "./components/library/LeftPanel";
@@ -10,6 +10,7 @@ import ModalItemPreview from "./components/library/ModalItemPreview";
 import Article from "./components/library/Article";
 import NavBar from "./components/Navbar";
 import CanvasBackground from "./components/library/Background";
+import { useStepContext } from "@mui/material";
 
 /**
  * The Modal interface to represent the modal object.
@@ -18,8 +19,46 @@ interface Modal {
   title: string;
   tags: string[];
   content_ids: string[];
-  decorative: boolean;
+  type: string;
+  img: string;
+  date: string;
+  description: string;
+  authors: string;
 }
+
+const useScrollToLocation = () => {
+  const scrolledRef = useRef(false);
+  const { hash } = useLocation();
+  const hashRef = useRef(hash);
+
+  useEffect(() => {
+    if (hash) {
+      // We want to reset if the hash has changed
+      if (hashRef.current !== hash) {
+        hashRef.current = hash;
+        scrolledRef.current = false;
+      }
+
+      // only attempt to scroll if we haven't yet (this could have just reset above if hash changed)
+      if (!scrolledRef.current) {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition + 200;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+
+          scrolledRef.current = true;
+        }
+      }
+    }
+  });
+};
 
 /**
  * The Library component displays the library page of the website.
@@ -29,6 +68,7 @@ const Library = () => {
   /**
    * The states of the Library component, including the current article, previewed article, and whether to show the preview.
    */
+  useScrollToLocation();
   const [categoryItems, setCategoryItems] = useState<any[]>([]);
   const [categoryTags, setCategoryTags] = useState<any[]>([]);
   const [currentArticle, setCurrentArticle] = useState("");
@@ -155,9 +195,7 @@ const Library = () => {
               component={Link}
               color="primary"
               label={tag}
-              to={`/library?nav=Research&type=${tag
-                .replace(" ", "-")
-                .replace("'", "")}`}
+              to={`/library?nav=${tag}`}
               clickable
               deleteIcon={<ArrowForward />}
               onDelete={() => {}}
@@ -169,7 +207,7 @@ const Library = () => {
               articleId={contentId}
               openPreview={() => openPreview(contentId)}
               columns={columns}
-              decorative={modal.decorative}
+              type={modal.type}
             />
           ));
           modals.push(
@@ -178,7 +216,11 @@ const Library = () => {
               title={modal.title}
               chips={chips}
               items={content}
-              decorative={modal.decorative}
+              type={modal.type}
+              img={modal.img}
+              date={modal.date}
+              description={modal.description}
+              authors={modal.authors}
             />
           );
         });
@@ -256,6 +298,10 @@ const Library = () => {
    * Gets the modals for a specific subsection
    */
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     if (currentArticle === "") {
       const parts: string[] = window.location.href.split("/");
       let baseUrl: string = "";
@@ -295,7 +341,7 @@ const Library = () => {
                 articleId={contentId}
                 openPreview={() => openPreview(contentId)}
                 columns={columns}
-                decorative={modal.decorative}
+                type={modal.type}
               />
             ));
             modals.push(
@@ -304,7 +350,11 @@ const Library = () => {
                 title={modal.title}
                 chips={chips}
                 items={content}
-                decorative={modal.decorative}
+                type={modal.type}
+                img={modal.img}
+                date={modal.date}
+                description={modal.description}
+                authors={modal.authors}
               />
             );
           });
@@ -314,7 +364,7 @@ const Library = () => {
           // pass
         });
     }
-  }, [currentArticle || query.get("nav")]);
+  }, [currentArticle || query]);
 
   /**
    * Get the tagged content when type is set

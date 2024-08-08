@@ -2,6 +2,7 @@ import "./assets/library/css/modal.css";
 import { Box, ButtonGroup, Card, CardContent } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import StarIcon from "@mui/icons-material/Star";
+import Markdown from "react-markdown";
 
 /**
  * The ModalProps interface represents the props that the Modal component receives.
@@ -10,7 +11,30 @@ interface ModalProps {
   title: string;
   chips: JSX.Element | JSX.Element[];
   items: JSX.Element[];
-  decorative?: boolean;
+  type?: string;
+  img?: string;
+  date?: string;
+  description?: string;
+  authors?: string;
+}
+
+/**
+ * Checks if an image exists at the given URL.
+ * @param {string} url - The URL of the image to check.
+ * @param {void} callback - The callback function to execute after checking the image.
+ */
+function checkImage(url: string, callback: (exists: boolean) => void): void {
+  const img = new Image();
+
+  img.onload = function () {
+    callback(true);
+  };
+
+  img.onerror = function () {
+    callback(false);
+  };
+
+  img.src = url;
 }
 
 /**
@@ -24,6 +48,20 @@ const Modal = (props: ModalProps) => {
    */
   const headerRef = useRef(null);
   const [headerSize, setHeaderSize] = useState({ width: 0, height: 0 });
+  const [img, setImg] = useState<string>("");
+  const [authors, setAuthors] = useState<string>("Members: ");
+
+  useEffect(() => {
+    window.addEventListener("load", function () {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }, []);
 
   /**
    * Update header dims
@@ -35,18 +73,51 @@ const Modal = (props: ModalProps) => {
     }
   }, [props.title]);
 
+  useEffect(() => {
+    const parts: string[] = window.location.href.split("/");
+    let baseUrl: string = "";
+    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+      baseUrl = `${parts[0]}//127.0.0.1:8000`;
+    } else {
+      baseUrl = `${parts[0]}//${parts[2]}`;
+    }
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(
+          `${baseUrl}/api/v1/library/${props.img}/image`
+        );
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        checkImage(imageUrl, function (exists: boolean) {
+          if (exists) {
+            setImg(imageUrl);
+          }
+        });
+      } catch (error) {
+        // pass
+      }
+    };
+    fetchImage();
+  }, [props.img]);
+
+  useEffect(() => {
+    if (props.authors && props.authors.split(",").length <= 1) {
+      setAuthors("Team Lead: ");
+    }
+  }, [props.authors]);
+
   /**
    * The Modal component.
    */
   return (
-    <Card className="modal">
+    <Card className="modal" id={props.title.toLowerCase().replaceAll(" ", "-")}>
       <CardContent>
         <div className="modal-top-bar">
           <div style={{ display: "flex", justifyContent: "left" }}>
             <h2 className="modal-header" ref={headerRef}>
               {props.title}
             </h2>
-            {props.decorative ? (
+            {props.type === "decorative" ? (
               <div
                 style={{
                   position: "absolute",
@@ -73,13 +144,50 @@ const Modal = (props: ModalProps) => {
           </div>
           {props.chips}
         </div>
-        <ButtonGroup
-          variant="text"
-          color="inherit"
-          sx={{ width: "100%", marginTop: "1rem", flexWrap: "wrap" }}
-        >
-          {props.items}
-        </ButtonGroup>
+        {props.type !== "descriptive" ? (
+          <ButtonGroup
+            variant="text"
+            color="inherit"
+            sx={{ width: "100%", marginTop: "1rem", flexWrap: "wrap" }}
+          >
+            {props.items}
+          </ButtonGroup>
+        ) : (
+          <div>
+            <div
+              className="descriptive-text"
+              style={{ display: "flex", gap: "0.5rem", marginTop: "1rem" }}
+            >
+              <img src={img} alt={img} style={{ maxHeight: "20vh" }}></img>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "left",
+                }}
+              >
+                <p style={{ fontWeight: "bold" }}>{props.date}</p>
+                <Markdown>{props.description}</Markdown>
+                <p style={{ fontWeight: "bold", color: "#0578ff" }}>
+                  {authors}
+                  {props.authors}
+                </p>
+              </div>
+            </div>
+            <ButtonGroup
+              variant="text"
+              color="inherit"
+              sx={{
+                width: "100%",
+                marginTop: "1rem",
+                flexWrap: "wrap",
+                display: props.items.length > 0 ? "block" : "none",
+              }}
+            >
+              {props.items}
+            </ButtonGroup>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

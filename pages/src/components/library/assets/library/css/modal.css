@@ -222,3 +222,7 @@
     transform: scale(0) rotate(90deg);
   }
 }
+
+.descriptive-text > div > p {
+  margin: 0.5rem;
+}

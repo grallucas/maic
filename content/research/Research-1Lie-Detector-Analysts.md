@@ -1,10 +1,7 @@
-# date: 1000
-not_in_recent:
+summary: The team is working to reproduce some LLM lie detection results on a new math model to determine the accuracy of the results it outputs.
+type: anchor - Research
+date: 2023-2024
 title: Lie Detector Analysts
-img: ./img/thumbnails/Lie_Detector_Analysts.png"
-
-**This team is validating LLM lie detection results with a new mathematical model.**<br/>
-**Team Lead:** Dr. Yoder & Xander Neuwirth<br/>
-**Year:** 2023-2024
-
-The team is working to reproduce some LLM lie detection results on a new math model to determine the accuracy of the results it outputs.
+image: ./img/thumbnails/Lie_Detector_Analysts.png"
+difficulty: easy
+authors: Dr. Yoder & Xander Neuwirth

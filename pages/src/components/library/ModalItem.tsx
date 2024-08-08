@@ -11,7 +11,7 @@ interface ModalItemProps {
   articleId?: string;
   openPreview?: (articleId: string) => boolean;
   columns: number;
-  decorative?: boolean;
+  type?: string;
 }
 
 /**
@@ -46,6 +46,7 @@ const ModalItem = (props: ModalItemProps) => {
   const navigate = useNavigate();
   const [title, setTitle] = useState<string>("");
   const [authors, setAuthors] = useState<string>("");
+  const [type, setType] = useState<string>("md");
   const [img, setImg] = useState<any>(
     <Skeleton variant="rectangular" width={200} height={250} />
   );
@@ -104,6 +105,7 @@ const ModalItem = (props: ModalItemProps) => {
         const json = JSON.parse(data)["response"];
         setTitle(json["title"]);
         setAuthors(json["authors"]);
+        setType(json["type"]);
       })
       .catch((error: Error) => {
         // pass
@@ -111,9 +113,16 @@ const ModalItem = (props: ModalItemProps) => {
   }, [props.articleId]);
 
   function handleRedict() {
-    if (props.openPreview && props.articleId) {
-      if (props.openPreview(props.articleId)) {
-        navigate(`/library?nav=Articles&article=${props.articleId}`);
+    if (type.includes("anchor")) {
+      const navLoc = type.split(" - ")[1];
+      navigate(
+        `/library?nav=${navLoc}#${title.toLowerCase().replaceAll(" ", "-")}`
+      );
+    } else {
+      if (props.openPreview && props.articleId) {
+        if (props.openPreview(props.articleId)) {
+          navigate(`/library?nav=Articles&article=${props.articleId}`);
+        }
       }
     }
   }
@@ -126,12 +135,12 @@ const ModalItem = (props: ModalItemProps) => {
       sx={{
         width: "100%",
         flex: `1 0 ${100 / props.columns}%`,
-        padding: props.decorative ? "initial" : "0",
+        padding: props.type === "decorative" ? "initial" : "0",
       }}
       onClick={() => handleRedict()}
     >
       {" "}
-      {!props.decorative ? (
+      {props.type !== "decorative" ? (
         <div style={{ padding: "1rem" }} id={props.articleId}>
           {typeof img === "string" ? (
             <img
