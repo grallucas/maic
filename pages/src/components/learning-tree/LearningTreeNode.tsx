@@ -8,7 +8,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import { CardActionArea, useThemeProps } from '@mui/material';
-import type { Node, NodeProps } from '@xyflow/react';
+import type { Node, NodeProps} from '@xyflow/react';
+import {Position, Handle} from '@xyflow/react'
 import Grid from '@mui/material/Grid'; // Grid version 1
 import "./assets/css/learningTreeNode.css";
 
@@ -99,6 +100,13 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
 
     return (
         <div className={state.className}>
+            <Handle 
+                type="target"
+                position={Position.Top}
+                style={{ background: baseColor, visibility: 'hidden'}}
+                onConnect={(params) => console.log('handle onConnect', params)}
+                isConnectable={true}>
+            </Handle>
             <Card className='card'
             sx={{border: 3, borderRadius: 4, borderColor: baseColor, background: `linear-gradient(to top, #0c0d0e, ${gradientColor})`, color: textColor}}
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
@@ -107,6 +115,13 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             >
                 {card}
             </Card>
+            <Handle 
+                type="source"
+                position={Position.Bottom}
+                style={{ background: baseColor, visibility: 'hidden'}}
+                onConnect={(params) => console.log('handle onConnect', params)}
+                isConnectable={true}>
+            </Handle>
         </div>
     );
 };

@@ -67,7 +67,7 @@ const initialNodes = [
   {
     id: 'child',
     type: 'treeNode',
-    position: { x: 0, y: 500},
+    position: { x: 200, y: 500},
     data: { 
       name: "Child Node Test",
       image_path: "string",
@@ -81,8 +81,20 @@ const initialNodes = [
   },
 ];
 
+const initialEdges = [
+  {
+    type: 'bezier',
+    source: 'root',
+    target: 'child',
+    id: '4',
+    animated: true,
+    style: { stroke: '#606060', strokeWidth: 3 },
+  },
+];
+
 const Tree = (props: TreeProps) => {
     const [nodes, setNodes] = useState(initialNodes);
+    const [edges, setEdges] = useState(initialEdges);
 
 
 // const Tree = (props: TreeProps) => {
@@ -109,6 +121,7 @@ const Tree = (props: TreeProps) => {
         <div className = 'tree'>
                 <ReactFlow 
                 nodes = {nodes} 
+                edges = {edges}
                 nodeTypes={nodeTypes}
                 fitView = {true}
                 fitViewOptions={fitViewOptions}
