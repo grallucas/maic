@@ -226,3 +226,7 @@
 .descriptive-text > div > p {
   margin: 0.5rem;
 }
+
+.featured-modal-item:hover .featured-modal-item-text {
+  background-color: rgba(0.2,0.2,0.2,0.9) !important;
+}

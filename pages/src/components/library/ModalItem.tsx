@@ -166,6 +166,7 @@ const ModalItem = (props: ModalItemProps) => {
             justifyContent: "center",
           }}
           id={props.articleId}
+          className="featured-modal-item"
         >
           {typeof img === "string" ? (
             <img
@@ -181,14 +182,17 @@ const ModalItem = (props: ModalItemProps) => {
           <div
             style={{
               position: "absolute",
-              background: "linear-gradient(to bottom, transparent, black)",
+              // background: "linear-gradient(to bottom, transparent, black)",
+              backgroundColor: "rgba(0.1,0.1,0.1,0.7)",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "flex-end",
-              height: "50%",
+              justifyContent: "center",
+              height: "33%",
               width: "100%",
               bottom: "0",
+              transition: "0.25s",
             }}
+            className="featured-modal-item-text"
           >
             <h3
               style={{ textAlign: "center", color: "white" }}
