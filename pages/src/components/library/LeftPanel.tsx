@@ -126,7 +126,7 @@ const LeftPanel = (props: LeftPanelProps) => {
         />
         <Button
           component={Link}
-          to="/library?nav=Submit"
+          to="https://forms.office.com/r/STYXQ1FPMn"
           startIcon={<NoteAddIcon />}
         >
           Submit
