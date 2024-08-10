@@ -10,19 +10,6 @@ import { Node, NodeProps } from '@xyflow/react';
 import { Position, Handle } from '@xyflow/react';
 import './assets/css/learningTreeNode.css';
 
-<<<<<<< HEAD
-// This type defines the props that are able to be passed down to the treeNode
-type treeNode = Node<{
-  name: string;
-  image_path: string;
-  description: string;
-  category: string;
-  category_color: string;
-  highlighted_path: string;
-  position: string;
-  link: string;
-}, 'treeNode'>;
-=======
 //This type, defines the props that are able to be passed down to the treeNode
 type treeNode = Node<{ 
     name: string;
@@ -36,7 +23,6 @@ type treeNode = Node<{
     link: string;
     }, 
     'treeNode'>;
->>>>>>> 370d118821362dd4045328e0f998ad30555d8f82
 
 const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
   // Default colors to use if nothing is specified
@@ -119,10 +105,9 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     }
   }
 
-<<<<<<< HEAD
-  const [state, setState] = useState({ raised: false, className: 'smalltreenode' });
-
-  const card = [];
+    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
+    
+    const card = [];
   if (state.raised) { // Big Node Content
     card.push(
       <CardActionArea href={data.link}>
@@ -135,8 +120,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 height="200"
                 image={
                   window.location.href.includes("3000")
-                    ? data.image_path
-                    : "/api/v1/library/ROSIE Supercomputer/image"
+                    ? data.local_image_path
+                    : data.api_image_path
                 }
                 alt="Image"
                 sx={{ borderRadius: 2 }}
@@ -146,87 +131,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
               <CardContent>
                 <div className="title">
                   {data.name}
-=======
-    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
-    
-    const card = [];
-    if(state.raised){ // Big Node Content
-        card.push(
-            <CardActionArea href={data.link} sx={{ p: 1 }}>
-                <Grid container spacing={0.5}>
-                    {/* Left Side: Image and Title */}
-                    <Grid item xs={6} container direction="column" justifyContent="space-between">
-                        <Grid item>
-                            <CardMedia
-                                component="img"
-                                height="200"
-                                image={
-                                window.location.href.includes("3000")
-                                    ? data.local_image_path
-                                    : data.api_image_path
-                                }
-                                alt="Image"
-                                sx={{ borderRadius: 2 }}
-                            />
-                        </Grid>
-                        <Grid item sx={{ mt: 2 }}>
-                            <CardContent>
-                                <div className="title">
-                                {data.name}
-                                </div>
-                            </CardContent>
-                        </Grid>
-                    </Grid>
-                    
-                    {/* Right Side: Description and Category */}
-                    <Grid item xs={6} container direction="column" justifyContent="space-between">
-                        <Grid item sx={{ mb: 0 }}>
-                            <CardContent>
-                                <div style={{marginBottom: '-50px'}}>
-                                {data.description}
-                                </div>
-                            </CardContent>
-                        </Grid>
-                        <Grid item sx={{ mb: 4 }}>
-                            <Chip
-                                sx={{
-                                position: "relative",
-                                borderRadius: 4,
-                                backgroundColor: baseColor,
-                                color: textColor,
-                                }}
-                                size="small"
-                                label={data.category}
-                            />
-                        </Grid>
-                    </Grid>
-
-                    {/* On Bottom In Middle: "Click to Learn More" */}
-                    <Grid item xs={12}>
-                        <CardContent>
-                            <div className="learn-more">
-                                Click to Learn More
-                            </div>
-                        </CardContent>
-                    </Grid>
-                </Grid>
-            </CardActionArea>)
-    } else { // Small Node Content
-        card.push(
-        <CardActionArea href = {data.link} sx={{p: 0.5}}>
-                <CardMedia
-                    component="img"
-                    height="200"
-                    image={
-                        window.location.href.includes("3000") ? data.local_image_path : "/api/v1/library/ROSIE Supercomputer/image"
-                    }
-                    alt="Image"
-                    sx={{borderRadius: 2}}
-                />
-            <CardContent>
-                <div>
-                    {data.name}
->>>>>>> 370d118821362dd4045328e0f998ad30555d8f82
                 </div>
               </CardContent>
             </Grid>
@@ -269,7 +173,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         <CardMedia
           component="img"
           image={
-            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
+            window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
           }
           alt="Image"
         />
