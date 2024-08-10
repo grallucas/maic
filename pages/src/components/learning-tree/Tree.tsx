@@ -46,8 +46,8 @@ interface CustomNode extends Node<CustomNodeData> {
  */
 const fitViewOptions: FitViewOptions = {
     minZoom: 0.1, 
-    maxZoom: 1,
-    nodes: [{ id: 'root' }], // Node(s) to fit in the screen on page load
+    maxZoom: 0.55,
+    nodes: [{ id: 'root'}, ], // Node(s) to fit in the screen on page load {id: 'rosie0'}
 };
 
 /**
@@ -77,10 +77,10 @@ const initialNodes: CustomNode[] = [
             category_color: "gray",
             link: '/learning-tree',
         },
-        children: ['rosie1','child r', 'child l'],
+        children: ['rosie0','child r', 'child l'],
     },
     {
-        id: 'rosie1',
+        id: 'rosie0',
         type: 'treeNode',
         position: { x: -700, y: 500 },
         data: { 
@@ -92,17 +92,77 @@ const initialNodes: CustomNode[] = [
             category_color: "red",
             link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
         },
+        children: ['rosie1']
+    },
+    {
+        id: 'rosie1',
+        type: 'treeNode',
+        position: { x: -700, y: 1000 },
+        data: { 
+            name: "Intro to ROSIE (Pt 1): Getting Access",
+            local_image_path: "/tree-thumbnails/ROSIE Tutorial Icon 1.png",
+            api_image_path: "/api/v1/library/ROSIE Tutorial Icon 1/image",
+            description: "You have an email from Dr. Retert, now what?",
+            category: "ROSIE",
+            category_color: "red",
+            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+        },
         children: ['rosie2']
     },
     {
         id: 'rosie2',
         type: 'treeNode',
-        position: { x: -700, y: 1000 },
+        position: { x: -700, y: 1500 },
         data: { 
-            name: "Who is ROSIE?",
-            local_image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
-            api_image_path: "/api/v1/library/ROSIE Supercomputer/image",
-            description: "Rosie is MSOE's supercomputer! Learn more here!",
+            name: "Intro to ROSIE (Pt 2): First-Time Login",
+            local_image_path: "/tree-thumbnails/ROSIE Tutorial Icon 2.png",
+            api_image_path: "/api/v1/library/ROSIE Tutorial Icon 2/image",
+            description: "If you have not had a class that has used rosie yet, you will need to request access to Rosie in order to do many AI workshops",
+            category: "ROSIE",
+            category_color: "red",
+            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+        },
+        children: ['rosie3']
+    },
+    {
+        id: 'rosie3',
+        type: 'treeNode',
+        position: { x: -700, y: 2000 },
+        data: { 
+            name: "Intro to ROSIE (Pt 3): Using ROSIE Web Portal",
+            local_image_path: "/tree-thumbnails/ROSIE Tutorial Icon 3.png",
+            api_image_path: "/api/v1/library/ROSIE Tutorial Icon 3/image",
+            description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
+            category: "ROSIE",
+            category_color: "red",
+            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+        },
+        children: ['rosie4']
+    },
+    {
+        id: 'rosie4',
+        type: 'treeNode',
+        position: { x: -700, y: 2500 },
+        data: { 
+            name: "Intro to ROSIE (Pt 4): Starting your first ROSIE Job",
+            local_image_path: "/tree-thumbnails/ROSIE Tutorial Icon 4.png",
+            api_image_path: "/api/v1/library/ROSIE Tutorial Icon 4/image",
+            description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
+            category: "ROSIE",
+            category_color: "red",
+            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+        },
+        children: ['rosie5']
+    },
+    {
+        id: 'rosie5',
+        type: 'treeNode',
+        position: { x: -700, y: 3000 },
+        data: { 
+            name: "Intro to ROSIE (Pt 5): Using the ROSIE Terminal",
+            local_image_path: "/tree-thumbnails/ROSIE Tutorial Icon 5.png",
+            api_image_path: "/api/v1/library/ROSIE Tutorial Icon 5/image",
+            description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
             category: "ROSIE",
             category_color: "red",
             link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
@@ -258,7 +318,9 @@ const Tree = (props: TreeProps) => {
                 colorMode="dark"
             >
                 <Background />
-                <Controls />
+                <Controls 
+                showInteractive={false}
+                />
             </ReactFlow>
         </div>
     );
