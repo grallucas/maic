@@ -90,7 +90,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     switch(data.category_color){
         case 'red': {
             baseColor = '#9A031E'
-            gradientTop = '#750000'
+            gradientTop = '#650000'
+            gradientBottom = '#380000'
             textColor='#fff'
             break;
         }
