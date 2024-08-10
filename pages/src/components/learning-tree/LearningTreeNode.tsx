@@ -10,17 +10,19 @@ import { Node, NodeProps } from '@xyflow/react';
 import { Position, Handle } from '@xyflow/react';
 import './assets/css/learningTreeNode.css';
 
-// This type defines the props that are able to be passed down to the treeNode
-type treeNode = Node<{
-  name: string;
-  image_path: string;
-  description: string;
-  category: string;
-  category_color: string;
-  highlighted_path: string;
-  position: string;
-  link: string;
-}, 'treeNode'>;
+//This type, defines the props that are able to be passed down to the treeNode
+type treeNode = Node<{ 
+    name: string;
+    local_image_path: string;
+    api_image_path: string;
+    description: string;
+    category: string;
+    category_color: string;
+    highlighted_path: string;
+    position: string;
+    link: string;
+    }, 
+    'treeNode'>;
 
 const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
   // Default colors to use if nothing is specified
@@ -103,9 +105,9 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     }
   }
 
-  const [state, setState] = useState({ raised: false, className: 'smalltreenode' });
-
-  const card = [];
+    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
+    
+    const card = [];
   if (state.raised) { // Big Node Content
     card.push(
       <CardActionArea href={data.link}>
@@ -118,8 +120,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 height="200"
                 image={
                   window.location.href.includes("3000")
-                    ? data.image_path
-                    : "/api/v1/library/ROSIE Supercomputer/image"
+                    ? data.local_image_path
+                    : data.api_image_path
                 }
                 alt="Image"
                 sx={{ borderRadius: 2 }}
@@ -156,7 +158,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 />
                 <Typography
                     variant="body2" // Adjust this variant to change the font size and style
-                    sx={{ mb: 3, fontSize: 14, fontStyle: 'italic' }}
+                    sx={{ mb: 3, fontSize: 14, fontStyle: 'italic', fontWeight: 'bold' }}
                 >
                     Click to learn more!
                 </Typography>
@@ -167,11 +169,11 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea href={data.link} sx = {{maxHeight: 300, maxWidth: 200}}>
+      <CardActionArea href={data.link} sx = {{maxWidth: 200}}>
         <CardMedia
           component="img"
           image={
-            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
+            window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
           }
           alt="Image"
         />
