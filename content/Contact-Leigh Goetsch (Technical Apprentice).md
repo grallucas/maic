@@ -1,6 +1,6 @@
 img: ./img/board_members/Leigh Goetsch Portrait.jpg
 date: 14/11/2023
-order: 5
+type: md
 not_in_recent:
 
 ### Workshop Developer Apprentice

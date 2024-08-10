@@ -51,7 +51,7 @@ const LeftPanel = (props: LeftPanelProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/tags`)
+    fetch(`${baseUrl}/api/v1/library/tags/articles`)
       .then((response: Response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -63,17 +63,21 @@ const LeftPanel = (props: LeftPanelProps) => {
         let buttons: any[] = [];
         Object.keys(json).forEach((key: string) => {
           buttons.push(
-            <Button style={{textAlign: "left"}} component={Link} to={`/library?nav=Articles&type=${json[key]}`}>
+            <Button
+              style={{ textAlign: "left" }}
+              component={Link}
+              to={`/library?nav=Articles&type=${json[key]}`}
+            >
               {json[key]}
             </Button>
-          )
-        })
+          );
+        });
         setCategories(buttons);
       })
       .catch((error: Error) => {
         // pass
       });
-  }, [])
+  }, []);
 
   /**
    * The LeftPanel component.
@@ -105,11 +109,7 @@ const LeftPanel = (props: LeftPanelProps) => {
         >
           Articles
         </Button>
-        {articlesDropdown && (
-          <div>
-            {categories}
-          </div>
-        )}
+        {articlesDropdown && <div>{categories}</div>}
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
@@ -126,7 +126,7 @@ const LeftPanel = (props: LeftPanelProps) => {
         />
         <Button
           component={Link}
-          to="/library?nav=Submit"
+          to="https://forms.office.com/r/STYXQ1FPMn"
           startIcon={<NoteAddIcon />}
         >
           Submit

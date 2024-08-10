@@ -12,6 +12,7 @@ mangum = "*"
 pillow = "*"
 black = "*"
 flake8 = "*"
+requests = "*"
 
 [dev-packages]
 

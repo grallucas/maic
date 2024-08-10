@@ -22,9 +22,23 @@ class Modal(BaseModel):
     title: str
     tags: List[str]
     content_ids: List[str]
+    type: str = "normal"
+    img: str = ""
+    description: str = ""
+    authors: str = ""
+    date: str = ""
 
     def to_dict(self):
-        return {"title": self.title, "tags": self.tags, "content_ids": self.content_ids}
+        return {
+            "title": self.title,
+            "tags": self.tags,
+            "content_ids": self.content_ids,
+            "type": self.type,
+            "image": self.img,
+            "description": self.description,
+            "authors": self.authors,
+            "date": self.date,
+        }
 
 
 class ArticleCard(BaseModel):

@@ -1,5 +1,5 @@
 summary: If you need to use ROSIE while off-campus, you will need to install Global Protect!
-order: 92
+type: md
 date: 27/8/2023
 title: Using ROSIE While Off-Campus
 image: ./img/thumbnails/GlobalProtect-icon.png
@@ -8,6 +8,7 @@ authors: Thomas Benzshawel,Ben Paulson
 categories: Rosie,VPN
 
 ## Global Protect - Access Rosie from off campus
+
 **Rosie can normally only be accessed from the schools network.**<br><br>
 However, we can get around this through the use of a VPN!
 The VPN MSOE uses is called Global Protect and can be downloaded from [here](https://vpn.msoe.edu/global-protect/getsoftwarepage.esp).

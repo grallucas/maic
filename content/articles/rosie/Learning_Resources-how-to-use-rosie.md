@@ -1,13 +1,11 @@
 summary: Using Rosie has a bit of a learning curve, so make sure you read this guide before trying to use it!
-order: 1
+type: md
 date: 27/8/2023
 title: How to use Rosie
 image: ./img/thumbnails/ROSIE_Dashboard.png
 difficulty: easy
 authors: Thomas Benzshawel
 categories: Rosie,Topic Introduction
-
-
 
 ## Working with the Rosie GUI
 
@@ -37,12 +35,11 @@ When you open a notebook, if you go back to the file explorer you'll notice that
 If you hit the Running tab at the top of the page you can check if you have multiple notebooks running. Having multiple notebooks running is a bad idea so this menu can help you shut down all notebooks but the one you want to run.
 
 Once you open a notebook, you can start running cells like normal.
-Type some code in and hit Shift+Enter to run the cell (or the play icon by the top of the screen), you can tell a cell is running because a "*" will be displayed next to the cell, when it finishes the * will be replaced with a number.
+Type some code in and hit Shift+Enter to run the cell (or the play icon by the top of the screen), you can tell a cell is running because a "_" will be displayed next to the cell, when it finishes the _ will be replaced with a number.
 To insert a new cell, use the Alt+Enter command or hit the plus by the top of the screen.
 To delete a cell, highlight the cell (so it is highlighted blue and not green), and press the D key twice, or hit the scissors by the top of the screen.
 If you run into issues running code, you can restart by opening the kernel menu and selecting restart.
 Make sure to periodically hit Ctrl+S to save your notebook as well, you can see when your notebook was last saved at the top of the screen.
-
 
 ## Using SSH To Connect To Rosie In VS Code
 
@@ -87,9 +84,8 @@ There is one more thing to do before running Juyter notebook cells. You have to 
 
 In general, this process only involves running jernel and connecting a notebook once all setup has been done.
 
-
-
 ## TL;DR
+
 1. Run this command if you haven't already: /data/ai_club/util/setup
 2. Restart your terminal.
 3. Use the command jernel to start a jupyter server.

@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 import "./assets/library/css/modal.css";
 import tempImage from "./assets/library/images/temp-image.jpg";
 import { useNavigate } from "react-router-dom";
@@ -11,11 +11,12 @@ interface ModalItemProps {
   articleId?: string;
   openPreview?: (articleId: string) => boolean;
   columns: number;
+  type?: string;
 }
 
 /**
  * Checks if an image exists at the given URL.
- * @param {string} url - The URL of the image to check. 
+ * @param {string} url - The URL of the image to check.
  * @param {void} callback - The callback function to execute after checking the image.
  */
 function checkImage(url: string, callback: (exists: boolean) => void): void {
@@ -43,13 +44,17 @@ const ModalItem = (props: ModalItemProps) => {
    * Also the navigate function to navigate to the article page.
    */
   const navigate = useNavigate();
-  const [title, setTitle] = useState<string>(
-    "No title defined for this article"
+  const [title, setTitle] = useState<string>("");
+  const [authors, setAuthors] = useState<string>("");
+  const [type, setType] = useState<string>("md");
+  const [img, setImg] = useState<any>(
+    <Skeleton
+      variant="rectangular"
+      width={"100%"}
+      height={"100%"}
+      sx={{ minWidth: "20vh", minHeight: "20vh" }}
+    />
   );
-  const [authors, setAuthors] = useState<string>(
-    "No authors defined for this article"
-  );
-  const [img, setImg] = useState<string>(tempImage);
 
   /**
    * Fetches the image from the server and updates the image states.
@@ -94,27 +99,39 @@ const ModalItem = (props: ModalItemProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        setTitle(json["title"]);
-        setAuthors(json["authors"]);
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    if (props.articleId) {
+      fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          setTitle(json["title"]);
+          setAuthors(json["authors"]);
+          setType(json["type"]);
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+    }
   }, [props.articleId]);
 
   function handleRedict() {
-    if (props.openPreview && props.articleId) {
-      if (props.openPreview(props.articleId)) {
-        navigate(`/library?nav=Articles&article=${props.articleId}`);
+    if (type.toLowerCase() === "video") {
+      navigate(`/library?nav=Videos&article=${props.articleId}`);
+    } else if (type.includes("anchor")) {
+      const navLoc = type.split(" - ")[1];
+      navigate(
+        `/library?nav=${navLoc}#${title.toLowerCase().replaceAll(" ", "-")}`
+      );
+    } else {
+      if (props.openPreview && props.articleId) {
+        if (props.openPreview(props.articleId)) {
+          navigate(`/library?nav=Articles&article=${props.articleId}`);
+        }
       }
     }
   }
@@ -123,18 +140,88 @@ const ModalItem = (props: ModalItemProps) => {
    * The ModalItem component.
    */
   return (
-    <Button sx={{ width: "100%", flex: `1 0 ${100 / props.columns}%` }} onClick={() => handleRedict()}>
-      <div style={{ padding: "1rem" }} id={props.articleId}>
-        <img
-          src={img}
-          alt="Preview"
-          style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
-          className={props.articleId}
-          loading="lazy"
-        ></img>
-        <h3 className="modal-item-header">{title}</h3>
-        <p className="authors">{authors}</p>
-      </div>
+    <Button
+      sx={{
+        width: "100%",
+        flex: `1 0 ${100 / props.columns}%`,
+        padding: props.type === "decorative" ? "initial" : "0",
+      }}
+      onClick={() => handleRedict()}
+    >
+      {" "}
+      {props.type !== "decorative" ? (
+        <div style={{ padding: "1rem" }} id={props.articleId}>
+          {typeof img === "string" ? (
+            <img
+              src={img}
+              alt="Preview"
+              style={{
+                width: "auto",
+                maxHeight: "20vh",
+                maxWidth: "20vh",
+                objectFit: "fill",
+              }}
+              className={props.articleId}
+              loading="lazy"
+            ></img>
+          ) : (
+            img
+          )}
+          <h3 className="modal-item-header">{title}</h3>
+          <p className="authors">{authors}</p>
+        </div>
+      ) : (
+        <div
+          style={{
+            overflow: "hidden",
+            height: "35vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            width: "100%",
+          }}
+          id={props.articleId}
+        >
+          {typeof img === "string" ? (
+            <img
+              src={img}
+              alt="Preview"
+              style={{
+                width: "100%",
+              }}
+              className={props.articleId}
+              loading="lazy"
+            ></img>
+          ) : (
+            img
+          )}
+          <div
+            style={{
+              position: "absolute",
+              background: "linear-gradient(to bottom, transparent, black)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              height: "50%",
+              width: "100%",
+              bottom: "0",
+            }}
+          >
+            <h3
+              style={{ textAlign: "center", color: "white" }}
+              className="modal-item-header"
+            >
+              {title}
+            </h3>
+            <p
+              style={{ textAlign: "center", marginBottom: "1rem" }}
+              className="authors"
+            >
+              {authors}
+            </p>
+          </div>
+        </div>
+      )}
     </Button>
   );
 };
