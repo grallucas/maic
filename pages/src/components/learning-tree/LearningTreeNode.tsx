@@ -33,6 +33,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     let gradientColor = '#fff';
     let textColor = '#fff';
 
+    //Version2
     switch(data.category_color){
         case 'red': {
             baseColor = '#9A031E'
@@ -41,38 +42,38 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             break;
         }
         case 'orange': {
-            baseColor = '#FF6700'
-            gradientColor = '#CC5500'
+            baseColor = '#FB8B24'
+            gradientColor = '#D66B00'
             textColor = '#fff'
             break;
         }
         case 'yellow': {
-            baseColor = '#FFD300'
-            gradientColor = '#CCA200'
+            baseColor = '#F7B801'
+            gradientColor = '#C79400'
             textColor = '#fff'
             break;
         }
         case 'green': {
-            baseColor = '#008450'
-            gradientColor = '#00663D'
+            baseColor = '#008148'
+            gradientColor = '#005C34'
             textColor = '#fff'
             break;
         }
         case 'blue': {
-            baseColor = '#005F99'
-            gradientColor = '#004080'
+            baseColor = '#005F73'
+            gradientColor = '#003F50'
             textColor = '#fff'
             break;
         }
         case 'indigo': {
-            baseColor = '#4B0082'
-            gradientColor = '#360065'
+            baseColor = '#1A365D'
+            gradientColor = '#112344'
             textColor = '#fff'
             break;
         }
         case 'violet': {
-            baseColor = '#8A2BE2'
-            gradientColor = '#6B1FB2'
+            baseColor = '#6A0572'
+            gradientColor = '#45004F'
             textColor = '#fff'
             break;
         }
@@ -83,6 +84,58 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             break;
         }
     }
+
+    //Version1
+    // switch(data.category_color){
+    //     case 'red': {
+    //         baseColor = '#9A031E'
+    //         gradientColor = '#750000'
+    //         textColor='#fff'
+    //         break;
+    //     }
+    //     case 'orange': {
+    //         baseColor = '#FF6700'
+    //         gradientColor = '#CC5500'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'yellow': {
+    //         baseColor = '#FFD300'
+    //         gradientColor = '#CCA200'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'green': {
+    //         baseColor = '#008450'
+    //         gradientColor = '#00663D'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'blue': {
+    //         baseColor = '#005F99'
+    //         gradientColor = '#004080'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'indigo': {
+    //         baseColor = '#4B0082'
+    //         gradientColor = '#360065'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'violet': {
+    //         baseColor = '#8A2BE2'
+    //         gradientColor = '#6B1FB2'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     default: {
+    //         baseColor = '#fff';
+    //         gradientColor = '#fff';
+    //         textColor = '#fff';
+    //         break;
+    //     }
+    // }
 
     const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
