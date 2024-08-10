@@ -46,10 +46,9 @@ const useScrollToLocation = () => {
         if (element) {
           const elementPosition =
             element.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition + 200;
 
           window.scrollTo({
-            top: offsetPosition,
+            top: elementPosition,
             behavior: "smooth",
           });
 
@@ -242,31 +241,33 @@ const Library = () => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${category}/tagged-content`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        let tempCategoryItems: any[] = [];
-        Object.keys(json).forEach((key, index) => {
-          tempCategoryItems.push(
-            <ModalItem
-              key={json[key]}
-              articleId={json[key]}
-              openPreview={() => openPreview(json[key])}
-              columns={columns}
-            />
-          );
+    if (category) {
+      fetch(`${baseUrl}/api/v1/library/${category}/tagged-content`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          let tempCategoryItems: any[] = [];
+          Object.keys(json).forEach((key, index) => {
+            tempCategoryItems.push(
+              <ModalItem
+                key={json[key]}
+                articleId={json[key]}
+                openPreview={() => openPreview(json[key])}
+                columns={columns}
+              />
+            );
+          });
+          setCategoryItems(tempCategoryItems);
+        })
+        .catch((error: Error) => {
+          // pass
         });
-        setCategoryItems(tempCategoryItems);
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    }
   }, [category]);
 
   useEffect(() => {
@@ -310,59 +311,61 @@ const Library = () => {
       } else {
         baseUrl = `${parts[0]}//${parts[2]}`;
       }
-      fetch(`${baseUrl}/api/v1/library/subsection/${query.get("nav")}`)
-        .then((response: Response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data: any) => {
-          const json = data["response"];
-          let modals: any[] = [];
-          Object.keys(json).forEach((key, index) => {
-            const modal: Modal = json[key];
-            const chips = modal.tags.map((tag, index) => (
-              <Chip
-                key={index}
-                component={Link}
-                color="primary"
-                label={tag}
-                to={`/library?nav=${query.get("nav")}`}
-                clickable
-                deleteIcon={<ArrowForward />}
-                onDelete={() => {}}
-              />
-            ));
-            const contentIds = modal.content_ids.sort();
-            const content = contentIds.map((contentId) => (
-              <ModalItem
-                key={contentId}
-                articleId={contentId}
-                openPreview={() => openPreview(contentId)}
-                columns={columns}
-                type={modal.type}
-              />
-            ));
-            modals.push(
-              <Modal
-                key={index}
-                title={modal.title}
-                chips={chips}
-                items={content}
-                type={modal.type}
-                img={modal.img}
-                date={modal.date}
-                description={modal.description}
-                authors={modal.authors}
-              />
-            );
+      if (query.get("nav")) {
+        fetch(`${baseUrl}/api/v1/library/subsection/${query.get("nav")}`)
+          .then((response: Response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data: any) => {
+            const json = data["response"];
+            let modals: any[] = [];
+            Object.keys(json).forEach((key, index) => {
+              const modal: Modal = json[key];
+              const chips = modal.tags.map((tag, index) => (
+                <Chip
+                  key={index}
+                  component={Link}
+                  color="primary"
+                  label={tag}
+                  to={`/library?nav=${query.get("nav")}`}
+                  clickable
+                  deleteIcon={<ArrowForward />}
+                  onDelete={() => {}}
+                />
+              ));
+              const contentIds = modal.content_ids.sort();
+              const content = contentIds.map((contentId) => (
+                <ModalItem
+                  key={contentId}
+                  articleId={contentId}
+                  openPreview={() => openPreview(contentId)}
+                  columns={columns}
+                  type={modal.type}
+                />
+              ));
+              modals.push(
+                <Modal
+                  key={index}
+                  title={modal.title}
+                  chips={chips}
+                  items={content}
+                  type={modal.type}
+                  img={modal.img}
+                  date={modal.date}
+                  description={modal.description}
+                  authors={modal.authors}
+                />
+              );
+            });
+            setModals(modals);
+          })
+          .catch((error: Error) => {
+            // pass
           });
-          setModals(modals);
-        })
-        .catch((error: Error) => {
-          // pass
-        });
+      }
     }
   }, [currentArticle || query]);
 
@@ -379,31 +382,33 @@ const Library = () => {
         baseUrl = `${parts[0]}//${parts[2]}`;
       }
 
-      fetch(`${baseUrl}/api/v1/library/${query.get("type")}/tagged-content`)
-        .then((response: Response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data: any) => {
-          const json = data["response"];
-          const items: any[] = [];
-          Object.keys(json).forEach((key, index) => {
-            items.push(
-              <ModalItem
-                key={index}
-                articleId={json[key]}
-                openPreview={() => openPreview(json[key])}
-                columns={columns}
-              />
-            );
-          });
+      if (query.get("type")) {
+        fetch(`${baseUrl}/api/v1/library/${query.get("type")}/tagged-content`)
+          .then((response: Response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data: any) => {
+            const json = data["response"];
+            const items: any[] = [];
+            Object.keys(json).forEach((key, index) => {
+              items.push(
+                <ModalItem
+                  key={index}
+                  articleId={json[key]}
+                  openPreview={() => openPreview(json[key])}
+                  columns={columns}
+                />
+              );
+            });
 
-          const tag = query.get("type") || "defaultTitle";
-          const modal = <Modal title={tag} chips={[]} items={items} />;
-          setModals([modal]);
-        });
+            const tag = query.get("type") || "defaultTitle";
+            const modal = <Modal title={tag} chips={[]} items={items} />;
+            setModals([modal]);
+          });
+      }
     }
   }, [query.get("type")]);
 

@@ -69,9 +69,9 @@ async def get_modals():
                 title="Featured Videos",
                 tags=["Videos"],
                 content_ids=[
-                    "Learning_Resources-RunningJupyterLabOnADGXNode copy",
-                    "Learning_Resources-global-protect",
-                    "Learning_Resources-how-to-use-jupyter-notebooks",
+                    "Video-Rosie_23_Competiton",
+                    "Video-Rosie_24_Competiton",
+                    "Video-NVIDIA_QA_Panel_MAIC_Speaker_Series",
                 ],
                 type="decorative",
             ),
@@ -232,6 +232,13 @@ async def get_content_type(content_id: str):
                 "response": {
                     "type": content_type,
                     "pdf": markdown[8].replace("pdf:", "").strip(),
+                }
+            }
+        if content_type == "video":
+            return {
+                "response": {
+                    "type": content_type,
+                    "id": markdown[8].replace("id:", "").strip(),
                 }
             }
         return {"response": {"type": content_type}}

@@ -48,7 +48,12 @@ const ModalItem = (props: ModalItemProps) => {
   const [authors, setAuthors] = useState<string>("");
   const [type, setType] = useState<string>("md");
   const [img, setImg] = useState<any>(
-    <Skeleton variant="rectangular" width={200} height={250} />
+    <Skeleton
+      variant="rectangular"
+      width={"100%"}
+      height={"100%"}
+      sx={{ minWidth: "20vh", minHeight: "20vh" }}
+    />
   );
 
   /**
@@ -94,26 +99,30 @@ const ModalItem = (props: ModalItemProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        setTitle(json["title"]);
-        setAuthors(json["authors"]);
-        setType(json["type"]);
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    if (props.articleId) {
+      fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          setTitle(json["title"]);
+          setAuthors(json["authors"]);
+          setType(json["type"]);
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+    }
   }, [props.articleId]);
 
   function handleRedict() {
-    if (type.includes("anchor")) {
+    if (type.toLowerCase() === "video") {
+      navigate(`/library?nav=Videos&article=${props.articleId}`);
+    } else if (type.includes("anchor")) {
       const navLoc = type.split(" - ")[1];
       navigate(
         `/library?nav=${navLoc}#${title.toLowerCase().replaceAll(" ", "-")}`
@@ -146,7 +155,12 @@ const ModalItem = (props: ModalItemProps) => {
             <img
               src={img}
               alt="Preview"
-              style={{ width: "90%", maxHeight: "25vh", maxWidth: "20vh" }}
+              style={{
+                width: "auto",
+                maxHeight: "20vh",
+                maxWidth: "20vh",
+                objectFit: "fill",
+              }}
               className={props.articleId}
               loading="lazy"
             ></img>
@@ -164,6 +178,7 @@ const ModalItem = (props: ModalItemProps) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            width: "100%",
           }}
           id={props.articleId}
         >
@@ -171,7 +186,9 @@ const ModalItem = (props: ModalItemProps) => {
             <img
               src={img}
               alt="Preview"
-              style={{ width: "100%" }}
+              style={{
+                width: "100%",
+              }}
               className={props.articleId}
               loading="lazy"
             ></img>

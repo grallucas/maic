@@ -135,27 +135,29 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${props.articleId}/abstract`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        setAbstract(json["abstract"]);
-        setReadingTime(`${json["reading_time"]} minute read`);
-        const pageLength = Number.parseInt(json["pages"]);
-        if (pageLength === 1) {
-          setPageLength("1 page");
-        } else {
-          setPageLength(`${pageLength} pages`);
-        }
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    if (props.articleId) {
+      fetch(`${baseUrl}/api/v1/library/${props.articleId}/abstract`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          setAbstract(json["abstract"]);
+          setReadingTime(`${json["reading_time"]} minute read`);
+          const pageLength = Number.parseInt(json["pages"]);
+          if (pageLength === 1) {
+            setPageLength("1 page");
+          } else {
+            setPageLength(`${pageLength} pages`);
+          }
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+    }
   }, [props.articleId]);
 
   /**
@@ -169,20 +171,22 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${props.articleId}/tags`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        setTags(createTag(json));
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    if (props.articleId) {
+      fetch(`${baseUrl}/api/v1/library/${props.articleId}/tags`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          setTags(createTag(json));
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+    }
   }, [props.articleId]);
 
   /**

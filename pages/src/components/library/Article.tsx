@@ -57,6 +57,7 @@ const Article = (props: ArticleProps) => {
   const [contents, setContents] = useState<string>("");
   const [type, setType] = useState<string>("md");
   const [pdfUrl, setPdfUrl] = useState<string>("");
+  const [videoId, setVideoId] = useState<string>("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -67,30 +68,35 @@ const Article = (props: ArticleProps) => {
     } else {
       baseUrl = `${parts[0]}//${parts[2]}`;
     }
-    fetch(`${baseUrl}/api/v1/library/${props.articleId}/content-type`)
-      .then((response: Response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        const json = JSON.parse(data)["response"];
-        if (json["type"] === "link") {
-          const link = json["link"];
-          window.open(link, "_blank");
-          navigate("/library");
-          props.closeArticle();
-        }
-        if (json["type"] === "pdf") {
-          setPdfUrl(json["pdf"]);
-        }
-        window.scrollTo(0, 0);
-        setType(json["type"]);
-      })
-      .catch((error: Error) => {
-        // pass
-      });
+    if (props.articleId) {
+      fetch(`${baseUrl}/api/v1/library/${props.articleId}/content-type`)
+        .then((response: Response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data: string) => {
+          const json = JSON.parse(data)["response"];
+          if (json["type"] === "link") {
+            const link = json["link"];
+            window.open(link, "_blank");
+            navigate("/library");
+            props.closeArticle();
+          }
+          if (json["type"] === "pdf") {
+            setPdfUrl(json["pdf"]);
+          }
+          if (json["type"] === "video") {
+            setVideoId(json["id"]);
+          }
+          window.scrollTo(0, 0);
+          setType(json["type"]);
+        })
+        .catch((error: Error) => {
+          // pass
+        });
+    }
   }, [props.articleId]);
 
   /**
@@ -187,24 +193,26 @@ const Article = (props: ArticleProps) => {
         baseUrl = `${parts[0]}//${parts[2]}`;
       }
 
-      fetch(`${baseUrl}/api/v1/library/${props.articleId}`)
-        .then((response: Response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.text();
-        })
-        .then((data: string) => {
-          const elements = data.split("\\n");
-          setSummary(elements[0].split("summary: ")[1]);
-          setDate(convertDateToTextual(elements[2].split("date: ")[1]));
-          setTitle(elements[3].split("title: ")[1]);
-          setAuthors(elements[6].split("authors: ")[1].split(",").join(", "));
-          setContents(elements.slice(9).join("\n").slice(0, -1));
-        })
-        .catch((error: Error) => {
-          // pass
-        });
+      if (props.articleId) {
+        fetch(`${baseUrl}/api/v1/library/${props.articleId}`)
+          .then((response: Response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.text();
+          })
+          .then((data: string) => {
+            const elements = data.split("\\n");
+            setSummary(elements[0].split("summary: ")[1]);
+            setDate(convertDateToTextual(elements[2].split("date: ")[1]));
+            setTitle(elements[3].split("title: ")[1]);
+            setAuthors(elements[6].split("authors: ")[1].split(",").join(", "));
+            setContents(elements.slice(9).join("\n").slice(0, -1));
+          })
+          .catch((error: Error) => {
+            // pass
+          });
+      }
     }
   }, [props.articleId]);
 
@@ -242,6 +250,17 @@ const Article = (props: ArticleProps) => {
         width={"100%"}
         style={{
           display: type === "pdf" ? "block" : "none",
+          marginTop: "55px",
+          border: "none",
+          height: "calc(100vh - 55px)",
+        }}
+      />
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={videoId}
+        width={"100%"}
+        style={{
+          display: type === "video" ? "block" : "none",
           marginTop: "55px",
           border: "none",
           height: "calc(100vh - 55px)",

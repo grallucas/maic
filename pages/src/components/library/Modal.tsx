@@ -1,5 +1,5 @@
 import "./assets/library/css/modal.css";
-import { Box, ButtonGroup, Card, CardContent } from "@mui/material";
+import { Box, ButtonGroup, Card, CardContent, Skeleton } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import Markdown from "react-markdown";
@@ -48,7 +48,9 @@ const Modal = (props: ModalProps) => {
    */
   const headerRef = useRef(null);
   const [headerSize, setHeaderSize] = useState({ width: 0, height: 0 });
-  const [img, setImg] = useState<string>("");
+  const [img, setImg] = useState<any>(
+    <Skeleton variant="rectangular" width={"19vh"} height={"19vh"} />
+  );
   const [authors, setAuthors] = useState<string>("Members: ");
 
   useEffect(() => {
@@ -148,7 +150,11 @@ const Modal = (props: ModalProps) => {
           <ButtonGroup
             variant="text"
             color="inherit"
-            sx={{ width: "100%", marginTop: "1rem", flexWrap: "wrap" }}
+            sx={{
+              width: "100%",
+              marginTop: "1rem",
+              flexWrap: "wrap",
+            }}
           >
             {props.items}
           </ButtonGroup>
@@ -158,7 +164,11 @@ const Modal = (props: ModalProps) => {
               className="descriptive-text"
               style={{ display: "flex", gap: "0.5rem", marginTop: "1rem" }}
             >
-              <img src={img} alt={img} style={{ maxHeight: "20vh" }}></img>
+              {typeof img === "string" ? (
+                <img src={img} alt={img} style={{ maxHeight: "20vh" }}></img>
+              ) : (
+                img
+              )}
               <div
                 style={{
                   display: "flex",
