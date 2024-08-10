@@ -26,7 +26,7 @@ interface TreeProps {}
 // Custom node data type with index signature
 interface CustomNodeData {
     name: string;
-    image_path: string;
+    local_image_path: string;
     description: string;
     category: string;
     category_color: string;
@@ -70,21 +70,38 @@ const initialNodes: CustomNode[] = [
         position: { x: 0, y: 0 },
         data: {
             name: "What is the Learning Tree?",
-            image_path: "/tree-thumbnails/learning-tree.png",
+            local_image_path: "/tree-thumbnails/learning-tree.png",
+            api_image_path: 'string',
             description: "The learning tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way.",
             category: "Introduction",
             category_color: "gray",
             link: '/learning-tree',
         },
-        children: ['child r', 'child l'],
+        children: ['rosie1','child r', 'child l'],
     },
     {
-        id: 'rosie 1',
+        id: 'rosie1',
         type: 'treeNode',
-        position: { x: 400, y: 0 },
+        position: { x: -700, y: 500 },
         data: { 
             name: "Who is ROSIE?",
-            image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
+            local_image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
+            api_image_path: "/api/v1/library/ROSIE Supercomputer/image",
+            description: "Rosie is MSOE's supercomputer! Learn more here!",
+            category: "ROSIE",
+            category_color: "red",
+            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+        },
+        children: ['rosie2']
+    },
+    {
+        id: 'rosie2',
+        type: 'treeNode',
+        position: { x: -700, y: 1000 },
+        data: { 
+            name: "Who is ROSIE?",
+            local_image_path: "/tree-thumbnails/ROSIE Supercomputer.jpg",
+            api_image_path: "/api/v1/library/ROSIE Supercomputer/image",
             description: "Rosie is MSOE's supercomputer! Learn more here!",
             category: "ROSIE",
             category_color: "red",
@@ -98,7 +115,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 200, y: 500 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "orange",
@@ -112,7 +130,8 @@ const initialNodes: CustomNode[] = [
         position: { x: -200, y: 500 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "yellow",
@@ -126,7 +145,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 200, y: 1500 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "green",
@@ -140,7 +160,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 0, y: 2000 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "blue",
@@ -154,7 +175,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 200, y: 2500 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "indigo",
@@ -168,7 +190,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 0, y: 3000 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "violet",
@@ -182,7 +205,8 @@ const initialNodes: CustomNode[] = [
         position: { x: 200, y: 3500 },
         data: { 
             name: "Child Node Test",
-            image_path: "string",
+            local_image_path: "string",
+            api_image_path: 'string',
             description: "string",
             category: "ROSIE",
             category_color: "default",

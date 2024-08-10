@@ -16,7 +16,8 @@ import "./assets/css/learningTreeNode.css";
 //This type, defines the props that are able to be passed down to the treeNode
 type treeNode = Node<{ 
     name: string;
-    image_path: string;
+    local_image_path: string;
+    api_image_path: string;
     description: string;
     category: string;
     category_color: string;
@@ -123,8 +124,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                                 height="200"
                                 image={
                                 window.location.href.includes("3000")
-                                    ? data.image_path
-                                    : "/api/v1/library/ROSIE Supercomputer/image"
+                                    ? data.local_image_path
+                                    : data.api_image_path
                                 }
                                 alt="Image"
                                 sx={{ borderRadius: 2 }}
@@ -179,7 +180,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                     component="img"
                     height="200"
                     image={
-                        window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
+                        window.location.href.includes("3000") ? data.local_image_path : "/api/v1/library/ROSIE Supercomputer/image"
                     }
                     alt="Image"
                     sx={{borderRadius: 2}}
