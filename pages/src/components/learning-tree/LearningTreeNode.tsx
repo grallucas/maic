@@ -33,11 +33,55 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     let gradientColor = '#fff';
     let textColor = '#fff';
 
-    //Will eventually be a switch statement for each supported color
-    if(data.category_color === 'red'){
-        baseColor = '#9A031E'
-        gradientColor= '#750000'
-        textColor='#fff'
+    switch(data.category_color){
+        case 'red': {
+            baseColor = '#9A031E'
+            gradientColor = '#750000'
+            textColor='#fff'
+            break;
+        }
+        case 'orange': {
+            baseColor = '#FF6700'
+            gradientColor = '#CC5500'
+            textColor = '#fff'
+            break;
+        }
+        case 'yellow': {
+            baseColor = '#FFD300'
+            gradientColor = '#CCA200'
+            textColor = '#fff'
+            break;
+        }
+        case 'green': {
+            baseColor = '#008450'
+            gradientColor = '#00663D'
+            textColor = '#fff'
+            break;
+        }
+        case 'blue': {
+            baseColor = '#005F99'
+            gradientColor = '#004080'
+            textColor = '#fff'
+            break;
+        }
+        case 'indigo': {
+            baseColor = '#4B0082'
+            gradientColor = '#360065'
+            textColor = '#fff'
+            break;
+        }
+        case 'violet': {
+            baseColor = '#8A2BE2'
+            gradientColor = '#6B1FB2'
+            textColor = '#fff'
+            break;
+        }
+        default: {
+            baseColor = '#fff';
+            gradientColor = '#fff';
+            textColor = '#fff';
+            break;
+        }
     }
 
     const [state, setState] = useState({raised: false, className: 'smalltreenode'})
