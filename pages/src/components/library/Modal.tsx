@@ -165,7 +165,7 @@ const Modal = (props: ModalProps) => {
               style={{ display: "flex", gap: "0.5rem", marginTop: "1rem" }}
             >
               {typeof img === "string" ? (
-                <img src={img} alt={img} style={{ maxHeight: "20vh" }}></img>
+                <img src={img} alt={img} style={{ maxHeight: "20vh", borderRadius: "1rem" }}></img>
               ) : (
                 img
               )}
@@ -183,19 +183,22 @@ const Modal = (props: ModalProps) => {
                   {props.authors}
                 </p>
               </div>
+              <ButtonGroup
+                  variant="text"
+                  color="inherit"
+                  sx={{
+                    // width: "100%",
+                    marginTop: "0rem",
+                    flexWrap: "wrap",
+                    // display: props.items.length > 0 ? "flex" : "none",
+                    display: props.items.length > 0 ? "block" : "none",
+                    // flex: "1 0 40%",
+                  }}
+                  id={props.type}
+                >
+                  {props.items}
+                </ButtonGroup>
             </div>
-            <ButtonGroup
-              variant="text"
-              color="inherit"
-              sx={{
-                width: "100%",
-                marginTop: "1rem",
-                flexWrap: "wrap",
-                display: props.items.length > 0 ? "block" : "none",
-              }}
-            >
-              {props.items}
-            </ButtonGroup>
           </div>
         )}
       </CardContent>

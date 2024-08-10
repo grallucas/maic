@@ -226,3 +226,20 @@
 .descriptive-text > div > p {
   margin: 0.5rem;
 }
+
+#descriptive > button {
+  /* align-items: flex-start; */
+  border: none;
+  display: inline;
+}
+
+#descriptive > button > div {
+  display: flex;
+  gap: 1rem;
+}
+
+#descriptive > button > div > img{
+  /* max-width: 100% !important; */
+  max-width: 10vh !important;
+  max-height: 10vh !important;
+}
