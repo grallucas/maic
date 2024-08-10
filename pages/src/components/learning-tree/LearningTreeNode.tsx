@@ -34,48 +34,99 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     let gradientBottom = '#0c0d0e';
     let textColor = '#fff';
 
+    //Version1
+    // switch(data.category_color){
+    //     case 'red': {
+    //         baseColor = '#9A031E'
+    //         gradientTop = '#750000'
+    //         textColor='#fff'
+    //         break;
+    //     }
+    //     case 'orange': {
+    //         baseColor = '#FF6700'
+    //         gradientTop = '#CC5500'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'yellow': {
+    //         baseColor = '#FFD300'
+    //         gradientTop = '#CCA200'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'green': {
+    //         baseColor = '#008450'
+    //         gradientTop = '#00663D'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'blue': {
+    //         baseColor = '#005F99'
+    //         gradientTop = '#004080'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'indigo': {
+    //         baseColor = '#4B0082'
+    //         gradientTop = '#360065'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     case 'violet': {
+    //         baseColor = '#8A2BE2'
+    //         gradientTop = '#6B1FB2'
+    //         textColor = '#fff'
+    //         break;
+    //     }
+    //     default: {
+    //         baseColor = '#fff';
+    //         gradientTop = '#fff';
+    //         textColor = '#fff';
+    //         break;
+    //     }
+    // }
+
     //Version2
     switch(data.category_color){
         case 'red': {
             baseColor = '#9A031E'
             gradientTop = '#750000'
-            gradientBottom = '#'
             textColor='#fff'
             break;
         }
         case 'orange': {
-            baseColor = '#FF6700'
-            gradientTop = '#CC5500'
+            baseColor = '#FB8B24'
+            gradientTop = '#D66B00'
             textColor = '#fff'
             break;
         }
         case 'yellow': {
-            baseColor = '#FFD300'
-            gradientTop = '#CCA200'
+            baseColor = '#F7B801'
+            gradientTop = '#C79400'
             textColor = '#fff'
             break;
         }
         case 'green': {
-            baseColor = '#008450'
-            gradientTop = '#00663D'
+            baseColor = '#008148'
+            gradientTop = '#005C34'
             textColor = '#fff'
             break;
         }
         case 'blue': {
-            baseColor = '#005F99'
-            gradientTop = '#004080'
+            baseColor = '#005F73'
+            gradientTop = '#003F50'
             textColor = '#fff'
             break;
         }
         case 'indigo': {
-            baseColor = '#4B0082'
-            gradientTop = '#360065'
+            baseColor = '#1A365D'
+            gradientTop = '#112344'
             textColor = '#fff'
             break;
         }
         case 'violet': {
-            baseColor = '#8A2BE2'
-            gradientTop = '#6B1FB2'
+            baseColor = '#6A0572'
+            gradientTop = '#45004F'
             textColor = '#fff'
             break;
         }
@@ -86,58 +137,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             break;
         }
     }
-
-    //Version1
-    // switch(data.category_color){
-    //     case 'red': {
-    //         baseColor = '#9A031E'
-    //         gradientColor = '#750000'
-    //         textColor='#fff'
-    //         break;
-    //     }
-    //     case 'orange': {
-    //         baseColor = '#FF6700'
-    //         gradientColor = '#CC5500'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     case 'yellow': {
-    //         baseColor = '#FFD300'
-    //         gradientColor = '#CCA200'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     case 'green': {
-    //         baseColor = '#008450'
-    //         gradientColor = '#00663D'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     case 'blue': {
-    //         baseColor = '#005F99'
-    //         gradientColor = '#004080'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     case 'indigo': {
-    //         baseColor = '#4B0082'
-    //         gradientColor = '#360065'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     case 'violet': {
-    //         baseColor = '#8A2BE2'
-    //         gradientColor = '#6B1FB2'
-    //         textColor = '#fff'
-    //         break;
-    //     }
-    //     default: {
-    //         baseColor = '#fff';
-    //         gradientColor = '#fff';
-    //         textColor = '#fff';
-    //         break;
-    //     }
-    // }
 
     const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
