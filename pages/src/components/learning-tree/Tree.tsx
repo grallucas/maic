@@ -3,6 +3,7 @@ import {
     ReactFlow, 
     Background, 
     Controls,
+    MiniMap,
     addEdge,
     applyNodeChanges,
     applyEdgeChanges,
@@ -318,8 +319,13 @@ const Tree = (props: TreeProps) => {
                 colorMode="dark"
             >
                 <Background />
+                <MiniMap 
+                    nodeColor={(node) => {
+                        return node.data.category_color as string;
+                    }}
+                />
                 <Controls 
-                showInteractive={false}
+                    showInteractive={false}
                 />
             </ReactFlow>
         </div>
