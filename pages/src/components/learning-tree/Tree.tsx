@@ -19,6 +19,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import LearningTreeNode from "./LearningTreeNode"
 import "./assets/css/tree.css";
+import { colors } from "@mui/material";
 
 interface TreeProps {
 
@@ -59,13 +60,11 @@ const initialNodes = [
       description: "Rosie is MSOE's supercomputer! Learn more here!",
       category: "ROSIE",
       category_color: "red",
-      highlighted_path: "null",
-      position: "null",
       link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
       },
   },
   {
-    id: 'child',
+    id: 'child r',
     type: 'treeNode',
     position: { x: 200, y: 500},
     data: { 
@@ -74,23 +73,19 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "orange",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
   {
-    id: '2',
+    id: 'child l',
     type: 'treeNode',
-    position: { x: 0, y: 1000},
+    position: { x: -200, y: 500},
     data: { 
       name: "Child Node Test",
       image_path: "string",
       description: "string",
       category: "ROSIE",
       category_color: "yellow",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -104,8 +99,6 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "green",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -119,8 +112,6 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "blue",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -134,8 +125,6 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "indigo",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -149,8 +138,6 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "violet",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -164,8 +151,6 @@ const initialNodes = [
       description: "string",
       category: "ROSIE",
       category_color: "default",
-      highlighted_path: "string",
-      position: "string",
       link: '/learning-tree',
     },
   },
@@ -175,10 +160,18 @@ const initialEdges = [
   {
     type: 'bezier',
     source: 'root',
-    target: 'child',
+    target: 'child r',
     id: '4',
     animated: true,
-    style: { stroke: '#606060', strokeWidth: 3 },
+    style: { stroke: '#606060', strokeWidth: 6 },
+  },
+  {
+    type: 'bezier',
+    source: 'root',
+    target: 'child l',
+    id: '5',
+    animated: true,
+    style: { stroke: '#606060', strokeWidth: 6 },
   },
 ];
 
