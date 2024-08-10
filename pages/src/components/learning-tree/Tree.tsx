@@ -45,7 +45,7 @@ interface CustomNode extends Node<CustomNodeData> {
  * the default zoom too.
  */
 const fitViewOptions: FitViewOptions = {
-    minZoom: 0.1, 
+    minZoom: -10000, 
     maxZoom: 1,
     nodes: [{ id: 'root' }], // Node(s) to fit in the screen on page load
 };
