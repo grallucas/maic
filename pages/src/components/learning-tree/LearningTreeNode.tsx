@@ -30,55 +30,57 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
 
     //Default colors to use if nothing to specified
     let baseColor = '#fff';
-    let gradientColor = '#fff';
+    let gradientTop = '#fff';
+    let gradientBottom = '#0c0d0e';
     let textColor = '#fff';
 
     switch(data.category_color){
         case 'red': {
             baseColor = '#9A031E'
-            gradientColor = '#750000'
+            gradientTop = '#750000'
+            gradientBottom = '#'
             textColor='#fff'
             break;
         }
         case 'orange': {
             baseColor = '#FF6700'
-            gradientColor = '#CC5500'
+            gradientTop = '#CC5500'
             textColor = '#fff'
             break;
         }
         case 'yellow': {
             baseColor = '#FFD300'
-            gradientColor = '#CCA200'
+            gradientTop = '#CCA200'
             textColor = '#fff'
             break;
         }
         case 'green': {
             baseColor = '#008450'
-            gradientColor = '#00663D'
+            gradientTop = '#00663D'
             textColor = '#fff'
             break;
         }
         case 'blue': {
             baseColor = '#005F99'
-            gradientColor = '#004080'
+            gradientTop = '#004080'
             textColor = '#fff'
             break;
         }
         case 'indigo': {
             baseColor = '#4B0082'
-            gradientColor = '#360065'
+            gradientTop = '#360065'
             textColor = '#fff'
             break;
         }
         case 'violet': {
             baseColor = '#8A2BE2'
-            gradientColor = '#6B1FB2'
+            gradientTop = '#6B1FB2'
             textColor = '#fff'
             break;
         }
         default: {
             baseColor = '#fff';
-            gradientColor = '#fff';
+            gradientTop = '#fff';
             textColor = '#fff';
             break;
         }
@@ -152,7 +154,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 isConnectable={true}>
             </Handle>
             <Card className='card'
-            sx={{border: 3, borderRadius: 4, borderColor: baseColor, background: `linear-gradient(to top, #0c0d0e, ${gradientColor})`, color: textColor}}
+            sx={{border: 3, borderRadius: 4, borderColor: baseColor, background: `linear-gradient(to top, ${gradientBottom}, ${gradientTop})`, color: textColor}}
             onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
             onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
             raised = {state.raised}
