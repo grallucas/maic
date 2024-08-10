@@ -65,7 +65,7 @@ const initialNodes = [
       },
   },
   {
-    id: 'child',
+    id: 'child r',
     type: 'treeNode',
     position: { x: 200, y: 500},
     data: { 
@@ -80,9 +80,9 @@ const initialNodes = [
     },
   },
   {
-    id: '2',
+    id: 'child l',
     type: 'treeNode',
-    position: { x: 0, y: 1000},
+    position: { x: -200, y: 500},
     data: { 
       name: "Child Node Test",
       image_path: "string",
@@ -175,10 +175,18 @@ const initialEdges = [
   {
     type: 'bezier',
     source: 'root',
-    target: 'child',
+    target: 'child r',
     id: '4',
     animated: true,
-    style: { stroke: '#606060', strokeWidth: 3 },
+    style: { stroke: '#606060', strokeWidth: 6,  },
+  },
+  {
+    type: 'bezier',
+    source: 'root',
+    target: 'child l',
+    id: '5',
+    animated: true,
+    style: { stroke: '#606060', strokeWidth: 6 },
   },
 ];
 

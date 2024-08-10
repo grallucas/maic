@@ -38,7 +38,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         case 'red': {
             baseColor = '#9A031E'
             gradientTop = '#750000'
-            gradientBottom = '#'
             textColor='#fff'
             break;
         }
@@ -89,7 +88,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
     const card = [];
-    if(state.raised){
+    if(state.raised){ // Big Node Content
         card.push(
         <CardActionArea href = {data.link} sx={{p: 1}} >
             <Grid container spacing={0.5}>
@@ -124,7 +123,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 </Grid>
             </Grid>
         </CardActionArea>)
-    } else {
+    } else { // Small Node Content
         card.push(
         <CardActionArea href = {data.link} sx={{p: 0.5}}>
                 <CardMedia
