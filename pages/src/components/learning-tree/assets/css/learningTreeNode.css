@@ -20,8 +20,4 @@
   position: relative;
   left: -12.5vw;
   text-align: center;
-
-  /* make a transition to width 15vw on mouse leaves */
-    transition: all 0.5s;
-
 }
