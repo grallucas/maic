@@ -85,6 +85,20 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
             textColor = '#fff'
             break;
         }
+        case 'gray': {
+            baseColor = '#B5B5B5'
+            gradientTop = '#8C8C8C'
+            gradientBottom = '#636363'
+            textColor = '#fff'
+            break;
+        }
+        case 'dark gray': {
+            baseColor = '#3C3C3C'
+            gradientTop = '#1F1F1F'
+            gradientBottom = '#000000'
+            textColor = '#fff'
+            break;
+        }
         default: {
             baseColor = '#fff'
             gradientTop = '#fff'
@@ -99,39 +113,65 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const card = [];
     if(state.raised){ // Big Node Content
         card.push(
-        <CardActionArea href = {data.link} sx={{p: 1}} >
-            <Grid container spacing={0.5}>
-                <Grid xs={6}>
-                    <CardMedia
-                        component="img"
-                        height='200'
-                        image={
-                            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/ROSIE Supercomputer/image"
-                        }
-                        alt="Image"
-                        sx={{borderRadius: 2}}
-                    />
+            <CardActionArea href={data.link} sx={{ p: 1 }}>
+                <Grid container spacing={0.5}>
+                    {/* Left Side: Image and Title */}
+                    <Grid item xs={6} container direction="column" justifyContent="space-between">
+                        <Grid item>
+                            <CardMedia
+                                component="img"
+                                height="200"
+                                image={
+                                window.location.href.includes("3000")
+                                    ? data.image_path
+                                    : "/api/v1/library/ROSIE Supercomputer/image"
+                                }
+                                alt="Image"
+                                sx={{ borderRadius: 2 }}
+                            />
+                        </Grid>
+                        <Grid item sx={{ mt: 2 }}>
+                            <CardContent>
+                                <div className="title">
+                                {data.name}
+                                </div>
+                            </CardContent>
+                        </Grid>
+                    </Grid>
+                    
+                    {/* Right Side: Description and Category */}
+                    <Grid item xs={6} container direction="column" justifyContent="space-between">
+                        <Grid item sx={{ mb: 0 }}>
+                            <CardContent>
+                                <div style={{marginBottom: '-50px'}}>
+                                {data.description}
+                                </div>
+                            </CardContent>
+                        </Grid>
+                        <Grid item sx={{ mb: 4 }}>
+                            <Chip
+                                sx={{
+                                position: "relative",
+                                borderRadius: 4,
+                                backgroundColor: baseColor,
+                                color: textColor,
+                                }}
+                                size="small"
+                                label={data.category}
+                            />
+                        </Grid>
+                    </Grid>
+
+                    {/* On Bottom In Middle: "Click to Learn More" */}
+                    <Grid item xs={12}>
+                        <CardContent>
+                            <div className="learn-more">
+                                Click to Learn More
+                            </div>
+                        </CardContent>
+                    </Grid>
                 </Grid>
-                <Grid xs={6} sx={{mt:10}}>
-                    <CardContent>
-                        <div>
-                        {data.description}
-                        </div>
-                    </CardContent>
-                </Grid>
-                <Grid xs={6} sx={{mt:2}}>
-                    <CardContent>
-                        <div className='title'>
-                        {data.name}
-                        </div>
-                    </CardContent>
-                </Grid>
-                <Grid xs={3}></Grid>
-                <Grid xs={3} container direction={'column'} justifyContent={'flex-end'} alignItems={'stretch'}>
-                    <Chip sx={{position: 'relative', right: -8, bottom: -10, borderRadius: 4, borderBottomRightRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, backgroundColor: baseColor, color: textColor}} size = "small" label={data.category}/>
-                </Grid>
-            </Grid>
-        </CardActionArea>)
+            </CardActionArea>)
     } else { // Small Node Content
         card.push(
         <CardActionArea href = {data.link} sx={{p: 0.5}}>
