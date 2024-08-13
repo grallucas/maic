@@ -1,3 +1,5 @@
+/* learningTreeNode.css */
+
 .card {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -6,28 +8,31 @@
     display: flex;
     padding: 10px;
     box-sizing: border-box;
-  }
-  
-  .title {
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+.title {
     font-size: x-large;
-  }
-  
-  .smalltreenode {
+}
+
+.smalltreenode {
     width: auto; /* Match width to height for small nodes */
     height: auto;
-  }
-  
-  .bigtreenode {
+    transition: all 0.3s ease-in-out; /* Smooth transition when scaling up */
+}
+
+.bigtreenode {
     width: 40vw;
     position: relative;
     left: -12.5vw;
     text-align: center;
-  }
-  
-  .description {
+    transition: all 0.3s ease-in-out; /* Smooth transition when scaling down */
+}
+
+.description {
     margin-bottom: 5px; /* Reduced space below the description */
-  }
-  
-  .category-chip {
+}
+
+.category-chip {
     position: absolute;
-  }
+}

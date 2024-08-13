@@ -96,6 +96,27 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         textColor = '#fff';
         break;
     }
+    case 'pink': {
+        baseColor = '#FFC0CB';
+        gradientTop = '#FFA07A';
+        gradientBottom = '#FF6347';
+        textColor = '#fff';
+        break;
+    }
+    case 'lime': {
+        baseColor = '#00FF00';
+        gradientTop = '#00FF00';
+        gradientBottom = '#00FF00';
+        textColor = '#fff';
+        break;
+    }
+    case 'teal': {
+        baseColor = '#008080';
+        gradientTop = '#008080';
+        gradientBottom = '#008080';
+        textColor = '#fff';
+        break;
+    }
     default: {
       baseColor = '#fff';
       gradientTop = '#fff';
@@ -169,7 +190,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea href={data.link} sx = {{maxWidth: 200}}>
+      <CardActionArea href={data.link} sx = {{maxWidth: 200, minWidth: 200, minHeight: 200}}>
         <CardMedia
           component="img"
           image={
@@ -203,7 +224,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
           borderColor: baseColor,
           background: `linear-gradient(to top, ${gradientBottom}, ${gradientTop})`,
           color: textColor,
-          height: '310px',  // Fixed height for the card
         }}
         onMouseOver={() => setState({ raised: true, className: "bigtreenode" })}
         onMouseOut={() => setState({ raised: false, className: "smalltreenode" })}
