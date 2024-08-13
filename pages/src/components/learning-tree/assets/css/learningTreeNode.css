@@ -3,16 +3,15 @@
 .card {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: large;
+    font-size: xx-small;
     height: auto; /* Fixed height */
     display: flex;
-    padding: 10px;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
 }
 
 .title {
-    font-size: x-large;
+    font-size: xx-small;
 }
 
 .smalltreenode {

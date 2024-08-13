@@ -190,13 +190,14 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea href={data.link} sx = {{maxWidth: 200, minWidth: 200, minHeight: 200}}>
+      <CardActionArea href={data.link} sx = {{maxWidth: 90, minWidth: 90, minHeight: 120, maxHeight: 120}}>
         <CardMedia
           component="img"
           image={
             window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
           }
           alt="Image"
+          sx= {{mb: -1.5}}
         />
         <CardContent>
           <div className="title">
@@ -219,8 +220,8 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
       <Card
         className='card'
         sx={{
-          border: 3,
-          borderRadius: 4,
+          border: 2,
+          borderRadius: 2,
           borderColor: baseColor,
           background: `linear-gradient(to top, ${gradientBottom}, ${gradientTop})`,
           color: textColor,

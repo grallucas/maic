@@ -47,7 +47,7 @@ interface CustomNode extends Node<CustomNodeData> {
  */
 const fitViewOptions: FitViewOptions = {
     minZoom: 0.00000000000000000000000000000000000000000000000000000000000000001, 
-    maxZoom: 0.55,
+    maxZoom: 2000,
     nodes: [{ id: 'root'}, {id: 'computerVision3'}], // Node(s) to fit in the screen on page load {id: 'rosie0'}
 };
 
