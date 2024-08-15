@@ -92,7 +92,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "What is the Learning Tree?",
             local_image_path: "/tree-thumbnails/learning-tree.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/learning-tree/image',
             description: "The learning tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way.",
             category: "Introduction",
             category_color: "gray",
@@ -169,7 +169,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "How to Use Visual Studio Code",
             local_image_path: "/tree-thumbnails/VSC_Tutorial_1.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/VSC_Tutorial_1/image',
             description: "Visual Studio Code is a powerful tool for coding, but it can be a bit overwhelming at first. Let's get you started!",
             category: "Local Development",
             category_color: "blue",
@@ -199,7 +199,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "Installing Languages / Extensions in VSC",
             local_image_path: "/tree-thumbnails/VSC_Tutorial_2.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/VSC_Tutorial_2/image',
             description: "VSC is a powerful tool, but it's even better when you have the right tools installed. Let's get you set up!",
             category: "Local Development",
             category_color: "blue",
@@ -229,7 +229,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "Using VSC's Terminal",
             local_image_path: "/tree-thumbnails/VSC_Tutorial_3.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/VSC_Tutorial_3/image',
             description: "VSC is a powerful tool, but it's even better when you have the right tools installed. Let's get you set up!",
             category: "Local Development",
             category_color: "blue",
@@ -259,7 +259,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "Using an Environment in VSC",
             local_image_path: "/tree-thumbnails/VSC_Tutorial_4.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/VSC_Tutorial_4/image',
             description: "Getting an environment set up in VSC is crucial for development because it allows you to run your code in a controlled environment.",
             category: "Local Development",
             category_color: "blue",
@@ -289,7 +289,7 @@ const initialNodes: CustomNode[] = [
         data: {
             name: "Using VSC's Version Control",
             local_image_path: "/tree-thumbnails/VSC_Tutorial_5.png",
-            api_image_path: 'string',
+            api_image_path: '/api/v1/library/VSC_Tutorial_5/image',
             description: "VSC is a powerful tool, but it's even better when you have the right tools installed. Let's get you set up!",
             category: "Local Development",
             category_color: "blue",
