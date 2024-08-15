@@ -3,27 +3,28 @@
 .card {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: xx-small;
+    font-size: small;
     height: auto; /* Fixed height */
     display: flex;
-    box-sizing: border-box;
     transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
 }
 
 .title {
-    font-size: xx-small;
+    font-size: medium;
 }
 
 .smalltreenode {
-    width: auto; /* Match width to height for small nodes */
+    width: 10vw; /* Match width to height for small nodes */
+    min-width: 150px;
     height: auto;
     transition: all 0.3s ease-in-out; /* Smooth transition when scaling up */
 }
 
 .bigtreenode {
-    width: 40vw;
+    width: 30vw;
+    min-width: 400px;
     position: relative;
-    left: -12.5vw;
+    left: -10vw;
     text-align: center;
     transition: all 0.3s ease-in-out; /* Smooth transition when scaling down */
 }

@@ -190,9 +190,11 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea href={data.link} sx = {{maxWidth: 90, minWidth: 90, minHeight: 120, maxHeight: 120}}>
+      <CardActionArea href={data.link} sx = {{}}>
         <CardMedia
           component="img"
+          height="150"
+          width="150"
           image={
             window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
           }
