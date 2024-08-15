@@ -158,7 +158,7 @@ const initialNodes: CustomNode[] = [
             description: "Let's get you access to that fancy supercomputer in Diercks Hall, no matter your major/year!",
             category: "ROSIE",
             category_color: "red",
-            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+            link: "/library?nav=Articles&article=Learning_Resources-pt1-how-to-get-rosie-access"
         },
         children: ['rosie1']
     },
@@ -188,7 +188,7 @@ const initialNodes: CustomNode[] = [
             description: "Now you have an email from ROSIE, let's get you logged in for the first time!",
             category: "ROSIE",
             category_color: "red",
-            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+            link: "/library?nav=Articles&article=Learning_Resources-pt2-first-login"
         },
         children: ['rosie2']
     },
@@ -218,7 +218,7 @@ const initialNodes: CustomNode[] = [
             description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
             category: "ROSIE",
             category_color: "red",
-            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+            link: "/library?nav=Articles&article=Learning_Resources-pt3-using-ROSIE-webportal"
         },
         children: ['rosie3']
     },
@@ -248,7 +248,7 @@ const initialNodes: CustomNode[] = [
             description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
             category: "ROSIE",
             category_color: "red",
-            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+            link: "/library?nav=Articles&article=Learning_Resources-pt4-starting-your-first-ROSIE-job",
         },
         children: ['rosie4']
     },
@@ -278,7 +278,7 @@ const initialNodes: CustomNode[] = [
             description: "Now that you have access to ROSIE with your own password, you can start using the online ROSIE interface!",
             category: "ROSIE",
             category_color: "red",
-            link: "https://www.msoe.edu/about-msoe/news/details/meet-rosie/"
+            link: "/library?nav=Articles&article=Learning_Resources-pt5-the-ROSIE-terminal"
         },
         children: ['rosie5', 'basicAI0']
     },
