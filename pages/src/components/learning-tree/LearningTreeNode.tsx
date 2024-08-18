@@ -194,7 +194,6 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         <CardMedia
           component="img"
           height="150"
-          width="150"
           image={
             window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
           }
