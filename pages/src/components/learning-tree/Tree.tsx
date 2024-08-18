@@ -20,7 +20,8 @@ import {
 import '@xyflow/react/dist/style.css';
 import LearningTreeNode from "./LearningTreeNode";
 import "./assets/css/tree.css";
-import { colors } from "@mui/material";
+import { colors} from "@mui/material";
+import { ZoomIn } from "@mui/icons-material";
 
 interface TreeProps {}
 
@@ -980,14 +981,14 @@ const Tree = (props: TreeProps) => {
                 minZoom={0.001}
                 maxZoom={2}
             >
-                <Background />
                 <MiniMap 
+                    zoomable pannable nodeClassName={"LearningTreeNode"}
                     nodeColor={(node) => {return node.data.category_color as string;}}
                     nodeStrokeWidth={3}
                 />
-                <Controls 
-                    showInteractive={false}
-                />
+                <Background />
+                <Controls showInteractive={false}>
+                </Controls>
             </ReactFlow>
         </div>
     );
