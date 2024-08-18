@@ -46,9 +46,9 @@ interface CustomNode extends Node<CustomNodeData> {
  * the default zoom too.
  */
 const fitViewOptions: FitViewOptions = {
-    minZoom: 0.00000000000000000000000000000000000000000000000000000000000000001, 
-    maxZoom: 2000,
-    nodes: [{ id: 'root'}, {id: 'computerVision3'}], // Node(s) to fit in the screen on page load {id: 'rosie0'}
+    minZoom: 0.000001, 
+    maxZoom: 2,
+    nodes: [{ id: 'root'}, {id: 'nlp4'}], // Node(s) to fit in the screen on page load {id: 'rosie0'}
 };
 
 /**
@@ -976,12 +976,14 @@ const Tree = (props: TreeProps) => {
                 fitView={true}
                 fitViewOptions={fitViewOptions}
                 colorMode="dark"
+                /* Change these zoom levels if tree gets larger */
+                minZoom={0.001}
+                maxZoom={2}
             >
                 <Background />
                 <MiniMap 
-                    nodeColor={(node) => {
-                        return node.data.category_color as string;
-                    }}
+                    nodeColor={(node) => {return node.data.category_color as string;}}
+                    nodeStrokeWidth={3}
                 />
                 <Controls 
                     showInteractive={false}
