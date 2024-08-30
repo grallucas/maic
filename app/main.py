@@ -36,7 +36,7 @@ async def serve_index(full_path: str):
         if full_path == "library" or full_path == "learning-tree":
             file_path = os.path.join(path_static, "index.html")
         elif not os.path.exists(f"./{full_path}"):
-            return None
+            return FileResponse("404.html")
         else:
             file_path = full_path
         return FileResponse(file_path)

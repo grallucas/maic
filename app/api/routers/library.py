@@ -21,7 +21,7 @@ async def get_tags():
     for folder in folders:
         tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))
 
-    return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag])}
+    return {"response": sorted([tag.strip().title() for tag in tags if ".md" not in tag])}
 
 
 @router.get(

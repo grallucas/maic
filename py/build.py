@@ -175,6 +175,9 @@ t3 = time()
 
 CONTENT = []
 for fname in listdir('./content'):
+    if os.path.isdir(os.path.join(fname)):
+        continue
+        
     entry = {}
     entry['type'] = fname.split('/')[-1].split('-')[0]
     entry['fname'] = fname.split('/')[-1].split('.')[0]

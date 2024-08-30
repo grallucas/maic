@@ -1,6 +1,6 @@
 img: ./img/board_members/Adam Haile Portrait.png
 date: 14/11/2023
-type: md
+order: 7
 not_in_recent:
 
 ### Lead Researcher & Research Coordinator
