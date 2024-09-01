@@ -242,4 +242,14 @@
   /* max-width: 100% !important; */
   max-width: 10vh !important;
   max-height: 10vh !important;
+  border-radius: 1rem;
+}
+
+.descriptive-text > #descriptive {
+  max-height: 200px;
+  overflow-y: scroll;
+  border: solid #999 1px;
+  border-radius: 1rem;
+  min-width: 450px;
+  max-width: 450px;
 }
