@@ -5,4 +5,3 @@ title: Agent Simulation Experts
 image: ./img/thumbnails/Agent_Simulation_Experts.png"
 difficulty: easy
 authors: Lucas Gral
-files: Synthesizing Audio from Silent Video using Sequence to Sequence Modeling, Research-1Silent-Sound-Synthesizers, Research-1Agent-Simulation-Experts
