@@ -127,6 +127,9 @@ async def get_image(content_id: str) -> FileResponse:
                 file_path = f"img/{folder}/{content_id}.{option}"
                 if os.path.exists(file_path):
                     return FileResponse(file_path)
+                file_path = f"img/{folder}/{content_id}.{option.upper()}"
+                if os.path.exists(file_path):
+                    return FileResponse(file_path)
 
         raise HTTPException(status_code=404, detail="Image not found.")
 
@@ -299,6 +302,7 @@ async def get_subsection(subsection_name: str):
                         authors=lines[6].replace("authors:", "").strip(),
                     )
                 )
+                modals = sorted(modals, key=(lambda x: x.date), reverse=True)
             return {"response": modals}
         else:
             tags = os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}")
