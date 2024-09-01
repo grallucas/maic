@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, APIRouter
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.api import router as api_router
@@ -35,6 +35,9 @@ async def serve_index(full_path: str):
     if full_path != "":
         if full_path == "library" or full_path == "learning-tree":
             file_path = os.path.join(path_static, "index.html")
+        elif path.startswith('articles-'):
+            article_name = path[len('articles-'):-len('.html')]
+            RedirectResponse(os.path.join(path_static, f"/library?article={article_name}"))
         elif not os.path.exists(f"./{full_path}"):
             return None
         else:
