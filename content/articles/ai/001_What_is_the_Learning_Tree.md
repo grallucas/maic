@@ -7,7 +7,7 @@ difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started
 
-## Why Read?
+## Why
 At the start of every article, we'll provide a brief overview of WHY you should read the article. This is a great way to quickly determine if the article is right for you, and our goal as student writers is to provide you with resources we believe are extremely credible, rather than just our own opinions.
 
 
