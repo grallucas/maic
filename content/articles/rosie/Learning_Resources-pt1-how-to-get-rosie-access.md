@@ -37,6 +37,8 @@ In order to gain access to Rosie, you must fill out the request form that is lin
 
 ## What's Next?
 
-**Once you get his email,** read the following article: [First Log In](articles-Learning_Resources-pt2-first-login.html)
-<br><br>
+**Once you get his email,** read the following article: [First Log In](/library?nav=Articles&article=Learning_Resources-pt2-first-login)
+<br>
+**Back to Learning Tree:** [Learning Tree](/learning-tree?node=rosie0)
+<br>
 <br>
