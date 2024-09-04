@@ -12,3 +12,5 @@ Workshops.html
 articles-*.html
 .idea/vcs.xml
 index.html
+Pipfile
+Pipfile.lock

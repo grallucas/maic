@@ -47,9 +47,6 @@ function convertDateToTextual(dateString: string) {
  * @returns {JSX.Element} The Article component.
  */
 const Article = (props: ArticleProps) => {
-  /**
-   * The states of the Article component, including the title, summary, date, authors, and contents of the article.
-   */
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [date, setDate] = useState<string>("");
@@ -99,10 +96,6 @@ const Article = (props: ArticleProps) => {
     }
   }, [props.articleId]);
 
-  /**
-   * Fetches the images within the contents of the article from the server and updates the image srcs.
-   * Also adds a copy button to the code blocks in the article.
-   */
   useEffect(() => {
     const parts: string[] = window.location.href.split("/");
     let baseUrl: string = "";
@@ -180,9 +173,6 @@ const Article = (props: ArticleProps) => {
     });
   }, [contents]);
 
-  /**
-   * Fetches the article with the given article ID from the server and updates the states of the Article component.
-   */
   useEffect(() => {
     if (props.articleId !== "") {
       const parts: string[] = window.location.href.split("/");
@@ -216,9 +206,6 @@ const Article = (props: ArticleProps) => {
     }
   }, [props.articleId]);
 
-  /**
-   * Returns the JSX for the Article component.
-   */
   return (
     <div className="content">
       {type === "md" && (
@@ -226,9 +213,7 @@ const Article = (props: ArticleProps) => {
           {!title && !authors && !date && !summary && (
             <div>
               <h1>404 - Article Not Found</h1>
-              <p>
-                No article was found here. Try again looking for the article.
-              </p>
+              <p>No article was found here. Try again looking for the article.</p>
             </div>
           )}
           {title && (
@@ -240,7 +225,27 @@ const Article = (props: ArticleProps) => {
           {date && <Markdown>{`### **Published:** ${date}`}</Markdown>}
           {summary && <Markdown>{`### ${summary}`}</Markdown>}
           {title && authors && date && summary && (
-            <Markdown children={contents} rehypePlugins={[rehypeRaw]} />
+            <Markdown
+                children={contents}
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                h2: ({ node, ...props }) => {
+                    if (
+                    Array.isArray(props.children) &&
+                    typeof props.children[0] === "string" &&
+                    props.children[0] === "Why"
+                    ) {
+                    console.log("Applying yellow-why class to Why heading");
+                    return (
+                        <h2 {...props} className="yellow-why">
+                        {props.children}
+                        </h2>
+                    );
+                    }
+                    return <h2 {...props} />;
+                },
+                }}
+            />
           )}
         </div>
       )}
