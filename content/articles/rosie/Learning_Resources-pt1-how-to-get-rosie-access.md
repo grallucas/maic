@@ -7,6 +7,24 @@ difficulty: easy
 authors: Thomas Benzshawel,Ben Paulson
 categories: Rosie,Topic Introduction
 
+<br>
+<a href='/learning-tree?node=rosie0' style='
+    background-color: #31313a;
+    color: white;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;'
+>
+  Back to Learning Tree
+</a>
+
 ## Gaining Access
 
 In order to gain access to Rosie, you must fill out the request form that is linked [on this page](https://msoe.dev/#/requestaccess).
