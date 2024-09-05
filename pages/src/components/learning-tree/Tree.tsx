@@ -23,7 +23,9 @@ import "./assets/css/tree.css";
 import { colors} from "@mui/material";
 import { ZoomIn } from "@mui/icons-material";
 
-interface TreeProps {}
+interface TreeProps {
+    nodeID: string | null;
+}
 
 // Custom node data type with index signature
 interface CustomNodeData {
@@ -48,7 +50,7 @@ interface CustomNode extends Node<CustomNodeData> {
  */
 const fitViewOptions: FitViewOptions = {
     minZoom: 0.000001, 
-    maxZoom: 2,
+    maxZoom: 0.8,
     nodes: [{ id: 'root'}, {id: 'nlp4'}], // Node(s) to fit in the screen on page load {id: 'rosie0'}
 };
 
@@ -948,7 +950,7 @@ const generateEdges = (nodes: CustomNode[]): Edge[] => {
                 const targetNode = nodes.find(n => n.id === childId);
                 if (targetNode) {
                     edges.push({
-                        type: 'bezier',
+                        type: 'default',
                         source: node.id,
                         target: childId,
                         id: `${node.id}-${childId}-${index}`,
@@ -968,6 +970,11 @@ const Tree = (props: TreeProps) => {
     const [nodes, setNodes] = useState<CustomNode[]>(initialNodes);
     const [edges, setEdges] = useState<Edge[]>(initialEdges);
 
+    if(props.nodeID !== null){
+        fitViewOptions.nodes = [{id: `${props.nodeID}`}];
+    }
+
+    console.log(fitViewOptions.minZoom);
     return (
         <div className='tree'>
             <ReactFlow 

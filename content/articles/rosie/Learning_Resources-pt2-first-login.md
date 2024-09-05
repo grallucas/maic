@@ -73,5 +73,5 @@ Once you see the message that it's creating directory 'home/username' followed b
 
 ## What To Do Moving Forward?
 
-Now, we aren't actually going to use this terminal interface to interact with ROSIE (that's gross 🤧); instead, we'll be using the online interface, using Jupyter Notebooks and starting up your own ROSIE instances. Find out more in the next article: [Using The ROSIE Dev Page](articles-Learning_Resources-pt3-using-ROSIE-webportal.html).
+Now, we aren't actually going to use this terminal interface to interact with ROSIE (that's gross 🤧); instead, we'll be using the online interface, using Jupyter Notebooks and starting up your own ROSIE instances. Find out more in the next article: [Using The ROSIE Dev Page](/library?nav=Articles&article=Learning_Resources-pt3-using-ROSIE-webportal).
 <br><br><br><br><br>

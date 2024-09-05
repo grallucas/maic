@@ -34,11 +34,11 @@ From here, you interact with ROSIE using the five tabs at the top of the screen,
 ## Part 4: Starting Your First ROSIE Job
 
 Start here if you're just wanting to understand how you can immediately start coding and getting your projects to run on ROSIE.<br>
-[Part 4: Starting Your First ROSIE Job](articles-Learning_Resources-pt4-starting-your-first-ROSIE-job.html)
+[Part 4: Starting Your First ROSIE Job](/library?nav=Articles&article=Learning_Resources-pt4-starting-your-first-ROSIE-job)
 
 ## Part 5: Using the ROSIE Terminal
 
 Start here if you're wanting to understand how you can use ROSIE's command line to run jobs, create files, and more. This is an advanced topic, and we recommend you start with part 4 no matter your skill level since we will be referencing a lot of the knowledge you get from that article in this lesson.<br>
-[Part 5: Using the ROSIE Terminal](articles-Learning_Resources-pt5-the-ROSIE-terminal.html)
+[Part 5: Using the ROSIE Terminal](/library?nav=Articles&article=Learning_Resources-pt5-the-ROSIE-terminal)
 
 <br><br><br><br><br>
