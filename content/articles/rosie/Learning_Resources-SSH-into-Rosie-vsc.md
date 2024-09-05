@@ -1,4 +1,4 @@
-summary: 
+summary: This article walks through the process of connecting VSCode to Rosie via SSH, and explains why you might want to do so in the first place.
 type: md
 date: 4/9/2024
 title: 
@@ -9,11 +9,5 @@ categories: Rosie,SSH
 
 ## Why Read?
 
-You may already be familiar with the Rosie Dashboard, but it's also possible to connect to Rosie with a command line. In fact, sometimes it's easier or necessary to do so if: the Rosie dashboard is down, you have to reset your password, or you want to quickly make a change without navigating through the dashboard or starting a job.
+You may already be familiar with the Rosie Dashboard, but it's also possible to connect to Rosie with a command line. In fact, sometimes it's easier or necessary to do so. The terminal is your friend if: the Rosie dashboard is down, you have to reset your password, or you want to quickly make a change without navigating through the dashboard or starting a job. Furthermore, connecting to Rosie from VSCode gives you all the benefits of VSCode with all the computing power of Rosie!
 
-### In This Article You Will Learn (OPTIONAL)
-
-- List of key points or skills the reader will learn from the article.
-- This section is optional but can be helpful for readers to understand the scope of the article.
-
-walkthru

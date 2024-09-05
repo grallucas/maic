@@ -90,6 +90,8 @@ The first line of the file `#!/bin/bash` is typical in scripts, and it tells the
 
 Once your script is ready to be started, run `sbatch job-script.sh`. This command will start a Slurm job with your specified options, and the job will run all of the commands you wrote in the script (in this case, `python script.py`). At this point, you could close the terminal if you wanted and your job would remain running!
 
+It's important to note that your job will not output anything to the terminal when using `sbatch`. Instead, all output is saved to a file specified in the sbatch script so that you can look at it later, even after the job ends.
+
 ## `scancel`
 
 By default, your jobs will run until either your specified time runs out or the code finishes running. If you want to close a job before it finishes - maybe you realized you used the `teaching` partition, but actually needed the `dgx` partition - you can stop the job early by using `scancel`.
