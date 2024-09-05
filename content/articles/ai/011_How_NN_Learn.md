@@ -1,4 +1,4 @@
-summary: Before diving into how AI learns, let's get a general understanding of what a neural network is.         
+summary: AI is all about learning, but how do models interpret data and actually learn from it?              
 type: md
 date: 31/8/2024
 title: How Do Neural Networks Learn?

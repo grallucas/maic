@@ -1,4 +1,4 @@
-summary: Before diving into how AI learns, let's get a general understanding of what a neural network is.         
+summary: Given our model understands what's right and wrong, how does it improve itself over time?           
 type: md
 date: 31/8/2024
 title: What is "Backpropagation"?
@@ -12,7 +12,7 @@ By watching this video below, you'll be able to understand on a deeper level wha
 
 <br/>
 
-[![3Blue1Brown AI Pt3](https://img.youtube.com/vi/Ilg3gGewQ5U/0.jpg)](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
+[![3Blue1Brown AI Pt3](../../../img/article_content/3b1b_3.jpeg)](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
 <br/>
 
