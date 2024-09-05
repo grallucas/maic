@@ -7,9 +7,32 @@ difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started
 
-## Why
-At the start of every article, we'll provide a brief overview of WHY you should read the article. This is a great way to quickly determine if the article is right for you, and our goal as student writers is to provide you with resources we believe are extremely credible, rather than just our own opinions.
+<br/>
+<br/>
 
+<div style='
+  position: relative;
+  padding: 10px; 
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.85); 
+  border: 4px solid transparent;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), linear-gradient(90deg, gold, orange, gold);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+'>
+
+<svg width='200' height='50' style='display: block; margin-bottom: 5px;'>
+  <text x='0' y='35' font-size='35' font-family='Arial' font-weight='bold' fill='gold'>
+    Why Read?
+    <animate attributeName='fill' values='gold; orange; gold' dur='3s' repeatCount='indefinite' />
+  </text>
+</svg>
+
+<p style='color: white; margin-top: 2px;'>At the start of every article, we'll provide a brief overview of WHY you should read the article. This is a great way to quickly determine if the article is right for you, and our goal as student writers is to provide you with resources we believe are extremely credible, rather than just our own opinions.</p>
+
+</div>
+
+<br/>
 
 ## What is the Learning Tree?
 The Learning Tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way. This tree is a great way to understand the different branches of AI and how they all connect to one another. While we are planning to continually update the tree, you can be sure that the videos/artciles we've linked to are some of the best resources available on the topics, rather than articles that we've written relative beginners to the space of AI as we are all collectively pursuing our degrees at MSOE.
