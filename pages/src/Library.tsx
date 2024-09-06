@@ -110,8 +110,10 @@ const Library = () => {
    * @param {string} articleId - The article ID to open the preview for.
    * @returns {boolean} Whether the preview is open.
    */
-  function openPreview(articleId: string): boolean {
+  function openPreview(articleObj: string): boolean {
     let returnValue = false;
+
+    const articleId = Object.keys(articleObj)[0];
 
     setPreviewedArticle((prevArticleId) => {
       if (prevArticleId === articleId) {
@@ -208,12 +210,11 @@ const Library = () => {
             const contentObj = Object.entries(contentId)[0];
             return (
               <ModalItem
-                key={contentObj[0]}
                 title={(contentObj[1] as any)["title"]}
                 authors={(contentObj[1] as any)["authors"]}
                 img={(contentObj[1] as any)["img"]}
                 dataType={(contentObj[1] as any)["type"]}
-                articleId={contentId}
+                articleId={contentObj[0]}
                 openPreview={() => openPreview(contentId)}
                 columns={columns}
                 type={modal.type}
@@ -362,7 +363,7 @@ const Library = () => {
                     authors={(contentObj[1] as any)["authors"]}
                     img={(contentObj[1] as any)["img"]}
                     dataType={(contentObj[1] as any)["type"]}
-                    articleId={contentId}
+                    articleId={contentObj[0]}
                     openPreview={() => openPreview(contentId)}
                     columns={columns}
                     type={modal.type}
