@@ -65,7 +65,7 @@ Once that folder is made, open it and we can start creating your first Jupyter N
 
 ## Using Jupyter Notebooks
 
-If you've never interacted with a Jupyter Notebook before, [this artice](articles-Learning_Resources-how-to-use-jupyter-notebooks.html) we put together is a great overview of the purpose of the technology and how you can use them on your local system (laptop).<br>
+If you've never interacted with a Jupyter Notebook before, [this article](/library?nav=Articles&article=Learning_Resources-how-to-use-jupyter-notebooks) we put together is a great overview of the purpose of the technology and how you can use them on your local system (laptop).<br>
 
 However, we're talking about ROSIE Jupyter Notebooks, which have the exact-same interface as Jupyter Notebooks you can use with Anaconda, but there are some important notes you should know when using them on ROSIE.<br><br>
 

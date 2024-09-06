@@ -167,8 +167,10 @@ const ModalItem = (props: ModalItemProps) => {
           ) : (
             img
           )}
-          <h3 className="modal-item-header">{title}</h3>
-          <p className="authors">{authors}</p>
+          <div>
+            <h3 className="modal-item-header">{title}</h3>
+            <p className="authors">{authors}</p>
+          </div>
         </div>
       ) : (
         <div

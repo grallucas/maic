@@ -1,25 +1,20 @@
-/**
- * Link to ReactFlow custom node documentation w/ typescript: https://reactflow.dev/learn/advanced-use/typescript
- * Link to ReactFlow custom node documentation (General): https://reactflow.dev/learn/customization/custom-nodes
- */
 import React, { useState } from 'react';
-import { Background, Handle, Position } from '@xyflow/react';
-import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import { CardActionArea, useThemeProps } from '@mui/material';
-import type { Node, NodeProps } from '@xyflow/react';
-import Grid from '@mui/material/Grid'; // Grid version 1
-import "./assets/css/learningTreeNode.css";
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { Node, NodeProps } from '@xyflow/react';
+import { Position, Handle } from '@xyflow/react';
+import './assets/css/learningTreeNode.css';
 
 //This type, defines the props that are able to be passed down to the treeNode
 type treeNode = Node<{ 
     name: string;
-    image_path: string;
+    local_image_path: string;
+    api_image_path: string;
     description: string;
     category: string;
     category_color: string;
@@ -30,104 +25,223 @@ type treeNode = Node<{
     'treeNode'>;
 
 const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
+  // Default colors to use if nothing is specified
+  let baseColor = '#fff';
+  let gradientTop = '#fff';
+  let gradientBottom = '#0c0d0e';
+  let textColor = '#fff';
 
-    // const useStyles = makeStyles({
-    //     root: {
-    //       maxWidth: 310,
-    //       transition: "transform 0.15s ease-in-out"
-    //     },
-    //     cardHovered: {
-    //       transform: "scale3d(1.05, 1.05, 1)"
-    //     }
-    //   });
-
-    const [state, setState] = useState({
-        raised:false, 
-        className: 'smalltreenode',
-    })
-    
-    //This switch statement below dynamically sets the color of the tags for each node based on data.category_color
-    //This statement will be added to when needed to add in more colors
-    const chip = [];
-    switch(data.category_color) { 
-        case 'red': { 
-            chip.push()
-            break; 
-        } 
-        default: { 
-            chip.push(<Chip color = "default" size = "small" label={data.category} />)
-            break; 
-        } 
+  // Colors
+  switch (data.category_color) {
+    case 'red': {
+      baseColor = '#9A031E';
+      gradientTop = '#650000';
+      gradientBottom = '#380000';
+      textColor = '#fff';
+      break;
     }
+    case 'orange': {
+      baseColor = '#FB8B24';
+      gradientTop = '#C85A00';
+      gradientBottom = '#7A3100';
+      textColor = '#fff';
+      break;
+    }
+    case 'yellow': {
+      baseColor = '#F7B801';
+      gradientTop = '#C79500';
+      gradientBottom = '#7A5A00';
+      textColor = '#fff';
+      break;
+    }
+    case 'green': {
+      baseColor = '#008148';
+      gradientTop = '#005D32';
+      gradientBottom = '#00361C';
+      textColor = '#fff';
+      break;
+    }
+    case 'blue': {
+      baseColor = '#005F73';
+      gradientTop = '#004257';
+      gradientBottom = '#002638';
+      textColor = '#fff';
+      break;
+    }
+    case 'indigo': {
+      baseColor = '#1A365D';
+      gradientTop = '#122446';
+      gradientBottom = '#0A122F';
+      textColor = '#fff';
+      break;
+    }
+    case 'violet': {
+      baseColor = '#6A0572';
+      gradientTop = '#49004F';
+      gradientBottom = '#2A002D';
+      textColor = '#fff';
+      break;
+    }
+    case 'gray': {
+      baseColor = '#B5B5B5';
+      gradientTop = '#8C8C8C';
+      gradientBottom = '#636363';
+      textColor = '#fff';
+      break;
+    }
+    case 'cyan': {
+        baseColor = '#00A6A6';
+        gradientTop = '#007474';
+        gradientBottom = '#004242';
+        textColor = '#fff';
+        break;
+    }
+    case 'pink': {
+        baseColor = '#FFC0CB';
+        gradientTop = '#FFA07A';
+        gradientBottom = '#FF6347';
+        textColor = '#fff';
+        break;
+    }
+    case 'lime': {
+        baseColor = '#00FF00';
+        gradientTop = '#00FF00';
+        gradientBottom = '#00FF00';
+        textColor = '#fff';
+        break;
+    }
+    case 'teal': {
+        baseColor = '#008080';
+        gradientTop = '#008080';
+        gradientBottom = '#008080';
+        textColor = '#fff';
+        break;
+    }
+    default: {
+      baseColor = '#fff';
+      gradientTop = '#fff';
+      gradientBottom = '#0c0d0e';
+      textColor = '#fff';
+      break;
+    }
+  }
+
+    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
     const card = [];
-    if(state.raised){
-        card.push(
-        <CardActionArea href = {data.link} sx={{p: 1}} >
-            <Grid container spacing={0.5}>
-                <Grid xs={6}>
-                    <CardMedia
-                        component="img"
-                        height='200'
-                        image={
-                            window.location.href.includes("3000") ? data.image_path : "/api/v1/library/Sticker/image"
-                        }
-                        alt="Image"
-                        sx={{borderRadius: 2}}
-                    />
-                </Grid>
-                <Grid xs={6} sx={{mt:7, p:3}}>
-                    <CardContent >
-                        <Typography variant="body2" >
-                            {data.description}
-                        </Typography>
-                    </CardContent>
-                </Grid>
-                <Grid xs={6} sx={{mt:2}}>
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {data.name}
-                    </Typography>
-                    </CardContent>
-                </Grid>
-                <Grid xs={6} container direction={'column'} justifyContent={'flex-end'} alignItems={'stretch'}>
-                        <Chip sx={{position: 'relative', right: -8, bottom: -10, borderRadius: 4, borderBottomRightRadius: 0, borderTopRightRadius: 0, borderBottomLeftRadius: 0, backgroundColor: "#9A031E", color: '#fff'}} size = "small" label={data.category}/>
-                </Grid>
+  if (state.raised) { // Big Node Content
+    card.push(
+      <CardActionArea href={data.link}>
+        <Grid container spacing={0.5}>
+          {/* Left Side: Image and Title */}
+          <Grid item xs={6} container direction="column" justifyContent="space-between" sx={{maxWidth: 200}}>
+            <Grid item>
+              <CardMedia
+                component="img"
+                height="200"
+                image={
+                  window.location.href.includes("3000")
+                    ? data.local_image_path
+                    : data.api_image_path
+                }
+                alt="Image"
+                sx={{ borderRadius: 2 }}
+              />
             </Grid>
-        </CardActionArea>)
-    } else {
-        card.push(
-        <CardActionArea href = {data.link} sx={{p: 0.5}}>
-                <CardMedia
-                    component="img"
-                    height="200"
-                    image={
-                        window.location.href.includes("3000") ? data.image_path : "/api/v1/library/Sticker/image"
-                    }
-                    alt="Image"
-                    sx={{borderRadius: 2}}
-                />
-            
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {data.name}
-                </Typography>
-            </CardContent>
-        </CardActionArea>)
-    }
+            <Grid item>
+              <CardContent>
+                <div className="title">
+                  {data.name}
+                </div>
+              </CardContent>
+            </Grid>
+          </Grid>
 
-    return (
-        <div className={state.className}>
-            <Card 
-            sx={{border: 3, borderRadius: 4, borderColor:'#9A031E', background: 'linear-gradient(to top, #0c0d0e, #750000)', color: '#fff'}}
-            onMouseOver = {()=>setState({raised: true, className: "bigtreenode"})}
-            onMouseOut = {()=>setState({raised: false, className: "smalltreenode"})}
-            raised = {state.raised}
-            >
-                {card}
-            </Card>
-        </div>
+          {/* Right Side: Description and Category */}
+          <Grid item xs={6} container direction="column" justifyContent="space-between" sx={{maxWidth: 200}}>
+            <Grid item>
+              <CardContent>
+                <div>
+                  {data.description}
+                </div>
+              </CardContent>
+            </Grid>
+            <Grid item>
+                <Chip
+                    sx={{
+                    backgroundColor: baseColor,
+                    color: textColor,
+                    borderRadius: 4,
+                    mb: 0 // Reduced margin-bottom to bring the text closer to the chip
+                    }}
+                    size="medium"
+                    label={data.category}
+                />
+                <Typography
+                    variant="body2" // Adjust this variant to change the font size and style
+                    sx={{ mb: 3, fontSize: 14, fontStyle: 'italic', fontWeight: 'bold' }}
+                >
+                    Click to learn more!
+                </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </CardActionArea>
     );
+  } else { // Small Node Content
+    card.push(
+      <CardActionArea href={data.link} sx = {{}}>
+        <CardMedia
+          component="img"
+          height="150"
+          image={
+            window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
+          }
+          alt="Image"
+          sx= {{mb: -1.5}}
+        />
+        <CardContent>
+          <div className="title">
+            {data.name}
+          </div>
+        </CardContent>
+      </CardActionArea>
+    );
+  }
+
+  return (
+    <div className={state.className}>
+      <Handle
+        type="target"
+        position={Position.Top}
+        style={{ background: baseColor, visibility: 'hidden' }}
+        onConnect={(params) => console.log('handle onConnect', params)}
+        isConnectable={true}
+      />
+      <Card
+        className='card'
+        sx={{
+          border: 2,
+          borderRadius: 2,
+          borderColor: baseColor,
+          background: `linear-gradient(to top, ${gradientBottom}, ${gradientTop})`,
+          color: textColor,
+        }}
+        onMouseOver={() => setState({ raised: true, className: "bigtreenode" })}
+        onMouseOut={() => setState({ raised: false, className: "smalltreenode" })}
+        raised={state.raised}
+      >
+        {card}
+      </Card>
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        style={{ background: baseColor, visibility: 'hidden' }}
+        onConnect={(params) => console.log('handle onConnect', params)}
+        isConnectable={true}
+      />
+    </div>
+  );
 };
 
 export default LearningTreeNode;
