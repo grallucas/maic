@@ -14,6 +14,7 @@ path_to_nodes = "learning_tree/learning-tree-nodes"
 async def get_learning_tree():
     try:
         learning_tree = LearningTree(path=path_to_nodes)
+        # print("LEARNING TREE: ", learning_tree.builder())
         return JSONResponse(content=learning_tree.builder())
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred while generating the learning tree: {str(e)}")
