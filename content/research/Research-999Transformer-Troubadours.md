@@ -2,6 +2,6 @@ summary: Problem​: Music be hard​<br/> Approach:​ Sequence to Sequence Tra
 type: anchor - Research
 date: 2022-2023
 title: The Transformer Troubadors
-image: ./img/thumbnails/Transformer-Troubadours.PNG
+image: ./img/thumbnails/Transformer-Troubadours.png
 difficulty: easy
 authors: Luke Harwood, Code Steinmetz, Adam Buker, Andy Dao, Jiri Liska, Lucas Gral

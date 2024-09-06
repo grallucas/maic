@@ -77,7 +77,7 @@ const Library = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    document.title = 'MAIC - Library';
+    document.title = "MAIC - Library";
   }, []);
 
   /**
@@ -110,8 +110,10 @@ const Library = () => {
    * @param {string} articleId - The article ID to open the preview for.
    * @returns {boolean} Whether the preview is open.
    */
-  function openPreview(articleId: string): boolean {
+  function openPreview(articleObj: string): boolean {
     let returnValue = false;
+
+    const articleId = Object.keys(articleObj)[0];
 
     setPreviewedArticle((prevArticleId) => {
       if (prevArticleId === articleId) {
@@ -204,15 +206,21 @@ const Library = () => {
               onDelete={() => {}}
             />
           ));
-          const content = modal.content_ids.map((contentId) => (
-            <ModalItem
-              key={contentId}
-              articleId={contentId}
-              openPreview={() => openPreview(contentId)}
-              columns={columns}
-              type={modal.type}
-            />
-          ));
+          const content = modal.content_ids.map((contentId) => {
+            const contentObj = Object.entries(contentId)[0];
+            return (
+              <ModalItem
+                title={(contentObj[1] as any)["title"]}
+                authors={(contentObj[1] as any)["authors"]}
+                img={(contentObj[1] as any)["img"]}
+                dataType={(contentObj[1] as any)["type"]}
+                articleId={contentObj[0]}
+                openPreview={() => openPreview(contentId)}
+                columns={columns}
+                type={modal.type}
+              />
+            );
+          });
           modals.push(
             <Modal
               key={index}
@@ -257,10 +265,15 @@ const Library = () => {
           const json = JSON.parse(data)["response"];
           let tempCategoryItems: any[] = [];
           Object.keys(json).forEach((key, index) => {
+            const contentObj = Object.entries(json[key])[0];
             tempCategoryItems.push(
               <ModalItem
-                key={json[key]}
-                articleId={json[key]}
+                key={contentObj[0]}
+                articleId={contentObj[0]}
+                title={(contentObj[1] as any)["title"]}
+                authors={(contentObj[1] as any)["authors"]}
+                dataType={(contentObj[1] as any)["type"]}
+                img={(contentObj[1] as any)["img"]}
                 openPreview={() => openPreview(json[key])}
                 columns={columns}
               />
@@ -341,15 +354,22 @@ const Library = () => {
                 />
               ));
               const contentIds = modal.content_ids.sort();
-              const content = contentIds.map((contentId) => (
-                <ModalItem
-                  key={contentId}
-                  articleId={contentId}
-                  openPreview={() => openPreview(contentId)}
-                  columns={columns}
-                  type={modal.type}
-                />
-              ));
+              const content = contentIds.map((contentId) => {
+                const contentObj = Object.entries(contentId)[0];
+                return (
+                  <ModalItem
+                    key={contentObj[0]}
+                    title={(contentObj[1] as any)["title"]}
+                    authors={(contentObj[1] as any)["authors"]}
+                    img={(contentObj[1] as any)["img"]}
+                    dataType={(contentObj[1] as any)["type"]}
+                    articleId={contentObj[0]}
+                    openPreview={() => openPreview(contentId)}
+                    columns={columns}
+                    type={modal.type}
+                  />
+                );
+              });
               modals.push(
                 <Modal
                   key={index}
@@ -396,12 +416,18 @@ const Library = () => {
           })
           .then((data: any) => {
             const json = data["response"];
+            console.log(json);
             const items: any[] = [];
             Object.keys(json).forEach((key, index) => {
+              const contentObj = Object.entries(json[key])[0];
               items.push(
                 <ModalItem
-                  key={index}
-                  articleId={json[key]}
+                  key={contentObj[0]}
+                  articleId={contentObj[0]}
+                  title={(contentObj[1] as any)["title"]}
+                  authors={(contentObj[1] as any)["authors"]}
+                  dataType={(contentObj[1] as any)["type"]}
+                  img={(contentObj[1] as any)["img"]}
                   openPreview={() => openPreview(json[key])}
                   columns={columns}
                 />

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Dict, Any
 from fastapi import UploadFile, File
 
 
@@ -21,7 +21,7 @@ class Modal(BaseModel):
 
     title: str
     tags: List[str]
-    content_ids: List[str]
+    content_ids: List[Dict[str, Any]]
     type: str = "normal"
     img: str = ""
     description: str = ""
