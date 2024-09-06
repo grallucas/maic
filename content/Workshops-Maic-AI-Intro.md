@@ -1,4 +1,4 @@
-img: ./img/thumbnails/aiIntro.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/aiIntro.png
 summary: Intro to AI and Keras
 date: 21/9/2023
 title: Intro to AI and Keras

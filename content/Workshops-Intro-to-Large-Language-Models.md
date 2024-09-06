@@ -1,4 +1,4 @@
-img: ./img/thumbnails/llm.jpg
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/llm.jpg
 summary: Learn the basics of LLama, ChatGPT, and how to use them in your projects
 date: 9/11/2023
 title: Basics of Large Language Models

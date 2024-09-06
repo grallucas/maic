@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Q.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Q.png
 summary: Q-Learning
 date: 5/1/2023
 title: Q-Learning

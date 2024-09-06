@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Image_Segmentation.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Image_Segmentation.png
 summary: Image Segmentation
 date: 19/1/2023
 title: Image Segmentation

@@ -1,4 +1,4 @@
-img: ./img/thumbnails/MAIC-QuarterZip.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/MAIC-QuarterZip.png
 date: 14/11/2023
 not_in_recent:
 

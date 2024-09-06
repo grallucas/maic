@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Deep_Q.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Deep_Q.png
 summary: Deep Q-Learning
 date: 12/1/2023
 title: Deep Q-Learning

@@ -1,4 +1,4 @@
-img: ./img/board_members/Andy_Dao_Portrait.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/board_members/Andy_Dao_Portrait.png
 date: 14/11/2023
 order: 2
 not_in_recent:

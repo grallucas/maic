@@ -12,7 +12,7 @@ html(
         ),
 
         div(
-            img(class_='appear', src='./img/misc/logo.png', style='animation: AppearFromTop 0.7s ease-out 0s 1;'),
+            img(class_='appear', src='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/logo.png', style='animation: AppearFromTop 0.7s ease-out 0s 1;'),
             id='splash-logo'
         ),
 
@@ -40,11 +40,11 @@ html(
         ),
 
         div(
-            img(src='./img/misc/transition.png', class_='transition'),
+            img(src='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/transition.png', class_='transition'),
             div(
                 div(
                     h1('Meet the Eboard!'),
-                    img(src="./img/misc/2023 Org Fair.jpg", style='width:100%'),
+                    img(src="https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/2023 Org Fair.jpg", style='width:100%'),
                     p("A passionate team of MSOE university students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiraing a future driven by AI's transformative potential."),
                     a('Contact Us', href='./contact.html', style = 'color: #0099ff; font-weight: bold;'),
                     style='max-width: 400px;'
@@ -71,7 +71,7 @@ html(
                                 style='color: #0099ff; font-weight: bold;'
                             ), 
                             p(entry['summary']),
-                            style="margin-bottom: 15px; background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
+                            style="margin-bottom: 15px; background-image: url(https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 10px; padding-right: 5%; padding-left: 5%;"
                         )
                         for entry in sorted(
                             list(filter(lambda entry: 'not_in_recent' not in entry, CONTENT)),

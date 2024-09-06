@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Lyric_Transformer.jpg
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Lyric_Transformer.jpg
 summary: Transformer Lyric-Generation
 date: 26/1/2023
 title: Transformer Lyric-Generation

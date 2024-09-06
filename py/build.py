@@ -9,7 +9,7 @@ from time import time # profiling
 
 t1 = time()
 
-TOP_PAGES = ['index', 'library', 'learning-tree', 'Research', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
+TOP_PAGES = ['index', 'library', 'learning-tree', 'Workshops', 'Merch', 'Contact', 'About', 'Leaderboard']
 
 def get_page_display_name(name):
     if name=='index': return 'Home'
@@ -26,7 +26,7 @@ def common_metadata(page_name):
     return elems(
         title('MSOE AI Club') if page_name == 'index'
         else title(f'MAIC - {get_page_display_name(page_name)}'),
-        link(rel='icon', type='image/png', href='./img/misc/Sticker.png'),
+        link(rel='icon', type='image/png', href='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/Sticker.png'),
         meta(charset="UTF-8"),
         meta(name='viewport', content='width=device-width, initial-scale=1.0'),
         link(rel='stylesheet', href='./js-css/style.css'),
@@ -59,7 +59,7 @@ def common_content_to_card(entry, extra=''):
             style='margin-right: 10px;'
         ),
         id=entry['fname'],
-        style="background-image: url(./img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
+        style="background-image: url(https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
     )
 
 def common_content_group_to_page(page_name, content):
@@ -299,7 +299,7 @@ with open('./404.html', 'w') as f:
                 div(
                     h1('404', style="font-size: 800%;"),
                     h2("The page you're looking for doesn't exist!", a('Go back!', href="./index.html")),
-                    p(img(src='./img/misc/404snail.png')),
+                    p(img(src='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/404snail.png')),
                     id='stuff'
                 )
             )

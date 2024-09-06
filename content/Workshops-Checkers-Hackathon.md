@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Checkers_Hack.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Checkers_Hack.png
 summary: Checkers Hackathon
 date: 10/12/2022
 title: Checkers Hackathon

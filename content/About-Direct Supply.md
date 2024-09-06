@@ -1,4 +1,4 @@
-img: ./img/misc/DirectSupply_Logo.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/DirectSupply_Logo.png
 date: 14/10/2023
 order: 9
 not_in_recent:

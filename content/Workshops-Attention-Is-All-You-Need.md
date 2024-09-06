@@ -1,4 +1,4 @@
-img: ./img/thumbnails/attention.jpg
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/attention.jpg
 summary: Attention Is All You Need
 date: 6/10/2022
 title: Attention Is All You Need

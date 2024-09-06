@@ -1,4 +1,4 @@
-img: ./img/thumbnails/Transformer Caption Generation.png
+img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Transformer Caption Generation.png
 summary: Image Caption Generation (With Transformers!)
 date: 27/4/2023
 title: Image Caption Generation (With Transformers!)
