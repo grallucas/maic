@@ -2,7 +2,7 @@ summary: Given you now understand some programming and AI basics, let's dive int
 type: md
 date: 31/8/2024
 title: Why Learn AI with AI-Club?
-image: ./pages/public/tree-thumbnails/ai_in_school.png
+image: ./img/tree-thumbnails/ai_in_school.png
 difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started

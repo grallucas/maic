@@ -110,25 +110,7 @@ const Article = (props: ArticleProps) => {
         !img.classList.contains("modal-item-preview-image") &&
         !img.classList.contains("logo")
       ) {
-        const ogFile = img.src
-          .split("/")
-          [img.src.split("/").length - 1].replace(".png", "")
-          .replace(".jpg", "")
-          .replace(".gif", "");
-
-        const fetchImage = async () => {
-          try {
-            const response = await fetch(
-              `${baseUrl}/api/v1/library/${ogFile}/image`
-            );
-            const blob = await response.blob();
-            const imageUrl = URL.createObjectURL(blob);
-            img.src = imageUrl;
-          } catch (error) {
-            return;
-          }
-        };
-        fetchImage();
+        img.src = `http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${img.src.split("/").slice(-3).join("/")}`;
       }
     });
 

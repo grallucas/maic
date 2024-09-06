@@ -2,6 +2,6 @@ summary: Our group delves into the implementation of the card game Hearts using 
 type: anchor - Research
 date: 2023-2024
 title: Heart Strategists
-image: ./img/thumbnails/Heart_Strategists.png"
+image: ./img/thumbnails/Heart_Strategists.png
 difficulty: easy
 authors: Mitchell Johnstone

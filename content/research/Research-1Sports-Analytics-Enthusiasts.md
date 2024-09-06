@@ -2,6 +2,6 @@ summary: Understanding and applying basic machine learning algorithms and applyi
 type: anchor - Research
 date: 2023-2024
 title: Sports Analytics Enthusiasts
-image: ./img/thumbnails/Sports_Analytics_Enthusiasts.png"
+image: ./img/thumbnails/Sports_Analytics_Enthusiasts.png
 difficulty: easy
 authors: Aydin Ruppe

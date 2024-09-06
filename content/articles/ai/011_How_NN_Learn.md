@@ -2,7 +2,7 @@ summary: AI is all about learning, but how do models interpret data and actually
 type: md
 date: 31/8/2024
 title: How Do Neural Networks Learn?
-image: ./pages/public/tree-thumbnails/how_nn_learn.png
+image: ./img/tree-thumbnails/how_nn_learn.png
 difficulty: easy
 authors: Ben Paulson
 categories: Basics of AI, 3Blue1Brown

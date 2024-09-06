@@ -2,6 +2,6 @@ summary: Understand what goes on behind Quantum Machine Learning which aims to c
 type: anchor - Research
 date: 2023-2024
 title: Quantum ML Explorers
-image: ./img/thumbnails/Quantum_ML_Explorers.png"
+image: ./img/thumbnails/Quantum_ML_Explorers.png
 difficulty: easy
 authors: Malcolm Johnson

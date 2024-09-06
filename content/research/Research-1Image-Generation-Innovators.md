@@ -2,6 +2,6 @@ summary: Exploring attention-based image generation models that can transform pl
 type: anchor - Research
 date: 2023-2024
 title: Image Generation Innovators
-image: ./img/thumbnails/Image_Generation_Innovators.png"
+image: ./img/thumbnails/Image_Generation_Innovators.png
 difficulty: easy
 authors: Ryan Kruk

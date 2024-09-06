@@ -2,6 +2,6 @@ summary: Advancing the project initially spearheaded by MSOE undergraduate resea
 type: anchor - Research
 date: 2023-2024
 title: Brain Alignment Innovators
-image: ./img/thumbnails/Brain_Alignment_Innovators.png"
+image: ./img/thumbnails/Brain_Alignment_Innovators.png
 difficulty: easy
 authors: Bart Gebka

@@ -2,6 +2,6 @@ summary: Learn the basics of reinforcement learning as an introductory concept t
 type: anchor - Research
 date: 2023-2024
 title: RL Fundamentals Team
-image: ./img/thumbnails/RL_Fundamentals_Team.png"
+image: ./img/thumbnails/RL_Fundamentals_Team.png
 difficulty: easy
 authors: Michael Conner

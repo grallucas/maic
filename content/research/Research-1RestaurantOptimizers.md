@@ -2,6 +2,6 @@ summary: Our group investigates how to use reinforcement learning (RL) to optimi
 type: anchor - Research
 date: 2023-2024
 title: Restaurant Optimizers
-image: ./img/thumbnails/Restaurant_Optimizers.png"
+image: ./img/thumbnails/Restaurant_Optimizers.png
 difficulty: easy
 authors: Justin Benning

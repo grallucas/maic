@@ -2,6 +2,6 @@ summary: Evaluate the performance of different deep learning models in detecting
 type: anchor - Research
 date: 2023-2024
 title: COVID Detection Specialists
-image: ./img/thumbnails/COVID_Detection_Specialists.png"
+image: ./img/thumbnails/COVID_Detection_Specialists.png
 difficulty: easy
 authors: Ted Colwell

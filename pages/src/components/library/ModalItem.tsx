@@ -56,37 +56,37 @@ const ModalItem = (props: ModalItemProps) => {
     />
   );
 
-  /**
-   * Fetches the image from the server and updates the image states.
-   */
-  useEffect(() => {
-    if (props.articleId) {
-      const parts: string[] = window.location.href.split("/");
-      let baseUrl: string = "";
-      if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
-        baseUrl = `${parts[0]}//127.0.0.1:8000`;
-      } else {
-        baseUrl = `${parts[0]}//${parts[2]}`;
-      }
-      const fetchImage = async () => {
-        try {
-          const response = await fetch(
-            `${baseUrl}/api/v1/library/${props.articleId}/thumbnail`
-          );
-          const blob = await response.blob();
-          const imageUrl = URL.createObjectURL(blob);
-          checkImage(imageUrl, function (exists: boolean) {
-            if (exists) {
-              setImg(imageUrl);
-            }
-          });
-        } catch (error) {
-          // pass
-        }
-      };
-      fetchImage();
-    }
-  }, [props.articleId]);
+  // /**
+  //  * Fetches the image from the server and updates the image states.
+  //  */
+  // useEffect(() => {
+  //   if (props.articleId) {
+  //     const parts: string[] = window.location.href.split("/");
+  //     let baseUrl: string = "";
+  //     if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+  //       baseUrl = `${parts[0]}//127.0.0.1:8000`;
+  //     } else {
+  //       baseUrl = `${parts[0]}//${parts[2]}`;
+  //     }
+  //     const fetchImage = async () => {
+  //       try {
+  //         const response = await fetch(
+  //           `${baseUrl}/api/v1/library/${props.articleId}/thumbnail`
+  //         );
+  //         const blob = await response.blob();
+  //         const imageUrl = URL.createObjectURL(blob);
+  //         checkImage(imageUrl, function (exists: boolean) {
+  //           if (exists) {
+  //             setImg(imageUrl);
+  //           }
+  //         });
+  //       } catch (error) {
+  //         // pass
+  //       }
+  //     };
+  //     fetchImage();
+  //   }
+  // }, [props.articleId]);
 
   /**
    * Fetches the title and authors from the server and updates the title and authors states.
@@ -112,6 +112,7 @@ const ModalItem = (props: ModalItemProps) => {
           setTitle(json["title"]);
           setAuthors(json["authors"]);
           setType(json["type"]);
+          setImg(`http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${json["img"].replace("./", "")}`);
         })
         .catch((error: Error) => {
           // pass

@@ -2,6 +2,6 @@ summary: The Sign Scripters implemented a state of the art model for interpretin
 type: anchor - Research
 date: 2023-2024
 title: Sign Scripters
-image: ./img/thumbnails/Sign_Scriptors.png"
+image: ./img/thumbnails/Sign_Scriptors.png
 difficulty: easy
 authors: Michael Conner

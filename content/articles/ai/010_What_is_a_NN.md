@@ -2,7 +2,7 @@ summary: Before diving into how AI learns, let's get a general understanding of 
 type: md
 date: 31/8/2024
 title: What is a Neural Network?
-image: ./pages/public/tree-thumbnails/what_is_a_nn.png
+image: ./img/tree-thumbnails/what_is_a_nn.png
 difficulty: easy
 authors: Ben Paulson
 categories: Basics of AI, 3Blue1Brown

@@ -2,7 +2,7 @@ summary: This group is working on a project to generate realistic audio from sil
 type: anchor - Research
 date: 2023-2024
 title: Silent Sound Synthesizers
-image: ./img/thumbnails/Silent_Sound_Synthesizers.png"
+image: ./img/thumbnails/Silent_Sound_Synthesizers.png
 difficulty: easy
 authors: Adam Haile
 files: Synthesizing Audio from Silent Video using Sequence to Sequence Modeling

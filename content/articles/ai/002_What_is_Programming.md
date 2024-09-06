@@ -2,7 +2,7 @@ summary: Before getting to AI development, let's start with the basics of progra
 type: md
 date: 31/8/2024
 title: What is Programming?
-image: ./pages/public/tree-thumbnails/what_is_programming.png
+image: ./img/tree-thumbnails/what_is_programming.png
 difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started

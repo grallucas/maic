@@ -147,7 +147,8 @@ async def get_content_title_and_authors(content_id: str):
         title = markdown[3].replace("title:", "").strip()
         authors = markdown[6].replace("authors:", "").strip().replace(",", ", ")
         type = markdown[1].replace("type:", "").strip()
-        return {"response": {"title": title, "authors": authors, "type": type}}
+        img = markdown[4].replace("image:", "").strip()
+        return {"response": {"title": title, "authors": authors, "type": type, "img": img}}
 
     return None
 
@@ -286,17 +287,7 @@ async def get_subsection(subsection_name: str):
                         content_ids=content_ids,
                         img=lines[4]
                         .replace("image: ", "")
-                        .strip()
-                        .split("/")[-1]
-                        .replace(".png", "")
-                        .replace(".PNG", "")
-                        .replace(".jpg", "")
-                        .replace(".JPG", "")
-                        .replace(".jpeg", "")
-                        .replace(".JPEG", "")
-                        .replace(".gif", "")
-                        .replace(".GIF", "")
-                        .replace('"', ""),
+                        .strip(),
                         date=lines[2].replace("date:", "").strip(),
                         description=lines[0].replace("summary:", "").strip().replace("<br/>", "\n\n"),
                         authors=lines[6].replace("authors:", "").strip(),

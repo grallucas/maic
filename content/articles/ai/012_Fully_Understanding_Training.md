@@ -2,7 +2,7 @@ summary: Given our model understands what's right and wrong, how does it improve
 type: md
 date: 31/8/2024
 title: What is "Backpropagation"?
-image: ./pages/public/tree-thumbnails/understanding_back_prop.png
+image: ./img/tree-thumbnails/understanding_back_prop.png
 difficulty: easy
 authors: Ben Paulson
 categories: Basics of AI, 3Blue1Brown

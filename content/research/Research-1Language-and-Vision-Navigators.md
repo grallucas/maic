@@ -2,6 +2,6 @@ summary: We are doing reinforcement learning on function calling language/vision
 type: anchor - Research
 date: 2023-2024
 title: Language/Vision Navigators
-image: ./img/thumbnails/Language_Vision_Navigators.png"
+image: ./img/thumbnails/Language_Vision_Navigators.png
 difficulty: easy
 authors: Cody Steinmetz

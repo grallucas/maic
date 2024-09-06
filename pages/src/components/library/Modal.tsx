@@ -65,6 +65,10 @@ const Modal = (props: ModalProps) => {
     });
   }, []);
 
+  useEffect(() => {
+    setImg(`http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${props.img?.replace("./", "")}`);
+  }, [props.img])
+
   /**
    * Update header dims
    */
@@ -75,32 +79,33 @@ const Modal = (props: ModalProps) => {
     }
   }, [props.title]);
 
-  useEffect(() => {
-    const parts: string[] = window.location.href.split("/");
-    let baseUrl: string = "";
-    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
-      baseUrl = `${parts[0]}//127.0.0.1:8000`;
-    } else {
-      baseUrl = `${parts[0]}//${parts[2]}`;
-    }
-    const fetchImage = async () => {
-      try {
-        const response = await fetch(
-          `${baseUrl}/api/v1/library/${props.img}/image`
-        );
-        const blob = await response.blob();
-        const imageUrl = URL.createObjectURL(blob);
-        checkImage(imageUrl, function (exists: boolean) {
-          if (exists) {
-            setImg(imageUrl);
-          }
-        });
-      } catch (error) {
-        // pass
-      }
-    };
-    fetchImage();
-  }, [props.img]);
+  // useEffect(() => {
+  //   const parts: string[] = window.location.href.split("/");
+  //   let baseUrl: string = "";
+  //   if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+  //     baseUrl = `${parts[0]}//127.0.0.1:8000`;
+  //   } else {
+  //     baseUrl = `${parts[0]}//${parts[2]}`;
+  //   }
+  //   const fetchImage = async () => {
+  //     try {
+  //       console.log(props.img);
+  //       const response = await fetch(
+  //         `${baseUrl}/api/v1/library/${props.img}/image`
+  //       );
+  //       const blob = await response.blob();
+  //       const imageUrl = URL.createObjectURL(blob);
+  //       checkImage(imageUrl, function (exists: boolean) {
+  //         if (exists) {
+  //           setImg(imageUrl);
+  //         }
+  //       });
+  //     } catch (error) {
+  //       // pass
+  //     }
+  //   };
+  //   fetchImage();
+  // }, [props.img]);
 
   useEffect(() => {
     if (props.authors && props.authors.split(",").length <= 1) {

@@ -2,6 +2,6 @@ summary: Exploring using an LLM to play Town of Salem. After finding and making 
 type: anchor - Research
 date: 2023-2024
 title: Salem Strategists
-image: ./img/thumbnails/Salem_Strategists.png"
+image: ./img/thumbnails/Salem_Strategists.png
 difficulty: easy
 authors: Dr. Yoder & Xander Neuwirth

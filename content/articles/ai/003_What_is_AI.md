@@ -2,7 +2,7 @@ summary: Let's get some contextual info on AI and how it's used in the real worl
 type: md
 date: 31/8/2024
 title: What is AI?
-image: ./pages/public/tree-thumbnails/what_is_ai.png
+image: ./img/tree-thumbnails/what_is_ai.png
 difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started

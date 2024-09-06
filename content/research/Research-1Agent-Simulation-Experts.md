@@ -2,6 +2,6 @@ summary: Simulating human (and/or non-human) agents in an interactive environmen
 type: anchor - Research
 date: 2023-2024
 title: Agent Simulation Experts
-image: ./img/thumbnails/Agent_Simulation_Experts.png"
+image: ./img/thumbnails/Agent_Simulation_Experts.png
 difficulty: easy
 authors: Lucas Gral

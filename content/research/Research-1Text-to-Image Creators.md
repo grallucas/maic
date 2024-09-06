@@ -2,6 +2,6 @@ summary: Our goal is to create images from text using models that use an attenti
 type: anchor - Research
 date: 2023-2024
 title: Text-to-Image Creators
-image: ./img/thumbnails/Text_to_Image_Creators.png"
+image: ./img/thumbnails/Text_to_Image_Creators.png
 difficulty: easy
 authors: Nikhil Gajghate

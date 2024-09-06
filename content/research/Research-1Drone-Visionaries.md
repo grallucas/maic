@@ -2,6 +2,6 @@ summary: Our team is working on incorporating computer vision on a drone in orde
 type: anchor - Research
 date: 2023-2024
 title: Drone Visionaries
-image: ./img/thumbnails/Drone_Visionaries.png"
+image: ./img/thumbnails/Drone_Visionaries.png
 difficulty: easy
 authors: Aiden Holcombe

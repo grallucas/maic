@@ -2,6 +2,6 @@ summary: Based on the brain waves collected from ECG scanners placed on a subjec
 type: anchor - Research
 date: 2023-2024
 title: Mind Reading AI
-image: ./img/thumbnails/Mind_Reading_AI.png"
+image: ./img/thumbnails/Mind_Reading_AI.png
 difficulty: easy
 authors: Thomas Benzshawel

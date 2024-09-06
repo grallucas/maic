@@ -2,6 +2,6 @@ summary: Our project focuses on developing an AI model that can accurately predi
 type: anchor - Research
 date: 2023-2024
 title: NourishNet
-image: ./img/thumbnails/Nourish_Team_Logo.png"
+image: ./img/thumbnails/Nourish_Team_Logo.png
 difficulty: easy
 authors: Ben Paulson

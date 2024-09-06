@@ -2,6 +2,6 @@ summary: Working to generate IHC slides from H&E stains. IHC slides are used to 
 type: anchor - Research
 date: 2023-2024
 title: IT-Squared
-image: ./img/thumbnails/IT_Squared.png"
+image: ./img/thumbnails/IT_Squared.png
 difficulty: easy
 authors: Alex Moran
