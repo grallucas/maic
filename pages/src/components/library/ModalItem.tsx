@@ -9,6 +9,10 @@ import { useEffect, useState } from "react";
  */
 interface ModalItemProps {
   articleId?: string;
+  title?: string;
+  authors?: string;
+  img?: string;
+  dataType?: string;
   openPreview?: (articleId: string) => boolean;
   columns: number;
   type?: string;
@@ -44,16 +48,25 @@ const ModalItem = (props: ModalItemProps) => {
    * Also the navigate function to navigate to the article page.
    */
   const navigate = useNavigate();
-  const [title, setTitle] = useState<string>("");
-  const [authors, setAuthors] = useState<string>("");
-  const [type, setType] = useState<string>("md");
+  const [title, setTitle] = useState<string>(props.title || "No title found");
+  const [authors, setAuthors] = useState<string>(
+    props.authors || "No associated authors"
+  );
+  const [type, setType] = useState<string>(props.dataType || "md");
   const [img, setImg] = useState<any>(
-    <Skeleton
-      variant="rectangular"
-      width={"100%"}
-      height={"100%"}
-      sx={{ minWidth: "20vh", minHeight: "20vh" }}
-    />
+    props.img ? (
+      `https://maic-fastapi-lambda.s3.amazonaws.com/${props.img.replace(
+        "./",
+        ""
+      )}`
+    ) : (
+      <Skeleton
+        variant="rectangular"
+        width={"100%"}
+        height={"100%"}
+        sx={{ minWidth: "20vh", minHeight: "20vh" }}
+      />
+    )
   );
 
   // /**
@@ -91,34 +104,34 @@ const ModalItem = (props: ModalItemProps) => {
   /**
    * Fetches the title and authors from the server and updates the title and authors states.
    */
-  useEffect(() => {
-    const parts: string[] = window.location.href.split("/");
-    let baseUrl: string = "";
-    if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
-      baseUrl = `${parts[0]}//127.0.0.1:8000`;
-    } else {
-      baseUrl = `${parts[0]}//${parts[2]}`;
-    }
-    if (props.articleId) {
-      fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
-        .then((response: Response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.text();
-        })
-        .then((data: string) => {
-          const json = JSON.parse(data)["response"];
-          setTitle(json["title"]);
-          setAuthors(json["authors"]);
-          setType(json["type"]);
-          setImg(`https://maic-fastapi-lambda.s3.amazonaws.com/${json["img"].replace("./", "")}`);
-        })
-        .catch((error: Error) => {
-          // pass
-        });
-    }
-  }, [props.articleId]);
+  // useEffect(() => {
+  //   const parts: string[] = window.location.href.split("/");
+  //   let baseUrl: string = "";
+  //   if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
+  //     baseUrl = `${parts[0]}//127.0.0.1:8000`;
+  //   } else {
+  //     baseUrl = `${parts[0]}//${parts[2]}`;
+  //   }
+  //   if (props.articleId) {
+  //     fetch(`${baseUrl}/api/v1/library/${props.articleId}/title-and-authors`)
+  //       .then((response: Response) => {
+  //         if (!response.ok) {
+  //           throw new Error("Network response was not ok");
+  //         }
+  //         return response.text();
+  //       })
+  //       .then((data: string) => {
+  //         const json = JSON.parse(data)["response"];
+  //         setTitle(json["title"]);
+  //         setAuthors(json["authors"]);
+  //         setType(json["type"]);
+  //         setImg();
+  //       })
+  //       .catch((error: Error) => {
+  //         // pass
+  //       });
+  //   }
+  // }, [props.articleId]);
 
   function handleRedict() {
     if (type.toLowerCase() === "video") {

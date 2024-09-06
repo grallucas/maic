@@ -2,6 +2,6 @@ summary: Problem:​ Genomic Inversion Detection​<br/> Approach:​ Graph Atte
 type: anchor - Research
 date: 2022-2023
 title: DNA GAT
-image: ./img/thumbnails/DNA-GAT.PNG
+image: ./img/thumbnails/DNA-GAT.png
 difficulty: easy
 authors: Alex Drobek, Arman Hossain, Collin Schmocker, Alex Moran

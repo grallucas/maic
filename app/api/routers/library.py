@@ -49,9 +49,9 @@ async def get_modals():
                 title="Featured Research",
                 tags=["Research"],
                 content_ids=[
-                    "Research-1NourishNet",
-                    "Research-1Silent-Sound-Synthesizers",
-                    "Research-1Brain-Alignment-Innovators",
+                    {"Research-1NourishNet": (await get_content_title_and_authors("Research-1NourishNet"))["response"]},
+                    {"Research-1Silent-Sound-Synthesizers": (await get_content_title_and_authors("Research-1Silent-Sound-Synthesizers"))["response"]},
+                    {"Research-1Brain-Alignment-Innovators": (await get_content_title_and_authors("Research-1Brain-Alignment-Innovators"))["response"]},
                 ],
                 type="decorative",
             ),
@@ -59,9 +59,9 @@ async def get_modals():
                 title="Featured Articles",
                 tags=["Articles"],
                 content_ids=[
-                    "Learning_Resources-RunningJupyterLabOnADGXNode copy",
-                    "Learning_Resources-global-protect",
-                    "Learning_Resources-how-to-use-jupyter-notebooks",
+                    {"Learning_Resources-RunningJupyterLabOnADGXNode copy": (await get_content_title_and_authors("Learning_Resources-RunningJupyterLabOnADGXNode copy"))["response"]},
+                    {"Learning_Resources-global-protect": (await get_content_title_and_authors("Learning_Resources-global-protect"))["response"]},
+                    {"Learning_Resources-how-to-use-jupyter-notebooks": (await get_content_title_and_authors("Learning_Resources-how-to-use-jupyter-notebooks"))["response"]},
                 ],
                 type="decorative",
             ),
@@ -69,9 +69,9 @@ async def get_modals():
                 title="Featured Videos",
                 tags=["Videos"],
                 content_ids=[
-                    "Video-Rosie_23_Competiton",
-                    "Video-Rosie_24_Competiton",
-                    "Video-NVIDIA_QA_Panel_MAIC_Speaker_Series",
+                    {"Video-Rosie_23_Competiton": (await get_content_title_and_authors("Video-Rosie_23_Competiton"))["response"]},
+                    {"Video-Rosie_24_Competiton": (await get_content_title_and_authors("Video-Rosie_24_Competiton"))["response"]},
+                    {"Video-NVIDIA_QA_Panel_MAIC_Speaker_Series": (await get_content_title_and_authors("Video-NVIDIA_QA_Panel_MAIC_Speaker_Series"))["response"]},
                 ],
                 type="decorative",
             ),
@@ -210,7 +210,9 @@ async def get_tag_content(tag: str):
                     items = os.listdir(f"{os.getcwd()}/content/{folder}/{subfolder}")
                     content.extend([item.replace(".md", "") for item in items])
 
-        return {"response": sorted(content)}
+        response = {"response": sorted(content)}
+        response["response"] = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in response["response"]]
+        return response
 
     return None
 
@@ -279,6 +281,7 @@ async def get_subsection(subsection_name: str):
                             .split(",")
                         ]
                     )
+                content_ids = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in content_ids]
                 modals.append(
                     Modal(
                         title=lines[3].replace("title: ", "").strip(),
@@ -298,21 +301,16 @@ async def get_subsection(subsection_name: str):
         else:
             tags = os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}")
             tags = [tag for tag in tags if ".md" not in tag]
-            return {
-                "response": [
-                    Modal(
-                        title=tag,
-                        tags=[],
-                        content_ids=[
-                            content.replace(".md", "")
-                            for content in os.listdir(
-                                f"{os.getcwd()}/content/{subsection_name.lower()}/{tag}"
-                            )
-                        ],
-                    )
-                    for tag in tags
-                ]
-            }
+            response = {"response": []}
+            for tag in tags:
+                content_ids = [content.replace(".md", "") for content in os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{tag}")]
+                content_ids = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in content_ids]
+                response["response"].append(Modal(
+                    title=tag,
+                    tags=[],
+                    content_ids=content_ids
+                ))
+            return response
 
     return None
 
