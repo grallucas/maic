@@ -131,13 +131,13 @@ const LeftPanel = (props: LeftPanelProps) => {
         >
           Submit
         </Button>
-        <Button
+        {/* <Button
           component={Link}
-          to="/library?nav=Help"
+          to="/About.html"
           startIcon={<HelpIcon />}
         >
           Help
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
