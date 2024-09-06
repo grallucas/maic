@@ -2,7 +2,7 @@ summary: This article walks through the process of connecting VSCode to Rosie vi
 type: md
 date: 4/9/2024
 title: Connecting to Rosie in VSCode via SSH
-image: 
+image: ./img/thumbnails/ssh_with_vsc.webp
 difficulty: easy
 authors: Lucas Gral
 categories: Rosie,SSH
