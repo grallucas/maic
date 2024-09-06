@@ -76,6 +76,10 @@ const Library = () => {
   const [columns, setColumns] = useState<number>(6);
   const [width, setWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    document.title = 'MAIC - Library';
+  }, []);
+
   /**
    * Updates the width state based on the window width.
    */
