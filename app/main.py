@@ -28,6 +28,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@router.get("/")
+async def serve_root():
+    print("Serving: index.html")
+    return FileResponse("index.html")
 
 # Serve the index.html for the base route and all other routes
 @router.get("/{full_path:path}")
@@ -39,7 +43,9 @@ async def serve_index(full_path: str):
             return FileResponse("404.html")
         else:
             file_path = full_path
+        print("Serving:", file_path)
         return FileResponse(file_path)
+    print("Serving: index.html")
     return FileResponse("index.html")
 
 
