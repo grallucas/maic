@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/evolution.png
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/thumbnails/evolution.png
 summary: Evolutionary Algorithms
 date: 15/9/2022
 title: Evolutionary Algorithms

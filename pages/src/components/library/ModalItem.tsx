@@ -112,7 +112,7 @@ const ModalItem = (props: ModalItemProps) => {
           setTitle(json["title"]);
           setAuthors(json["authors"]);
           setType(json["type"]);
-          setImg(`http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${json["img"].replace("./", "")}`);
+          setImg(`https://maic-fastapi-lambda.s3.amazonaws.com/${json["img"].replace("./", "")}`);
         })
         .catch((error: Error) => {
           // pass

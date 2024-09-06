@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/board_members/Lucas G Portrait.png
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/board_members/Lucas G Portrait.png
 date: 14/11/2023
 order: 6
 not_in_recent:

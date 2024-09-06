@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/UNET.png
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/thumbnails/UNET.png
 summary: UNets
 date: 30/5/2023
 title: UNets

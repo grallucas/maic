@@ -14,6 +14,7 @@ RUN mkdir -p /var/task/functions/pages/build
 RUN mkdir -p /var/task/functions/content
 RUN mkdir -p /var/task/functions/js-css
 RUN mkdir -p /var/task/functions/img
+RUN mkdir -p /var/task/functions/data
 RUN mkdir -p /var/task/learning_tree
 RUN pipenv requirements > requirements.txt
 
@@ -39,6 +40,9 @@ COPY ./js-css /var/task/functions/js-css/
 # Copy the contents of the local img folder to functions/img
 COPY ./img /var/task/functions/img/
 
+# Copy the contents of the local img folder to functions/img
+COPY ./data /var/task/functions/data/
+
 # Copy the contents of the local learning-tree folder to functions/learning-tree
 COPY ./learning_tree /var/task/functions/learning_tree/
 
@@ -56,6 +60,9 @@ ENV LAMBDA_FUNCTION_NAME=msoe-maic-fastapi
 
 # Sync the images to the S3 bucket
 RUN aws s3 sync /var/task/functions/img s3://$S3_BUCKET_NAME/img --delete
+
+# Sync the data to the S3 bucket
+RUN aws s3 sync /var/task/functions/data s3://$S3_BUCKET_NAME/data
 
 # Copy the zip file to an S3 bucket
 RUN aws s3 cp /var/task/functions.zip s3://$S3_BUCKET_NAME/

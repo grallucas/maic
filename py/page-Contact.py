@@ -6,7 +6,7 @@ html(
             div(h1('Contacting the MAIC Eboard')),
             div(class_='break'),
             div(
-                # img(src='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/eboard.png', width=500),
+                # img(src='https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/eboard.png', width=500),
                 a('📣 If You Wish to Host an Event, Connect With Us Here 📣', href='https://forms.office.com/Pages/ResponsePage.aspx?id=rM5GQNP9yUasgLfEpJurcGAyFplwhXJCtqB2wsxmGVlUMVNaRkVPUUtNOEsyS1oxMTIwRUpKQkoyNi4u', style = 'font-weight: bold;'),
                 p('Below is a list of each eboard member; if you have a specific question, feel free to contact them directly!'),
                 hr()

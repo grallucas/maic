@@ -110,7 +110,7 @@ const Article = (props: ArticleProps) => {
         !img.classList.contains("modal-item-preview-image") &&
         !img.classList.contains("logo")
       ) {
-        img.src = `http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${img.src.split("/").slice(-3).join("/")}`;
+        img.src = `https://maic-fastapi-lambda.s3.amazonaws.com/${img.src.split("/").slice(-3).join("/")}`;
       }
     });
 

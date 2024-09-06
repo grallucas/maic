@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/Conv_NN_GIF.gif
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/thumbnails/Conv_NN_GIF.gif
 summary: Convolutional Neural Networks
 date: 13/4/2023
 title: Convolutional Neural Networks

@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/NN_from_scratch.jpg
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/thumbnails/NN_from_scratch.jpg
 summary: Deep Learning from Scratch
 date: 1/12/2022
 title: Deep Learning from Scratch

@@ -26,7 +26,7 @@ def common_metadata(page_name):
     return elems(
         title('MSOE AI Club') if page_name == 'index'
         else title(f'MAIC - {get_page_display_name(page_name)}'),
-        link(rel='icon', type='image/png', href='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/Sticker.png'),
+        link(rel='icon', type='image/png', href='https://maic-fastapi-lambda.s3-website.amazonaws.com/img/misc/Sticker.png'),
         meta(charset="UTF-8"),
         meta(name='viewport', content='width=device-width, initial-scale=1.0'),
         link(rel='stylesheet', href='./js-css/style.css'),
@@ -36,7 +36,7 @@ def common_metadata(page_name):
 def common_toolbar(page_name):
     return div(
         # h3('<a href = "index.html" style = "text-decoration: none; background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,77,255,1) 8%, rgba(6,170,216,1) 26%, rgba(100,253,253,1) 42%, rgba(255,141,255,1) 61%, rgba(144,100,253,1) 80%, rgba(80,77,255,1) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">MAIC</a>'),
-        h3(a(img(src = 'https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/Sticker.png', height='25', style='float: left; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;'))),
+        h3(a(img(src = 'https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/Sticker.png', height='25', style='float: left; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;'))),
         elems(
             a(
                 p(get_page_display_name(page if (page != "library" and page !="learning-tree") else page.replace("-", " ").title())),
@@ -59,7 +59,7 @@ def common_content_to_card(entry, extra=''):
             style='margin-right: 10px;'
         ),
         id=entry['fname'],
-        style="background-image: url(https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
+        style="background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding-bottom: 35px; padding-right: 5%; padding-left: 5%; overflow: auto; margin-bottom: 20px;"
     )
 
 def common_content_group_to_page(page_name, content):
@@ -299,7 +299,7 @@ with open('./404.html', 'w') as f:
                 div(
                     h1('404', style="font-size: 800%;"),
                     h2("The page you're looking for doesn't exist!", a('Go back!', href="./index.html")),
-                    p(img(src='https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/404snail.png')),
+                    p(img(src='https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/404snail.png')),
                     id='stuff'
                 )
             )

@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/misc/NVIDIA_Logo.jpg
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NVIDIA_Logo.jpg
 date: 14/10/2023
 order: 9
 not_in_recent:

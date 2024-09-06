@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/holiday.jpg
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/thumbnails/holiday.jpg
 summary: Holiday Sentiment Analysis
 date: 15/12/2022
 title: Holiday Sentiment Analysis

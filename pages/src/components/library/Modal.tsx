@@ -66,7 +66,7 @@ const Modal = (props: ModalProps) => {
   }, []);
 
   useEffect(() => {
-    setImg(`http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/${props.img?.replace("./", "")}`);
+    setImg(`https://maic-fastapi-lambda.s3.amazonaws.com/${props.img?.replace("./", "")}`);
   }, [props.img])
 
   /**
