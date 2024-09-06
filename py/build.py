@@ -239,54 +239,54 @@ for page_name in TOP_PAGES:
     except FileNotFoundError:
         print('Missing expected top page:', f'./py/page-{page_name}.py')
 
-for entry in CONTENT_GROUPS['Learning_Resources']:
-    if 'body' not in entry: continue
-    with open(common_get_article_link(entry["fname"]), 'w', encoding='utf-8') as f:
-        content = html(
-            head(
-                common_metadata(entry['title']),
-                link(rel='stylesheet', href='./js-css/article.css')
-            ),
-            body(
-                common_toolbar(entry['title']),
-                div(
-                    div(
-                        h1(entry['title']),
-                        div(
-                            div(b("By: ") + ', '.join(entry['authors'])),
-                            div(b("Published: ") + entry['date'].strftime("%b %d, %Y")),
-                            div(entry['summary']),
-                            style="padding-bottom: 25px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.25rem;"
-                        ),
-                        entry['body'],
-                        style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
-                    ),
-                    style="width:100%; display: flex; justify-content: center;"
-                ),
-                script("""
-                    document.querySelectorAll('code').forEach(e => {
-                        if(e.parentElement.textContent.trim() == e.textContent.trim()){
-                            e.style.display='inline-block';
-                            e.style.padding='10px';
-                        }
-                    });
-                """),
-                script("document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))"),
-                script(src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
-            )
-        )
-        lines = content.split('\n')
-        content = ''
-        dedent_amt = 0
-        for l in lines:
-            content += l[dedent_amt:]+'\n'
-            if dedent_amt == 0:
-                if l.strip().startswith('<pre><code'):
-                    dedent_amt = l.index('<pre><code')
-            else:
-                if l.strip().startswith('</code></pre>'):
-                    dedent_amt = 0
-        f.write(content)
+# for entry in CONTENT_GROUPS['Learning_Resources']:
+#     if 'body' not in entry: continue
+#     with open(common_get_article_link(entry["fname"]), 'w', encoding='utf-8') as f:
+#         content = html(
+#             head(
+#                 common_metadata(entry['title']),
+#                 link(rel='stylesheet', href='./js-css/article.css')
+#             ),
+#             body(
+#                 common_toolbar(entry['title']),
+#                 div(
+#                     div(
+#                         h1(entry['title']),
+#                         div(
+#                             div(b("By: ") + ', '.join(entry['authors'])),
+#                             div(b("Published: ") + entry['date'].strftime("%b %d, %Y")),
+#                             div(entry['summary']),
+#                             style="padding-bottom: 25px; color: rgb(var(--text-2)); font-size: 0.9rem; line-height: 1.25rem;"
+#                         ),
+#                         entry['body'],
+#                         style="max-width: 72rem; padding-left: 30px; padding-bottom: 35px;"
+#                     ),
+#                     style="width:100%; display: flex; justify-content: center;"
+#                 ),
+#                 script("""
+#                     document.querySelectorAll('code').forEach(e => {
+#                         if(e.parentElement.textContent.trim() == e.textContent.trim()){
+#                             e.style.display='inline-block';
+#                             e.style.padding='10px';
+#                         }
+#                     });
+#                 """),
+#                 script("document.querySelectorAll('code').forEach(x => x.classList.add('prettyprint'))"),
+#                 script(src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
+#             )
+#         )
+#         lines = content.split('\n')
+#         content = ''
+#         dedent_amt = 0
+#         for l in lines:
+#             content += l[dedent_amt:]+'\n'
+#             if dedent_amt == 0:
+#                 if l.strip().startswith('<pre><code'):
+#                     dedent_amt = l.index('<pre><code')
+#             else:
+#                 if l.strip().startswith('</code></pre>'):
+#                     dedent_amt = 0
+#         f.write(content)
 
 with open('./404.html', 'w') as f:
     f.write(
