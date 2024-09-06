@@ -7,8 +7,27 @@ difficulty: easy
 authors: Ben Paulson
 categories: Tutorial, AI-Club, Getting Started
 
-<br/>
-<br/>
+<br>
+<a href='/learning-tree?node=1' style='
+    background-color: #31313a;
+    color: gainsboro;
+    padding: 6px 16px;
+    border: none
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;'
+>
+  View in Learning Tree
+</a>
+
+<br>
+<br>
+<br>
 
 <div style='
   position: relative;

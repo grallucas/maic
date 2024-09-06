@@ -22,7 +22,7 @@ categories: Rosie,Topic Introduction
     text-decoration: none;
     display: inline-block;'
 >
-  Back to Learning Tree
+  View in Learning Tree
 </a>
 
 ## Gaining Access

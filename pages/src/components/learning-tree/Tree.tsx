@@ -1018,21 +1018,25 @@ const Tree = (props: TreeProps) => {
     console.log(fitViewOptions.minZoom);
     return (
         <div className='tree'>
-            <ReactFlow 
-                nodes={nodes} 
+            <ReactFlow
+                nodes={nodes}
                 edges={edges}
                 nodeTypes={nodeTypes}
                 fitView={true}
                 fitViewOptions={fitViewOptions}
                 colorMode="dark"
+                /* Change these zoom levels if tree gets larger */
+                minZoom={0.001}
+                maxZoom={2}
             >
                 <Background />
-                <MiniMap 
+                {/* <MiniMap
                     nodeColor={(node) => {
-                        return node.data.category_color as string;
+                        return node.data.category_color as string || 'white';
                     }}
-                />
-                <Controls 
+                    nodeStrokeWidth={3}
+                /> */}
+                <Controls
                     showInteractive={true}
                 />
             </ReactFlow>
