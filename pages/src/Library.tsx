@@ -462,7 +462,7 @@ const Library = () => {
                   query.get("nav") === null) && (
                   <Modal
                     title="Categories"
-                    chips={categoryTags.map((tag, index) => {
+                    chips={categoryTags.slice(0, 6).map((tag, index) => {
                       return (
                         <Chip
                           key={index + 1}

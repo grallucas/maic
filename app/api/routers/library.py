@@ -59,8 +59,8 @@ async def get_modals():
                 title="Featured Articles",
                 tags=["Articles"],
                 content_ids=[
-                    {"001_What_is_the_Learning_Tree": (await get_content_title_and_authors("Learning_Resources-RunningJupyterLabOnADGXNode copy"))["response"]},
-                    {"010_What_is_a_NN": (await get_content_title_and_authors("Learning_Resources-global-protect"))["response"]},
+                    {"001_What_is_the_Learning_Tree": (await get_content_title_and_authors("001_What_is_the_Learning_Tree"))["response"]},
+                    {"010_What_is_a_NN": (await get_content_title_and_authors("010_What_is_a_NN"))["response"]},
                     {"Learning_Resources-how-to-use-jupyter-notebooks": (await get_content_title_and_authors("Learning_Resources-how-to-use-jupyter-notebooks"))["response"]},
                 ],
                 type="decorative",

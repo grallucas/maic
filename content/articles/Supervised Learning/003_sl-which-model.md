@@ -2,7 +2,7 @@ summary: We have so many models, when should you use each one?
 type: md
 date: 9/4/24
 title: Picking which model to use
-image: .img/tree-thumbnails/sl-which-model.png
+image: ./img/tree-thumbnails/sl-which-model.png
 difficulty: easy
 authors: Thomas Benzshawel
 categories: supervised learning, regression, classification

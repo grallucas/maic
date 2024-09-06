@@ -25,6 +25,11 @@ RUN pip install --target=/var/task/functions -r requirements.txt
 # Copy local contents of app into the functions/app directory
 COPY ./app /var/task/functions/
 
+# Copy non-built HTML stuff
+COPY ./about_points.html /var/task/functions/
+COPY ./about_achievements.html /var/task/functions/
+COPY ./map.html /var/task/functions/
+
 # Copy the contents of the local pages/build folder to functions/pages/build
 COPY ./pages/build /var/task/functions/pages/build/
 

@@ -142,6 +142,7 @@ class LearningTree():
 
         # data_dict.pop('horizontal_displacement') # removing this because it was only needed to calculate position
 
+        result_dict['data']['api_image_path'] = result_dict['data']['api_image_path'].replace('./', 'https://maic-fastapi-lambda.s3.amazonaws.com/', 1)
         self.nodes[int(node_id)] = result_dict
 
         # TODO PROBABLY HAVE TO FIX THIS SOMEWHERE
