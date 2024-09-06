@@ -31,6 +31,14 @@ class LearningTree():
         Converts the learning tree structure into a dictionary format.
         :return: list containing nodes
         """
+        def extract_first_number(s):
+            parts = s.split('-')
+            for part in parts:
+                if part.isdigit():
+                    return int(part)
+            raise Exception('failed to find number in filename')
+
+        self.node_names = sorted(self.node_names, key=extract_first_number) 
         temp_list = []
         for node in self.node_names:
             _, node_id, parent_ids = self._split_string(node)
@@ -48,9 +56,6 @@ class LearningTree():
             node_dict['data'].pop('horizontal_displacement')
 
         return final_list
-
-
-            
 
     def _split_string(self, input_string):
         """
@@ -72,7 +77,6 @@ class LearningTree():
             parent_ids = match.group(3).split('-')
             
             parent_ids = [num for num in parent_ids if num]
-            
             return file_name, node_id, parent_ids
         else:
             # If the first pattern doesn't match, try the pattern without remaining numbers
@@ -118,12 +122,16 @@ class LearningTree():
         if set(data_dict.keys()) != LearningTree.REQUIRED_KEYS:
             raise ValueError(f"File {path} does not contain exactly the required keys: {LearningTree.REQUIRED_KEYS}")
 
+        result_dict['data'] = data_dict
+        self.nodes[int(node_id)] = result_dict
+
         # formatting position
         if int(node_id) == 1:
             result_dict['position'] = {
                 'x': 0,
                 'y': 0,
             }
+
         else:
             parent_ids = [int(parent) for parent in parent_ids]
             result_dict['position'] = self.generate_position(int(node_id), parent_ids, data_dict['horizontal_displacement'])
@@ -134,9 +142,7 @@ class LearningTree():
         
         # data_dict.pop('horizontal_displacement') # removing this because it was only needed to calculate position
 
-        self.nodes[int(node_id)] = data_dict
-
-        result_dict['data'] = data_dict
+        self.nodes[int(node_id)] = result_dict
 
         # TODO PROBABLY HAVE TO FIX THIS SOMEWHERE
     
@@ -161,15 +167,19 @@ class LearningTree():
     def generate_position(self, node_id: int, parent_ids: List[int], horizontal_displacement) -> Dict[str, int]:
         total = 0
         for parent in parent_ids:
-            total += int(self.nodes[parent]['horizontal_displacement'])
+            total += int(self.nodes[parent]['data']['horizontal_displacement'])
         average_horizontal_position = total // len(parent_ids)
 
         x_position = average_horizontal_position + int(horizontal_displacement)
-        y_position = 500
-        return {
+        y_position = int(self.nodes[parent_ids[0]]['position']['y']) + 500
+
+        pos = {
             'x': x_position,
             'y': y_position,
         }
+
+        self.nodes[node_id]['position'] = pos
+        return pos
 
     def add_children(self, sorted_list):
         for node in sorted_list:
@@ -184,7 +194,8 @@ class LearningTree():
 
         return sorted_list
 
-x = LearningTree().builder()
+# x = LearningTree().builder()
+# print(x)
 # for key, value in x[1].items():
 #     print(f"{key}: {value}")
 
