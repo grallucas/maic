@@ -3,7 +3,7 @@ description="This article walks through the process of connecting VSCode to Rosi
 category="ROSIE"
 category_color="red"
 highlighted_path="True"
-horizontal_displacement="-800"
+horizontal_displacement="-1000"
 vertical_displacement="500"
 api_image_path="./img/thumbnails/ssh_with_vsc.png"
 link="/library?nav=Articles&article=6-rosie-ssh"

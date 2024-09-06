@@ -67,7 +67,7 @@ class LearningTree():
         :return: A tuple containing the file_name, the node_id, and a list of parent_ids
         """
 
-        pattern_with_parent = r'^([a-zA-Z-]+)-(\d+)-(\d+)$'
+        pattern_with_parent = r'^([a-zA-Z-]+)-(\d+)-([\d-]+)$'
         pattern_without_parent = r'^([a-zA-Z-]+)-(\d)$'        
 
         match = re.match(pattern_with_parent, input_string)

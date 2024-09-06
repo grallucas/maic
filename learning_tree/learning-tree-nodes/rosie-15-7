@@ -3,7 +3,7 @@ description="If you need to use ROSIE while off-campus, you will need to install
 category="ROSIE"
 category_color="red"
 highlighted_path="True"
-horizontal_displacement="-200"
+horizontal_displacement="-400"
 vertical_displacement="500"
 api_image_path="./img/thumbnails/GlobalProtect-icon.png"
 link="/library?nav=Articles&article=global-protect"
