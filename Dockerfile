@@ -13,6 +13,7 @@ RUN mkdir -p /var/task/functions
 RUN mkdir -p /var/task/functions/pages/build
 RUN mkdir -p /var/task/functions/content
 RUN mkdir -p /var/task/functions/js-css
+RUN mkdir -p /var/task/functions/img
 RUN mkdir -p /var/task/learning_tree
 RUN pipenv requirements > requirements.txt
 
@@ -35,6 +36,9 @@ COPY ./content /var/task/functions/content/
 # Copy the contents of the local js/css folder to functions/js-css
 COPY ./js-css /var/task/functions/js-css/
 
+# Copy the contents of the local img folder to functions/img
+COPY ./img /var/task/functions/img/
+
 # Copy the contents of the local learning-tree folder to functions/learning-tree
 COPY ./learning_tree /var/task/functions/learning_tree/
 
@@ -49,6 +53,9 @@ ENV AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 ENV AWS_DEFAULT_REGION=us-east-1
 ENV S3_BUCKET_NAME=maic-fastapi-lambda
 ENV LAMBDA_FUNCTION_NAME=msoe-maic-fastapi
+
+# Sync the images to the S3 bucket
+RUN aws s3 sync /var/task/functions/img s3://$S3_BUCKET_NAME/img --delete
 
 # Copy the zip file to an S3 bucket
 RUN aws s3 cp /var/task/functions.zip s3://$S3_BUCKET_NAME/

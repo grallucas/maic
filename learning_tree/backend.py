@@ -13,7 +13,7 @@ class LearningTree():
     """
     REQUIRED_KEYS = None
     # have this build tree
-    def __init__(self, path):
+    def __init__(self, path = None):
         """
         Initializes the LearningTree instance by reading node names from the specified directory,
         and removing the template file from the list of node names.
@@ -102,7 +102,7 @@ class LearningTree():
         result_dict['parent'] = parent_ids
 
         data_dict = {}
-        exact_path = self.path + '\\' + path
+        exact_path = os.path.join(self.path, path)
         with open(exact_path, 'r') as file:
             for line in file:
                 line = line.strip()

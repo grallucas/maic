@@ -125,12 +125,12 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     }
   }
 
-    const [state, setState] = useState({raised: false, className: 'smalltreenode'})
+  const [state, setState] = useState({raised: false, className: 'smalltreenode'})
     
-    const card = [];
+  const card = [];
   if (state.raised) { // Big Node Content
     card.push(
-      <CardActionArea key="big-node" href={data.link}>
+      <CardActionArea href={data.link}>
         <Grid container spacing={0.5}>
           {/* Left Side: Image and Title */}
           <Grid item xs={6} container direction="column" justifyContent="space-between" sx={{maxWidth: 200}}>
@@ -187,9 +187,10 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea key="small-node" href={data.link} sx = {{maxWidth: 90, minWidth: 90, minHeight: 120, maxHeight: 120}}>
+      <CardActionArea href={data.link} sx = {{}}>
         <CardMedia
           component="img"
+          height="150"
           image={
             data.api_image_path
           }
