@@ -57,12 +57,6 @@ const NavBar = (props: NavBarProps) => {
         <p>Learning Tree</p>
       </a>
       <a
-        className={`${props.page === "Research" ? "active" : ""}`}
-        href="/Research.html"
-      >
-        <p>Research</p>
-      </a>
-      <a
         className={`${props.page === "Workshops" ? "active" : ""}`}
         href="/Workshops.html"
       >
