@@ -1,0 +1,8 @@
+name="Using an Environment in VSC"
+description="Getting an environment set up in VSC is crucial for development because it allows you to run your code in a controlled environment."
+category="Local Development"
+category_color="blue"
+highlighted_path="True"
+horizontal_displacement="0"
+api_image_path="http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/VSC_Tutorial_4.png"
+link="/library"

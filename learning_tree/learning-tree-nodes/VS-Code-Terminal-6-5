@@ -1,0 +1,8 @@
+name="Using VSC's Terminal"
+description="VSC is a powerful tool, but it's even better when you have the right tools installed. Let's get you set up!"
+category="Local Development"
+category_color="blue"
+highlighted_path="True"
+horizontal_displacement="0"
+api_image_path="http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/VSC_Tutorial_3.png"
+link="/library"
