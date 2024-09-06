@@ -25,12 +25,20 @@ class LearningTree():
         if LearningTree.REQUIRED_KEYS is None:
             LearningTree.REQUIRED_KEYS = self._load_required_keys()
         self.nodes = {}
-                
+
     def builder(self):
         """
         Converts the learning tree structure into a dictionary format.
         :return: list containing nodes
         """
+        def extract_first_number(s):
+            parts = s.split('-')
+            for part in parts:
+                if part.isdigit():
+                    return int(part)
+            raise Exception('failed to find number in filename')
+
+        self.node_names = sorted(self.node_names, key=extract_first_number) 
         temp_list = []
         for node in self.node_names:
             _, node_id, parent_ids = self._split_string(node)
@@ -49,9 +57,6 @@ class LearningTree():
 
         return final_list
 
-
-            
-
     def _split_string(self, input_string):
         """
         Splits the input string into three sections:
@@ -61,28 +66,28 @@ class LearningTree():
         :param input_string: The string to be split
         :return: A tuple containing the file_name, the node_id, and a list of parent_ids
         """
-        pattern_with_parent = r'^([a-zA-Z-]+)-(\d)-([\d-]+)$'
-        pattern_without_parent = r'^([a-zA-Z-]+)-(\d)$'
-        
+
+        pattern_with_parent = r'^([a-zA-Z-]+)-(\d+)-(\d+)$'
+        pattern_without_parent = r'^([a-zA-Z-]+)-(\d)$'        
+
         match = re.match(pattern_with_parent, input_string)
-        
+
         if match:
             file_name = match.group(1)
             node_id = match.group(2)
             parent_ids = match.group(3).split('-')
-            
+
             parent_ids = [num for num in parent_ids if num]
-            
             return file_name, node_id, parent_ids
         else:
             # If the first pattern doesn't match, try the pattern without remaining numbers
             match = re.match(pattern_without_parent, input_string)
-            
+
             if match:
                 file_name = match.group(1)
                 node_id = match.group(2)
                 parent_ids = []
-                
+
                 return file_name, node_id, parent_ids
             else:
                 raise ValueError("Input string does not match the expected format.")
@@ -118,6 +123,9 @@ class LearningTree():
         if set(data_dict.keys()) != LearningTree.REQUIRED_KEYS:
             raise ValueError(f"File {path} does not contain exactly the required keys: {LearningTree.REQUIRED_KEYS}")
 
+        result_dict['data'] = data_dict
+        self.nodes[int(node_id)] = result_dict
+
         # formatting position
         if int(node_id) == 1:
             result_dict['position'] = {
@@ -126,20 +134,18 @@ class LearningTree():
             }
         else:
             parent_ids = [int(parent) for parent in parent_ids]
-            result_dict['position'] = self.generate_position(int(node_id), parent_ids, data_dict['horizontal_displacement'])
+            result_dict['position'] = self.generate_position(int(node_id), parent_ids, data_dict['horizontal_displacement'], data_dict['vertical_displacement'])
             # {
             #     'x': (int)(data_dict['x_position']), 
             #     'y': (int)(data_dict['y_position']),
             # }
-        
+
         # data_dict.pop('horizontal_displacement') # removing this because it was only needed to calculate position
 
-        self.nodes[int(node_id)] = data_dict
-
-        result_dict['data'] = data_dict
+        self.nodes[int(node_id)] = result_dict
 
         # TODO PROBABLY HAVE TO FIX THIS SOMEWHERE
-    
+
         return result_dict
 
     def _load_required_keys(self):
@@ -158,18 +164,29 @@ class LearningTree():
                 required_keys.add(key.strip())
         return required_keys
 
-    def generate_position(self, node_id: int, parent_ids: List[int], horizontal_displacement) -> Dict[str, int]:
+    def generate_position(self, node_id: int, parent_ids: List[int], horizontal_displacement, vertical_displacement) -> Dict[str, int]:
         total = 0
         for parent in parent_ids:
-            total += int(self.nodes[parent]['horizontal_displacement'])
+            temp = self.nodes[parent]['data']['horizontal_displacement']
+            if temp != '':
+                total += int(temp)
         average_horizontal_position = total // len(parent_ids)
+        if horizontal_displacement == '':
+            x_position = average_horizontal_position
+        else:
+            x_position = average_horizontal_position + int(horizontal_displacement)
+        y_position = self.nodes[parent_ids[0]]['position']['y']
+        if vertical_displacement != '': 
+            y_position += int(vertical_displacement)
+        else: y_position += 500 # THIS IS DEFAULT CASE IF USER DOES NOT INPUT
 
-        x_position = average_horizontal_position + int(horizontal_displacement)
-        y_position = 500
-        return {
+        pos = {
             'x': x_position,
             'y': y_position,
         }
+
+        self.nodes[node_id]['position'] = pos
+        return pos
 
     def add_children(self, sorted_list):
         for node in sorted_list:
@@ -185,6 +202,7 @@ class LearningTree():
         return sorted_list
 
 x = LearningTree().builder()
+print(x)
 # for key, value in x[1].items():
 #     print(f"{key}: {value}")
-
+ 

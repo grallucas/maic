@@ -83,7 +83,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     }
     case 'gray': {
       baseColor = '#B5B5B5';
-      gradientTop = '#8C8C8C';
+      gradientTop = '#636363';
       gradientBottom = '#636363';
       textColor = '#fff';
       break;
