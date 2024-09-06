@@ -242,7 +242,8 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
           padding: "1rem",
           display: "flex",
           flexDirection: "column",
-          height: "89%",
+          height: "auto",
+          paddingBottom: "8rem"
         }}
       >
         <img
