@@ -1,0 +1,8 @@
+name="ROSIE: First-Time Login"
+description="Now you have an email from ROSIE, let's get you logged in for the first time!"
+category="ROSIE"
+category_color="red"
+highlighted_path="True"
+horizontal_displacement="0"
+api_image_path="http://maic-fastapi-lambda.s3-website-us-east-1.amazonaws.com/img/thumbnails/ROSIE Tutorial Icon 2.png"
+link="/library"
