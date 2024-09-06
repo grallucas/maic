@@ -13,7 +13,6 @@ import './assets/css/learningTreeNode.css';
 //This type, defines the props that are able to be passed down to the treeNode
 type treeNode = Node<{ 
     name: string;
-    local_image_path: string;
     api_image_path: string;
     description: string;
     category: string;
@@ -131,7 +130,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     const card = [];
   if (state.raised) { // Big Node Content
     card.push(
-      <CardActionArea href={data.link}>
+      <CardActionArea key="big-node" href={data.link}>
         <Grid container spacing={0.5}>
           {/* Left Side: Image and Title */}
           <Grid item xs={6} container direction="column" justifyContent="space-between" sx={{maxWidth: 200}}>
@@ -140,9 +139,7 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
                 component="img"
                 height="200"
                 image={
-                  window.location.href.includes("3000")
-                    ? data.local_image_path
-                    : data.api_image_path
+                  data.api_image_path
                 }
                 alt="Image"
                 sx={{ borderRadius: 2 }}
@@ -190,12 +187,11 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
     );
   } else { // Small Node Content
     card.push(
-      <CardActionArea href={data.link} sx = {{}}>
+      <CardActionArea key="small-node" href={data.link} sx = {{maxWidth: 90, minWidth: 90, minHeight: 120, maxHeight: 120}}>
         <CardMedia
           component="img"
-          height="150"
           image={
-            window.location.href.includes("3000") ? data.local_image_path : data.api_image_path
+            data.api_image_path
           }
           alt="Image"
           sx= {{mb: -1.5}}

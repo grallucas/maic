@@ -113,13 +113,13 @@ const LeftPanel = (props: LeftPanelProps) => {
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
-        <Button
+        {/* <Button
           component={Link}
           to="/library?nav=Favorites"
           startIcon={<Favorite />}
         >
           Favorites
-        </Button>
+        </Button> */}
         <Divider
           sx={{ borderColor: "white", margin: "1rem 1rem" }}
           aria-hidden="true"

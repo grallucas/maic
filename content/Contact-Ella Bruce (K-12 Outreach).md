@@ -1,6 +1,6 @@
 img: ./img/board_members/Ella B Portrait.png
 date: 14/11/2023
-type: md
+order: 3
 not_in_recent:
 
 ### Head of K-12 Communications

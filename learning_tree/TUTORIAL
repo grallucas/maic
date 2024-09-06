@@ -1,0 +1,16 @@
+Copy the TEMPLATE file and use that for the node structure
+
+The naming structure is 'name-name-name-nodeid-childrenid(s)'
+^ as many names as you would like, just for 'name' do not have numbers in it.
+The name is purely for file organization and has no use.
+Node id is a single int and children id are all seperated by '-'
+
+ex 'what-is-ai-3-2-1' where 'what is ai' is the name, '3' is the nodeid and [2,1] are the parents 
+
+
+Minor tips
+    Inputted 'horizontal_displacement' in the root node (node_id=1) is not used. 
+    It is always set to 0,0 for consistency
+
+    Horizontal displacement is how many pixels left (negative) or right (positive)
+    you want the node to be from the average x position of the parent node(s)
