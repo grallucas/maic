@@ -53,12 +53,12 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
       textColor = '#fff';
       break;
     }
-    case 'green': {
-      baseColor = '#008148';
-      gradientTop = '#005D32';
-      gradientBottom = '#00361C';
-      textColor = '#fff';
-      break;
+    case 'limegreen': {
+        baseColor = '#32CD32'; // Brighter lime green
+        gradientTop = '#2EB82E'; // Lighter lime green for the top gradient
+        gradientBottom = '#28A428'; // Slightly darker lime green for the bottom gradient
+        textColor = '#fff'; // White text for better readability
+        break;
     }
     case 'blue': {
       baseColor = '#005F73';
@@ -115,6 +115,41 @@ const LearningTreeNode = ({ data }: NodeProps<treeNode>) => {
         gradientBottom = '#008080';
         textColor = '#fff';
         break;
+    }
+    case 'brown': {
+        baseColor = '#8B4513';
+        gradientTop = '#5C2E06';
+        gradientBottom = '#2E1A03';
+        textColor = '#fff';
+        break;
+    }
+    case 'beige': {
+    baseColor = '#F5F5DC';
+    gradientTop = '#E1DAB6';
+    gradientBottom = '#C7B899';
+    textColor = '#000';
+    break;
+    }
+    case 'black': {
+    baseColor = '#000000';
+    gradientTop = '#2C2C2C';
+    gradientBottom = '#1A1A1A';
+    textColor = '#fff';
+    break;
+    }
+    case 'white': {
+    baseColor = '#FFFFFF';
+    gradientTop = '#E5E5E5';
+    gradientBottom = '#CCCCCC';
+    textColor = '#000';
+    break;
+    }
+    case 'olive': {
+    baseColor = '#808000';
+    gradientTop = '#6B6B00';
+    gradientBottom = '#4C4C00';
+    textColor = '#fff';
+    break;
     }
     default: {
       baseColor = '#fff';

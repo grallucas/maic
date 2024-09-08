@@ -1,7 +1,7 @@
 name="DCGANs"
 description="COMING SOON"
 category="Generative AI"
-category_color="green"
+category_color="limegreen"
 highlighted_path="True"
 horizontal_displacement="-2700"
 vertical_displacement=""
