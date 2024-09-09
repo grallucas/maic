@@ -14,14 +14,14 @@ router = APIRouter()
 async def get_tags():
     folders = []
     for folder in os.listdir(f"{os.getcwd()}/content"):
-        if ".md" not in folder:
+        if ".md" not in folder and folder != ".DS_Store":
             folders.append(folder)
 
     tags = []
     for folder in folders:
         tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))
 
-    return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag])}
+    return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag and tag != ".DS_Store"])}
 
 
 @router.get(
@@ -34,9 +34,15 @@ async def get_subsection_tags(subsection: str):
         if folder == subsection.lower().strip():
             folders.append(folder)
 
+    if ".DS_Store" in folders:
+        folders.remove(".DS_Store")
+
     tags = []
     for folder in folders:
         tags.extend(os.listdir(f"{os.getcwd()}/content/{folder}"))
+
+    if ".DS_Store" in tags:
+        tags.remove(".DS_Store")
 
     return {"response": sorted([tag.strip() for tag in tags if ".md" not in tag])}
 
@@ -203,11 +209,11 @@ async def get_tag_content(tag: str):
 
         content = []
         for folder in folders:
-            for subfolder in os.listdir(f"{os.getcwd()}/content/{folder}"):
+            for sub_folder in os.listdir(f"{os.getcwd()}/content/{folder}"):
                 if (
-                    subfolder.lower().strip() == tag or tag == "all"
-                ) and ".md" not in subfolder:
-                    items = os.listdir(f"{os.getcwd()}/content/{folder}/{subfolder}")
+                    sub_folder.lower().strip() == tag or tag == "all"
+                ) and ".md" not in sub_folder and os.path.isdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
+                    items = os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}")
                     content.extend([item.replace(".md", "") for item in items])
 
         response = {"response": sorted(content)}
@@ -303,13 +309,14 @@ async def get_subsection(subsection_name: str):
             tags = [tag for tag in tags if ".md" not in tag]
             response = {"response": []}
             for tag in tags:
-                content_ids = [content.replace(".md", "") for content in os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{tag}")]
-                content_ids = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in content_ids]
-                response["response"].append(Modal(
-                    title=tag,
-                    tags=[],
-                    content_ids=content_ids
-                ))
+                if tag != ".DS_Store":
+                    content_ids = [content.replace(".md", "") for content in os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}/{tag}")]
+                    content_ids = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in content_ids]
+                    response["response"].append(Modal(
+                        title=tag,
+                        tags=[],
+                        content_ids=content_ids
+                    ))
             return response
 
     return None
@@ -361,15 +368,16 @@ def read_markdown_file(file_name: str):
                     f"{os.getcwd()}/content/{folder}/{temp_file_name}", "r", encoding="utf-8"
                 ) as file:
                     return file.read()
-            if ".md" not in sub_folder:
-                for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
-                    if file_name in file:
-                        with open(
-                            f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md",
-                            "r",
-                            encoding="utf-8",
-                        ) as file:
-                            return file.read()
+            if os.path.isdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
+                if ".md" not in sub_folder:
+                    for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
+                        if file_name in file:
+                            with open(
+                                f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md",
+                                "r",
+                                encoding="utf-8",
+                            ) as file:
+                                return file.read()
 
 
 def read_image_to_bytes(file_name: str):
