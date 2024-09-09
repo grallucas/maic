@@ -23,9 +23,7 @@ const NavBar = (props: NavBarProps) => {
           <img
             className="logo"
             src={
-              window.location.href.includes("3000")
-                ? "/Sticker.png"
-                : "/api/v1/library/Sticker/image"
+              "https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/Sticker.png"
             }
             alt="Logo"
             height="25px"
