@@ -26,7 +26,7 @@ def common_metadata(page_name):
     return elems(
         title('MSOE AI Club') if page_name == 'index'
         else title(f'MAIC - {get_page_display_name(page_name)}'),
-        link(rel='icon', type='image/png', href='https://maic-fastapi-lambda.s3-website.amazonaws.com/img/misc/Sticker.png'),
+        link(rel='icon', type='image/png', href='https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/Sticker.png'),
         meta(charset="UTF-8"),
         meta(name='viewport', content='width=device-width, initial-scale=1.0'),
         link(rel='stylesheet', href='./js-css/style.css'),
