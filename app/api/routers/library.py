@@ -322,38 +322,6 @@ async def get_subsection(subsection_name: str):
     return None
 
 
-@router.post("/search", description="Search for content in the library.")
-async def search(searching: SearchContent):
-    return {"response": searching.query}
-
-
-@router.post(
-    "/submit-content", description="Submit content to be added to the library."
-)
-async def submit_content(submission: SubmitContent):
-    if submission.content is None:
-        raise HTTPException(
-            status_code=400, detail="Bad Request. Incorrect contract. No content"
-        )
-    if submission.submitter_email is None:
-        raise HTTPException(
-            stauts_code=400,
-            detail="Bad Request. Incorrect contract. No submitter email",
-        )
-
-    MAX_SIZE = 128 * 1024 * 1024
-    if len(await submission.content.read()) > MAX_SIZE:
-        raise HTTPException(status_code=422, detail="Too large of a file size")
-
-    # TODO save file content somewhere
-
-    return {
-        "response": """Your content was successfully submitted!
-        It will be reviewed by the Head of Research, and you will be
-        notified about when your content has been added to the library!"""
-    }
-
-
 def read_markdown_file(file_name: str):
     folders = []
     for folder in os.listdir(f"{os.getcwd()}/content"):
