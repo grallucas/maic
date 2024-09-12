@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 interface LeftPanelProps {
   query: any;
   setQuery: any;
+  forceRefresh: (nav: string) => void;
 }
 
 /**
@@ -106,6 +107,7 @@ const LeftPanel = (props: LeftPanelProps) => {
           component={Link}
           to="/library?nav=Articles"
           startIcon={<DescriptionIcon />}
+          onClick={() => props.forceRefresh("Articles")}
         >
           Articles
         </Button>

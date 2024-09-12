@@ -57,6 +57,7 @@ const Modal = (props: ModalProps) => {
   const [query, setQuery] = useState<URLSearchParams>(
     new URLSearchParams(location.search)
   );
+  const [typeCheck, setTypeCheck] = useState<string>("initial");
 
   useEffect(() => {
     window.addEventListener("load", function () {
@@ -91,11 +92,40 @@ const Modal = (props: ModalProps) => {
     }
   }, [props.authors]);
 
+  useEffect(() => {
+    if (props.type === "normal") {
+      if (new URLSearchParams(location.search).get("type") !== null) {
+        if (new URLSearchParams(location.search).get("type")?.toLowerCase().replaceAll(" ", "-") !== props.title.toLowerCase().replaceAll(" ", "-")) {
+        setTypeCheck("none");
+        } else {
+        setTypeCheck("initial");
+        }
+      } else {
+        setTypeCheck("initial");
+      }
+      } else {
+      setTypeCheck("initial");
+    }
+  }, [props.type, props.title, typeCheck, setTypeCheck]);
+
+  // useEffect(() => {
+  //   const handleClick = () => {
+  //     console.log("Page was clicked");
+  //     // Add any additional logic you want to run on click
+  //   };
+
+  //   document.addEventListener("click", handleClick);
+
+  //   return () => {
+  //     document.removeEventListener("click", handleClick);
+  //   };
+  // }, []);
+
   /**
    * The Modal component.
    */
   return (
-    <Card className="modal" id={props.title.toLowerCase().replaceAll(" ", "-")} sx={{display: props.type === "normal" && query.get("type") !== null ? (query.get("type") !== props.title ? "initial" : "none") : "initial"}}>
+    <Card className="modal" id={props.title.toLowerCase().replaceAll(" ", "-")} sx={{display: typeCheck}}>
       <CardContent>
         <div className="modal-top-bar">
           <div style={{ display: "flex", justifyContent: "left" }}>

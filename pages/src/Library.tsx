@@ -441,6 +441,11 @@ const Library = () => {
     }
   }, [query.get("type")]);
 
+  function forceRefresh(nav: string) { // Temp solution
+    window.history.pushState({}, "", `/library?nav=${nav}`);
+    window.location.reload();
+  }
+
   /**
    * The Library component.
    */
@@ -449,7 +454,7 @@ const Library = () => {
       <NavBar page="Library" />
       <div className="App">
         <nav style={{ display: "flex" }}>
-          <LeftPanel query={query} setQuery={setQuery} />
+          <LeftPanel query={query} setQuery={setQuery} forceRefresh={(nav: string) => forceRefresh(nav)} />
           {query.get("article") === null && (
             <section
               className="modals"
