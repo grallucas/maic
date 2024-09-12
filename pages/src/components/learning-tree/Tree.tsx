@@ -53,7 +53,7 @@ interface CustomNode extends Node<CustomNodeData> {
 const fitViewOptions: FitViewOptions = {
     minZoom: 0.000001, 
     maxZoom: 0.8,
-    nodes: [{ id: 'root'}, {id: 'nlp4'}], // Node(s) to fit in the screen on page load {id: 'rosie0'}
+    nodes: [], // Node(s) to fit in the screen on page load {id: 'rosie0'}
 };
 
 /**
@@ -989,16 +989,15 @@ const Tree = (props: TreeProps) => {
                     throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
 
-                console.log('response')
-                console.log(response)
-
                 const data = await response.json();
-                console.log(`Fetched data: ${data}`);
 
                 if (Array.isArray(data)) {
                     setNodes(data);
                     const generatedEdges = generateEdges(data);
                     setEdges(generatedEdges);
+
+                    const maxNodeId = Math.max(...data.map((node: CustomNode) => Number(node.id)));
+                    fitViewOptions.nodes = [{id: '1'}, {id: maxNodeId.toString()}]
                 } else {
                     console.error('Fetched data is not an array:', data);
                 }
@@ -1028,6 +1027,7 @@ const Tree = (props: TreeProps) => {
                 /* Change these zoom levels if tree gets larger */
                 minZoom={0.001}
                 maxZoom={2}
+                zoomOnScroll={true}
             >
                 <Background />
                 {/* <MiniMap
