@@ -1,5 +1,5 @@
 import { Button, Chip, Divider } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import tempImage from "./assets/library/images/temp-image.jpg";
 import favoriteImage from "./assets/library/images/favorite.png";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
@@ -62,6 +62,11 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
   const [tags, setTags] = React.useState<JSX.Element | undefined>();
   const [img, setImg] = React.useState<string>(tempImage);
   const [liked, isLiked] = React.useState<boolean>(false);
+  const location = useLocation();
+  const [query, setQuery] = React.useState<URLSearchParams>(
+    new URLSearchParams(location.search)
+  );
+  const [forceHide, setForceHide] = React.useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
   /**
@@ -229,13 +234,17 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
     }
   }, [liked]);
 
+  useEffect(() => {
+    setForceHide(query.get("article") !== null);
+  }, [query])
+
   /**
    * The ModalItemPreview component.
    */
   return (
     <div
       ref={modalRef}
-      className={`page-preview ${props.showPreview ? "show-page-preview" : ""}`}
+      className={`page-preview ${query.get("article") !== null ? "" : (props.showPreview ? "show-page-preview" : "")}`}
     >
       <div
         style={{
@@ -288,9 +297,7 @@ const ModalItemPreview = (props: ModalItemPreviewProps) => {
             sx={{ width: "100%" }}
             component={Link}
             to={`/library?nav=Articles&article=${props.articleId}`}
-            onClick={() =>
-              props.articleId ? props.openPreview(props.articleId) : {}
-            }
+            onClick={() => props.hidePreview()}
           >
             <div className="read-now-button">
               Read Now

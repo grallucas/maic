@@ -416,7 +416,6 @@ const Library = () => {
           })
           .then((data: any) => {
             const json = data["response"];
-            console.log(json);
             const items: any[] = [];
             Object.keys(json).forEach((key, index) => {
               const contentObj = Object.entries(json[key])[0];

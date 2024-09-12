@@ -3,6 +3,7 @@ import { Box, ButtonGroup, Card, CardContent, Skeleton } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import Markdown from "react-markdown";
+import { useLocation } from "react-router-dom";
 
 /**
  * The ModalProps interface represents the props that the Modal component receives.
@@ -52,6 +53,10 @@ const Modal = (props: ModalProps) => {
     <Skeleton variant="rectangular" width={"19vh"} height={"19vh"} />
   );
   const [authors, setAuthors] = useState<string>("Members: ");
+  const location = useLocation();
+  const [query, setQuery] = useState<URLSearchParams>(
+    new URLSearchParams(location.search)
+  );
 
   useEffect(() => {
     window.addEventListener("load", function () {
@@ -79,33 +84,6 @@ const Modal = (props: ModalProps) => {
     }
   }, [props.title]);
 
-  // useEffect(() => {
-  //   const parts: string[] = window.location.href.split("/");
-  //   let baseUrl: string = "";
-  //   if (parts[2] === "127.0.0.1:3000" || parts[2] === "localhost:3000") {
-  //     baseUrl = `${parts[0]}//127.0.0.1:8000`;
-  //   } else {
-  //     baseUrl = `${parts[0]}//${parts[2]}`;
-  //   }
-  //   const fetchImage = async () => {
-  //     try {
-  //       console.log(props.img);
-  //       const response = await fetch(
-  //         `${baseUrl}/api/v1/library/${props.img}/image`
-  //       );
-  //       const blob = await response.blob();
-  //       const imageUrl = URL.createObjectURL(blob);
-  //       checkImage(imageUrl, function (exists: boolean) {
-  //         if (exists) {
-  //           setImg(imageUrl);
-  //         }
-  //       });
-  //     } catch (error) {
-  //       // pass
-  //     }
-  //   };
-  //   fetchImage();
-  // }, [props.img]);
 
   useEffect(() => {
     if (props.authors && props.authors.split(",").length <= 1) {
@@ -117,7 +95,7 @@ const Modal = (props: ModalProps) => {
    * The Modal component.
    */
   return (
-    <Card className="modal" id={props.title.toLowerCase().replaceAll(" ", "-")}>
+    <Card className="modal" id={props.title.toLowerCase().replaceAll(" ", "-")} sx={{display: props.type === "normal" && query.get("type") !== null ? (query.get("type") !== props.title ? "initial" : "none") : "initial"}}>
       <CardContent>
         <div className="modal-top-bar">
           <div style={{ display: "flex", justifyContent: "left" }}>
@@ -192,12 +170,9 @@ const Modal = (props: ModalProps) => {
                   variant="text"
                   color="inherit"
                   sx={{
-                    // width: "100%",
                     marginTop: "0rem",
                     flexWrap: "wrap",
-                    // display: props.items.length > 0 ? "flex" : "none",
                     display: props.items.length > 0 ? "block" : "none",
-                    // flex: "1 0 40%",
                   }}
                   id={props.type}
                 >
