@@ -5,3 +5,4 @@ title: Agent Simulation Experts
 image: ./img/thumbnails/Agent_Simulation_Experts.png
 difficulty: easy
 authors: Lucas Gral
+files: Synergistic Simulations Multi-Agent Problem Solving with Large Language Models, Agent Sim Preso

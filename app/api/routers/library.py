@@ -275,34 +275,50 @@ async def get_subsection(subsection_name: str):
             modals = []
             for file in files:
                 markdown = read_markdown_file(file)
+                if not markdown:
+                    print(f"File {file} is empty or could not be read.")
+                    continue
+                
                 lines = markdown.split("\n")
+                print(f"Processing file: {file} with {len(lines)} lines.")  # Debug output
+                
                 content_ids = []
-                if "files:" in lines[7]:
-                    content_ids.extend(
-                        [
-                            file.strip()
-                            for file in lines[7]
-                            .replace("files:", "")
-                            .strip()
-                            .split(",")
-                        ]
-                    )
+                
+                # Check if the file has at least 8 lines before accessing lines[7]
+                if len(lines) > 7:
+                    if "files:" in lines[7]:
+                        content_ids.extend(
+                            [
+                                file.strip()
+                                for file in lines[7]
+                                .replace("files:", "")
+                                .strip()
+                                .split(",")
+                            ]
+                        )
+                else:
+                    print(f"File {file} has fewer than 8 lines.")
+                    continue  # Skip this file if it's too short
+                
+                # Fetch content titles and authors
                 content_ids = [{content_id: (await get_content_title_and_authors(content_id))["response"]} for content_id in content_ids]
+                
+                # Construct and append modal
                 modals.append(
                     Modal(
                         title=lines[3].replace("title: ", "").strip(),
                         tags=[],
                         type="descriptive",
                         content_ids=content_ids,
-                        img=lines[4]
-                        .replace("image: ", "")
-                        .strip(),
+                        img=lines[4].replace("image: ", "").strip(),
                         date=lines[2].replace("date:", "").strip(),
                         description=lines[0].replace("summary:", "").strip().replace("<br/>", "\n\n"),
                         authors=lines[6].replace("authors:", "").strip(),
                     )
                 )
-                modals = sorted(modals, key=(lambda x: x.date), reverse=True)
+                
+            # Sort modals by date
+            modals = sorted(modals, key=(lambda x: x.date), reverse=True)
             return {"response": modals}
         else:
             tags = os.listdir(f"{os.getcwd()}/content/{subsection_name.lower()}")
@@ -332,20 +348,28 @@ def read_markdown_file(file_name: str):
         for sub_folder in os.listdir(f"{os.getcwd()}/content/{folder}"):
             temp_file_name = file_name if ".md" in file_name else f"{file_name}.md"
             if sub_folder == temp_file_name:
+                print(f"Found file: {sub_folder}")  # Debugging output
                 with open(
                     f"{os.getcwd()}/content/{folder}/{temp_file_name}", "r", encoding="utf-8"
                 ) as file:
-                    return file.read()
+                    content = file.read()
+                    print(f"File content: {content[:100]}")  # Print first 100 characters for inspection
+                    return content
             if os.path.isdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
                 if ".md" not in sub_folder:
                     for file in os.listdir(f"{os.getcwd()}/content/{folder}/{sub_folder}"):
                         if file_name in file:
+                            print(f"Found file in subdirectory: {file}")
                             with open(
                                 f"{os.getcwd()}/content/{folder}/{sub_folder}/{file_name}.md",
                                 "r",
                                 encoding="utf-8",
                             ) as file:
-                                return file.read()
+                                content = file.read()
+                                print(f"File content from subdirectory: {content[:100]}")  # Print first 100 characters
+                                return content
+    print(f"File {file_name} not found")  # If no match found
+    return None
 
 
 def read_image_to_bytes(file_name: str):

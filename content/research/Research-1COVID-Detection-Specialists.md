@@ -5,3 +5,4 @@ title: COVID Detection Specialists
 image: ./img/thumbnails/COVID_Detection_Specialists.png
 difficulty: easy
 authors: Ted Colwell
+files: Reading Between the Lungs

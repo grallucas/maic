@@ -128,7 +128,7 @@ def build_leaderboard_html(user_data_path, icons_data_path):
         if type(user_data_df.iloc[i]['Awards']) != float:
             award_names = user_data_df.iloc[i]['Awards'].split("|")
 
-            if 'eboard2023' in award_names:
+            if 'eboard2024' in award_names:
                 print("EBOARD MEMBER:", leaderboard_df['User'].iloc[i])
                 leaderboard_df['All-Time'].iloc[i] = 'EBOARD'
                 leaderboard_df['Current'].iloc[i] = 'EBOARD'

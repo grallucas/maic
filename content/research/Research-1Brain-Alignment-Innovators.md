@@ -5,3 +5,4 @@ title: Brain Alignment Innovators
 image: ./img/thumbnails/Brain_Alignment_Innovators.png
 difficulty: easy
 authors: Bart Gebka
+files: Brain Alignment, Gray Matter Preso

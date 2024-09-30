@@ -5,3 +5,4 @@ title: NourishNet
 image: ./img/thumbnails/Nourish_Team_Logo.png
 difficulty: easy
 authors: Ben Paulson
+files: Proactive Severity State Forecasting of Food Commodity Prices for Global Warning Systems, NourishNet ROSIE Presentation, NourishNet Recording

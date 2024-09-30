@@ -5,3 +5,4 @@ title: Drone Visionaries
 image: ./img/thumbnails/Drone_Visionaries.png
 difficulty: easy
 authors: Aiden Holcombe
+files: Deep Learning in Embedded Systems with an Emphasis on Convolutional Drone Intelligence

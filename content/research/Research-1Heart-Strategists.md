@@ -5,3 +5,4 @@ title: Heart Strategists
 image: ./img/thumbnails/Heart_Strategists.png
 difficulty: easy
 authors: Mitchell Johnstone
+files: Heart of AI

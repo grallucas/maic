@@ -1,16 +1,21 @@
 Icon Name,Icon Image Path,Tooltip,Priority
-eboard2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/current_eboard.png,2023 Eboard,1000
+eboard2024,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/current_eboard.png,2024 Eboard,1000
+eboard2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2023 Eboard,521
 eboard2022,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2022 Eboard,520
 eboard2021,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2021 Eboard,519
 eboard2020,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2020 Eboard,518
 eboard2019,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/MAIC.png,Founding Board Member,999
+ROSIE Competition Finalist 2024,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/ROSIE2024.png,2024 ROSIE Challenge Finalist,191
 ROSIE Competition Finalist 2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/ROSIE2023.png,2023 ROSIE Challenge Finalist,190
 ROSIE Competition Finalist 2022,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/ROSIE2022.png,2022 ROSIE Challenge Finalist,189
+2024 Researcher,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2024Researcher.png,2024 Researcher,101
 2023 Researcher,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2023Researcher.png,2023 Researcher,100
 2022 Researcher,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2022Researcher.png,2022 Researcher,99
+2024 MICS Attendee,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2024MICS.png,2024 MICS Attendee,131
 2023 MICS Attendee,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2023MICS.png,2023 MICS Attendee,130
 2022 MICS Attendee,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/2022MICS.png,2022 MICS Attendee,130
 Overlord,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/Overlord.png,Tech Coord Overlord,998
 Founder,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/Founder.png,Founder,1001
 ROSIE Presenter,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/ROSIE_Presenter.png,ROSIE Presenter,188
-NVIDIA DLI 2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/NVIDIA_DLI_2023.jpg,NVIDIA DLI 2023,50
+NVIDIA DLI 2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/NVIDIA_DLI_2023.jpg,NVIDIA DLI,50
+Hacksgiving,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/hacksgiving.png,Hacksgiving,51
