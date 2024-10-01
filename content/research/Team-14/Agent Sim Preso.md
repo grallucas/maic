@@ -1,12 +1,12 @@
 summary: Simulating human (and/or non-human) agents in an interactive environment to build upon a similar prior work (https://arxiv.org/pdf/2304.03442.pdf). In having agents powered by an LLM, we expect to see emergent social and physical properties of the environment as they interact with it. Our hope is that this agent-based approach can be applied to more problem domains than only the simulation of human communities.
-type: pdf
+type: link
 date: 2/4/2024
 title: Agent Simulation Experts Presentation
 image: ./img/thumbnails/synergistic_sim.png
 difficulty: easy
 authors: Asher Sprigler, Andy Dao, Keagan Weinstock, Wendpanga Tapsoba, Gavin Childress, Lucas Gral
 categories: Research,Time Series Forecasting,Deep Learning,LLM,RAG
-pdf: https://drive.google.com/file/d/1q4V94G3i1d87NXBaZrsvWhaq6pj5xM7X/view?usp=sharing
+link: https://drive.google.com/file/d/1q4V94G3i1d87NXBaZrsvWhaq6pj5xM7X/view?usp=sharing
 pages: 15
 
 MSOE Artificial Intelligence Research Paper

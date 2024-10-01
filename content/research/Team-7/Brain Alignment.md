@@ -1,12 +1,12 @@
 summary: Advancing the project initially spearheaded by MSOE undergraduate researcher, Alex Ruchti. We are utilizing the Homologous Point Transformer methodology to align histology brain slices with their corresponding MRI brain slices. This approach was previously applied successfully to prostate registration.
-type: pdf
+type: link
 date: 24/9/2024
 title: Mind Over (Gray) Matter - Homologous Point Transform Applications to Brain Histology and MR Domains
 image: ./img/thumbnails/gray-matter.png
 difficulty: easy
 authors: Caleb Gray, Alexander Neher, Sonia Grade, Mikolaj Sordyl, Abigail Draper, John Bukowy, Bart Gebka
 categories: Transfer Learning, Medical Imaging, Previous Paper
-pdf: https://drive.google.com/file/d/1IRvckF6zv_TWNMd_VF7sG5ZxnTWcSx3P/view?usp=sharing
+link: https://drive.google.com/file/d/1IRvckF6zv_TWNMd_VF7sG5ZxnTWcSx3P/view?usp=sharing
 pages: 8
 
 Mind Over (Gray) Matter: Homologous Point

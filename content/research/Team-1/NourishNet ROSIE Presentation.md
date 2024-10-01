@@ -1,12 +1,12 @@
 summary: The presentation provided by the NourishNet team during the ROSIE Competition -- this is the same presentation that was given to the United Nations when presenting the final product developed by the NourishNet AI-Club research team.
-type: pdf
+type: link
 date: 2/4/2024
 title: NourishNet Presentation
 image: ./img/thumbnails/NN_preso.png
 difficulty: easy
 authors: Sydney Balboni, Grace Ivey, Brett Storoe, John Cisler, Tyge Plater, Caitlyn Grant, Ella Bruce, Benjamin Paulson
 categories: Research,Time Series Forecasting,Deep Learning,LLM,RAG
-pdf: https://docs.google.com/presentation/d/1KzRevyXfEEzFnrNN1u0kS4VXhkX4mtjG/edit?usp=sharing&ouid=104717368757680851613&rtpof=true&sd=true
+link: https://docs.google.com/presentation/d/1KzRevyXfEEzFnrNN1u0kS4VXhkX4mtjG/edit?usp=sharing&ouid=104717368757680851613&rtpof=true&sd=true
 pages: 15
 
 MSOE Artificial Intelligence Research Paper

@@ -1,12 +1,12 @@
 summary: The presentation provided by the NourishNet team during the MICS Conference -- this is the same presentation that was given to the United Nations when presenting the final product developed by the NourishNet AI-Club research team.
-type: pdf
+type: link
 date: 2/4/2024
 title: NourishNet Recording
 image: ./img/thumbnails/NN_UN.png
 difficulty: easy
 authors: Sydney Balboni, Grace Ivey, Brett Storoe, John Cisler, Tyge Plater, Caitlyn Grant, Ella Bruce, Benjamin Paulson
 categories: Research,Time Series Forecasting,Deep Learning,LLM,RAG
-pdf: https://drive.google.com/file/d/1ACEnxwPpYIlEa_7ctoUExMiSfTk1VhAB/view?usp=sharing
+link: https://drive.google.com/file/d/1ACEnxwPpYIlEa_7ctoUExMiSfTk1VhAB/view?usp=sharing
 pages: 15
 
 MSOE Artificial Intelligence Research Paper

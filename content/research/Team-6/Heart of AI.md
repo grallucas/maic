@@ -1,12 +1,12 @@
 summary: Our group delves into the implementation of the card game Hearts using reinforcement learning techniques to investigate the effectiveness of various reinforcement learning algorithms in understanding and strategically playing the game. Using algorithms such as Deep Q-Networks (DQN) and Monte Carlo Tree Search (MCTS), we aim to discern the strengths and weaknesses of these approaches in tackling the complexities of Hearts, thereby providing valuable insights into the advancement of AI systems for game playing.
-type: pdf
+type: link
 date: 30/6/2024
 title: Heart of AI
 image: ./img/thumbnails/hearts_ai_front.png
 difficulty: easy
 authors: Sam Keyser, Zach Wentz, Charles Nortrup, Franklin Cole, Mitchell Johnstone
 categories: Reinforcement Learning, Game Playing
-pdf: https://drive.google.com/file/d/1dCHIuas71IgE6UDhM4HTn-jFmRRjXoIl/view?usp=sharing
+link: https://drive.google.com/file/d/1dCHIuas71IgE6UDhM4HTn-jFmRRjXoIl/view?usp=sharing
 pages: 8
 
 MSOE Artificial Intelligence Research Paper

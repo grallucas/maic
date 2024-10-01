@@ -1,12 +1,12 @@
 summary: Evaluate the performance of different deep learning models in detecting COVID-19 from chest X-ray images. Through the use of a large and recent dataset of segmented lung images we evaluated two deep learning architectures: Resnet-50 and InceptionV3. Both models achieve high test accuracy, above 99%, suggesting that deep learning can be a useful tool for COVID-19 screening. We also look at some possible ways to improve the results, such as using different data processing techniques and model architectures.
-type: pdf
+type: link
 date: 30/6/2024
 title: Reading Between the Lungs: Evaluation of Deep Learning Model Architectures for COVID-19 Classification on Segmented Chest X-rays
 image: ./img/thumbnails/between_lungs_front.png
 difficulty: easy
 authors: Evan Schubert, William Sebelik-Lassiter, Mitchell Mahnke, Theodore Colwell
 categories: Embedded Systems, Computer Vision, Drones
-pdf: https://drive.google.com/file/d/1AfvrSssBzguIFJ_G5akitkx8t9-gmKQH/view?usp=sharing
+link: https://drive.google.com/file/d/1AfvrSssBzguIFJ_G5akitkx8t9-gmKQH/view?usp=sharing
 pages: 9
 
   MSOE Artificial Intelligence Research Paper

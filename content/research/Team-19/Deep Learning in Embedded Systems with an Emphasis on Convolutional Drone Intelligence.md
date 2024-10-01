@@ -1,12 +1,12 @@
 summary: Our team is working on incorporating computer vision on a drone in order to assist in autonomous movement. We hope to apply this in both searching and tracking applications. Currently we are working on a tracking proof of concept, where we will have a drone be able to follow a soccer ball during a game.
-type: pdf
+type: link
 date: 30/6/2024
 title: Deep Learning in Embedded Systems with an Emphasis on Convolutional Drone Intelligence
 image: ./img/thumbnails/drone_front.png
 difficulty: easy
 authors: Salvin Chowdhury, Aidan Holcombe, Braden Everson, Christian Zastrow
 categories: Embedded Systems, Computer Vision, Drones
-pdf: https://drive.google.com/file/d/1teHkmdCgRK-JI7MFyBSCdxHvp3LdCApo/view?usp=sharing
+link: https://drive.google.com/file/d/1teHkmdCgRK-JI7MFyBSCdxHvp3LdCApo/view?usp=sharing
 pages: 15
 
 Deep Learning in Embedded Systems with an Emphasis on Convolutional Drone Intelligence
