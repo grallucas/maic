@@ -1,6 +1,6 @@
 summary: Learn the basics of how computers can process and understand images, a foundational skill for all computer vision tasks.
 type: md
-date: 9/4/24
+date: 10/6/24
 title: Intro to Computer Vision
 image: ./img/tree-thumbnails/intro-comp-vis.png
 difficulty: easy

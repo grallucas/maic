@@ -1,6 +1,6 @@
 summary: Discover key techniques like resizing, normalization, and augmentation to prepare images for analysis by machine learning models.
 type: md
-date: 9/4/24
+date: 10/6/24
 title: Image Preprocessing
 image: ./img/tree-thumbnails/intro-comp-vis.png
 difficulty: easy
