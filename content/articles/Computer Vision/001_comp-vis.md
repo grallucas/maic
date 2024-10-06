@@ -54,5 +54,5 @@ categories: supervised learning, regression, classification
 <br/>
 
 <br/>
- 
+This resource from IBM talks about the basics of what Computer Vision is and how it works.  When reading this article, pay close attention to the "What is Computer Vision", and the "How does Computer Vision Work" sections.  These two areas contain information that can help you form a basic understanding of what Computer Vision is and how is operates -- along with an introduction to a neural network architecture commonly used in Computer Vision.
 https://www.ibm.com/cloud/learn/computer-vision
