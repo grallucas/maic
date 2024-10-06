@@ -108,7 +108,7 @@ class LearningTree():
 
         data_dict = {}
         exact_path = os.path.join(self.path, path)
-        with open(exact_path, 'r') as file:
+        with open(exact_path, 'r', encoding='utf8') as file:
             for line in file:
                 line = line.strip()
                 if not line:
