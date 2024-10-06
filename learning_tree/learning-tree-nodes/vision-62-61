@@ -1,5 +1,5 @@
 name="Segmentation"
-description="COMING SOON"
+description=“Explore how machines can identify the exact boundaries of objects within an image, making segmentation key for precision tasks.”
 category="Computer Vision"
 category_color="cyan"
 highlighted_path="True"

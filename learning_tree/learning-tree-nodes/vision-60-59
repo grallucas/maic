@@ -1,5 +1,5 @@
 name="Convolutional Neural Network (CNN)"
-description="COMING SOON"
+description=“Understand the structure and functionality of CNNs, the model architecture used in most modern computer vision tasks.”
 category="Computer Vision"
 category_color="cyan"
 highlighted_path="True"

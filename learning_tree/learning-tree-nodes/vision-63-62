@@ -1,5 +1,5 @@
 name="Object Detection"
-description="COMING SOON"
+description="Dive into the methods for identifying and locating objects within images, a crucial skill for real-time applications like autonomous driving."
 category="Computer Vision"
 category_color="cyan"
 highlighted_path="True"

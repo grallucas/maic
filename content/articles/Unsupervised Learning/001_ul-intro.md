@@ -5,7 +5,7 @@ title: Difference Between Supervised and Unsupervised Learning
 image: ./img/tree-thumbnails/ul-intro.png
 difficulty: easy
 authors: Ben Paulson, Aiden Miller
-categories: supervised learning, regression, classification
+categories: unsupervised learning
 
 <br>
 <a href='/learning-tree?node=29' style='

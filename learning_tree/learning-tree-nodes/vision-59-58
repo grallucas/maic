@@ -1,5 +1,5 @@
 name="Image Preprocessing"
-description="COMING SOON"
+description=“Discover key techniques like resizing, normalization, and augmentation to prepare images for analysis by machine learning models.”
 category="Computer Vision"
 category_color="cyan"
 highlighted_path="True"

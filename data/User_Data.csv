@@ -12,13 +12,13 @@ Jonathon Keane,test description,Hacksgiving|2023 Researcher|2023 ROSIE Finalist|
 Robert Myers Jr.,test description,,4,4,Robert,Myers
 Ted Colwell,test description,2024 Researcher|2023 Researcher|2023 ROSIE Competition Finalist|2024 MICS Attendee|2023 MICS Attendee|eboard2022|eboard2021|eboard2020,2,2,Ted,Colwell
 Mitchell Johnstone,test description,Hacksgiving|ROSIE Presenter|2023 MICS Attendee|2023 Researcher|2024 Researcher|2024 MICS Attendee,65,22,Mitchell,Johnstone
-Autumn Beyer,test description,,42,5,Autumn,Beyer
+Autumn Beyer,test description,2022 Researcher|2022 MICS Attendee|Hacksgiving,42,5,Autumn,Beyer
 Joseph Barganz,test description,NVIDIA DLI 2023,4,4,Joseph,Barganz
 Tyler Schreiber,test description,Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,12,0,Tyler,Schreiber
 Adam Haile,test description,2023 MICS Attendee|2023 Researcher|NVIDIA DLI 2023|2024 MICS Attendee|2024 Researcher|eboard2024,27,25,Adam,Haile
 Micah Pollnow,test description,,2,2,Micah,Pollnow
 Collin Schmocker,test description,,24,13,Collin,Schmocker
-Eric Van Zant,test description,NVIDIA DLI 2023,45,1,Eric,Van
+Eric Van Zant,test description,NVIDIA DLI 2023|Research 2023|2023 MICS Attendee,45,1,Eric,Van
 Alexander Knepprath,test description,,6,6,Alexander,Knepprath
 Michael Conner,test description,Hacksgiving|2024 Researcher|2024 MICS Attendee|eboard2022|Overlord|2023 Researcher|2023 MICS Attendee|ROSIE Competition Finalist 2023|ROSIE Presenter,35,35,Michael,Conner
 Xander Neuwirth,test description,Founder|2022 Researcher|2023 Researcher|ROSIE Competition Finalist 2022|eboard2019|eboard2020,17,2,Xander,Neuwirth
@@ -89,7 +89,7 @@ Connor Nagela,test description,,7,5,Connor,Nagela
 Daniel Fischer,test description,,2,2,Daniel,Fischer
 Ethan Wrasman,test description,,2,2,Ethan,Wrasman
 Gavin Jones,test description,NVIDIA DLI 2023,10,10,Gavin,Jones
-Grace Ivey,test description,Hacksgiving|2024 Researcher|2024 MICS Attendee|2024 ROSIE Competition Finalist,2,2,Grace,Ivey
+Grace Ivey,test description,Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,2,2,Grace,Ivey
 Ian Knudson,test description,,2,2,Ian,Knudson
 Jack Ford,test description,2024 Researcher|2024 MICS Attendee,2,2,Jack,Ford
 John Linden,test description,,2,2,John,Linden
@@ -101,7 +101,7 @@ Patrick Saxton,test description,,2,2,Patrick,Saxton
 Roberto Garcia,test description,,2,2,Roberto,Garcia
 Samir Mahmud,test description,NVIDIA DLI 2023,5,5,Samir,Mahmud
 Tiffany Villalobos,test description,,2,2,Tiffany,Villalobos
-Tyge Plater,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|2024 ROSIE Competition Finalist,19,19,Tyge,Plater
+Tyge Plater,test description,eboard2024|Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,19,19,Tyge,Plater
 Tyler Faulkner,test description,,2,2,Tyler,Faulkner
 William Peterson,test description,,2,2,William,Peterson
 Zachary Kohlman,test description,,2,2,Zachary,Kohlman
@@ -110,7 +110,7 @@ Zachary Weidner,test description,,2,2,Zachary,Weidner
 Zachary Wentz,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|ROSIE Presenter|2024 MICS Attendee,6,6,Zachary,Wentz
 Jon Garcia,test description,,1,1,Jon,Garcia
 James Prendiville,test description,,5,5,James,Prendiville
-Caitlyn Grant,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|2024 ROSIE Competition Finalist,13,13,Caitlyn,Grant
+Caitlyn Grant,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,13,13,Caitlyn,Grant
 Jacob Tyree,test description,NVIDIA DLI 2023,5,5,Jacob,Tyree
 Georgia Ridgeway,test description,NVIDIA DLI 2023,2,2,Georgia,Ridgeway
 Muhammad Alliyu,test description,,2,2,Muhammad,Alliyu
@@ -191,7 +191,7 @@ Tuyet Vo,test description,,1,1,Tuyet,Vo
 Artemis Dempsey ,test description,NVIDIA DLI 2023,3,3,Artemis,Dempsey
 Paul Nutini,test description,Hacksgiving,4,4,Paul,Nutini
 Wendpanga Tapsoba ,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,5,5,Wendpanga,Tapsoba
-Brett Storoe,test description,Hacksgiving|ROSIE Presenter|NVIDIA DLI 2023|eboard2024|2024 Researcher|2024 ROSIE Copmetition Finalist|2024 MICS Attendee,10,0,Brett,Storoe
+Brett Storoe,test description,Hacksgiving|ROSIE Presenter|NVIDIA DLI 2023|eboard2024|2024 Researcher|ROSIE Competition Finalist 2024|2024 MICS Attendee,10,0,Brett,Storoe
 Christian Basso,test description,2024 Researcher|2024 MICS Attendee,4,0,Christian,Basso
 Mikolaj Sordyl,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,5,5,Mikolaj,Sordyl
 Morgan  Anderson,test description,NVIDIA DLI 2023,1,1,Morgan,
@@ -243,7 +243,7 @@ Gerald Pickett,test description,,1,1,Gerald,Pickett
 Tanner Cellio,test description,Hacksgiving,3,3,Tanner,Cellio
 Jonny Keane,test description,Hacksgiving,3,3,Jonny,Keane
 Ian Czerkis,test description,,1,1,Ian,Czerkis
-Ella Bruce,test description,Hacksgiving|eboard2023|eboard2024|2024 Researcher|2024 MICS Attendee|2024 ROSIE Competition Finalist,10,10,Ella,Bruce
+Ella Bruce,test description,Hacksgiving|eboard2023|eboard2024|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,10,10,Ella,Bruce
 Sam Sterritt,test description,,1,1,,
 Evan Roegner,test description,Hacksgiving,2,2,,
 Graham Gilsdorf,test description,,1,1,,

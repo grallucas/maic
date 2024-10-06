@@ -1,5 +1,5 @@
 name="Image Classification"
-description="COMING SOON"
+description=“Learn how models are trained to classify images into categories, one of the most common applications of computer vision.”
 category="Computer Vision"
 category_color="cyan"
 highlighted_path="True"

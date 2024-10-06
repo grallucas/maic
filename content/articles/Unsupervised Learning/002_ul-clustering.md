@@ -2,10 +2,10 @@ summary: With unsupervised learning, a common algorithm is "clustering" data poi
 type: md
 date: 9/4/24
 title: Unsupervised Clustering
-image: ./img/tree-thumbnails/ul-intro.png
+image: ./img/tree-thumbnails/ul-clustering.png
 difficulty: easy
 authors: Ben Paulson, Aiden Miller
-categories: supervised learning, regression, classification
+categories: unsupervised learning
 
 <br>
 <a href='/learning-tree?node=30' style='
