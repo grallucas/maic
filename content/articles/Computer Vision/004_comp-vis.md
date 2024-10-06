@@ -8,7 +8,7 @@ authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
 
 <br>
-<a href='/learning-tree?node=59' style='
+<a href='/learning-tree?node=61' style='
     background-color: #31313a;
     color: gainsboro;
     padding: 6px 16px;
@@ -56,5 +56,7 @@ categories: supervised learning, regression, classification
 <br/>
 
 This is great resource for demonstrating the image classification because it gives an introduction to utilizing the TensorFlow library (Library used in MSOE classes), gives a detailed run through of the why, and builds on utilizing Convolutional Layers found in the CNN topic.  It does this through a step by step code example using real image data that you can use to train the model you create through the guide. 
+<br/>
+<a href='https://www.tensorflow.org/tutorials/images/classification' style='color: white'>
 https://www.tensorflow.org/tutorials/images/classification
-
+</a>

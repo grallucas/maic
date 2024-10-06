@@ -55,7 +55,13 @@ categories: supervised learning, regression, classification
 
 <br/>
 This resource discusses different techniques on how input images are manipulated to turn them into pixel and color data that a Computer Vision model is able to intake and interpret.  Some key takeaways from this are Uniform Aspect Ratio, Mean & Standard Deviation of Input Data, Image Normalization, and Dimensionality Reduction.
+<br/>
+<a href='https://becominghuman.ai/image-data-pre-processing-for-neural-networks-498289068258' style='color: white'>
 https://becominghuman.ai/image-data-pre-processing-for-neural-networks-498289068258
+</a>
 
 This resource provides an indepth code example for doing image preprocessing with the TensorFlow library.  It has a step by step guide to get you introduced to image preprocessing, and further explains what is happening through each block of code.
+<br/>
+<a href='https://www.kaggle.com/code/rimmelasghar/getting-started-with-image-preprocessing-in-python' style='color: white'>
 https://www.kaggle.com/code/rimmelasghar/getting-started-with-image-preprocessing-in-python
+</a>

@@ -8,7 +8,7 @@ authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
 
 <br>
-<a href='/learning-tree?node=59' style='
+<a href='/learning-tree?node=63' style='
     background-color: #31313a;
     color: gainsboro;
     padding: 6px 16px;
@@ -56,7 +56,9 @@ categories: supervised learning, regression, classification
 <br/>
 
 This resource for Object Detection from freeCodeCamp goes over what YOLOv8 (A type of Computer Vision Model) can do, and dicusses a step by step process on how to do detect objects in images using it.  It also dicusses how to build a web environment around an object detection model. 
+<br/>
+<a href='https://www.freecodecamp.org/news/how-to-detect-objects-in-images-using-yolov8' style='color: white'>
 https://www.freecodecamp.org/news/how-to-detect-objects-in-images-using-yolov8
-
+</a>
 
 

@@ -8,7 +8,7 @@ authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
 
 <br>
-<a href='/learning-tree?node=59' style='
+<a href='/learning-tree?node=62' style='
     background-color: #31313a;
     color: gainsboro;
     padding: 6px 16px;
@@ -56,10 +56,15 @@ categories: supervised learning, regression, classification
 <br/>
 
 This Medium article goes over what Image segmentation is and how it works.  It also provides a code example for how to utilize an Image Segmentation model but it should be noted that mutliple different models exist for this so you don't just have to utilize the one seen here.
+<br/>
+<a href='https://towardsdatascience.com/image-segmentation-with-six-lines-0f-code-acb870a462e8' style='color: white'>
 https://towardsdatascience.com/image-segmentation-with-six-lines-0f-code-acb870a462e8
+</a>
 
 This resource provides a leaderboard that contains multiple Papers, and their corresponding Github's, to track progress in Image Segmentation.  From this leaderboard you're able to view multiple state-of-the-art Image Segmentation models and learn how they are utilized. 
+<br/>
+<a href='https://paperswithcode.com/task/image-segmentation' style='color: white'>
 https://paperswithcode.com/task/image-segmentation
-
+</a>
 
 

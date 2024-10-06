@@ -8,7 +8,7 @@ authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
 
 <br>
-<a href='/learning-tree?node=59' style='
+<a href='/learning-tree?node=60' style='
     background-color: #31313a;
     color: gainsboro;
     padding: 6px 16px;
@@ -55,7 +55,13 @@ categories: supervised learning, regression, classification
 
 <br/>
 This resource provides great insight into the how a Convolutional Neural Network (CNN) works by providing mutiple views for explaining how a CNN works, which is very useful for getting an understanding of how a CNN model works.  This article also discusses the different layers that make up the architecture for a CNN, explaining how they work and their function.
+<br/>
+<a href='https://cs231n.github.io/convolutional-networks/' style='color: white'>
 https://cs231n.github.io/convolutional-networks/
+</a>
 
 This resource provides a paper 'AlexNet' that utilizes a CNN to do Image Classification, along with its Github which can be utilized to gain a better understanding of what a CNN model looks like when implemented in code. 
+<br/>
+<a href='https://paperswithcode.com/method/alexnet' style='color: white'>
 https://paperswithcode.com/method/alexnet
+</a>

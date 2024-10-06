@@ -8,7 +8,7 @@ authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
 
 <br>
-<a href='/learning-tree?node=59' style='
+<a href='/learning-tree?node=64' style='
     background-color: #31313a;
     color: gainsboro;
     padding: 6px 16px;
@@ -56,7 +56,9 @@ categories: supervised learning, regression, classification
 <br/>
 
 This resources provides a Paper, and its Github, which gives an example on how to utilize a transformer architecture for Computer Vision.
+<br/>
+<a href='https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1' style='color: white'>
 https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1
-
+</a>
 
 
