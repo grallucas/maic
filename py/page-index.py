@@ -44,7 +44,7 @@ html(
             div(
                 div(
                     h1('Meet the Eboard!'),
-                    img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/2023 Org Fair.jpg", style='width:100%'),
+                    img(src="/img/misc/maic_eboard_24.jpg", style='width:100%'),
                     p("A passionate team of MSOE university students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiring a future driven by AI's transformative potential."),
                     a('Contact Us', href='./contact.html', style = 'color: #0099ff; font-weight: bold;'),
                     style='max-width: 400px;'
@@ -81,7 +81,7 @@ html(
                                     p('Join us every week at the ', a('Direct Supply ITC', href='https://maps.app.goo.gl/QQbGUNRQrcK8dZpHA', style='font-weight:bold;'), 'from 6:30-7:30 PM for valuable industry insights—and enjoy some free food!'),         
                                     style="flex: 1;"
                                 ),
-                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding: 10px;"
+                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: rgb(var(--hl-2)); padding: 10px;"
                             )
                         ),
 
@@ -103,43 +103,53 @@ html(
                                     style="flex: 1;"
                                 ),
                                 img(src="/img/misc/hacksgiving-2023.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #FFC000;'),
-                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding: 10px;"
+                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: #FFC000; padding: 10px;"
                             )
                         ),
 
                         # Research Groups Section (Image on Left)
                         div(
                             div(
-                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/Research_Groups_Image.png", style='width: 45%; margin-right: 20px;'),
+                                img(src="/img/misc/2024_ROSIE_MAIC.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 3%; margin-right: 0px; border-radius: 15px; border: 2px solid #4BECFD;'),
                                 div(
                                     a(
-                                        h2('Research Groups'),
-                                        href='#research-groups',  # Set an anchor or relevant link here
-                                        style='color: #0099ff; font-weight: bold;'
+                                        h1('Research Groups', style='color: #ffffff; font-weight: bold; margin-bottom: 7px;'),
+                                        p('Publishing Novel AI Applications', style='color: #4BECFD; font-weight: bold; margin-top: 5px;'),
                                     ),
-                                    p('Join one of our Research Groups and dive into specific AI topics through collaboration. With corporate mentorship and a focus on exploratory learning, these groups offer invaluable hands-on experience.'),
+                                    p('''
+                                        Research Groups are designed for students to work collaboratively on AI projects that often lead to published research. 
+                                        Guided by mentors, these groups dive into advanced AI topics, with a focus on innovative solutions and practical experience across 6 months.
+                                        We even offer for-credit opportunities!
+                                        <br/><br/>
+                                    '''),
+                                    p('Teams meet weekly to collaborate and develop research papers, often presented at conferences. Interested in making an impact? ', a('See our previous projects here.', href='https://msoe-maic.com/library?nav=Research', style='font-weight: bold;')),
                                     style="flex: 1;"
                                 ),
-                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding: 10px;"
+                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: #4BECFD; padding: 10px;"
                             )
                         ),
 
                         # Learning Tree Section (Image on Left)
                         div(
                             div(
-                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/Learning_Tree_Image.png", style='width: 45%; margin-right: 20px;'),
                                 div(
                                     a(
-                                        h2('Learning Tree'),
-                                        href='#learning-tree',  # Set an anchor or relevant link here
-                                        style='color: #0099ff; font-weight: bold;'
+                                        h1('Learning Tree', style='color: #ffffff; font-weight: bold; margin-bottom: 7px;'),
+                                        p('Your Pathway to Mastering AI', style='color: #00FA86; font-weight: bold; margin-top: 5px;'),
                                     ),
-                                    p('The Learning Tree is your pathway to mastering AI. Starting from fundamental concepts to advanced topics, it provides curated learning resources for both beginners and seasoned AI enthusiasts.'),
+                                    p('''
+                                        The Learning Tree is a structured resource guide that helps both beginners and advanced learners navigate AI concepts. 
+                                        Covering fundamental topics through to advanced areas like computer vision and natural language processing, it provides curated 
+                                        resources for self-paced learning -- often used by our hands-on project mentors!
+                                        <br/><br/>
+                                    '''),
+                                    p('Explore various AI topics and take control of your learning journey by understanding the path ahead. ', a('Jump to the Learning Tree!', href='https://msoe-maic.com/learning-tree', style='font-weight: bold;')),
                                     style="flex: 1;"
                                 ),
-                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: gray; padding: 10px;"
+                                img(src="/img/misc/learning_tree_logo.png", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #00FA86;'),
+                                style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: #00FA86; padding: 10px;"
                             )
-                        )
+                        ),
                     ),
                     style='width: 65%;'
                 ),
