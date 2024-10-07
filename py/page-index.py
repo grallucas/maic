@@ -44,7 +44,7 @@ html(
             div(
                 div(
                     h1('Meet the Eboard!'),
-                    img(src="/img/misc/maic_eboard_24.jpg", style='width:100%'),
+                    img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/maic_eboard_24.jpg", style='width:100%'),
                     p("A passionate team of MSOE university students dedicated to making artificial intelligence knowledge accessible to all. By strengthening our community partnerships each year, and staying on top of current innovations within the field, they create a platform for learning and innovation, inspiring a future driven by AI's transformative potential."),
                     a('Contact Us', href='./contact.html', style = 'color: #0099ff; font-weight: bold;'),
                     style='max-width: 400px;'
@@ -67,7 +67,7 @@ html(
                         # Speaker Events Section (Image on Left)
                         div(
                             div(
-                                img(src="/img/misc/joe_poeschl.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 3%; margin-right: 0px; border-radius: 15px; border: 2px solid rgb(var(--hl-2));'),
+                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/joe_poeschl.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 3%; margin-right: 0px; border-radius: 15px; border: 2px solid rgb(var(--hl-2));'),
                                 div(
                                     a(
                                         h1('Speaker Events', style='color: #ffffff; font-weight: bold; margin-bottom: 7px;'),
@@ -102,7 +102,7 @@ html(
                                     p('Teams meet for one hour each week and spend another hour on development. This is a great opportunity to build your AI portfolio, work alongside mentors, and gain industry experience! For more details, ', a('check out this overview document.', href='https://drive.google.com/file/d/1kNZouHtwEL0uxEgGWr5qynHw7G9GEfGE/view?usp=sharing', style='font-weight: bold;')),
                                     style="flex: 1;"
                                 ),
-                                img(src="/img/misc/hacksgiving-2023.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #FFC000;'),
+                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/hacksgiving-2023.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #FFC000;'),
                                 style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: #FFC000; padding: 10px;"
                             )
                         ),
@@ -110,7 +110,7 @@ html(
                         # Research Groups Section (Image on Left)
                         div(
                             div(
-                                img(src="/img/misc/2024_ROSIE_MAIC.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 3%; margin-right: 0px; border-radius: 15px; border: 2px solid #4BECFD;'),
+                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/2024_ROSIE_MAIC.jpg", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 3%; margin-right: 0px; border-radius: 15px; border: 2px solid #4BECFD;'),
                                 div(
                                     a(
                                         h1('Research Groups', style='color: #ffffff; font-weight: bold; margin-bottom: 7px;'),
@@ -146,7 +146,7 @@ html(
                                     p('Explore various AI topics and take control of your learning journey by understanding the path ahead. ', a('Jump to the Learning Tree!', href='https://msoe-maic.com/learning-tree', style='font-weight: bold;')),
                                     style="flex: 1;"
                                 ),
-                                img(src="/img/misc/learning_tree_logo.png", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #00FA86;'),
+                                img(src="https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/learning_tree_logo.png", style='width: 30%; aspect-ratio: 1 / 1; object-fit: cover; margin-left: 0px; margin-right: 3%; border-radius: 15px; border: 2px solid #00FA86;'),
                                 style="display: flex; align-items: center; margin-bottom: 5px; background-image: url(https://maic-fastapi-lambda.s3.amazonaws.com/img/misc/NN_background_pattern_2.png); background-size: cover; border-radius: 30px; border-style: solid; border-width: 3px; border-color: #00FA86; padding: 10px;"
                             )
                         ),
