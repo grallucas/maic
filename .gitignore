@@ -14,3 +14,5 @@ articles-*.html
 index.html
 Pipfile
 Pipfile.lock
+/node_modules
+/.idea
