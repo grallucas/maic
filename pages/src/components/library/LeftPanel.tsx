@@ -115,6 +115,9 @@ const LeftPanel = (props: LeftPanelProps) => {
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
+        <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
+          Competitions
+        </Button>
         {/* <Button
           component={Link}
           to="/library?nav=Favorites"
