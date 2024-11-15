@@ -1,7 +1,7 @@
 summary: The learning tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way.
 type: md
 date: 11/12/2024
-title: HacksGiving 2024 with Discovery World
+title: Fun with Liquids
 image: ./img/thumbnails/discovery_world.png
 difficulty: easy
 authors: Ben Paulson
