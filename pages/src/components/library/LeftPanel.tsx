@@ -7,7 +7,6 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import Movie from "@mui/icons-material/Movie";
 import Favorite from "@mui/icons-material/Favorite";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
-import LogoDevIcon from '@mui/icons-material/LogoDev';
 import HelpIcon from "@mui/icons-material/Help";
 import { Link } from "react-router-dom";
 
@@ -116,7 +115,7 @@ const LeftPanel = (props: LeftPanelProps) => {
         <Button component={Link} to="/library?nav=Videos" startIcon={<Movie />}>
           Videos
         </Button>
-        <Button component={Link} to="/library?nav=Competitions" startIcon={<LogoDevIcon />}>
+        <Button component={Link} to="/library?nav=Competitions" startIcon={<EmojiEventsIcon />}>
           Competitions
         </Button>
         {/* <Button
