@@ -1,111 +1,51 @@
-summary: The learning tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way.
+summary: HacksGiving 2024, a three-day hackathon hosted by the MSOE AI-Club in collaboration with Discovery World, brought together students to create innovative AI solutions for improving visitor experiences at Milwaukee’s science and technology center.
 type: md
-date: 11/12/2024
+date: 11/26/2024
 title: HacksGiving 2024 with Discovery World
 image: ./img/thumbnails/discovery_world.png
 difficulty: easy
 authors: Ben Paulson
-categories: Tutorial, AI-Club, Getting Started
+categories: HacksGiving, Competition, Project
 
-[//]: # (<br>)
+## HacksGiving 2024: AI for Good with Discovery World
 
-[//]: # (<a href='/learning-tree?node=1' style=')
+HacksGiving 2024 was a tremendous success! From November 21–24, the MSOE Artificial Intelligence Club (MAIC), in collaboration with Discovery World, hosted its second annual **HacksGiving: AI for Good** hackathon. Over the course of three days, more than 70 students from across MSOE and beyond came together to design cutting-edge AI solutions to enhance visitor interactions at Milwaukee’s premier science and technology museum.
 
-[//]: # (    background-color: #31313a;)
+### The Challenge: AI for Discovery World
+This year’s challenge invited participants to develop AI-driven solutions that would make Discovery World’s exhibits more immersive, accessible, and engaging for visitors of all ages. Teams were tasked with addressing key considerations such as personalization, language accessibility, scalability, and educational value. The goal? To create solutions that could enrich the experience for everyone, from curious five-year-olds to seasoned experts.
 
-[//]: # (    color: gainsboro;)
+### Event Highlights
+HacksGiving kicked off on Thursday evening with an inspiring keynote from Dr. Jeremy Kedziora and Discovery World’s UX designer Evan Jackson. Students were introduced to the problem statement, encouraged to form teams, and provided with resources to begin brainstorming their ideas.
 
-[//]: # (    padding: 6px 16px;)
+The following days were filled with energy and collaboration as teams worked tirelessly in Diercks Hall to bring their visions to life. With access to cutting-edge tools, mentorship from AI experts, and plenty of snacks to fuel their creativity, participants made impressive progress on their projects.
 
-[//]: # (    border: none)
+On Sunday, teams presented their final solutions to a panel of judges, including Discovery World staff, MSOE faculty, and AI-Club mentors. The innovative ideas and high-quality presentations left the judges in awe.
 
-[//]: # (    border-radius: 4px;)
+### The Winning Teams
+The competition was fierce, but three teams emerged victorious:
 
-[//]: # (    text-transform: uppercase;)
+#### **1st Place: Discovery Mate** – $3,000 Prize
+- **Description:** Discovery Mate wowed the judges with a custom AI framework that minimizes hallucinations, provides real-time translation and text-to-speech, supports voice-interruptible chatbot conversations with language switching, and includes an exhibit recommendation engine.
+- **Team Members:** Alhagie Boye, Olek Drobek, Caleb Gray, Bart Gebka, Sonia Grade, Autumn Mizer, Alex Neher
 
-[//]: # (    font-family: "Roboto", sans-serif;)
+#### **2nd Place: Yarvis** – $2,000 Prize
+- **Description:** Yarvis proposed using Bluetooth repeaters to detect visitor locations, enhancing interactivity by guiding users through exhibits with contextual information and recommendations.
+- **Team Members:** Mazen Hamid, Travis Jankowski, Alex Lopez, Noah Nieberle, Patrick Rafferty, Gabby Sladek
 
-[//]: # (    font-size: 1em;)
+#### **3rd Place: Liquid Vision** – $1,000 Prize
+- **Description:** Liquid Vision focused on scalable tech solutions, incorporating gamified learning badges, QR codes for exhibit interactions, and intuitive question-and-answer features.
+- **Team Members:** Sydney Balboni, Mason Beynon, Reagan Burkemper, Zoe Kirkman, Kathlyn Leanos, Adam Swedlund, Michael Wood
 
-[//]: # (    font-weight: bold;)
+#### **Honorable Mentions**
+- **Gio:** Solo project by Giovanni Martinez-Cortez Salvador, featuring a chatbot integrated with Discovery World’s website.
+- **Explore Discovery:** NFC-powered exhibit interactions, traversable maps, and AR potential by a team including Andy Dao, Leigh Goetsch, Benjamin Leshin, and others.
 
-[//]: # (    cursor: pointer;)
+### Impact and Takeaways
+HacksGiving 2024 doubled its participation compared to last year, showcasing the growing excitement for leveraging AI to make a real-world impact. The event not only provided students with an opportunity to build their portfolios but also strengthened their skills in teamwork, problem-solving, and AI development.
 
-[//]: # (    text-decoration: none;)
+“I saw some extremely passionate builders really hoping to make a difference for Discovery World and everyone who visits,” said Ben Paulson, president of the AI-Club and event co-organizer. “I’m excited to see what Discovery World does with the solutions these teams have built.”
 
-[//]: # (    display: inline-block;')
+### Acknowledgments
+HacksGiving 2024 wouldn’t have been possible without the support of our sponsors, mentors, and Discovery World staff. Special thanks to Dr. Kedziora, Evan Jackson, Robert Bardunias, and Ben Paulson for judging, as well as the rest of the MSOE HacksGiving committee coming together to make this event possible. We also extend our gratitude to Cristo Rey Jesuit High School for joining us on the final day to experience the excitement of a collegiate-level hackathon.
 
-[//]: # (>)
-
-[//]: # (  View in Learning Tree)
-
-[//]: # (</a>)
-
-[//]: # ()
-[//]: # (<br>)
-
-[//]: # (<br>)
-
-[//]: # (<br>)
-
-[//]: # ()
-[//]: # (<div style=')
-
-[//]: # (  position: relative;)
-
-[//]: # (  padding: 10px; )
-
-[//]: # (  border-radius: 5px;)
-
-[//]: # (  background-color: rgba&#40;0, 0, 0, 0.85&#41;; )
-
-[//]: # (  border: 4px solid transparent;)
-
-[//]: # (  background-image: linear-gradient&#40;90deg, rgba&#40;0, 0, 0, 0.85&#41;, rgba&#40;0, 0, 0, 0.85&#41;&#41;, linear-gradient&#40;90deg, gold, orange, gold&#41;;)
-
-[//]: # (  background-origin: border-box;)
-
-[//]: # (  background-clip: padding-box, border-box;)
-
-[//]: # ('>)
-
-[//]: # (<svg width='200' height='50' style='display: block; margin-bottom: 5px;'>)
-
-[//]: # (  <text x='0' y='35' font-size='35' font-family='Arial' font-weight='bold' fill='gold'>)
-
-[//]: # (    Why Read?)
-
-[//]: # (    <animate attributeName='fill' values='gold; orange; gold' dur='3s' repeatCount='indefinite' />)
-
-[//]: # (  </text>)
-
-[//]: # (</svg>)
-
-[//]: # (<p style='color: white; margin-top: 2px;'>At the start of every article, we'll provide a brief overview of WHY you should read the article. This is a great way to quickly determine if the article is right for you, and our goal as student writers is to provide you with resources we believe are extremely credible, rather than just our own opinions.</p>)
-
-[//]: # ()
-[//]: # (</div>)
-
-[//]: # (<br/>)
-
-## Hacksgiving 2024
-The Learning Tree is a visual representation of the world of AI, built by pulling from reliable sources students before you have identified as useful and structure in an easy-to-visualize way. This tree is a great way to understand the different branches of AI and how they all connect to one another. While we are planning to continually update the tree, you can be sure that the videos/artciles we've linked to are some of the best resources available on the topics, rather than articles that we've written relative beginners to the space of AI as we are all collectively pursuing our degrees at MSOE.
-
-Content that is exclusive to the learning tree, which won't be linked to separate articles, include information specific to MSOE. You can expect this to be information about the club itself (such as this article!), information about ROSIE, mentioning classes, and even workshops developed by AI-Club or our NVIDIA partners.
-
-By working your way through the tree, you'll be able to understand the different branches of AI and how they all connect to one another. This will help you understand the different pathways you can take in AI, and ultimately help you decide what you want to focus on in the field. Feel free to reference these resources at your own pace, and don't be afraid to reach out to AI-Club if you have any questions!
-
-
-## What is AI-Club (MAIC)?
-The MSOE Artificial Intelligence Club (MAIC) is a student organization that focuses on "demystifying AI for everyone", ultimately providing a network of students who are interested in AI and are motivated to learn more about it. We do this through both high-level and low-level learning opportunities:<br/>
-
-### High-Level Learning
-"High-level" learning opportunities are those that are more general and are easy to pick up. This primarily includes bi-weekly speaker events which we host in the Direct Supply ITC Great Hall on Thursdays from 6:30-7:30pm, bringing in industry professionals who are leaders in their field to talk about AI and ultimately *WHY* it's important to learn!
-
-### Low-Level Learning
-"Low-level" learning opporunities are hands-on projects -- we pride ourselves on providing these opportunities for ALL students through a student mentorship evironment. Whether you're a freshman or a senior, we have a project for you to work on and learn from on a team of motivated students, guided by a student mentor who has experience in the field. Possible project pathways are as follows:
-* **Innovation Labs:** Recommended for people getting started with AI, these projects are in a team of 8-12 students (again, with a student mentor providing guidance and direction) and are focused on a problem provided by an industry sponsor. Across 2 months, you'll work on a solution for the partner's problem in a hackathon with a $5000 prize pool, presenting your solution to the sponsor at the end and ultimately achieving an AMAZING portfolio piece where you worked on a real-world problem.
-* **Research Groups:** Recommend for people who have worked on a team before, these projects are in a team of 4-6 students (again, with a student mentor providing guidance and direction) and are focused on developing a NOVEL solution to a problem in the field of AI. Across 6 months, you'll work on writing a research paper to be submitted to a conference/competition, presenting your solution and ultimately creating an AMAZING portfolio piece where you are an author of a published paper in a novel space of AI. AI-Club will help you get your paper published and will provide funding for the conference/competition you submit to.
-
-
-
+Stay tuned to see how Discovery World incorporates these AI solutions into their exhibits, and mark your calendars for next year’s HacksGiving event!
