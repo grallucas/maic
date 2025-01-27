@@ -2,7 +2,7 @@ summary: Explore how machines can identify the exact boundaries of objects withi
 type: md
 date: 10/6/24
 title: Segmentation
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/image-segmentation.png
 difficulty: easy
 authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification

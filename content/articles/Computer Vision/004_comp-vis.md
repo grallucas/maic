@@ -2,7 +2,7 @@ summary: Learn how models are trained to classify images into categories, one of
 type: md
 date: 10/6/24
 title: Image Classification
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/image-classification.png
 difficulty: easy
 authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
