@@ -53,7 +53,7 @@ categories: supervised learning, NLP
 <br/>
 <br/>
 
-## **Weaviate Blog – What is a Vector Database**
+## **Weaviate Blog – Embeddings Visualized**
 This article introduces you to vector databases, which are designed specifically to store and query high-dimensional vectors (used to represent complex data like text). It explains the core concept of vector storage and retrieval, highlighting the importance of vector databases in modern AI applications. If you're interested in understanding how vector-based data is stored and managed for tasks like semantic search and recommendation systems, this article will give you a solid foundation.
 <br/>
 
