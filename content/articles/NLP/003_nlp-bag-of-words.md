@@ -53,7 +53,7 @@ categories: supervised learning, NLP
 <br/>
 <br/>
 
-## **IBM - Bag of Words  **
+## **IBM - Bag of Words**
 If you're new to Natural Language Processing (NLP), this article provides a simple, high-level introduction to the Bag of Words (BoW) model. It explains what BoW is, why it's used, and how it helps machines understand text. This is a great starting point for anyone who wants a clear, non-technical explanation before diving into implementation.
 <br/>
 
@@ -74,7 +74,7 @@ If you're new to Natural Language Processing (NLP), this article provides a simp
 <br>
 </a>
 
-## **DataCamp Bag of Words Tutorial **
+## **DataCamp Bag of Words Tutorial**
 Once you understand the basics, this tutorial guides you through implementing Bag of Words (BoW) in Python. It explains step-by-step how to convert text into numerical features using BoW, with easy-to-follow code examples. If you want to see BoW in action and learn how it's applied in real-world Natural Language Processing (NLP) tasks like text classification, this is a great resource!
 <br/>
 
