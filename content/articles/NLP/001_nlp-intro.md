@@ -2,7 +2,7 @@ summary: Learn the basics of how computers can process and understand natural la
 type: md
 date: 19/2/2025
 title: Intro to Natural Language Processing (NLP)
-image: ./img/tree-thumbnails/article-soon.png
+image: ./img/tree-thumbnails/IntroNLP.png
 difficulty: easy
 authors: Tyge Plater
 categories: supervised learning, NLP

@@ -2,7 +2,7 @@ summary: Learn the concept of Bag of Words in a simple, high-level, way and then
 type: md
 date: 19/2/2025
 title: Bag of Words
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/bag-of-words.png
 difficulty: medium
 authors: Tyge Plater
 categories: supervised learning, NLP

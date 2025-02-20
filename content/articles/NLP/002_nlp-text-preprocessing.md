@@ -2,7 +2,7 @@ summary: Discover key techniques like Text Cleaning, Tokenization, and Stop Word
 type: md
 date: 19/2/2025
 title: Text Preprocessing
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/text-preprocessing.png
 difficulty: medium
 authors: Tyge Plater
 categories: supervised learning, NLP
