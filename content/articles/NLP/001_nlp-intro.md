@@ -1,6 +1,6 @@
 summary: Learn the basics of how computers can process and understand natural language, a foundational skill for all natural language processing tasks.
 type: md
-date: 2/16/25
+date: 19/2/2025
 title: Intro to Natural Language Processing (NLP)
 image: ./img/tree-thumbnails/article-soon.png
 difficulty: easy
@@ -55,7 +55,7 @@ categories: supervised learning, NLP
 <br/>
 
 ## **IBM Natural Language Processing Overview**
-This article by IBM provides a high-level, beginner-friendly overview of Natural Language Processing. It explains what Natural Language Processing (NLP) is, how it works, and its real-world applications (such as chatbots, sentiment analysis, and machine translation). This is a great read if you’re new to NPL and want a simple, non-technical overview that focuses on practical use cases rather than deep theory.
+This article by IBM provides a high-level, beginner-friendly overview of Natural Language Processing. It explains what Natural Language Processing (NLP) is, how it works, and its real-world applications (such as chatbots, sentiment analysis, and machine translation). This is a great read if you’re new to NLP and want a simple overview that focuses on practical use cases rather than deep theory.
 <br/>
 
 <a href='https://www.ibm.com/think/topics/natural-language-processing' style='

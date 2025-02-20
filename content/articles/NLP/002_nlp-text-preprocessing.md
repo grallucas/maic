@@ -1,6 +1,6 @@
 summary: Discover key techniques like Text Cleaning, Tokenization, and Stop Word Removal to prepare text for analysis by machine learning models.
 type: md
-date: 2/16/25
+date: 19/2/2025
 title: Text Preprocessing
 image: ./img/tree-thumbnails/intro-comp-vis.png
 difficulty: medium

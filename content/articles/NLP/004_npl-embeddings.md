@@ -1,6 +1,7 @@
 summary: Learn the concepts of Vector Stores and Embeddings
-date: 2/16/25
-title: Bag of Words
+type: md
+date: 19/2/2025
+title: Embeddings
 image: ./img/tree-thumbnails/intro-comp-vis.png
 difficulty: medium
 authors: Tyge Plater
@@ -54,7 +55,7 @@ categories: supervised learning, NLP
 <br/>
 
 ## **Weaviate Blog – Embeddings Visualized**
-This article introduces you to vector databases, which are designed specifically to store and query high-dimensional vectors (used to represent complex data like text). It explains the core concept of vector storage and retrieval, highlighting the importance of vector databases in modern AI applications. If you're interested in understanding how vector-based data is stored and managed for tasks like semantic search and recommendation systems, this article will give you a solid foundation.
+This article is the most important here since it introduces the concept of embeddings visually, which will help you to gain a fundamental understanding of how embeddings are used.  Specifically, the article introduces vector (embedding) databases, which are designed specifically to store and query high-dimensional vectors (used to represent complex data like text). It explains the core concept of vector storage and retrieval, highlighting the importance of vector databases in modern AI applications. If you're interested in understanding how vector-based data is stored and managed for tasks like semantic search and recommendation systems, this article will give you a solid foundation. 
 <br/>
 
 <a href='https://weaviate.io/blog/what-is-a-vector-database' style='
@@ -97,7 +98,7 @@ This article provides a high-level introduction to word embeddings, explaining h
 
 
 ## **DataCamp – What is Text Embedding AI?**
-This article is the most important here since it introduces the concept of embeddings visually, which will help you to gain a fundamental understanding of how embeddings are used.  It introduces vector (embedding) databases, which are designed specifically to store and query high-dimensional vectors (used to represent complex data like text). It explains the core concept of vector storage and retrieval, highlighting the importance of vector databases in modern AI applications. If you're interested in understanding how vector-based data is stored and managed for tasks like semantic search and recommendation systems, this article will give you a solid foundation.
+This article expands on the concept of text embeddings by diving deeper into how embeddings are used for tasks like document similarity and natural language understanding. It provides a practical explanation of how text can be represented as vectors and how those vectors are used in real-world AI applications. Perfect for those who want to understand the broader applications of embeddings in modern AI systems like recommendation engines and semantic search.
 <br/>
 
 <a href='https://www.datacamp.com/blog/what-is-text-embedding-ai' style='

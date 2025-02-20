@@ -1,5 +1,6 @@
 summary: Learn the concept of Bag of Words in a simple, high-level, way and then dive into learning how to implement Bag of Words in Python.
-date: 2/16/25
+type: md
+date: 19/2/2025
 title: Bag of Words
 image: ./img/tree-thumbnails/intro-comp-vis.png
 difficulty: medium
@@ -46,7 +47,7 @@ categories: supervised learning, NLP
   </text>
 </svg>
 
-<p style='color: white; margin-top: 2px;'>One of the simplest and most effective techniques in NLP, Bag of Words converts text into numerical representations by counting word occurrences. Understanding BoW helps you see how early NLP models extract features from text for tasks like spam detection, sentiment analysis, and document classification. Even though modern methods like embeddings have evolved, BoW is still a valuable concept for understanding how text data can be structured for machine learning.
+<p style='color: white; margin-top: 2px;'>One of the simplest and most effective techniques in NLP, Bag of Words (BoW) converts text into numerical representations by counting word occurrences. Understanding BoW helps you see how early NLP models extract features from text for tasks like spam detection, sentiment analysis, and document classification. Even though modern methods like embeddings have evolved, BoW is still a valuable concept for understanding how text data can be structured for machine learning.
 </p>
 </div>
 
@@ -54,7 +55,7 @@ categories: supervised learning, NLP
 <br/>
 
 ## **IBM - Bag of Words**
-If you're new to Natural Language Processing (NLP), this article provides a simple, high-level introduction to the Bag of Words (BoW) model. It explains what BoW is, why it's used, and how it helps machines understand text. This is a great starting point for anyone who wants a clear, non-technical explanation before diving into implementation.
+If you're new to Natural Language Processing (NLP), this article provides a simple, high-level introduction to the Bag of Words (BoW) model. It explains what BoW is, why it's used, and how it helps machines understand text. This is a great starting point for anyone who wants a clear explanation before diving into implementation.
 <br/>
 
 <a href='https://www.ibm.com/think/topics/bag-of-words' style='
