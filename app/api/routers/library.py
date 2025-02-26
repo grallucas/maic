@@ -78,6 +78,7 @@ async def get_modals():
                     {"Video-Rosie_23_Competiton": (await get_content_title_and_authors("Video-Rosie_23_Competiton"))["response"]},
                     {"Video-Rosie_24_Competiton": (await get_content_title_and_authors("Video-Rosie_24_Competiton"))["response"]},
                     {"Video-NVIDIA_QA_Panel_MAIC_Speaker_Series": (await get_content_title_and_authors("Video-NVIDIA_QA_Panel_MAIC_Speaker_Series"))["response"]},
+                    {"Video-Web_Scraping": (await get_content_title_and_authors("Video-Web_Scraping"))["response"]},
                 ],
                 type="decorative",
             ),
