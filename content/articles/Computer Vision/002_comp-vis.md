@@ -2,7 +2,7 @@ summary: Discover key techniques like resizing, normalization, and augmentation 
 type: md
 date: 10/6/24
 title: Image Preprocessing
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/image-preprocessing.png
 difficulty: easy
 authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification

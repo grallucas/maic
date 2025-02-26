@@ -2,7 +2,7 @@ summary: Explore the cutting-edge transformer architecture that is quickly becom
 type: md
 date: 10/6/24
 title: Vision Transformer
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/vision-transformer.png
 difficulty: easy
 authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification

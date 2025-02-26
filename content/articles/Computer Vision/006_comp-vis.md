@@ -2,7 +2,7 @@ summary: Dive into the methods for identifying and locating objects within image
 type: md
 date: 10/6/24
 title: Object Detection
-image: ./img/tree-thumbnails/intro-comp-vis.png
+image: ./img/tree-thumbnails/object-detection.png
 difficulty: easy
 authors: Ben Paulson, Tyge Plater
 categories: supervised learning, regression, classification
