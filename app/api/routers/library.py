@@ -55,9 +55,9 @@ async def get_modals():
                 title="Featured Research",
                 tags=["Research"],
                 content_ids=[
-                    {"Research-1NourishNet": (await get_content_title_and_authors("Research-1NourishNet"))["response"]},
-                    {"Research-1Silent-Sound-Synthesizers": (await get_content_title_and_authors("Research-1Silent-Sound-Synthesizers"))["response"]},
-                    {"Research-1Brain-Alignment-Innovators": (await get_content_title_and_authors("Research-1Brain-Alignment-Innovators"))["response"]},
+                    {"Research-50NourishNet": (await get_content_title_and_authors("Research-50NourishNet"))["response"]},
+                    {"Research-50Silent-Sound-Synthesizers": (await get_content_title_and_authors("Research-50Silent-Sound-Synthesizers"))["response"]},
+                    {"Research-50Brain-Alignment-Innovators": (await get_content_title_and_authors("Research-50Brain-Alignment-Innovators"))["response"]},
                 ],
                 type="decorative",
             ),
