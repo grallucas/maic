@@ -2,6 +2,8 @@
 
 ## API (New)
 
+The API serves all data for the website, however only the Library and Learning Tree have their own additional endpoints for data retrieval. These endpoints can be found in the [`learning_tree.py`](./app/api/routers/learning_tree.py) and [`library.py`](./app/api/routers/library.py) router folders.
+
 How to setup the API environment locally
 
 1. Install pipenv with `pip install pipenv`
@@ -41,7 +43,104 @@ How to build the React pages for the API.
 
 The build pages will be visible from their corresponding endpoints.
 
-## Requirements
+### Library
+The library pulls all it's articles from the [`./content`](./content) directory. It will only use content that is in a folder, anything not foldered will not show up in the library. The folders make up the subsections that immediately show on the left side of the library.
+
+An article of the library should start with the following header:
+```
+summary: Long format summary of the article that gives a high level description.
+type: md (also: link, video, pdf)
+date: 31/8/2024 (dd/mm/yyyy)
+title: What is the Learning Tree? 
+image: ./img/tree-thumbnails/learning-tree.png (the relative location in accordance to the project root of where the image is)
+difficulty: easy
+authors: Ben Paulson
+categories: Tutorial, AI-Club, Getting Started
+```
+
+After this, most have the following button added on which provides a link back in the Learning Tree to the article
+```
+<br>
+<a href='/learning-tree?node=1' style='
+    background-color: #31313a;
+    color: gainsboro;
+    padding: 6px 16px;
+    border: none
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;'
+>
+  View in Learning Tree
+</a>
+```
+
+Make sure to change out the `?node=1` to the correct ID for the article in the Learning Tree (more on this later).
+
+Most articles also have a "Why to Read" section that details some more information pertaining to what the article is about.
+```
+<div style='
+  position: relative;
+  padding: 10px; 
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.85); 
+  border: 4px solid transparent;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), linear-gradient(90deg, gold, orange, gold);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+'>
+
+<svg width='200' height='50' style='display: block; margin-bottom: 5px;'>
+  <text x='0' y='35' font-size='35' font-family='Arial' font-weight='bold' fill='gold'>
+    Why Read?
+    <animate attributeName='fill' values='gold; orange; gold' dur='3s' repeatCount='indefinite' />
+  </text>
+</svg>
+
+<p style='color: white; margin-top: 2px;'>At the start of every article, we'll provide a brief overview of WHY you should read the article. This is a great way to quickly determine if the article is right for you, and our goal as student writers is to provide you with resources we believe are extremely credible, rather than just our own opinions.</p>
+
+</div>
+```
+
+### Learning Tree
+The Learning Tree requires setting up a node in the [`./learning_tree`](./learning_tree/learning-tree-nodes) folder for it to exist. Nodes following the following format
+```
+name-id-child_ids
+```
+- `name`: The name of the node, not really used for anything other than to more easily find nodes in the folder
+- `id`: The ID of this node (use this in the Library article to refer it back to)
+- `child_ids`: This can be any number of children which this node has. Keep in mind, to connect this node to a specific one, the parent of this node has to have it's ID in it's children IDs.
+
+Nodes following the following structure:
+```
+name="Why Learn AI with AI-Club?"
+description="Given you understand the basics of AI's history and applications, let's now dive into how you would typically learn about AI at MSOE given you don't join MAIC."
+category="Introduction"
+category_color="gray"
+highlighted_path="True"
+horizontal_displacement=""
+vertical_displacement="500"
+api_image_path="./img/tree-thumbnails/ai_in_school.png"
+link="/library?nav=Articles&article=004_Learning_AI_at_School"
+```
+The primary pieces to note are:
+- `category_color`: Background color of the node
+- `horizontal_displacement`: How far to shift the node left/right from the parent
+- `vertical_displacement`: How far to shift the node up/down globally
+- `api_image_path`: The relative path from root to the thumbnail image
+- `link`: The relative link to the article in the library
+
+## Old Website - Requirements
+
+The old website contains things such as the leaderboard, sponsors, contact info for eboard etc. Anything that is not the Library or Learning tree goes through the old website code.
+Reasoning for the migration was due to the inflexiblity of the old website and wanting a system that we could make updates to without re-rendering everything. Also standardizes the website more
+with what people would expect. Unfortunately, we did not have the time to migrate everything over so all old code is still used somewhere, just not actively maintained by eBoard as strongly.
+
+All of the website is served via the FastAPI, just only the new React code actually makes use of any of the endpoints.
 
 - `pip install markdown`
 - `pip install pandas` (you probably have this already)
