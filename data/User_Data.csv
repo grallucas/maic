@@ -1,17 +1,17 @@
 User,Description,Awards,All-Time Points,Current Points,First Name,Last Name
-Ben Paulson,test description,Hacksgiving|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2022|eboard2023|eboard2024|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,54,49,Ben,Paulson
+Ben Paulson,test description,Hacksgiving|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2022|eboard2023|eboard2024|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,14,14,Ben,Paulson
 Lucas Gral,test description,Overlord|eboard2022|eboard2023|eboard2024|2022 Researcher|2023 Researcher|2022 MICS Attendee|ROSIE Presenter,37,37,Lucas,Gral
-Sydney Balboni,test description,ROSIE Presenter|Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee|NVIDIA DLI 2023,48,47,Sydney,Balboni
+Sydney Balboni,test description,ROSIE Presenter|Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee|NVIDIA DLI 2023,50,49,Sydney,Balboni
 John Cisler,test description,Hacksgiving|ROSIE Competition Finalist 2024|ROSIE Presenter|eboard2023|eboard2024|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,15,14,John,Cisler
-Evan Schubert,test description,2024 Researcher|2024 MICS Attendee,13,13,Evan,Schubert
+Evan Schubert,test description,2024 Researcher|2024 MICS Attendee,14,14,Evan,Schubert
 JT Wehmeier,test description,,10,7,JT,Wehmeier
-Noah Nieberle,test description,Hacksgiving,19,19,Noah,Nieberle
+Noah Nieberle,test description,Hacksgiving,20,20,Noah,Nieberle
 Aidan Schneider,test description,NVIDIA DLI 2023,5,5,Aidan,Schneider
 Dom Palermo,test description,,3,3,Dom,Palermo
 Jonathon Keane,test description,Hacksgiving|2023 Researcher|2023 ROSIE Finalist|ROSIE Presenter|2023 MICS Attendee,3,3,Jonathon,Keane
 Robert Myers Jr.,test description,,4,4,Robert,Myers
 Ted Colwell,test description,2024 Researcher|2023 Researcher|2023 ROSIE Competition Finalist|2024 MICS Attendee|2023 MICS Attendee|eboard2022|eboard2021|eboard2020,2,2,Ted,Colwell
-Mitchell Johnstone,test description,Hacksgiving|ROSIE Presenter|2023 MICS Attendee|2023 Researcher|2024 Researcher|2024 MICS Attendee,65,0,Mitchell,Johnstone
+Mitchell Johnstone,test description,Hacksgiving|ROSIE Presenter|2023 MICS Attendee|2023 Researcher|2024 Researcher|2024 MICS Attendee,66,1,Mitchell,Johnstone
 Autumn Beyer,test description,2022 Researcher|2022 MICS Attendee|Hacksgiving,42,5,Autumn,Beyer
 Joseph Barganz,test description,NVIDIA DLI 2023,4,4,Joseph,Barganz
 Tyler Schreiber,test description,Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,12,0,Tyler,Schreiber
@@ -43,7 +43,7 @@ Aiden Miller,test description,Hacksgiving|2023 MICS Attendee|ROSIE Presenter|202
 Rudolph Evonich,test description,,6,6,Rudolph,Evonich
 Benjamin Weber,test description,2023 MICS Attendee|ROSIE Presenter|2023 Researcher,17,17,Benjamin,Weber
 Kong Xiong,test description,,1,1,Kong,Xiong
-Andy Dao,test description,Hacksgiving|NVIDIA DLI 2023|eboard2024|2024 Researcher|ROSIE Presenter|2024 MICS Attendee,42,2,Andy,Dao
+Andy Dao,test description,Hacksgiving|NVIDIA DLI 2023|eboard2024|2024 Researcher|ROSIE Presenter|2024 MICS Attendee,43,3,Andy,Dao
 Ryan Kruk,test description,eboard2023|2023 MICS Attendee|2023 Researcher|ROSIE Presenter|2022 Researcher|2024 Researcher,8,4,Ryan,Kruk
 Luke Harwood,test description,,3,3,Luke,Harwood
 Matej Koncos,test description,,16,11,Matej,Koncos
@@ -53,21 +53,21 @@ Luka Malovic,test description,,3,3,Luka,Malovic
 Michael Kirkton,test description,,1,0,Michael,Kirkton
 Alexandira Such,test description,,10,10,Alexandira,Such
 Arman Hossain,test description,,2,1,Arman,Hossain
-Mazen Hamid,test description,,22,18,Mazen,Hamid
+Mazen Hamid,test description,,25,21,Mazen,Hamid
 Samuel Scheele,test description,,9,9,Samuel,Scheele
 Marta Craviotto,test description,,6,0,Marta,Craviotto
 Patrick Marshall,test description,Hacksgiving,8,8,Patrick,Marshall
 Nathan Johnson,test description,,1,1,Nathan,Johnson
 Hugo Garrido-Lestache,test description,2023 Researcher|NVIDIA DLI 2023|2024 Researcher|Hacksgiving,8,3,Hugo,Garrido-Lestache
 Jackson Rolando,test description,,7,7,Jackson,Rolando
-Travis Jankowski,test description,,53,50,Travis,Jankowski
+Travis Jankowski,test description,,59,56,Travis,Jankowski
 Hunter Fritchen,test description,,1,1,Hunter,Fritchen
 Jiri Liska,test description,,3,3,Jiri,Liska
 Kevin Paganini,test description,,10,10,Kevin,Paganini
 Nigel Nelson,test description,,5,5,Nigel,Nelson
 Alexander Chapovalov,test description,2023 Researcher|2022 Researcher,3,3,Alexander,Chapovalov
 Alexander Drobek,test description,2024 Researcher|2024 MICS Attendee,2,2,Alexander,Drobek
-Alexander Lopez,test description,,44,40,Alexander,Lopez
+Alexander Lopez,test description,,46,42,Alexander,Lopez
 Caden Kautza,test description,,2,2,Caden,Kautza
 Caden White,test description,,2,2,Caden,White
 Carter Ulschmid,test description,,3,0,Carter,Ulschmid
@@ -77,7 +77,7 @@ David Oleksy,test description,,24,24,David,Oleksy
 Duaa Aljalous,test description,,8,8,Duaa,Aljalous
 Georgia Wood,test description,,2,2,Georgia,Wood
 Konrad Rozpadek,test description,2023 MICS Attendee|2023 Researcher,5,5,Konrad,Rozpadek
-Patrick Rafferty,test description,Hacksgiving|NVIDIA DLI 2023,48,48,Patrick,Rafferty
+Patrick Rafferty,test description,Hacksgiving|NVIDIA DLI 2023,51,51,Patrick,Rafferty
 Ryan Peter,test description,,3,3,Ryan,Peter
 Theophanes Zinos,test description,,3,3,Theophanes,Zinos
 Aarini Chakraborty,test description,,2,2,Aarini,Chakraborty
@@ -113,26 +113,26 @@ James Prendiville,test description,,5,5,James,Prendiville
 Caitlyn Grant,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,13,13,Caitlyn,Grant
 Jacob Tyree,test description,NVIDIA DLI 2023,5,5,Jacob,Tyree
 Georgia Ridgeway,test description,NVIDIA DLI 2023,2,2,Georgia,Ridgeway
-Muhammad Alliyu,test description,,3,3,Muhammad,Alliyu
+Muhammad Alliyu,test description,,4,4,Muhammad,Alliyu
 Thomas Benzshawel,test description,,7,7,Thomas,Benzshawel
 Anna Chisom,test description,,2,2,Anna,Chisom
-Greyson Brousil,test description,,1,1,Greyson,Brousil
-Aaron Herbst,test description,,9,8,Aaron,Herbst
+Greyson Brousil,test description,,2,2,Greyson,Brousil
+Aaron Herbst,test description,,12,11,Aaron,Herbst
 Braden Everson,test description,NVIDIA DLI 2023,3,3,Braden,Everson
 Braydon Hanson,test description,,5,5,Braydon,Hanson
 Jarek Konicek,test description,Hacksgiving,3,3,Jarek,Konicek
 Sonia Grade,test description,2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,23,23,Sonia,Grade
 Virginia Conaty,test description,NVIDIA DLI 2023,4,4,Virginia,Conaty
-Oliver Grudzinski,test description,,3,3,Oliver,Grudzinski
+Oliver Grudzinski,test description,,5,5,Oliver,Grudzinski
 Evan Nowlin,test description,NVIDIA DLI 2023,5,5,Evan,Nowlin
 Jacob Merget,test description,NVIDIA DLI 2023,4,4,Jacob,Merget
 Joel Roberts,test description,,1,1,joel,roberts
 Charles Harris,test description,NVIDIA DLI 2023,5,5,Charles,Harris
 Evan Marcks,test description,,1,1,Evan,Marcks
 Jacob Rolon,test description,,1,1,Jacob,Rolon
-Colton Waltz,test description,NVIDIA DLI 2023,15,15,Colton,Waltz
+Colton Waltz,test description,NVIDIA DLI 2023,18,18,Colton,Waltz
 Logan Feggestad,test description,,2,2,Logan,Feggestad
-Alhagie Boye,test description,Hacksgiving|NVIDIA DLI 2023,34,34,Alhagie,Boye
+Alhagie Boye,test description,Hacksgiving|NVIDIA DLI 2023,37,37,Alhagie,Boye
 Anupranay Thouta,test description,NVIDIA DLI 2023,4,4,Anupranay,Thouta
 Vsevolod Miziuk,test description,NVIDIA DLI 2023,4,4,Vsevolod,Miziuk
 Cade Rousseau,test description,NVIDIA DLI 2023,4,4,Cade,Rousseau
@@ -141,21 +141,21 @@ Dominic Zagra,test description,,4,0,Dominic,Zagra
 Morgan Redrup,test description,Hacksgiving|NVIDIA DLI 2023,4,4,Morgan,Redrup
 Oliver Galan,test description,,1,1,Oliver,Galan
 Caleb Gray,test description,2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,38,28,Caleb,Gray
-Victor Barbulescu,test description,NVIDIA DLI 2023,2,2,Victor,Barbulescu
+Victor Barbulescu,test description,NVIDIA DLI 2023,3,3,Victor,Barbulescu
 Jaden Liermann,test description,NVIDIA DLI 2023,7,7,Jaden,Liermann
 Devin Hansen,test description,,4,4,Devin,Hansen
 Jaden Griffith,test description,,2,0,Jaden,Griffith
 Chirag Patel,test description,,4,4,Chirag,Patel
 Christian Zastrow,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher,9,1,Christian,Zastrow
 Kyle Leverence,test description,,2,2,Kyle,Leverence
-Charles Nortrup,test description,2024 Researcher|2024 MICS Attendee|ROSIE Presenter,5,3,Charles,Nortrup
+Charles Nortrup,test description,2024 Researcher|2024 MICS Attendee|ROSIE Presenter,6,4,Charles,Nortrup
 Zach Wentz,test description,,1,1,Zach,Wentz
 Jack Dorner,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,7,5,Jack,Dorner
-Dylan Norquist,test description,2024 Researcher,11,11,Dylan,Norquist
+Dylan Norquist,test description,2024 Researcher,12,12,Dylan,Norquist
 Alex Ausan,test description,NVIDIA DLI 2023,4,4,Alex,Ausan
 Levi Wolfgramm,test description,NVIDIA DLI 2023,10,10,Levi,Wolfgramm
 Keagan Weinstock,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,11,11,Keagan,Weinstock
-Mikhail Filippov,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,18,14,Mikhail,Filippov
+Mikhail Filippov,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,23,19,Mikhail,Filippov
 Gavin Childress,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,11,11,Gavin,Childress
 Paul Eickhoff,test description,Hacksgiving,2,2,Paul,Eickhoff
 Alex Wunderlin,test description,NVIDIA DLI 2023,4,4,Alex,Wunderlin
@@ -165,7 +165,7 @@ James Watson,test description,,1,1,James,Watson
 Leigh Goetsch,test description,Hacksgiving|NVIDIA DLI 2023|eboard2024|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,12,12,Leigh,Goetsch
 Gavin Woodgate,test description,2024 Researcher,2,2,Gavin,Woodgate
 David Salzman,test description,,4,4,David,Salzman
-Michael Wood,test description,,13,13,Michael,Wood
+Michael Wood,test description,,16,16,Michael,Wood
 Vincenzo Bean,test description,NVIDIA DLI 2023,3,0,Vincenzo,Bean
 Asher Sprigler,test description,2022 Researcher|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,6,6,Asher,Sprigler
 Kalki Sarangan,test description,,2,2,Kalki,Sarangan
@@ -177,7 +177,7 @@ Jose Hall,test description,Hacksgiving|,3,3,Jose,Hall
 Mason Nguyen,test description,Hacksgiving|NVIDIA DLI 2023,7,7,Mason,Nguyen
 Nathan Miller,test description,NVIDIA DLI 2023,6,6,Nathan,Miller
 Franklin Cole,test description,2024 Researcher|2024 MICS Attendee|ROSIE Presenter,3,3,Franklin,Cole
-Alex Ewart,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,16,13,Alex,Ewart
+Alex Ewart,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,19,16,Alex,Ewart
 Clayton Stewart,test description,,2,2,Clayton,Stewart
 Cameron Konicek,test description,NVIDIA DLI 2023,1,1,Cameron,Konicek
 Keegan Kastman,test description,NVIDIA DLI 2023,5,5,Keegan,Kastman
@@ -196,13 +196,13 @@ Christian Basso,test description,2024 Researcher|2024 MICS Attendee,4,0,Christia
 Mikolaj Sordyl,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,5,5,Mikolaj,Sordyl
 Morgan  Anderson,test description,NVIDIA DLI 2023,1,1,Morgan,
 Nikolas Palacios,test description,,4,4,Nikolas,Palacios
-Chloe Eckdale-Dudley,test description,NVIDIA DLI 2023,6,6,Chloe,Eckdale-Dudley
+Chloe Eckdale-Dudley,test description,NVIDIA DLI 2023,7,7,Chloe,Eckdale-Dudley
 Liam Otten,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,5,2,Liam,Otten
 Eric Mahn,test description,,3,3,Eric,Mahn
 Jason Martinez,test description,NVIDIA DLI 2023,1,1,Jason,Martinez
 Michael Romanek,test description,NVIDIA DLI 2023,3,3,Michael,Romanek
 Hussain Mehdi,test description,NVIDIA DLI 2023,6,6,Hussain,Mehdi
-Adrian Manchado,test description,Hacksgiving,11,11,Adrian,Manchado
+Adrian Manchado,test description,Hacksgiving,12,12,Adrian,Manchado
 Abigail Draper,test description,2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024,1,1,Abigail,Draper
 Michaela Haensgen,test description,,1,1,Michaela,Haensgen
 Brandon Istad,test description,,2,2,Brandon,Istad
@@ -220,8 +220,8 @@ Eliana Biggers,test description,NVIDIA DLI 2023,5,5,Eliana,Biggers
 Krueger (Mac) Williams,test description,NVIDIA DLI 2023,5,5,Krueger,(Mac)
 Cristian Tejeda,test description,NVIDIA DLI 2023,3,3,Cristian,Tejeda
 Jawadul Chowdhury,test description,NVIDIA DLI 2023|2024 Researcher,1,1,Jawadul,Chowdhury
-Trent Adamson,test description,NVIDIA DLI 2023,5,5,Trent,Adamson
-Dimas Monte,test description,NVIDIA DLI 2023,8,0,Dimas,Monte
+Trent Adamson,test description,NVIDIA DLI 2023,7,7,Trent,Adamson
+Dimas Monte,test description,NVIDIA DLI 2023,9,1,Dimas,Monte
 Nastasja Radulovic,test description,NVIDIA DLI 2023,2,2,Nastasja,Radulovic
 Vit Kalianko,test description,NVIDIA DLI 2023,2,2,Vit,Kalianko
 Logan Feggeatad,test description,NVIDIA DLI 2023,2,2,Logan,Feggeatad
@@ -232,7 +232,7 @@ Mia Hochstetler,test description,,5,0,Mia,Hochstetler
 Jacob O'Shaughnessy,test description,2024 Researcher|2024 MICS Attendee,2,2,Jacob,O'Shaughnessy
 Marta,test description,,1,1,Marta,
 Mitchell Mahnke,test description,2024 Researcher|2024 MICS Attendee,3,3,Mitchell,Mahnke
-Charlie Nortrup,test description,,4,4,Charlie,Nortrup
+Charlie Nortrup,test description,,6,6,Charlie,Nortrup
 Miles Bailey-Waltz,test description,,1,1,Miles,Bailey-Waltz
 Adam,test description,,1,1,Adam,
 Richard Wyss,test description,,1,1,Richard,Wyss
@@ -247,61 +247,61 @@ Ella Bruce,test description,Hacksgiving|eboard2023|eboard2024|2024 Researcher|20
 Sam Sterritt,test description,,1,1,,
 Evan Roegner,test description,Hacksgiving,8,8,,
 Graham Gilsdorf,test description,,1,1,,
-Josiah Mathews,test description,,4,4,,
+Josiah Mathews,test description,,9,9,,
 Garrett Voight,test description,,2,2,,
 Josh Myers,test description,,3,3,,
-Ashton Thao,test description,,1,1,,
-Ryan Pal Hilgendorf,test description,,2,0,,
-Hayden Park,test description,,4,4,,
+Ashton Thao,test description,,2,2,,
+Ryan Pal Hilgendorf,test description,,3,1,,
+Hayden Park,test description,,9,9,,
 Jonathan Fantoni,test description,,1,1,,
 Jasdeep Singh,test description,,2,0,,
-Xander Ede,test description,,8,8,,
-Zak Goetter,test description,,20,18,,
+Xander Ede,test description,,10,10,,
+Zak Goetter,test description,,24,22,,
 Mj Ramos,test description,,1,1,,
-Vlad Wilson,test description,,20,20,,
-Kathlyn Leaños,test description,,14,9,,
-Ben Grill,test description,,3,3,,
+Vlad Wilson,test description,,23,23,,
+Kathlyn Leaños,test description,,16,11,,
+Ben Grill,test description,,4,4,,
 Peli Orugbani,test description,,2,2,,
 Megan Cranston,test description,,2,2,,
 Delsoro Somé,test description,,2,2,,
-Sydney Madden,test description,,4,4,,
-Mason Beynon,test description,,13,13,,
-Giovanni Martinez,test description,,9,9,,
+Sydney Madden,test description,,7,7,,
+Mason Beynon,test description,,16,16,,
+Giovanni Martinez,test description,,11,11,,
 Kylee Gander,test description,,2,2,,
 German Garrido-Lestache Belinchon,test description,,21,21,,
-Kelsey Collins,test description,,3,0,,
+Kelsey Collins,test description,,5,2,,
 Rishikesh Katta,test description,,2,2,,
-Benjamin Leshin,test description,,9,9,,
-Alexander Kruschka,test description,,5,5,,
-Austin Koske,test description,,20,20,,
-Andrew Needham,test description,,8,8,,
+Benjamin Leshin,test description,,12,12,,
+Alexander Kruschka,test description,,12,12,,
+Austin Koske,test description,,24,24,,
+Andrew Needham,test description,,12,12,,
 Venkata Reddy Karri,test description,,1,1,,
 Vyshnav Naidu Vikkurthi,test description,,1,1,,
 Kyle Sink,test description,,2,2,,
 Leonardo Mayorga Cruz,test description,,1,1,,
-Jayden Hudson,test description,,1,0,,
-Trevor Hancock,test description,,4,4,,
+Jayden Hudson,test description,,2,1,,
+Trevor Hancock,test description,,8,8,,
 Bryan Becerra-Cano,test description,,1,1,,
 Neeraj Renil Kadavatheri,test description,,2,2,,
 Giovanni Guaman,test description,,2,2,,
-Will Lassiter,test description,,7,5,,
+Will Lassiter,test description,,9,7,,
 Tyler Moake,test description,,1,1,,
-Joseph Beattie,test description,,5,2,,
+Joseph Beattie,test description,,12,9,,
 Preston Bohnsack,test description,,2,2,,
 Joshua Schelonka,test description,,22,22,,
-Alec Weinbender,test description,,4,4,,
+Alec Weinbender,test description,,8,8,,
 Srijan Kumar,test description,,1,1,,
 Zain Ul Aayaan Moosa Mohammed,test description,,4,4,,
-Elton Emini,test description,,5,5,,
+Elton Emini,test description,,6,6,,
 Peter Gerrits,test description,,1,0,,
-Dragan Milovanovic,test description,,4,4,,
-Jonathan Keane,test description,,2,2,,
+Dragan Milovanovic,test description,,5,5,,
+Jonathan Keane,test description,,3,3,,
 Quentin Robbins,test description,,1,1,,
-Autumn Mizer,test description,,22,21,,
-Isabella Ruiz,test description,,17,17,,
-Sebastian Dolecki,test description,,19,15,,
-Oskar Sierzega,test description,,10,0,,
-Alayna Ostler,test description,,4,4,,
+Autumn Mizer,test description,,24,23,,
+Isabella Ruiz,test description,,18,18,,
+Sebastian Dolecki,test description,,22,18,,
+Oskar Sierzega,test description,,13,3,,
+Alayna Ostler,test description,,10,10,,
 Savanna Mcclure,test description,,1,1,,
 Wilfried Tapsoba,test description,,1,1,,
 Cameron Delpage,test description,,2,2,,
@@ -309,42 +309,60 @@ Jack Lecloux,test description,,16,15,,
 Reinholzj,test description,,1,1,,
 Eli Vang,test description,,2,2,,
 Excel Olatunji,test description,,6,6,,
-Michael Link,test description,,4,4,,
+Michael Link,test description,,9,9,,
 Lucas Phillips,test description,,1,1,,
 Ethan Houseworth,test description,,1,1,,
 Andrew Gilpatrick,test description,,1,0,,
 Chloe Hyatt,test description,,1,1,,
 Zach Gardipee,test description,,1,1,,
 Zach Burke,test description,,1,1,,
-Josiah Reinholz,test description,,2,0,,
-Zoe Kirkman,test description,,12,12,,
-Madison Engebose,test description,,3,0,,
+Josiah Reinholz,test description,,8,6,,
+Zoe Kirkman,test description,,15,15,,
+Madison Engebose,test description,,8,5,,
 Chukwuma Chukwuma-Ugwu,test description,,1,1,,
-Peter Kwaterski,test description,,4,0,,
-Bjarne Baasch,test description,,23,22,,
+Peter Kwaterski,test description,,7,3,,
+Bjarne Baasch,test description,,26,25,,
 Holly Raetz,test description,,1,1,,
-Gabrielle Sladek,test description,,37,37,,
+Gabrielle Sladek,test description,,39,39,,
 Ashtin Ledden,test description,,1,1,,
-Reagan Burkemper,test description,,12,12,,
+Reagan Burkemper,test description,,14,14,,
 Brett Servais,test description,,2,2,,
 Matthew Crawford,test description,,1,1,,
 Evan Hartline,test description,,1,1,,
 Francesco Carnevali,test description,,1,1,,
-Jake Weiland,test description,,3,3,,
+Jake Weiland,test description,,7,7,,
 Asritha Mungara,test description,,2,2,,
 Anthony Marchello,test description,,1,1,,
 Lincoln Jiang,test description,,1,1,,
 Freda Yang,test description,,2,2,,
 Luke Stevens,test description,,1,1,,
-Miles Trompeter,test description,,24,20,,
-Aeden Douglas Meerdink,test description,,7,7,,
-Mohan Li,test description,,2,2,,
-Theodore Schmitt,test description,,1,0,,
+Miles Trompeter,test description,,28,24,,
+Aeden Douglas Meerdink,test description,,8,8,,
+Mohan Li,test description,,3,3,,
+Theodore Schmitt,test description,,3,2,,
 Edex@Msoe.Edu,test description,,1,0,,
-Madison Mina,test description,,1,0,,
+Madison Mina,test description,,2,1,,
 Vamsi,test description,,6,6,,
-Adam Swedlund,test description,,11,11,,
+Adam Swedlund,test description,,17,17,,
 Eddy Chukwuma-Ugwu,test description,,1,1,,
 Gideon Stephenson,test description,,1,1,,
 Joshua Dascoli,test description,,1,1,,
 Julian,test description,,1,1,,
+Felix Kimeu,test description,,1,1,,
+Vincent Martin,test description,,2,2,,
+Shritej Gunda,test description,,1,0,,
+Brian Schroedl,test description,,1,1,,
+Asritha Deep Mungara,test description,,1,1,,
+John Balasbas,test description,,2,2,,
+Adrianne Schellinger,test description,,2,2,,
+Ben Leshin,test description,,1,1,,
+Delsoro Some,test description,,3,3,,
+Alex Jones,test description,,1,1,,
+Vishnu Challa,test description,,1,0,,
+Isha Samrit,test description,,1,1,,
+Marco Nororis,test description,,1,1,,
+Lexi Dorner,test description,,1,1,,
+Sam Mcclure,test description,,1,0,,
+Madalyne Broennimann,test description,,1,1,,
+Mathias Galvan,test description,,1,0,,
+Zain Aayaan Mohammed,test description,,1,1,,
