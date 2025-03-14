@@ -1,7 +1,7 @@
 User,Description,Awards,All-Time Points,Current Points,First Name,Last Name
 Ben Paulson,test description,Hacksgiving|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2022|eboard2023|eboard2024|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,14,14,Ben,Paulson
 Lucas Gral,test description,Overlord|eboard2022|eboard2023|eboard2024|2022 Researcher|2023 Researcher|2022 MICS Attendee|ROSIE Presenter,37,37,Lucas,Gral
-Sydney Balboni,test description,ROSIE Presenter|Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee|NVIDIA DLI 2023,50,0,Sydney,Balboni
+Sydney Balboni,test description,ROSIE Presenter|Hacksgiving|2024 Researcher|2024 MICS Attendee|ROSIE Competition Finalist 2024|NVIDIA DLI 2023|ROSIE Presenter|eboard2023|ROSIE Competition Finalist 2023|2023 Researcher|2023 MICS Attendee|NVIDIA DLI 2023,50,49,Sydney,Balboni
 John Cisler,test description,Hacksgiving|ROSIE Competition Finalist 2024|ROSIE Presenter|eboard2023|eboard2024|ROSIE Competition Finalist 2023|ROSIE Competition Finalist 2022|2022 Researcher|2023 Researcher|2023 MICS Attendee|2022 MICS Attendee,15,14,John,Cisler
 Evan Schubert,test description,2024 Researcher|2024 MICS Attendee,14,14,Evan,Schubert
 JT Wehmeier,test description,,10,7,JT,Wehmeier
@@ -60,7 +60,7 @@ Patrick Marshall,test description,Hacksgiving,8,8,Patrick,Marshall
 Nathan Johnson,test description,,1,1,Nathan,Johnson
 Hugo Garrido-Lestache,test description,2023 Researcher|NVIDIA DLI 2023|2024 Researcher|Hacksgiving,8,3,Hugo,Garrido-Lestache
 Jackson Rolando,test description,,7,7,Jackson,Rolando
-Travis Jankowski,test description,,59,55,Travis,Jankowski
+Travis Jankowski,test description,,59,56,Travis,Jankowski
 Hunter Fritchen,test description,,1,1,Hunter,Fritchen
 Jiri Liska,test description,,3,3,Jiri,Liska
 Kevin Paganini,test description,,10,10,Kevin,Paganini
@@ -155,7 +155,7 @@ Dylan Norquist,test description,2024 Researcher,12,12,Dylan,Norquist
 Alex Ausan,test description,NVIDIA DLI 2023,4,4,Alex,Ausan
 Levi Wolfgramm,test description,NVIDIA DLI 2023,10,10,Levi,Wolfgramm
 Keagan Weinstock,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,11,11,Keagan,Weinstock
-Mikhail Filippov,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,23,15,Mikhail,Filippov
+Mikhail Filippov,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,23,19,Mikhail,Filippov
 Gavin Childress,test description,Hacksgiving|NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,11,11,Gavin,Childress
 Paul Eickhoff,test description,Hacksgiving,2,2,Paul,Eickhoff
 Alex Wunderlin,test description,NVIDIA DLI 2023,4,4,Alex,Wunderlin
@@ -170,14 +170,14 @@ Vincenzo Bean,test description,NVIDIA DLI 2023,3,0,Vincenzo,Bean
 Asher Sprigler,test description,2022 Researcher|2024 Researcher|2024 MICS Attendee|ROSIE Presenter,6,6,Asher,Sprigler
 Kalki Sarangan,test description,,2,2,Kalki,Sarangan
 Dara Davis,test description,,1,1,Dara,Davis
-Alex Toma,test description,NVIDIA DLI 2023,7,6,Alex,Toma
+Alex Toma,test description,NVIDIA DLI 2023,7,7,Alex,Toma
 Vincent Vassallo,test description,,2,2,Vincent,Vassallo
 Nathan Hallberg,test description,NVIDIA DLI 2023,6,6,Nathan,Hallberg
 Jose Hall,test description,Hacksgiving|,3,3,Jose,Hall
 Mason Nguyen,test description,Hacksgiving|NVIDIA DLI 2023,7,7,Mason,Nguyen
 Nathan Miller,test description,NVIDIA DLI 2023,6,6,Nathan,Miller
 Franklin Cole,test description,2024 Researcher|2024 MICS Attendee|ROSIE Presenter,3,3,Franklin,Cole
-Alex Ewart,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,19,14,Alex,Ewart
+Alex Ewart,test description,NVIDIA DLI 2023|2024 Researcher|2024 MICS Attendee,19,16,Alex,Ewart
 Clayton Stewart,test description,,2,2,Clayton,Stewart
 Cameron Konicek,test description,NVIDIA DLI 2023,1,1,Cameron,Konicek
 Keegan Kastman,test description,NVIDIA DLI 2023,5,5,Keegan,Kastman
@@ -251,12 +251,12 @@ Josiah Mathews,test description,,9,9,,
 Garrett Voight,test description,,2,2,,
 Josh Myers,test description,,3,3,,
 Ashton Thao,test description,,2,2,,
-Ryan Pal Hilgendorf,test description,,3,0,,
+Ryan Pal Hilgendorf,test description,,3,1,,
 Hayden Park,test description,,9,9,,
 Jonathan Fantoni,test description,,1,1,,
 Jasdeep Singh,test description,,2,0,,
 Xander Ede,test description,,10,10,,
-Zak Goetter,test description,,24,18,,
+Zak Goetter,test description,,24,22,,
 Mj Ramos,test description,,1,1,,
 Vlad Wilson,test description,,23,23,,
 Kathlyn Leaños,test description,,16,11,,
@@ -269,18 +269,18 @@ Mason Beynon,test description,,16,16,,
 Giovanni Martinez,test description,,11,11,,
 Kylee Gander,test description,,2,2,,
 German Garrido-Lestache Belinchon,test description,,21,21,,
-Kelsey Collins,test description,,5,0,,
+Kelsey Collins,test description,,5,2,,
 Rishikesh Katta,test description,,2,2,,
-Benjamin Leshin,test description,,12,8,,
+Benjamin Leshin,test description,,12,12,,
 Alexander Kruschka,test description,,12,12,,
 Austin Koske,test description,,24,24,,
-Andrew Needham,test description,,12,0,,
+Andrew Needham,test description,,12,12,,
 Venkata Reddy Karri,test description,,1,1,,
 Vyshnav Naidu Vikkurthi,test description,,1,1,,
 Kyle Sink,test description,,2,2,,
 Leonardo Mayorga Cruz,test description,,1,1,,
 Jayden Hudson,test description,,2,1,,
-Trevor Hancock,test description,,8,0,,
+Trevor Hancock,test description,,8,8,,
 Bryan Becerra-Cano,test description,,1,1,,
 Neeraj Renil Kadavatheri,test description,,2,2,,
 Giovanni Guaman,test description,,2,2,,
@@ -316,7 +316,7 @@ Andrew Gilpatrick,test description,,1,0,,
 Chloe Hyatt,test description,,1,1,,
 Zach Gardipee,test description,,1,1,,
 Zach Burke,test description,,1,1,,
-Josiah Reinholz,test description,,8,0,,
+Josiah Reinholz,test description,,8,6,,
 Zoe Kirkman,test description,,15,15,,
 Madison Engebose,test description,,8,5,,
 Chukwuma Chukwuma-Ugwu,test description,,1,1,,
@@ -336,7 +336,7 @@ Anthony Marchello,test description,,1,1,,
 Lincoln Jiang,test description,,1,1,,
 Freda Yang,test description,,2,2,,
 Luke Stevens,test description,,1,1,,
-Miles Trompeter,test description,,28,20,,
+Miles Trompeter,test description,,28,24,,
 Aeden Douglas Meerdink,test description,,8,8,,
 Mohan Li,test description,,3,3,,
 Theodore Schmitt,test description,,3,2,,
