@@ -203,7 +203,3 @@ class LearningTree():
         return sorted_list
 
 x = LearningTree().builder()
-print(x)
-# for key, value in x[1].items():
-#     print(f"{key}: {value}")
- 
