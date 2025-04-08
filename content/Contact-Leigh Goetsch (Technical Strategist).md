@@ -1,6 +1,6 @@
 img: https://maic-fastapi-lambda.s3.amazonaws.com/img/board_members/Leigh_Goetsch.jpg
-date: 14/11/2023
-order: 5
+date: 04/08/2025
+order: 4
 not_in_recent:
 
 ### Workshop Developer Apprentice

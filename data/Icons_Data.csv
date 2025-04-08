@@ -1,5 +1,6 @@
 Icon Name,Icon Image Path,Tooltip,Priority
-eboard2024,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/current_eboard.png,2024 Eboard,1000
+eboard2025,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/current_eboard.png,2024 Eboard,1001
+eboard2024,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2024 Eboard,1000
 eboard2023,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2023 Eboard,521
 eboard2022,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2022 Eboard,520
 eboard2021,https://maic-fastapi-lambda.s3.amazonaws.com/data/custom_icons/old_eboard.png,2021 Eboard,519

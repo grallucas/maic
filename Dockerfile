@@ -1,62 +1,12 @@
 FROM amazon/aws-lambda-python:3.11
 
-# Install necessary packages including AWS CLI
-RUN yum -y install zip aws-cli
-
-RUN python3 -m pip install --no-cache-dir --ignore-installed pipenv pandas markdown
+# Install AWS CLI
+RUN yum -y install aws-cli
 
 WORKDIR /var/task
 
-# Begin the functions compiling
-COPY Pipfile Pipfile.lock /var/task/
-RUN mkdir -p /var/task/functions
-RUN mkdir -p /var/task/functions/pages/build
-RUN mkdir -p /var/task/functions/content
-RUN mkdir -p /var/task/functions/js-css
-RUN mkdir -p /var/task/functions/img
-RUN mkdir -p /var/task/functions/data
-RUN mkdir -p /var/task/learning_tree
-RUN pipenv requirements > requirements.txt
-
-# Install dependencies directly into the app directory
-# RUN pip install --target=/var/task/functions/app -r requirements.txt
-RUN pip install --target=/var/task/functions -r requirements.txt
-
-# Copy local contents of app into the functions/app directory
-COPY ./app /var/task/functions/
-
-# Copy non-built HTML stuff
-COPY ./about_points.html /var/task/functions/
-COPY ./about_achievements.html /var/task/functions/
-COPY ./map.html /var/task/functions/
-
-# Copy the contents of the local pages/build folder to functions/pages/build
-COPY ./pages/build /var/task/functions/pages/build/
-
-# Copy the contents of the local content folder to functions/content
-COPY ./content /var/task/functions/content/
-
-# Copy the contents of the local js/css folder to functions/js-css
-COPY ./js-css /var/task/functions/js-css/
-
-# Copy the contents of the local img folder to functions/img
-COPY ./img /var/task/functions/img/
-
-# Copy the contents of the local img folder to functions/img
-COPY ./data /var/task/functions/data/
-
-# Copy the contents of the local learning-tree folder to functions/learning-tree
-COPY ./learning_tree /var/task/functions/learning_tree/
-
-# Copy the python builder code and build the base website
-RUN mkdir -p /var/task/functions/py
-COPY ./py /var/task/functions/py
-WORKDIR /var/task/functions
-RUN python3 /var/task/functions/py/build.py
-WORKDIR /var/task
-
-# Delete the python builder code
-RUN rm -rf /var/task/functions/py
+# Copy the contents of the local img folder to /var/task/img
+COPY ./img /var/task/img
 
 # Set environment variables for AWS credentials and bucket name
 ARG AWS_ACCESS_KEY_ID
