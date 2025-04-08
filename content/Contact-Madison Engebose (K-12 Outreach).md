@@ -1,4 +1,4 @@
-img: https://maic-fastapi-lambda.s3.amazonaws.com/img/board_members/Madison Engebose Portrait.png
+img: https://maic-fastapi-lambda.s3.amazonaws.com/img/board_members/Madison Engebose Portrait.jpg
 date: 04/08/2025
 order: 6
 not_in_recent:
